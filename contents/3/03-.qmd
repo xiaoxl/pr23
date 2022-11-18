@@ -1,0 +1,13 @@
+
+# Package: `numpy`
+
+The main reference for this chapter is @McK2017.
+
+
+{{< include 03-01.qmd >}}
+
+
+
+{{< include 03-ex.qmd >}}
+
+{{< include 03-proj.qmd >}}

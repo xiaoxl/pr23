@@ -1,0 +1,32 @@
+# R Fundamentals
+
+
+A few advantages about R:
+
+- Free and open source comparing to some other tools like Excel and SPSS.
+- Optimized with vectorization.
+
+
+
+
+
+{{< include 07-01.qmd >}}
+
+
+
+{{< include 07-02.qmd >}}
+
+
+
+{{< include 07-03.qmd >}}
+
+
+{{< include 07-04.qmd >}}
+
+
+
+{{< include 07-ex.qmd >}}
+
+
+
+{{< include 07-proj.qmd >}}

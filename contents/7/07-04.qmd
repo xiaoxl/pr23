@@ -1,0 +1,110 @@
+## Modifying values
+
+### Changing values in place
+
+You can use R’s notation system to modify values within an R object. 
+
+- In general when working with vectors, the two vectors should have the same length.
+- If the lengths are different, R will repeat the shorter one to make it match with the longer one. This is called the *vector recycling* rule. R will throw a warning if the two lengths are not proposional.
+
+::: {#exm-}
+```{r}
+#| error: true
+1:4 + 1:2
+1:4 + 1:3
+```
+:::
+
+
+
+- We may create values that do not yet exist in the object. R will expand the object to accommodate the new values.
+
+
+::: {#exm-}
+
+```{r}
+vec <- 1:6
+vec
+vec[7] <- 0
+vec
+```
+
+:::
+
+
+::: {#exm-}
+
+```{r}
+df <- data.frame(a=c(1,2), b=c('a', 'b'))
+df
+df$c <- 3:4
+df
+```
+
+:::
+
+
+### Logical subsetting
+We could compare two vectors element-wise, and the result is a logical vector. Then we could use this result to subset the vector / data.frame.
+
+
+
+::: {#exm-}
+
+```{r}
+suit <- c('spades', 'hearts', 'clubs', 'diamonds')
+face <- 1:5
+deck <- expand.grid(suit, face)
+```
+
+```{r}
+deck$Var1 == 'hearts'
+deck$Var2[deck$Var1 == 'hearts']
+deck[deck$Var1 == 'hearts',]
+```
+We could directly assign values to the subset. Note that the following assignment create a new column with `NA` values.
+
+
+```{r}
+deck$Var3[deck$Var1 == 'hearts'] <- 1
+deck
+```
+
+
+:::
+
+
+:::{.callout-tip}
+Other than the regualr logical operators, R provides a speical one: `%in%`. 
+
+`x %in% y`: Is `x` in the vector `y`?
+
+If `x` is a vector, the output is a vector with the same length as `x`, telling whether each element of `x` is in `y` or not.
+:::
+
+
+::: {.callout-tip}
+Other than the regular Boolean operators, R provides two special ones: `any` and `all`. 
+
+- `any(cond1, cond2, ...)`: Are any of these conditions true?
+- `all(cond1, cond2, ...)`: Are all of these conditions true?
+:::
+
+
+### Missing values `NA`
+
+In R, missing values are `NA`, and you can directly work with `NA`. Any computations related to `NA` will return `NA`.
+
+1. `na.rm`: Most R functions come with the optional argument `na.rm`. If you set it to be `TRUE`, the function will ignore `NA` when evaluating the function.
+
+
+::: {#exm-}
+
+```{r}
+mean(c(NA, 1:50))
+mean(c(NA, 1:50), na.rm=TRUE)
+```
+
+:::
+
+2. `is.na()`: This is a function testing whether an object is `NA`.

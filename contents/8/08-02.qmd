@@ -1,0 +1,188 @@
+## Tidy Data 
+
+The same underlying data can be represented in multiple ways. The following example shows the same data organized in four different ways.
+
+
+::: {#exm-tidydatasets}
+
+These tibbles are provided by `tidyr`. You could directly load it from `tidyverse`.
+
+```{r}
+library(tidyverse)
+data(table1, package='tidyr')
+data(table2, package='tidyr')
+data(table3, package='tidyr')
+data(table4a, package='tidyr')
+data(table4b, package='tidyr')
+```
+
+
+1. `table1`
+
+
+```{r}
+table1
+```
+
+2. `table2`
+
+```{r}
+table2
+```
+
+3. `table3`
+
+```{r}
+table3
+```
+
+
+4. Spread across two tibbles.
+
+```{r}
+table4a
+
+table4b
+```
+
+:::
+
+
+::: {#def-}
+A dataset is *tidy* if
+
+1. Each variable have its own column.
+2. Each observation have its own row.
+3. Each value have its oven cell.
+:::
+These three conditions are interrelated because it is impossible to only satisfy two of the three. In pratical, we need to follow the instructions:
+
+1. Put each dataset in a tibble.
+2. Put each variable in a column.
+
+*Tidy* data is a consistent way to organize your data in R. The main advantages are:
+
+1. It is one consistent way of storing data. In other words, this is a consistent data structure that can be used in many cases.
+2. To placing variables in columns allows R's vectorized nature to shine.
+
+All packages in the tidyverse are designed to work with tidy data. 
+
+### Tidying datasets
+Most datasets are untidy:
+
+- One variable might be spread across multiple columns.
+- One observation might be scattered across multiple rows.
+
+#### `pivot_longer()`
+A common problem is that the column names are not names of variables, but values of a variable. For example, `table4a` above has columns `1999` and `2000`. These two names are actually the values of a variable `year`. In addition, each row represents two observations, not one.
+
+```{r}
+table4a
+```
+To tidy this type of dataset, we need to gather those columns into a new pair of variables. We need three parameters:
+
+- The set of columns that represent values. In this case, those are `1999` and `2000`.
+- The name of the variable. In this case, it is `year`. 
+-The name of the variable whose values are spread over the cells. In this case, it is the number of `cases`. 
+
+Then we apply `pivot_longer()`.
+
+```{r}
+pivot_longer(table4a, cols=c(`1999`, `2000`), names_to='year', values_to='cases')
+```
+We may also use the pipe `%>%` symbol. 
+
+```{r}
+table4a %>% pivot_longer(cols=c(`1999`, `2000`), names_to='year', values_to='cases')
+```
+
+
+
+We can do the similar thing to `table4b`. Then we could combine the two tibbles together.
+
+```{r}
+tidy4a <- table4a %>% 
+    pivot_longer(cols=c(`1999`, `2000`), names_to='year', values_to='cases')
+tidy4b <- table4b %>% 
+    pivot_longer(cols=c(`1999`, `2000`), names_to='year', values_to='population')
+left_join(tidy4a, tidy4b)
+```
+
+`pivot_longer()` is an updated approach to `gather()`, designed to be both simpler to use and to handle more use cases. We recommend you use `pivot_longer()` for new code; `gather()` isn't going away but is no longer under active development.
+
+
+
+
+#### `pivot_wider()`
+Another issuse is that an observation is scattered across multiple rows. Take `table2` as an example. 
+An observation is a country in a year, but each observation is spread across two rows.
+
+```{r}
+table2
+```
+We could apply `pivot_wider()` to make it tidy. Here we need two arguments.
+
+- The column that contains variable names. Here, it’s `type`.
+- The column that contains values forms multiple variables. Here, it’s `count`.
+
+
+```{r}
+pivot_wider(table2, names_from='type', values_from='count')
+```
+We can also use the pipe symbol `%>%`.
+
+
+```{r}
+table2 %>% pivot_wider(names_from='type', values_from='count')
+```
+
+
+
+
+`pivot_wider()` is an updated approach to `spread()`, designed to be both simpler to use and to handle more use cases. We recommend you use `pivot_wider()` for new code; `spread()` isn't going away but is no longer under active development.
+
+
+#### `separate()`
+
+If we would like to split one columns into multiple columns since there are more than one values in a cell, we could use `separate()`. 
+
+
+```{r}
+separate(table3, rate, into=c('cases', 'population'))
+```
+We could also use the pipe symbol `%>%`.
+
+```{r}
+table3 %>% separate(rate, into=c('cases', 'population'))
+```
+
+Using separate, the first argument is the column to be separated. `into` is where you store the parsed data. If no arguments are given, `separate()` will split values wherever it sees a non-alphanumeric character. If you would like to specify a separator, you may use the `sep` argument. 
+
+- If `sep` is set to be a character, the column will be separated by the character.
+- If `sep` is set to be a vector of integers, the column will be separated by the positions.
+
+
+```{r}
+separate(table3, rate, into=c('cases', 'population'), sep='/')
+```
+
+```{r}
+separate(table3, rate, into=c('cases', 'population'), sep=c(2,5))
+```
+
+Note that in this example, since `into` only has two columns, the rest of the data are lost.
+
+Another useful argument is `convert`. After separation, the columns are still character columns. If we set `convert=TRUE`, the columns will be automatically converted into better types if possible.
+
+```{r}
+separate(table3, rate, into=c('cases', 'population'), convert=TRUE)
+```
+
+
+#### `unite()`
+`unite()` is the inverse of `separate()`. The syntax is straghtforward. The default separator is `_`. 
+
+```{r}
+table3 %>% unite(new, year, rate, sep='_')
+```
+

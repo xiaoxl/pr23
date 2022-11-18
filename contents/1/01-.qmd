@@ -1,0 +1,31 @@
+
+
+# Preliminaries 
+
+## Why Python?
+### Python is easy to learn and use
+<!-- Programmers familiar with traditional languages will find it easy to learn Python. All of the familiar constructs—loops, conditional statements, arrays, and so forth—are included, but many are easier to use in Python. Here are a few of the reasons why:
+
+- Types are associated with objects, not variables. A variable can be assigned a value of any type, and a list can contain objects of many types. This also means that type casting usually isn’t necessary and that your code isn’t locked into the straitjacket of predeclared types.
+
+- Python typically operates at a much higher level of abstraction. This is partly the result of the way the language is built and partly the result of an extensive standard code library that comes with the Python distribution. A program to download a web page can be written in two or three lines!
+
+- Syntax rules are very simple. Although becoming an expert Pythonista takes time
+and effort, even beginners can absorb enough Python syntax to write useful
+code quickly.
+
+Python is well suited for rapid application development. It isn’t unusual for coding an application in Python to take one-fifth the time it would in C or Java and to take as little as one-fifth the number of lines of the equivalent C program. This depends on the particular application, of course; for a numerical algorithm performing mostly integer arithmetic in for loops, there would be much less of a productivity gain. For the average application, the productivity gain can be significant.  -->
+### Python is easy to read
+### Python Community is mature and supportive
+
+
+
+
+
+
+
+{{< include 01-01.qmd >}}
+
+{{< include 01-ex.qmd >}}
+
+{{< include 01-proj.qmd >}}

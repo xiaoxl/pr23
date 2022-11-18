@@ -1,0 +1,409 @@
+
+
+
+## Data structures
+Main reference here is @Gro2014 and @Wic2017.
+
+### Vectors {#sec-r-rb-ds-vectors}
+Vector is one of the basic data structure in R. It is created by `c()` function. Sometimes it is called `atomic vector`. You may store any data types in it. R recognizes six basic types: *double*, *integers*, *characters*, *logicals*, *complex* and *raw*.
+
+The data type inside a vector can be checked by `typeof` function.
+
+```{r}
+die <- c(1, 2, 3, 4, 5, 6)
+typeof(die)
+```
+For consecutive numbers, an easier way to create vector is to use `:`.
+
+```{r}
+die <- 1:6
+```
+
+
+::: {.callout-caution}
+Note that vector index starts from 1 in R, while list index starts from 0 in Python.
+:::
+
+```{r}
+die[1]
+```
+When slicing with vectors, don't forget to use `c()`.
+
+```{r}
+die[c(2, 3)]
+```
+
+```{r}
+die[2:3]
+```
+
+You may use `length()` function to get its length.
+
+```{r}
+length(die)
+```
+
+
+
+### Attributes
+
+R objects may have attributes. Attributes won't be shown by default when you show the object. You may find the attributes of a R object by calling the `attributes()` function.
+
+The following example show that the vector `die` defined in @sec-r-rb-ds-vectors doesn't have attributes.
+
+```{r}
+attributes(die)
+```
+
+Attributes can be read and write using `attr` function. See the following example.
+
+::: {#exm-}
+```{r}
+attr(die, 'date') <- '2022-01-01'
+die
+attr(die, 'date') <- NULL
+die
+```
+:::
+
+You may think attributes as metadata attached to a R object. They are used to tell some useful infomation of the object. Some functions will interact with certain attributes. R itself treat attributes `class`, `comment`, `dim`, `dimnames`, `names`, `row.names` and `tsp` specially. We will only talk about `class` and `names` here. `dim` will be discussed in the next section. Others will be discussed when we use them.
+
+1. `class`: This is different from the class in Python. `class` in R is an attribute which talks about the class of an object. If the attribute `class` is not assigned to an object, the object will have an implicit class: `matrix`, `array`, `function`, `numeric` or the result of `typeof`. 
+
+`attr(x, 'class')` will show the "external" class of an object. You may also use `class(x)` to read and write attribute `class`. If the `class` is not assigned, `class(x)` will show the implicit class, while `attr(x, 'class')` will show `NULL`. 
+
+
+::: {#exm-}
+
+```{r}
+attr(die, 'class')
+class(die)
+class(die) <- 'a die'
+attr(die, 'class')
+class(die)
+```
+:::
+```{r}
+#| echo: false
+class(die) <- NULL
+```
+
+2. `names`: This attribute is used to name each element in a vector. After the names are assigned, it won't be displayed below the data like other attributes. It will be displayed above the data with correct alignment. Similar to `class`, you may use `names()` to read and write the attribute.
+
+
+::: {#exm-}
+```{r}
+names(die) <- c('one', 'two', 'three', 'four', 'five', 'six')
+die
+attributes(die)
+names(die)
+is.vector(die)
+```
+:::
+
+
+::: {.callout-tip}
+When you store different types of data into a single vector in R, R will convert them into a single type. The default way to do so is
+
+- if there are only logicals and numbers, logicals will be converted to numbers by `TRUE->1` and `FALSE->0`.
+- if characters are presented, all are converted to characters by what it is.
+
+
+```{r}
+c(1, TRUE)
+c('1', 1, TRUE)
+```
+:::
+
+
+
+::: {.callout-note}
+We can apply regular operators to vectors. The defaul way is to apply the operators element-wise.
+:::
+
+
+### matrices and arrays
+
+
+```{r}
+m <- matrix(c(1,2,3,4,5,6), nrow=2)
+m[1, ]
+```
+A matrix has `dim` attribute.
+
+```{r}
+dim(m)
+```
+
+Note that by assigning and removing `dim` attribute, you may change the object between vectors and matrices.
+
+
+::: {#exm-}
+
+```{r}
+m
+is.matrix(m)
+is.vector(m)
+dim(m)
+dim(m) <- NULL
+m
+is.matrix(m)
+is.vector(m)
+```
+:::
+
+
+::: {.callout-note}
+The `dim` of a matrix/vector can be a long vector. In this case, it will become an array. 
+:::
+
+### factors
+Factor is speical vector. It is a way to handle categorical data. The idea is the limit the possible values. In a factor all possible values are called `level`, which is an attribute. 
+
+
+::: {#exm-}
+We would like to talk about all months. We first define a vector of the valid levels:
+
+```{r}
+month_levels <- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+```
+Then we could start to transform some month vector into factors, by the function `factor()`.
+
+```{r}
+x1 <- c("Dec", "Apr", "Jan", "Mar")
+y1 <- factor(x1, level=month_levels)
+sort(x1)
+sort(y1)
+```
+Note that sorting `y1` is based on the levels.
+
+```{r}
+x2 <- c("Dec", "Apr", "Jam", "Mar")
+y2 <- factor(x2, level=month_levels)
+y2
+```
+Note that `y2` contains `NA` value since there is an entry in `x2` that is not valid.
+:::
+
+
+
+### Lists
+List is very similar to a vector. The main difference is that vector can only store values, while list can store objects. The most typical example of objects is another vector. Please see the following example.
+
+::: {#exm-}
+
+```{r}
+c(1:2, 3:4)
+list(1:2, 3:4)
+```
+
+:::
+
+::: {.callout-note}
+The attributes of an object is stored in an array.
+
+```{r}
+m <- matrix(c(1,2,3,4,5,6), nrow=2)
+a <- attributes(m)
+class(a)
+```
+
+:::
+
+
+
+### `data.frame`
+Data.Frame is a list with the `class` attribute `data.frame`, together with some restriction on the shape of each columns. You may think about it in terms of tables.
+
+```{r}
+df <- data.frame(face = c("ace", "two", "six"),
+                 suit = c("clubs", "clubs", "clubs"),
+                 value = c(1, 2, 3))
+df
+```
+
+- Data Frame group vectors. Each vector represents a column.
+- Different column can contain a different type of data, but every cell within one column must be the same type of data.
+- `data.frame()` can be used to create a data.frame. 
+- The type of a data.frame is a list. Similar to matrix comparing to vector, a `data.frame` is a `list` with `class` `data.frame`, as well as a few other attributes.
+
+
+
+### Examples
+
+
+::: {#exm-}
+Consider a date.frame representing a deck of cards. Here we use `expand.grid()` to perform the Cartesian product.
+
+```{r}
+suit <- c('spades', 'hearts', 'clubs', 'diamonds')
+face <- 1:13
+deck <- expand.grid(suit, face)
+head(deck)
+```
+We may assign names to change the column names.
+
+```{r}
+names(deck) <- c('suit', 'face')
+head(deck)
+```
+
+Note that since `suit` and `face` are two vectors, `merge()` can also do the Cartesian product. `expand.grid()` is good for both vectors and data.frame.
+
+
+```{r}
+deck <- merge(suit, face)
+head(deck)
+```
+
+:::
+
+
+### Load data
+
+#### build-in datasets
+R has many build-in datasets. You may use `data()` to see all of them. Here are a few common datasets.
+
+- `mtcars`: Motor Trend Car Road Tests: The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models)
+
+```{r}
+data(mtcars)
+```
+
+- `iris`: iris data set gives the measurements in centimeters of the variables sepal length, sepal width, petal length and petal width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+
+```{r}
+data(iris)
+```
+
+- `ToothGrowth`: ToothGrowth data set contains the result from an experiment studying the effect of vitamin C on tooth growth in 60 Guinea pigs. 
+
+```{r}
+data(ToothGrowth)
+```
+
+- `PlantGrowth`: Results obtained from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment condition.
+
+```{r}
+data(PlantGrowth)
+```
+
+- `USArrests`: This data set contains statistics about violent crime rates by us state.
+
+```{r}
+data(USArrests)
+```
+
+#### Read from files
+The build-in `read.csv()` function can directly read `.csv` file into a data.frame.
+
+
+::: {#exm-}
+We use the file `yob1880.txt` from Chapter 5 here. Put the file in the working folder and run the following code.
+
+```{r}
+#| eval: false
+df <- read.csv('yob1880.txt', header = FALSE)
+head(df)
+```
+
+```{r}
+#| echo: false
+df <- read.csv('assests/datasets/yob1880.txt', header = FALSE) 
+```
+We may also manually assign columns names.
+
+```{r}
+names(df) <- c('name', 'sex', 'counts')
+head(df)
+```
+:::
+
+
+::: {.callout-note}
+To save data is straightforward. 
+
+```{r}
+#| eval: false
+write.csv(df, file='df.csv', row.names=FALSE)
+```
+:::
+
+
+
+
+
+### Flow control
+
+#### `for` loop
+
+
+::: {#exm-}
+
+```{r}
+for (x in 1:10){
+    print(x)
+}
+```
+
+:::
+
+
+#### `if-else` 
+
+
+::: {#exm-}
+
+```{r}
+a <- 200
+b <- 33
+
+if (b > a) {
+  print("b is greater than a")
+} else if (a == b) {
+  print("a and b are equal")
+} else {
+  print("a is greater than b")
+}
+```
+
+:::
+
+
+#### Functions
+The standard format to define a function is `my_function <- function(input) {}` where the function name is on the left side of `<-`, the input arguments are in the `()`, and the function body is in `{}`. The output of the last line of the function body is the return value of the function.
+
+::: {#exm-}
+
+```{r}
+myfunction <- function() {
+    die <- 1:6
+    sum(die)
+}
+
+myfunction()
+```
+If you just type the function name without `()`, R will return the definition of the function.
+
+```{r}
+myfunction
+```
+
+:::
+
+
+
+::: {.callout-tip}
+The function `sample(x)`: `sample` takes a sample of the specified size from the elements of `x` using either with or without replacement. 
+
+`sample(x, size, replace = FALSE, prob = NULL)`: 
+
+- `x`: either a vector of one or more elements from which to choose, or a positive integer.
+- `size`: a non-negative integer giving the number of items to choose.
+- `replace`: should sampling be with replacement?
+- `prob`: a vector of probability weights for obtaining the elements of the vector being sampled.
+:::
+
+

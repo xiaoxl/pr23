@@ -1,0 +1,264 @@
+## Functions
+
+Functions are declared with the `def` keyword and returned from the `return` keyword.
+
+::: {#exm-}
+```{python}
+def my_function(x, y, z=1.5):
+    if z > 1:
+        return z * (x + y)
+    else:
+        return z / (x + y)
+```
+:::
+
+Each function can have *positional* arguments and *keyword* arguments. 
+
+- Keyword arguments are most commonly used to specify default values.
+- If no keywords are given, all arguments will be recognized by the positions.
+- If both positional arguments and keyword arguments are given, positional arguments have to be in front. 
+- The order of keyword arguments are not important.
+
+
+::: {.callout-note}
+Although there are global variable, it is always ecouraged to use local variables only. This means that the variables in and out of a function (as well as classes that we will talk about later) are not the same, even if they have the same name.
+:::
+
+
+::: {#exm-}
+## Mutable objects as default value
+It is highly recommended NOT to set any mutatable objects as the default value of an input of a function. The reason is that this default object is initialized when the function is defined, not when the function is called. Then all function calls will share the same default object.
+
+A typical example is an empty list. If you use an empty list as the defaul value, that list will be passed to the next function call, which is no longer empty. Please see the following example.
+
+```{python}
+def add(x=[]):
+    x.append(1)
+    return x
+
+add()
+```
+
+```{python}
+add()
+```
+```{python}
+add()
+```
+Every time the function is called with no arguments, the default value is used, which is the same list initialized at the beginning. The list at the begining is an empty list. But after we put things inside, it is no longer empyt.
+
+If you want to set a mutable object as a default, the way is as follows:
+
+```{python}
+def add(x=None):
+    if x is None:
+        x = list()
+    x.append(1)
+    return x
+
+add()
+```
+
+```{python}
+add()
+```
+
+```{python}
+add()
+```
+
+:::
+
+
+## Classes
+A class is an abstract structure that can be used to hold both variables and functions. Variables in a class are called *attributes*, and functions in a class are called *methods*.
+
+A class is defined in the following way.
+
+```{python}
+class Circle:
+    def __init__(self, radius=1):
+        self.radius = radius
+    
+    def area(self):
+        return self.radius**2*3.14 
+```
+In this example, we define a class `Circle`, which represents a circle. There is one attribute `radius`, and one method `area`. When define a cirlce, we need to specify its radius, and we could use the method `area` to compute the area of the circle.
+
+
+```{python}
+cir1 = Circle()
+cir2 = Circle(radius=5)
+
+cir1.area()
+```
+
+```{python}
+cir2.area()
+```
+Here we define two circles. The first circle `cir1` is of radius `1`. This `1` comes from the default value. Check the definition of `Circle.__init__()`. 
+
+The second circle `cir2` is of radius `5`, and this number is specified when we initialize the `Circle` instance.
+
+Then we compute the areas of these two circles by calling the `area()` method. You can also use `cir1.radius` to get access the radius of the circle. The syntax difference between attributes and methods is the `()` at the end.
+
+### `self`
+You may notice the `self` variable in the definition of the classes. The `self` is used to refered to the class its. When you want to get access to the class attributes or the class methods, you may use `self`.
+
+Take the code as an example. 
+```{python}
+class Circle:
+    def __init__(self, radius=1):
+        self.radius = radius
+```
+In the `__init__` function, there are two `radius`.
+
+1. `radius` is the local variable that is used by the function. It is also the input argument.
+2. `self.radius` is the class attribute, that is shared by all class methods. For example, we may add another class method to the class `Circle`.
+
+```{python}
+class Circle:
+    def __init__(self, radius=1):
+        self.radius = radius
+    
+    def area(self):
+        return self.radius**2*3.14 
+    
+    def perimeter(self):
+        return self.radius*3.14*2
+```
+Both `area()` and `perimeter()` use the same `self.radius`.
+
+
+:::{.callout-note}
+Class attributes are defined in the `__init__()` function. 
+:::
+
+
+
+### A design example
+Assume that we live in a world without Pandas, and we would like to design a table object. Then what do we need?
+
+A table should have multiple rows and multiple columns. We should be able to get access entries by columns and row index. We should also be able to display the table by using the `print` funciton.
+
+
+::: {.callout-note}
+The `.__str__()` method will be called when you try to `print` the object. If you don't explicitly override it, the type of the object will be shown.
+:::
+
+Therefore we may write the following class.
+
+```{python}
+class myTableClass():
+    def __init__(self, listoflist=None):
+        if listoflist is None:
+            listoflist = [[]]
+        self.nrows = len(listoflist)
+        self.ncols = len(listoflist[0])
+        self.data = listoflist
+        self.shape = (self.nrows, self.ncols)
+    
+    def get(self, i, j):
+        return self.data[i][j]
+
+    def __str__(self):
+        tmp = [' '.join([str(x) for x in row]) for row in self.data]
+        return '\n'.join(tmp)
+```
+This is a very brief table object. We may add more things to it. For example, we could talk about column names.
+
+```{python}
+class myTableClass():
+    def __init__(self, listoflist=None, columns=None):
+        if listoflist is None:
+            listoflist = [[]]
+        if columns is None:
+            columns = list()
+        self.nrows = len(listoflist)
+        self.ncols = len(listoflist[0])
+        self.data = listoflist
+        self.shape = (self.nrows, self.ncols)
+        self.columns = columns
+    
+    def get(self, i, j):
+        return self.data[i][j]
+
+    def rename(self, columns=None):
+        if columns is not None:
+            self.columns = columns
+
+    def __str__(self):
+        tmp = [' '.join([str(x) for x in row]) for row in self.data]
+        if len(self.columns) != 0:
+            tmp.insert(0, self.columns)
+        return '\n'.join(tmp)
+```
+
+
+
+::: {.callout-note}
+In Jupyter notebook or similar environment, we might directly call `df` to show a DataFrame and the shown DataFrame is rendered very pretty. This is due to the `IPython.display.display()` method, and is part of IPython console components.  
+:::
+
+## Inheritance
+
+One of the most important feature of classes is inheritance. Attributes and methods can be passed from parents to children, and child classes can override those attributes and methods if needed.
+
+For example, we would like to first write a `people` class.
+
+```{python}
+class people():
+    def __init__(self, name='default', age=20):
+        self.name = name
+        self.age = age
+
+    def eat(self):
+        print('eat something.')
+```
+This `people` class defines a people who can eat. Then using this `people` class, we could build a children class: `student`.
+```{python}
+class student(people):
+    pass
+```
+
+```{python}
+stu1 = student('name1', 10)
+stu1.eat()
+stu1.name
+```
+```{python}
+type(stu1)
+```
+Now you can see that this `stu1` is a `student`, but it has all attributes and methods as a `people`. However at current stage `student` and `people` are exactly the same since we don't have any new codes for `student`. Let us improve it a little bit.
+
+
+```{python}
+class student(people):
+    def __init__(self, name='default', age=20, grade=1):
+        super().__init__(name, age)
+        self.grade = grade
+
+    def eat(self):
+        print('eat in the cafe.')
+
+stu1 = student('name1', 10)
+stu1.eat()
+```
+Now `student` class override the `eat()` method from `people`. If someone is a `student`, he or she will eat in the cafe instead of just eat something.
+
+In addition, you may also notice that the `__init__()` constructor function is also overriden. The first part is `super().__init__(name, age)` which is just call the `people`'s constructor function. The second part is new in `student`, that we add a new attribute `grade` to it. Now `stu1` have attributes from `people` and the new attribute defined in `student`.
+
+```{python}
+stu1.name, stu1.age
+```
+
+```{python}
+stu1.grade
+```
+
+
+
+
+
+
+

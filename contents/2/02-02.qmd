@@ -1,0 +1,172 @@
+
+## Fundamentals
+This section is mainly based on @McK2017.
+
+### Indentation
+One key feature about Python is that its structures (blocks) is determined by **Indentation**. 
+
+Let's compare with other languages. Let's take `C` as an example.
+```{python}
+#| eval: false
+#| warning: false
+#| error: false
+
+/*This is a C function.*/
+int f(int x){return x;}
+```
+The block is defined by `{}` and lines are separated by `;`. `space` and `newline` are not important when `C` runs the code. It is recommended to write codes in a "beautiful, stylish" format for readibility, as follows. However it is not mandatary.
+```{python}
+#| eval: false
+#| warning: false
+#| error: false
+
+/*This is a C function.*/
+int f(int x) {
+   return x;
+}
+```
+
+In Python, blocks starts from `:` and then are determined by indents. Therefore you won't see a lot of `{}` in Python, and the "beautiful, stylish" format is mandatary. 
+```{python}
+# This is a Python function.
+def f(x):
+    return x
+```
+
+
+The default value for indentation is 4 spaces, which can be changed by users. We will just use the default value in this course.
+
+
+::: {.callout-note}
+It is usually recommended that one line of code should not be very long. If you do have one, and it cannot be shortened, you may break it into multiline codes directly in Python. However, since indentation is super important in Python, when break one line code into multilines, please make sure that everything is aligned perfectly. Please see the following example.
+
+```{python}
+#| eval: false
+results = shotchartdetail.ShotChartDetail(
+            team_id = 0,
+            player_id = 201939,
+            context_measure_simple = 'FGA',
+            season_nullable = '2021-22',
+            season_type_all_star = 'Regular Season')
+```
+
+:::
+
+
+
+
+### Binary operators and comparisons
+
+Most binary operators behaves as you expected. Here I just want to mention `==` and `is`. 
+
+- `==` is testing whehter these two objects have the same value.
+- `is` is testing whether these two objects are exactly the same.
+
+
+::: {.callout-note}
+You may use `id(x)` to check the id of the object `x`. Two objects are identical if they have the same id.
+:::
+
+
+
+<!-- ### Duck typing -->
+### `import`
+
+In Python a module is simply a file with the .py extension containing Python code. Assume that we have a Python file `example.py` stored in the folder `assests/codes/`. The file is as follows.
+
+```{python}
+#| eval: false
+
+# from assests/codes/example.py
+
+def f(x):
+    print(x)
+
+A = 'You get me!'
+```
+You may get access to this function and this string in the following way.
+
+```{python}
+from assests.codes import example
+
+example.f(example.A)
+```
+
+
+
+### Comments
+
+Any text preceded by the hash mark (pound sign) `#` is ignored by the Python interpreter. In many IDEs you may use hotkeys to directly toggle multilines as comments. For example, in VS Code the default setting for toggling comments is `ctrl+/`.
+
+
+### Dynamic references, strong types
+
+In some programming languages, you have to declare the variable’s name and what type of data it will hold. If a variable is declared to be a number, it can never hold a different type of value, like a string. This is called *static typing* because the type of the variable can never change.
+
+Python is a *dynamically typed* language, which means you do not have to declare a variable or what kind of
+data the variable will hold. You can change the value and type of data at any time. This could be either great or terrible news. 
+
+On the other side, "dynamic typed" doesn't mean that types are not important in Python. You still have to make sure that the types of all variables meet the requirements of the operations used.
+
+```{python}
+#| error: true
+
+a = 1
+b = 2
+b = '2'
+c = a + b
+```
+
+In this example, `b` was first assigned by a number, and then it was reassigned by a `str`. This is totally fine since Python is dynamically types. However later when adding `a` and `b`, the type error occurs since you cannot add a number and a `str`.
+
+
+::: {.callout-note}
+You may always use `type(x)` to detect the type of the object `x`.
+:::
+
+
+
+### Everything is an object
+
+Every number, string, data structure, function, class, module, and so on exists in the Python interpreter in its own “box”, which is referred to as a *Python object*. 
+
+Each object has an associated type (e.g., string or function) and internal data. In practice this makes the language very flexible, as even functions can be treated like any other object.
+
+Each object might have attributes and/or methods attached. 
+
+
+### Mutable and immutable objects
+An object whose internal state can be changed is *mutable*. On the other hand, *immutable* doesn’t allow any change in the object once it has been created.
+
+Some objects of built-in type that are mutable are:
+
+- Lists
+- Dictionaries
+- Sets
+
+
+Some objects of built-in type that are immutable are:
+
+- Numbers (Integer, Rational, Float, Decimal, Complex & Booleans)
+- Strings
+- Tuples
+
+
+::: {#exm-}
+## Tuples are not really "immutable"
+You can treat a tuple as a container, which contains some objects. The relations between the container and its contents are immutable, but the objects it holds might be mutable. Please check the following example.
+
+```{python}
+container = ([1], [2])
+print('This is `container`: ', container)
+print('This is the id of `container`: ', id(container))
+print('This is the id of the first list of `container`: ', id(container[0]))
+
+container[0].append(2)
+print('This is the new `container`: ', container)
+print('This is the id of the new `container`: ', id(container))
+print('This is the id of the first list (which is updated) of the new `container`: ', id(container[0]))
+```
+You can see that the tuple `container` and its first object stay the same, although we add one element to the first object.
+:::
+

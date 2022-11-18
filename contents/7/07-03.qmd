@@ -1,0 +1,114 @@
+## R notations
+
+### Selecting Values
+Let us start from a data.frame `df`. The basic usage is `df[ , ]`, where the first index is to subset the rows and the second index is to subset the columns. There are six ways to writing indexes.
+
+1. Positive integers: the regular way.
+
+- `df[i, j]` means the data in the ith row and jth column. 
+- If both `i` and `j` are vectors, a data.frame will be returned.
+- If `i` or `j` are a vector, a vector will be returned. If you still want a data.frame, you may add the option `drop=FALSE`.
+- If only one index is provided, it refers to the column.
+
+::: {#exm-}
+We consider the simplified version of a deck. The deck only contains face values from 1 to 5.
+
+```{r}
+#| echo: false
+suit <- c('spades', 'hearts', 'clubs', 'diamonds')
+face <- 1:5
+deck <- expand.grid(suit, face)
+```
+
+```{r}
+deck[1:2, 1:2]
+deck[1:2, 1]
+deck[1:2, 1, drop=FALSE]
+deck[1]
+```
+:::
+
+2. Negative integers: remove the related index.
+
+For example, 
+
+- `deck[-1, 1:3]` means it wants all rows except row 1, and column 1 to 3. 
+- `deck[-(2:20), 1:2]` means it wants all rows ecepte row 2 to row 20, and column 1 to 2.
+- Negative index and positive index cannot be used together in the same index.
+
+3. Blank Spaces: want every value in the dimension.
+
+```{r}
+deck[, 1]
+deck[1, ]
+```
+
+4. Logical values: select the rows or columns according to the value. The dimension should have exactly the same number of elements as the logical vector.
+
+
+```{r}
+rows <- c(TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE)
+deck[rows,]
+deck[1:2, c(TRUE, FALSE)]
+```
+
+5. Names: select columns based on `names` attribute.
+
+
+```{r}
+deck[, 'Var2']
+```
+
+### Dollar signs and double brackets
+
+List and data.frame obey an optional second system of notation. You can extract values using `$` syntax: the data.frame's name and the column name separated by a `$` will select a column and return a vector (since the data in each column is actually a vector).
+
+
+::: {#exm-}
+
+Here is an exmaple about data.frames.
+
+```{r}
+deck[, 1]
+deck$Var1
+```
+Note that if we select from the data.frame using index, we will get a data.frame.
+
+```{r}
+deck[1]
+class(deck[1])
+```
+:::
+::: {#exm-}
+
+Here is an example about lists.
+
+```{r}
+lst <- list(numbers = c(1, 2), logical = TRUE, strings = c("a", "b", "c"))
+lst$numbers
+```
+Note that if we select from the list using index, we will get a list.
+
+```{r}
+lst[1]
+class(lst[1])
+```
+:::
+
+
+
+Please think through these two examples and figure out the similarity between them.
+
+
+
+
+::: {.callout-caution}
+Understanding the return value type is very important. Many of the R function work with vectors, but they don't work with lists. So using the correct way to get values is very important.
+:::
+
+
+
+::: {.callout-warning}
+There is a command called `attach()` which let you get access to `deck$face` by just typing `face`. It is highly recommanded NOT to do this. It is much better to make everything explicit, especially when using IDE, typing is much easier.
+:::
+

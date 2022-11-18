@@ -1,0 +1,33 @@
+
+## `list` 
+
+
+::: {.callout-note}
+In Python, a list is an ordered sequence of object types and a string is an ordered sequence of characters. 
+:::
+
+- Access to the data
+- Slicing
+- Methods
+    - `append` and `+`
+    - `extend`
+    - `pop`
+    - `remove`
+- `in`
+- `for`
+- `list()`
+- `sorted`
+
+- `str.split`
+- `str.join`
+
+
+### List Comprehension
+List Comprehension is a convenient way to create lists based on the values of an existing list. It cannot provide any real improvement to the performance of the codes, but it can make the codes shorter and easier to read.
+
+The format of list Comprehension is
+```
+newlist = [expression for item in iterable if condition == True]
+```
+   
+

@@ -1,0 +1,33 @@
+# Package: `pandas`
+The basic data structure for `pandas` is `pandas.DataFrame`. You may treat it as a generalized version of tables.
+
+To use `pandas`, we just import it. In most cases you would like to use the alias `pd`.
+```{python}
+#| eval: false
+import pandas as pd
+```
+
+Since `DataFrame` is more like a table, the biggest questions here is not to do computations (which is still very important), but to retrieve, search, sort, merge, etc.. those data. 
+
+
+
+{{< include 04-01.qmd >}}
+
+
+{{< include 04-02.qmd >}}
+
+
+{{< include 04-03.qmd >}}
+
+
+{{< include 04-04.qmd >}}
+
+
+{{< include 04-ex.qmd >}}
+
+
+{{< include 04-proj.qmd >}}
+
+
+
+

@@ -1,0 +1,58 @@
+# Functions
+
+## Basic definitions
+- `def`
+- `return`
+
+
+
+## Positional arguments and keyword arguments, and default values
+
+::: {#exm-}
+```{python}
+def myfun(a, b, c=1, d=2, e='good'):
+    print(e)
+    return a-b*c-d
+
+result = myfun(1, 2, c=3)
+print(result)
+```
+:::
+
+
+### Lambda function
+*lambda* function is a way of writing functions consisting of a single statment. The format is `lambda x: output of x`. Please see the following examples.
+
+
+::: {#exm-}
+## Lambda function
+```{python}
+#| eval: false
+f = lambda x: 2*x+1
+
+f(3)
+```
+:::
+
+::: {#exm-}
+## More Lambda function
+```{python}
+#| eval: false
+def apply_to_list(some_list, f):
+    return [f(x) for x in some_list]
+
+ints = [4, 0, 1, 5, 6]
+apply_to_list(ints, lambda x: x * 2)
+```
+:::
+
+::: {#exm-}
+## Even more Lambda function
+```{python}
+#| eval: false
+fruits = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+
+fruits_sorted = sorted(fruits.items(), key=lambda x: x[1])
+print(fruits_sorted)
+```
+:::

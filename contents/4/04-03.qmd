@@ -1,0 +1,311 @@
+
+## Data Wrangling
+
+### Hierarchical indexing
+Pandas support a more complex indexing system, that the index may have multiple levels. See the following example.
+
+
+::: {$exm-}
+
+```{python}
+import pandas as pd
+import numpy as np
+
+data = pd.Series(np.random.randn(9),
+                 index = [['a', 'a', 'a', 'b', 'b', 'c', 'c', 'd', 'd'],
+                          [1, 2, 3, 1, 2, 3, 1, 2, 3]])
+data
+```
+You may look at the Series using different levels of indexes.
+
+```{python}
+data['a']
+```
+
+```{python}
+data.loc[:, 2]
+```
+
+You may use groupby to group by levels and do calculations related to levels. More `.groupby()` will be discussed in the next section. 
+
+```{python}
+data.groupby(level=1).sum()
+```
+
+
+:::
+
+
+
+
+From the example above, you may notice that the 2-level hierarchical indexing for a Series works very similar to a DataFrame. In fact, you may translate it back and forth between a 2-level indexing Series and a DataFrame.
+
+```{python}
+df = data.unstack()
+df
+```
+
+```{python}
+df.stack()
+```
+
+For DataFrame the index for both axes can be multiindex. The usual indexing way can be used if you want to start from the first level of the index. The more specific method to extract data is `.xs`.
+
+
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+
+df1 = pd.DataFrame(
+    {
+        "A": ["A0", "A1", "A2", "A3"],
+        "B": ["B0", "B1", "B2", "B3"],
+        "C": ["C0", "C1", "C2", "C3"],
+        "D": ["D0", "D1", "D2", "D3"],
+    },
+    index=[0, 1, 2, 3],
+)
+
+df2 = pd.DataFrame(
+    {
+        "A": ["A4", "A5", "A6", "A7"],
+        "B": ["B4", "B5", "B6", "B7"],
+        "C": ["C4", "C5", "C6", "C7"],
+        "D": ["D4", "D5", "D6", "D7"],
+    },
+    index=[4, 5, 6, 7],
+)
+
+df = pd.concat([df1, df2], keys=['x', 'y'])
+```
+
+
+```{python}
+df
+```
+
+```{python}
+df['A']
+```
+
+```{python}
+df.loc['x']
+```
+
+```{python}
+df.loc['x',3]
+```
+```{python}
+df.xs(3, level=1, drop_level=False)
+```
+:::
+
+
+
+### Combining and Merging Datasets
+
+#### `merge()`
+Merge combines datasets by linking rows using one or more keys. This is from relational databases (e.g., SQL-based). 
+
+Here are some examples. 
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+df1 = pd.DataFrame({'key': ['b', 'b', 'a', 'c', 'a', 'a', 'b'],
+                    'data1': range(7)})
+df2 = pd.DataFrame({'key': ['a', 'b', 'd'], 'data2': range(3)})
+```
+The two DataFrames are displayed as follows.
+
+```{python}
+df1
+```
+
+```{python}
+df2
+```
+
+```{python}
+pd.merge(df1, df2, on='key')
+```
+If the column names are different in each object, you can specify them separately.
+
+```{python}
+df3 = pd.DataFrame({'lkey': ['b', 'b', 'a', 'c', 'a', 'a', 'b'],
+                    'data1': range(7)})
+df4 = pd.DataFrame({'rkey': ['a', 'b', 'd'],
+                    'data2': range(3)})
+pd.merge(df3, df4, left_on='lkey', right_on='rkey')
+```
+
+:::
+
+By default `merge` does an inner join, that the keys in the result are the interesection found in both tables. Below are different types of `merge`. To specify the method for merge, the option is `how`.
+
+- `inner`
+- `left`
+- `right`
+- `outer`
+
+Let's see the following examples.
+
+
+
+
+::: {.grid}
+
+::: {.g-col-6}
+```{python}
+df1 = pd.DataFrame({'Key': [1, 2], 'A': [0, 2], 'B': [1, 3]})
+df1
+```
+:::
+
+::: {.g-col-6}
+```{python}
+df2 = pd.DataFrame({'Key': [1, 3], 'C': [0, 2], 'D': [1, 3]})
+df2
+```
+:::
+
+:::
+
+
+
+::: {.grid}
+
+
+::: {.g-col-6}
+```{python}
+pd.merge(df1, df2, on='Key', how='inner')
+```
+:::
+
+
+::: {.g-col-6}
+```{python}
+pd.merge(df1, df2, on='Key', how='outer')
+```
+:::
+
+:::
+
+
+
+::: {.grid}
+
+
+::: {.g-col-6}
+```{python}
+pd.merge(df1, df2, on='Key', how='left')
+```
+:::
+
+::: {.g-col-6}
+```{python}
+pd.merge(df1, df2, on='Key', how='right')
+```
+:::
+
+:::
+
+
+
+::: {.callout-note}
+If a key combination appears more than once in both tables, the resulting table will have the Cartesian product of the associated data. Here is a very basic example with one unique key combination.
+
+```{python}
+df1 = pd.DataFrame({'key': ['b', 'b', 'a', 'c', 'a', 'b'],
+                    'data1': range(6)})
+df2 = pd.DataFrame({'key': ['a', 'b', 'a', 'b', 'd'],
+                    'data2': range(5)})
+pd.merge(df1, df2, on='key', how='left')
+```
+:::
+
+
+::: {.callout-note} 
+If the merge keys in a DataFrame is in its index instead of column(s), we could pass `left_index=True` or `right_index=True` or both instead of setting `left_on`/`right_on`/`on`.
+:::
+
+
+::: {#exm-crossexample-deck}
+If we want to really create a Cartesian product, we may use the option `how='cross'`. For example, we would like to generate a deck of cards, we may use the following codes.
+
+```{python}
+suit = pd.DataFrame({'suit': ['spades', 'hearts', 'clubs', 'diamonds']})
+face = pd.DataFrame({'face': list(range(1, 14))})
+deck = pd.merge(suit, face, how='cross')
+```
+:::
+
+
+
+#### `concat()`
+The `concat()` function (in the main pandas namespace) performs concatenation operations along an axis while performing optional set logic (union or intersection) of the indexes (if any) on the other axes.  
+
+
+```{python}
+import pandas as pd
+
+df1 = pd.DataFrame(
+    {
+        "A": ["A0", "A1", "A2", "A3"],
+        "B": ["B0", "B1", "B2", "B3"],
+        "C": ["C0", "C1", "C2", "C3"],
+        "D": ["D0", "D1", "D2", "D3"],
+    },
+    index=[0, 1, 2, 3],
+)
+
+df2 = pd.DataFrame(
+    {
+        "A": ["A4", "A5", "A6", "A7"],
+        "B": ["B4", "B5", "B6", "B7"],
+        "C": ["C4", "C5", "C6", "C7"],
+        "D": ["D4", "D5", "D6", "D7"],
+    },
+    index=[4, 5, 6, 7],
+)
+
+df3 = pd.DataFrame(
+    {
+        "A": ["A8", "A9", "A10", "A11"],
+        "B": ["B8", "B9", "B10", "B11"],
+        "C": ["C8", "C9", "C10", "C11"],
+        "D": ["D8", "D9", "D10", "D11"],
+    },
+    index=[8, 9, 10, 11],
+)
+
+pd.concat([df1, df2, df3], keys=['x', 'y', 'z'])
+```
+
+The default way of `pd.concat()` is vertically. Note that it will check the column names. If the column names don't match, new columns will be created and `nan` values will be assigned. 
+
+If you want to concatenate the DataFrame horizontally you need to add `axis=1` option.
+Similarly, row index will be checked before concatenating. See the following example.
+
+::: {#exm-}
+```{python}
+pd.concat([df1, df2, df3], axis=1)
+```
+:::
+
+
+
+::: {#exm-}
+Consider the deck example from @exm-crossexample-deck. This time we would like to use `pd.concat()` to get the result.
+
+```{python}
+suitlist = ['spades', 'hearts', 'clubs', 'diamonds']
+facelist = list(range(1, 14))
+decklist = [pd.DataFrame({'suit': suit, 'face': facelist}) for suit in suitlist]
+deck = pd.concat(decklist, ignore_index=True)
+```
+
+:::

@@ -1,0 +1,20 @@
+## Projects
+
+
+
+::: {#exr-}
+Please read the file as a DataFrame from [here](assests/datasets/QSR.csv). This is the Dining satisfaction with quick service restaurants questionare data provided by Dr. Siri McDowall, supported by DART SEED grant.
+
+1. Please pick out all rating columns. Excluding `last.visit`, `visit.again` and `recommend`, compute the mean of the rest and add it to the DataFrame as a new column.
+2. Use a plot to show the relations among these four columns:  `last.visit`, `visit.again`, `recommend` and `mean`.
+3. Look at the column `Profession`. Keep `Student`, and change everything else to be `Professional`, and add it as a new column `Status` to the DataFrame.
+4. Draw the histogram of `mean` with respect to `Status`.
+5. Find the counts of each `recommend` rating for each `Status` and draw the barplot. Do the same to `last.visit`/`Status` and `visit.again`/`Status`.
+6. Exploer the dataset and draw one plot.
+:::
+
+
+
+::: {#exr-}
+Please use the baby name dataset. We would like to consider the diversity of the names. Please compute the number of popular names in top 50% for each year each gender. Draw a line plot to show the trend and discuss the result.
+:::

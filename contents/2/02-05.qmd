@@ -1,0 +1,14 @@
+
+## `dict` 
+
+
+- Access to the data
+- Methods
+    - directly add items
+    - `update`
+    - `get`
+    - `keys`
+    - `values`
+    - `items`
+- `dict()`
+- dictionary comprehension

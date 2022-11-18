@@ -1,0 +1,97 @@
+## Projects
+
+
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+```
+
+<!-- 
+::: {#exr-}
+This is a Python question. Please download the datasets from here. It is the same datasets as in @exm-tidydatasets. Please use Python to make `
+::: -->
+
+<!-- 
+::: {#exr-}
+Why are `gather()` and `spread()` not perfectly symmetrical? Carefully consider the following example:
+
+
+```{r}
+stocks <- tibble(
+    year = c(2015, 2015, 2016, 2016),
+    half = c( 1, 2, 1, 2),
+    return = c(1.88, 0.59, 0.92, 0.17)
+)
+stocks %>%
+    spread(year, return) %>%
+    gather("year", "return", `2015`:`2016`)
+```
+(Hint: look at the variable types and think about column `names`.)
+
+Both `spread()` and `gather()` have a `convert` argument. What does it do?
+::: -->
+
+<!-- 
+
+::: {#exr-}
+Why does this code fail?
+```{r}
+#| error: true
+table4a %>%
+    gather(1999, 2000, key = "year", value = "cases")
+```
+
+::: -->
+
+
+
+::: {#exr-}
+Please make the following data tidy.
+
+```{r}
+library(tidyverse)
+df <- tibble(Day=1:5, `Plant_A_Height (cm)`=c(0.5, 0.7, 0.9, 1.3, 1.8), `Plant_B_Height (cm)`=c(0.7, 1, 1.5, 1.8, 2.2))
+```
+:::
+
+
+
+::: {#exr-}
+Please use the `flights` dataset. Please find all flights that :
+
+1. Had an arrival delay of two or more hours.
+2. Flew to `IAH` or `HOU`.
+3. Were operated by `United`, `American` or `Delta`.
+4. Departed in summer (July, August, and September).
+5. Arrived more than two hours late, but didn’t leave late.
+6. Were delayed by at least an hour, but made up over 30 minutes in flight.
+7. Departed between midnight and 6 a.m. (inclusive).
+:::
+
+
+
+::: {#exr-}
+Re-create the R code necessary to generate the following graphs. The dataset is `mpg`.
+
+
+```{r}
+#| echo: false
+library(tidyverse)
+ggplot(data=mpg) +
+    geom_point(mapping = aes(x=displ, y=hwy)) +
+    geom_smooth(mapping = aes(x=displ, y=hwy), formula = y ~ x, method = "loess")
+
+
+ggplot(data=mpg) +
+    geom_point(mapping = aes(x=displ, y=hwy, color=drv)) +
+    geom_smooth(mapping = aes(x=displ, y=hwy, color=drv), formula = y ~ x, method = "loess")
+
+
+ggplot(data=mpg) +
+    geom_point(mapping = aes(x=displ, y=hwy, color=drv)) +
+    geom_smooth(mapping = aes(x=displ, y=hwy, color=drv, linetype=drv), formula = y ~ x, method = "loess")
+```
+
+:::

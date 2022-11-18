@@ -1,0 +1,106 @@
+## `dplyr`
+
+`dplyr` is a package used to manipulate data. Here we will just introduce the most basic functions. We will use `nycflights13::flights` as the example. This dataset comes from the US Bureau of Transportation Statistics. The document can be found [here](https://github.com/tidyverse/nycflights13).
+
+To load the dataset, please use the following code.
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+```
+
+```{r}
+#| warning: false
+library(nycflights13)
+flights
+```
+
+
+### `filter()`
+`filter()` allows you to subset observations based on their values. The first argument is the name of the tibble. The rest are the expressions that filter the data. Please see the following examples.
+
+
+```{r}
+flights %>% filter(month==1, day==1)
+```
+
+
+### `select()`
+`select()` allows you to filter columns. It is very similar to slicing `[]`.
+
+### `mutate()`
+`mutate()` is used to add new columns that are functions of existing columns. 
+
+
+```{r}
+flights %>% mutate(gain=arr_delay-dep_delay, hours=air_time/60, gain_per_hour=gain/hours)
+```
+If you only want to see the new columns, `transmute()` can be used.
+
+
+```{r}
+flights %>% transmute(gain=arr_delay-dep_delay, hours=air_time/60, gain_per_hour=gain/hours)
+```
+
+Here are an (incomplete) list of supported operators and functions.
+
+- Arithmetic operators: `+`, `-`, `*`, `/`, `^`.
+- Modular arithmetic: `%/%` (integer division), `%%` (remainder).
+- Logs: `log()`, `log2()`, `log10()`.
+- Cumulative and rolling aggregates: `cumsum()`, `cumprod()`, `cummin()`, `cummax()`, `cummean()`
+- Logical comparisons: `<`, `<=`, `>`, `>=`, `!=`.
+
+
+### `summarize()` and `group_by()`
+
+`summarize()` collapses a dataset to a single row. It computes values across all rows. It is usually paired with `group_by()`. Here are some examples.
+
+
+::: {#exm-}
+
+```{r}
+flights %>% group_by(year, month, day) %>% 
+    summarize(delay=mean(dep_delay, na.rm=TRUE))
+```
+:::
+
+
+::: {#exm-}
+
+```{r}
+delays <- flights %>% 
+    group_by(dest) %>% 
+    summarize(
+        count=n(), 
+        dist=mean(distance, na.rm=TRUE),
+        delay=mean(arr_delay, na.rm=TRUE)
+    ) %>% 
+    filter(count>20, dest!='HNL')
+delays
+```
+
+:::
+
+
+
+`group_by()` can also be used together with `mutate()` and `filter()`.
+
+
+::: {#exm-}
+
+```{r}
+flights %>%
+    group_by(dest) %>%
+    filter(n() > 365) %>%
+    filter(arr_delay > 0) %>%
+    mutate(prop_delay = arr_delay / sum(arr_delay)) %>%
+    select(year:day, dest, arr_delay, prop_delay)
+```
+
+:::
+
+
+::: {.callout-note}
+We already use it in the above examples. This is to compute the number of observations in the current group. This function is implemented specifically for each data source and can only be used from within `summarise()`, `mutate()` and `filter()`.
+:::

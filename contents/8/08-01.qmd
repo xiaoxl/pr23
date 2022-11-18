@@ -1,0 +1,92 @@
+
+## `tibble`
+
+`tidyverse` mainly deals with `tibble` instead of `data.frame`. Therefore this is where we start.
+
+`tibble` is a `data.frame` with different attributes and requirements. The package `tibble` provides support for `tibble`. It is included in `tidyverse`. To load it, you just use the code:
+
+```{r}
+#| collapse: true
+#| comment: "#>"
+library(tidyverse)
+```
+
+
+### Create tibbles
+Here is an example of creating tibbles.
+
+::: {#exm-}
+
+```{r}
+tbl <- tibble(x=1:5, y=1, z=x^2+y)
+tbl
+attributes(tbl)
+```
+Note that it is more flexible to create a tibble since `tibble()` will automatically recycle inputs and allows you to refer to variables that you just created.
+:::
+
+
+::: {.callout-note}
+In the past (for a very long time), when using `data.frame()` to create a `data.frame`, it will automatically convert strings to factors. This is changed recently that the default setting is not to convert. 
+
+When using `tibble()` to create a `tibble`, the type of the inputs will never be changed.
+:::
+
+
+::: {.callout-note}
+In `tibble` you may use *nonsyntactic* names as column names, which are invalid R variable names. To refer to these variables, you need to surround them with backticks `.
+
+```{r}
+tb <- tibble(
+    `:)` = "smile",
+    ` ` = "space",
+    `2000` = "number"
+)
+tb
+```
+
+:::
+
+### Differences between tibble and data.frame.
+
+
+#### Printing
+Tibbles have a refined print method that shows only the first 10 rows and all the columns that fit on screen.
+
+```{r}
+deck <- tibble(suit=rep(c('spades', 'hearts', 'clubs', 'diamonds'), 13), face=rep(1:13, 4))
+deck
+```
+
+
+#### Subsetting
+
+To get a single value, `[[]]` or `$` should be used, just like for `data.frame`. These two are almost the same. The only difference is that `[[]]` accepts positions, but `$` only accepts names.
+
+To be used in a pipe, the special placeholder `.` will be used. 
+
+```{r}
+deck %>% .$face
+```
+We will talk about pipes later.
+
+
+### `%>%` symbol
+`%>%` is the pipeline symbol, which is another way to connect several functions. Most functions in tidyverse have the first argument `data`, and both the input `data` and the output are tibbles. The syntax here is that `data %>% function(arguments)` is the same as `function(data, arguments)`. The benefit is that it is easier to have many functions consecutively applied to the data. Please see the following example.
+
+```{r}
+#| eval: false
+data %>% function1(arguments1)
+    %>% function2(arguments2)
+    %>% function3(arguments3)
+    %>% function4(arguments4)
+
+function4(function3(function2(function1(data, arguments1), arguments2), arguments3), arguments4)
+
+data2 <- function1(data, arguments1)
+data3 <- function2(data2, arguments2)
+data4 <- function3(data3, arguments3)
+function4(data4, arguments4)
+```
+The readability of the first one is much better than the second one. Comparing to the third one, we don't need to create a lot of intermedia temporary variables.
+

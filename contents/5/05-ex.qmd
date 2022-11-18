@@ -1,0 +1,12 @@
+## Exercises
+
+
+
+::: {#exr-}
+Please download the `mtcars` file from [here](assests/datasets/mtcars.csv) and read it as a DataFrame. Then create a scatter plot of the `drat` and `wt` variables from `mtcars` and color the dots by the `carb` variable. 
+:::
+
+
+::: {#exr-}
+Please consider the baby name dataset. Please draw the trends of counts of names ending in `a`, `e`, `n` across years for each gender.
+:::

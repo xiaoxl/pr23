@@ -1,0 +1,106 @@
+
+## Data Aggregation and Group Operations
+
+### split-apply-combine model
+
+We would like to apply group operations based on the split-apply-combine model. 
+
+- In the first stage of the process, data contained in a pandas object is *split* into groups based on one or more keys that you provide. We then use `.groupby(keys)` to perform the split step. The result is a grouped `groupby` object.
+- Once this is done, a function is *applied* to each group, producing a new value. 
+- Finally the results of all those function applications are combined into a result object. We may apply groupby functions directly as methods to groupby objects.The result is the combined result object.
+
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+df = pd.DataFrame({'key1' : ['a', 'a', 'b', 'b', 'a'],
+                   'key2' : ['one', 'two', 'one', 'two', 'one'],
+                   'data1' : np.random.randn(5),
+                   'data2' : np.random.randn(5)})
+df
+```
+Now we want to group `data1` in `df` by `key1`.
+
+```{python}
+grouped = df['data1'].groupby(df['key1'])
+grouped
+```
+What we get is a groupby object and we could apply group functions to it.
+
+The method to look at each group is `.get_group`.
+```{python}
+grouped.get_group('a')
+```
+
+We may directly apply some group functions to the groupby object.
+```{python}
+grouped.mean()
+```
+```{python}
+grouped.size()
+```
+
+We could iterate over groups.
+
+```{python}
+for name, group in grouped:
+    print('name', name)
+    print('group', group)
+```
+
+We could convert the group object into list and dictionary.
+
+```{python}
+list(grouped)
+```
+```{python}
+dict(list(grouped))
+```
+
+:::
+
+### More aggregation functions
+
+- `.describe()`
+- `.count()`
+- `.sum()`
+- `.mean()`
+- `.median`
+- `.std()`, `.var()`
+- `.min()`, `.max()`
+- `.prod()`
+- `first()`, `.last()`
+- `.agg()`
+
+
+### Some examples
+
+
+::: {#exm-}
+Consider the following DataFrame.
+
+```{python}
+import pandas as pd
+df = pd.DataFrame({'location': ['East', 'East', 'East', 'East',
+                                'West', 'West', 'West', 'West'],
+                   'data': np.random.randn(8)},
+                   index=['Ohio', 'New York', 'Vermont', 'Florida',
+                          'Oregon', 'Nevada', 'California', 'Idaho'])
+df.loc[['Vermont', 'Nevada', 'Idaho'], 'data'] = np.nan
+```
+
+We would like to fill in NA values with the mean from each group.
+
+```{python}
+df.groupby('location').apply(lambda x: x.fillna(x.mean()))
+```
+
+We could also fill in NA values with predefined values, similar to the non-groupby case.
+
+```{python}
+df.groupby('location').apply(lambda x: x.fillna({'East': 0.1,
+                                                 'West': -0.5}[x.name]))
+```
+
+:::

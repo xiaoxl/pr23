@@ -1,0 +1,22 @@
+
+
+# Classes/Packages for Python
+
+
+```{python}
+#| echo: false
+import os
+CURRENT_PATH = os.getcwd()
+```
+
+
+{{< include 06-01.qmd >}}
+
+{{< include 06-02.qmd >}}
+
+
+{{< include 06-ex.qmd >}}
+
+
+{{< include 06-proj.qmd >}}
+

@@ -1,0 +1,136 @@
+
+## `seaborn`
+
+There are some new libraries built upon `matplotlib`, and `seaborn` is one of them. `seaborn` is for statistical graphics. 
+
+`seaborn` is used imported in the following way.
+
+```{python}
+import seaborn as sns
+```
+
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+```
+
+`seaborn` also modifies the default `matplotlib` color schemes and plot styles to improve readability and aesthetics. Even if you do not use the `seaborn` API, you may prefer to import `seaborn` as a simple way to improve the visual aesthetics of general `matplotlib` plots.
+
+To apply `sns` theme, run the following code.
+
+```{python}
+sns.set_theme()
+```
+Let us directly run a few codes from the last section and compare the differences between them.
+
+
+
+::: {#exm-plotwithsns}
+
+```{python}
+plt.plot(np.random.randn(30).cumsum(), color='r', linestyle='--', marker='o')
+```
+Please compare the output of the same code with [the previous example](#exm-plot1)
+:::
+
+
+### Scatter plots with `relplot()`
+
+The basic scatter plot method is `scatterplot()`. It is wrapped in `relplot()` as the default plotting method. So here we will mainly talk about `relplot()`. It is named that way because it is designed to visualize many different statistical relationships. 
+
+The idea of `relplot()` is to display points based on the variables `x` and `y` you choose, and assign different properties to alter the apperance of the points. 
+
+- `col` will create multiple plots based on the column you choose.
+- `hue` is for color encoding, based on the column you choose.
+- `size` will change the marker area, based on the column you choose.
+- `style` will change the marker symbol, based on the column you choose.
+
+
+::: {#exm-}
+Consider the following example. `tips` is a DataFrame, which is shown below.
+
+```{python}
+import seaborn as sns
+tips = sns.load_dataset("tips")
+tips
+```
+
+
+```{python}
+sns.relplot(data=tips,
+            x="total_bill", y="tip", col="time",
+            hue="smoker", style="smoker", size="size")
+```
+:::
+
+The default type of plots for `relplot()` is scatter plots. However you may change it to line plot by setting `kind='line'`.
+
+
+::: {#exm-}
+
+```{python}
+dots = sns.load_dataset("dots")
+sns.relplot(data=dots, kind="line",
+            x="time", y="firing_rate", col="align",
+            hue="choice", size="coherence", style="choice",
+            facet_kws=dict(sharex=False))
+```
+
+:::
+
+### `regplot()`
+This method is a combination between scatter plots and linear regression.
+
+::: {#exm-}
+We still use `tips` as an example.
+```{python}
+sns.regplot(x='total_bill', y='tip', data=tips)
+```
+
+:::
+
+
+### `pairplot()`
+This is a way to display the pairwise relations among several variables. 
+
+::: {#exm-}
+The following code shows the pairplots among all numeric data in `tips`.
+```{python}
+sns.pairplot(tips, diag_kind='kde', plot_kws={'alpha': 0.2})
+```
+:::
+
+
+### `barplot`
+
+
+::: {#exm-}
+
+```{python}
+sns.barplot(x='total_bill', y='day', data=tips, orient='h')
+```
+In the plot, there are several `total_bill` during each `day`. The value in the plot is the average of `total_bill` in each `day`, and the black line stands for the `95%` confidence interval.
+
+```{python}
+sns.barplot(x='total_bill', y='day', hue='time', data=tips, orient='h')
+```
+In this plot, lunch and dinner are distinguished by colors.
+:::
+
+### Histogram
+
+::: {#exm-}
+
+```{python}
+mu, sigma = 100, 15
+x = mu + sigma * np.random.randn(10000)
+y = mu-30 + sigma*2 * np.random.randn(10000)
+df = pd.DataFrame(np.array([x,y]).T)
+sns.histplot(df, bins=100, kde=True)
+```
+Please compare this plot with [this Example](#exm-histogram1)
+:::
+

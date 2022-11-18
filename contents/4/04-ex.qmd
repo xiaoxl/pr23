@@ -1,0 +1,298 @@
+## Exercises
+Most problems are based on @Pra2018a.
+
+::: {#exr-}
+Please use the following code to generate a series `ser`, and then finish the following tasks.
+
+```{python}
+import pandas as pd
+import numpy as np
+
+
+mylist = list('abcedfghijklmnopqrstuvwxyz')
+myarr = np.arange(26)
+mydict = dict(zip(mylist, myarr))
+ser = pd.Series(mydict)
+```
+
+1. Convert the series `ser` into a dataframe `df` with its index as another column on the dataframe.
+2. Pick the two columns of `df` and set them into two serieses `ser1` and `ser2`. 
+3. Combine two series `ser1` and `ser2` to form a new dataframe `newdf`, and name their columns `ser1` and `ser2`.
+:::
+
+
+
+
+::: {#exr-}
+Consider two serieses `ser1` and `ser2`. You may use the following `ser1` and `ser2` as an example. The output of each questions below should be a series. You may want to learn the following commands:
+
+- [`np.union1d()`](https://numpy.org/doc/stable/reference/generated/numpy.union1d.html)
+- [`np.intersect1d()`](https://numpy.org/doc/stable/reference/generated/numpy.intersect1d.html)
+- [`np.isin()`](https://numpy.org/doc/stable/reference/generated/numpy.isin.html)
+
+```{python}
+import pandas as pd
+
+ser1 = pd.Series([1, 2, 3, 4, 5])
+ser2 = pd.Series([4, 5, 6, 7, 8])
+```
+1. Find all the elements from `ser1` that are also in `ser2`.
+2. Find all the elements from `ser2` that are also in `ser1`.
+3. From `ser1` remove items present in `ser2`.
+4. Find the union of `ser1` and `ser2`.
+5. Find the intersection of `ser1` and `ser2`.
+6. Find all the elemetns that are in either `ser1` or `ser2`, but not both.
+:::
+
+
+
+::: {#exr-}
+## Some statistics
+Please check the following commands and answer the following questions.
+
+- [`np.percentile()`](https://numpy.org/doc/stable/reference/generated/numpy.percentile.html)
+
+How to get the minimum, 25th percentile, median, 75th, and max of a numeric series? You may use the following Series as an example.
+
+```{python}
+import pandas as pd
+ser = pd.Series(np.random.normal(10, 5, 25))
+```
+
+
+:::
+
+
+
+::: {#exr-}
+Please use `pd.Series.value_counts()` to calculte the frequency counts of each unique value of the following Series.
+
+```{python}
+import pandas as pd
+import numpy as np
+ser = pd.Series(np.take(list('abcdefgh'), np.random.randint(8, size=30)))
+```
+:::
+
+
+::: {#exr-}
+Please keep the top 2 most frequent items of `ser` as it is and replace everything else as `Other`.
+
+```{python}
+import pandas as pd
+import numpy as np
+ser = pd.Series(np.take(list('abcdefgh'), np.random.randint(8, size=30)))
+```
+
+:::
+
+
+::: {#exr-}
+Please use `pd.cut` or `pd.qcut` to bin the Series `ser` into 10 equal deciles. You may use the following `ser` as an example.
+
+```{python}
+import pandas as pd
+ser = pd.Series(np.random.random(20))
+```
+
+
+:::
+
+
+::: {#exr-}
+Consider the Series `ser`:
+
+```{python}
+import pandas as pd
+import numpy as np
+ser = pd.Series(np.random.randint(1, 10, 7))
+```
+Find the positions of numbers that are multiples of 3 from ser.
+:::
+
+
+
+
+
+
+::: {#exr-}
+Compute the mean of `weights` of each `fruit`.
+```{python}
+import pandas as pd
+fruit = pd.Series(np.random.choice(['apple', 'banana', 'carrot'], 10))
+weights = pd.Series(np.linspace(1, 10, 10))
+df = pd.DataFrame({'fruit': fruit, 'weights': weights})
+```
+:::
+
+
+::: {#exr-}
+Consider the following DataFrame. 
+
+```{python}
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv')
+```
+
+1. Check if `df` has any missing values.
+2. Please count the number of missing values in each column.
+3. Please replace all missing values in `Min.Price` and `Max.Price` with their mean respectively.
+
+<!-- 3. In the original DataFrame, please replace the missing values in `Min.Price` with the column's mean and those in `Max.Price` with the column's median. -->
+:::
+
+
+
+
+
+::: {#exr-}
+Replace the spaces in `my_str = 'dbc deb abed gade'` with the least frequent character.
+:::
+
+
+::: {#exr-}
+Suppress scientific notations like `e-03` in `df` and print up to 4 numbers after decimal.
+
+```{python}
+import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.random(4)**10, columns=['random'])
+df
+```
+
+:::
+
+
+::: {#exr-}
+Format the values in column `random` of `df` as percentages.
+
+```{python}
+import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.random(4), columns=['random'])
+df
+```
+
+:::
+
+
+
+::: {#exr-}
+## Regular expressions
+Please use regular expressions to finish the following tasks.
+
+1. Match a string that has an `a` followed by zero or more `b`'s.
+2. Match a string that has an `a` followed by one or more `b`'s.
+3. Match a string that has an `a` followed by zero or one `b`.
+4. Match a string that has an `a` followed by three `b`'s.
+:::
+
+
+
+::: {#exr-}
+## More regex
+Find all words starting with `a` or `e` in a given string:
+
+```{python}
+text = "The following example creates an ArrayList with a capacity of 50 elements. Four elements are then added to the ArrayList and the ArrayList is trimmed accordingly."
+```
+
+:::
+
+
+::: {#exr-}
+## More regex
+Write a Python code to extract year, month and date from a `url1`: 
+
+```{python}
+url1= "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-beckhams-fame-rests-on-one-stupid-little-ball-josh-norman-tells-author/"
+```
+
+:::
+
+
+
+
+::: {#exr-}
+## More regex
+Please use regex to parse the following str to create a dictionary.
+```{python}
+text = r'''
+{
+    name: Firstname Lastname;
+    age: 100;
+    salary: 10000 
+}
+'''
+```
+
+
+:::
+
+
+
+::: {#exr-}
+Consider the following DataFrame.
+
+```{python}
+data = [['Evert van Dijk', 'Carmine-pink, salmon-pink streaks, stripes, flecks.  Warm pink, clear carmine pink, rose pink shaded salmon.  Mild fragrance.  Large, very double, in small clusters, high-centered bloom form.  Blooms in flushes throughout the season.'],
+        ['Every Good Gift', 'Red.  Flowers velvety red.  Moderate fragrance.  Average diameter 4".  Medium-large, full (26-40 petals), borne mostly solitary bloom form.  Blooms in flushes throughout the season.'], 
+        ['Evghenya', 'Orange-pink.  75 petals.  Large, very double bloom form.  Blooms in flushes throughout the season.'], 
+        ['Evita', 'White or white blend.  None to mild fragrance.  35 petals.  Large, full (26-40 petals), high-centered bloom form.  Blooms in flushes throughout the season.'],
+        ['Evrathin', 'Light pink. [Deep pink.]  Outer petals white. Expand rarely.  Mild fragrance.  35 to 40 petals.  Average diameter 2.5".  Medium, double (17-25 petals), full (26-40 petals), cluster-flowered, in small clusters bloom form.  Prolific, once-blooming spring or summer.  Glandular sepals, leafy sepals, long sepals buds.'],
+        ['Evita 2', 'White, blush shading.  Mild, wild rose fragrance.  20 to 25 petals.  Average diameter 1.25".  Small, very double, cluster-flowered bloom form.  Blooms in flushes throughout the season.']]
+  
+df = pd.DataFrame(data, columns = ['NAME', 'BLOOM']) 
+df 
+```
+
+Please use regex methods to find all the `()` in each columns.
+
+:::
+
+
+
+
+::: {#exr-}
+Get the last two rows of `df` whose row sum is greater than 100.
+
+```{python}
+import pandas as pd
+df = pd.DataFrame(np.random.randint(10, 40, 60).reshape(-1, 4))
+```
+:::
+
+
+
+::: {#exr-}
+The groupby object `df_grouped` is given below.
+```{python}
+import pandas as pd
+import numpy as np
+df = pd.DataFrame({'fruit': ['apple', 'banana', 'orange'] * 3,
+                   'price': np.random.rand(9),
+                   'taste': np.random.randint(0, 11, 9)})
+
+df_grouped = df.groupby(['fruit'])
+```
+
+1. Get the group belonging to `apple` as a DataFrame.
+2. Find the second largest value of `taste` for `banana`.
+3. Compute the mean `price` for every `fruit`.
+:::
+
+
+::: {#exr-}
+
+Join `df1` and `df2` by `fruit`/`pazham` and `weight`/`kilo`.
+```{python}
+df1 = pd.DataFrame({'fruit': ['apple', 'banana', 'orange'] * 3,
+                    'weight': ['high', 'medium', 'low'] * 3,
+                    'price': np.random.randint(0, 15, 9)})
+
+df2 = pd.DataFrame({'pazham': ['apple', 'orange', 'pine'] * 2,
+                    'kilo': ['high', 'low'] * 3,
+                    'price': np.random.randint(0, 15, 6)})
+```
+
+:::

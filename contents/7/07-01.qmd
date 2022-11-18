@@ -1,0 +1,56 @@
+
+## Hello world for R
+
+
+
+```{r}
+print('Hello world!')
+```
+
+
+## Essential concepts
+
+- In R, assignments is ` <- `, not `=`. `=` actually works, but it may cause confusions. So it is always recommended to use ` <- `. The R Studio keybinding for ` <- ` is `alt+-`.
+- `.` is NOT a special character in R, and can be used in variable names. So `is.na()` simply means a function called `is.na`. It is not a function `na` in a package `is` as in Python.
+- In R, the block is defined by `{}`. Indentation is not that important.
+- R has a better package management system than Python, and therefore in most cases you don't need virtual environment for R.
+
+
+### R Markdown / Quarto
+The counterpart of Jupyter notebook in R is `.rmd/.qmd` file. Similar to a notebook, in a R Markdown / Quarto file, there is a so-called code block that can run the codes inside to produce documents with both texts and codes and codes outputs.
+
+In the following two sections about R, you are supposed to submit `.rmd/.qmd` file.
+
+::: {.callout-note}
+Quarto is an extension/continuation of R Markdown. Most R Markdown file can be directly translated to a Quarto file without many modifications. The main difference between R Markdown and Quarto is that Quarto has better support for other languages such as Python and Julia. You may go to [its homepage](https://quarto.org/) for more details. 
+
+This note is produced by Quarto.
+:::
+
+The most import part of R Markdown / Quarto is the code block, that is 
+```{{r}}
+print('Hello world!')
+```
+In Quarto, you may also write
+
+```{{python}}
+print('Hello world!')
+```
+There are many options to adjust how the code blocks are excacuted. You don't need to worry about them right now. Currently just try to write your report together with code blocks.
+
+
+### Development tools
+
+#### R Studio
+For R, the almost definite choice of IDE is R Studio. You may download and install it from [the homepage](https://www.rstudio.com/). 
+
+Note that R Studio will soon be renamed to `posit`. Please keep an eye on it if it will make any differences.
+
+#### R Studio Cloud
+You may directly go to the [homepage](https://rstudio.cloud/) to use R Stuido from cloud. If you don't use it a lot it should be free.
+
+#### Google Colab
+You may use R in Google Colab. The link is [colab.to/r](https://colab.research.google.com/notebook#create=true&language=r). After you open the notebook, you may go to `Edit->Notebook settings` to change Runtime type to be `R`.
+
+The rest is similar to Jupyter notebook, while the codes are now R codes.
+

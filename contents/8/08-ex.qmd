@@ -1,0 +1,64 @@
+## Exercises
+
+
+::: {#exr-}
+How can you tell if an object is a tibble?
+:::
+
+
+
+::: {#exr-}
+Compare and contrast the following operations on a `data.frame` and equivalent `tibble`. What is different? Why might the default data frame behaviors cause you frustration?
+
+```{r}
+#| eval: false
+df <- data.frame(abc = 1, xyz = "a")
+df$x
+df[, "xyz"]
+df[, c("abc", "xyz")]
+
+```
+
+
+:::
+
+
+
+::: {#exr-}
+If you have the name of a variable stored in an object, e.g., `var <- "xyz"`, how can you extract the reference variable from a tibble? You may use the following codes to get a tibble.
+
+```{r}
+tbl <- tibble(abc = 1, xyz = "a")
+```
+
+:::
+
+
+::: {#exr-}
+Practice referring to nonsyntactic names in the following data.frame by:
+
+a. Extracting the variable called 1.
+b. Creating a new column called 3, which is 2 divided by 1.
+c. Renaming the columns to one, two, and three:
+
+```{r}
+annoying <- tibble(
+`1` = 1:10,
+`2` = `1` * 2 + rnorm(length(`1`))
+)
+```
+:::
+
+
+
+
+::: {#exr-}
+Both `unite()` and `separate()` have a `remove` argument. What does it do? Why would you set it to `FALSE`?
+
+:::
+
+
+
+::: {#exr-}
+Use `flights` dataset. Currently `dep_time` and `sched_dep_time` are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.
+:::

@@ -1,0 +1,103 @@
+
+# Setup
+
+## VS Code + Anaconda {#sec-vscode}
+
+Note that all the following steps are tested in Windows 10/11. If you use other operation systems please contact me.
+
+1. Go to [Anaconda download page](https://www.anaconda.com/). Download and install Anaconda. 
+
+2. Go to [VS Code download page](https://code.visualstudio.com/). Download and install VS Code. Actually Anaconda contains one copy of VS Code. Here I just assume that some of you intall VS Code before Anaconda.
+
+3. When installing VS Code, you may accept all default settings. When installing Anaconda, please pay attention to the `PATH` setting. 
+
+![](assests/img/20220817231206.png){fig-align="center"}
+
+The first box is unchecked by default. This setting is related to the ability to easily run Python code in Terminals. I recommend you to check it. If you don't check it during this step, you may add it to the system environment variable `PATH` manually later.
+
+4. The UI of VS Code looks as follows. 
+
+![](assests/img/20220817230456.png){fig-align="center"} 
+
+Please look at the fifth tab from the left sidebar. It is the Extension tab. 
+
+![](assests/img/20220817230658.png){fig-align="center"}
+
+Please search for `python` and install the first Python extension from Microsoft. It will actually install five extensions. These are all we need for now.
+
+5. After all are installed, go to the first Explorer tab on the left side bar, and `Open Folder`. This is the working directory for your project. 
+
+![](assests/img/20220817232908.png){fig-align="center"}
+
+Choose one folder and start a new `.py` file.
+
+![](assests/img/20220817231039.png){fig-align="center"}
+
+6. If everything is setup correctly, you may see the Python version and environment name at the right lower corner. In our case the environment name is `base`. We will need it in the future.
+
+![](assests/img/20220817232032.png){fig-align="center"}  
+
+Note that we are not looking at the `Python` for Language Mode. If you see `Select Interpreter` there, it means that VS Code doesn't find your Python interpreter. Please restart VS Code or select it manually, or check whether Anaconda is installed correctly. 
+
+![](assests/img/20220817231836.png){fig-align="center"}
+
+
+
+To check whether everything is setup correctly, please run the following tests.
+
+1. Use `ctrl+shift+p` to open the Command Palette, type "Jupyter: Create Interactive Window" and press `enter` to open the Jupyter interactive window.
+
+![](assests/img/20220817213123.png){fig-align="center"}  
+
+If the interactive window starts and you see the loading infomation of your kernel as follows, especially you see the environment name on the right upper corner, then you get everything correctly. However we will still do more tests.
+
+![](assests/img/20220817233440.png){fig-align="center"}
+
+2. In the window type `import numpy as np` to test whether you are able to import packages. If you don't see any error messages then it means good.
+
+![](assests/img/20220817213214.png){fig-align="center"}  
+
+3. In the editor window, type `import numpy as np` and right click the body to choose `Run Current File in Interactive Window`, and see whether it runs in interactive window.
+
+![](assests/img/20220817213046.png){fig-align="center"}  
+
+4. Open the terminal. Please use `Command Prompt` instead of `Powershell`. Activate the conda environment by type the command `conda activate base` in the example above. Please change the name to match your own environment. If `conda` cannot be recognized, please register Python and Anaconda to the system environment path. Please see the next Appendix for details.
+
+
+## Google Colab {#sec-googlecolab}
+Google Colab is a product from Google Research, that allows anybody to write and execute arbitrary Python code through the browser, and is especially well suited to machine learning, data analysis and education. 
+
+Here is the link to [Google Colab](https://research.google.com/colaboratory/). To use it you should have a Google account. Otherwise it is very simple to start, since a lot of packages for our course are already installed. 
+
+### Install packages
+If you would like to install more packages, you can type `%pip install` + package name in a code cell and execute it.
+
+The drawback here is that Google Colab can only stay for 24 hours. After that, all additionaly installed packages will be earsed. However you can put `%pip install` + package name at the beginning of your notebook and these packages will be installed every time you run the notebook.
+
+### Upload files
+You may directly upload files to the working directory of Google Colab. This has to be done in the browser. When working with these files, you may just use relative paths.
+
+The drawback here is that Google Colab can only stay for 24 hours. After that, although your `.ipynb` files will be stores, all other files will be earsed.
+
+### Mount Google Drive
+One way to let the uploaded files stay in cloud is to upload them to Google Drive, and then load your Google Drive contents from Google Colab.
+
+Goole Drive is a cloud storage service provided by Google. When you register a Google account you will be automatically assigned a Google Drive account. You may get access to it from [this link](https://www.google.com/drive/).
+
+Here are the steps to mount Google Drive:
+
+1. Upload your files to your Google Drive.
+2. Run the following codes in Colab code cells before you are loading the uploaded files:
+```{python}
+#| eval: false
+from google.colab import drive
+drive.mount('/content/gdrive')
+```
+3. A window pop up asking you about the permission. Authorize and the drive is mounted.
+4. To work in directories, the most popular commands are
+    - `%ls`: list all files and folders in the working directory.
+    - `%cd` + folder name: Get into a specific folder.
+    - `%cd..`: Get into the parent folder.
+    Then use these commands to find the files your just uploaded. 
+5. Finally you may directly get access to those files just like they are in the working directory.
+

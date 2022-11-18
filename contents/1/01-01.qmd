@@ -1,0 +1,106 @@
+
+## Hello world!
+
+
+<!-- 
+We will mainly focus on this code editor mode at the beginning and check our results or do some simple computations in the console.
+
+Notebook is another very popular mode to use Python. We will talk about it later.
+
+ -->
+
+
+### Setup the Python environment
+
+In this section we are going to setup the Python developing environment.
+
+#### VS Code + Anaconda
+Click [Appendix -@sec-vscode] to see the detailed steps for VS Code and Anaconda. You may also check out [the official document](https://code.visualstudio.com/docs/languages/python). It contains more features but less details.
+
+We will talk about the relation between Python and Anaconda and more about packages sometime later.
+
+#### Google Colab
+Click [Appendix -@sec-googlecolab] for more details.
+
+
+### `Hello World!`
+
+
+<!-- 5. Here are the steps to edit the system environment variables. First in the start menu search for `Edit the system environment variables`. 
+
+![](assests/img/20220817235031.png){fig-align="center"}
+
+Then click the `Environment Variables...` button at the right lower corner. 
+
+![](assests/img/20220817235002.png){fig-align="center"} 
+
+Find the `Path` variable in either the upper window or the lower window. Use which one depends on whether you want to register the variable for the user or for the machine. In this example I add for the user.
+
+Finally double click the variable and add the following path to it. You need to make changes according to your installation. I recommend you to locate your Anaconda installation first to get the path.
+
+![](assests/img/20220817233748.png){fig-align="center"} -->
+
+Take VS Code as an example. In the editor window, type in the code, and run the file in the interactive window.
+
+```{python}
+#| eval: false
+print('Hello World!')
+```
+
+![](assests/img/20220817235844.png){fig-align="center"}  
+
+If you see a small green check mark in the interactive window and also the output `Hello World!`, you are good to go!
+
+### Python code cells and Notebooks
+In VS Code you can run codes cell by cell. Each cell is separated by the symbol `# %%`. Each cell may contain multiple lines. You may click the small button on top of the cell or use keybindings.
+
+![](assests/img/20220818000531.png){fig-align="center"}  
+
+This feature actually mimic the notebook. We may start a real Python Notebook file by directly creating a file with extension `.ipynb`. 
+
+![](assests/img/20220818000752.png){fig-align="center"}
+
+The layout is straightforward. 
+
+
+### Linters
+
+<!-- go here @sec-vscode -->
+
+<!-- 
+### Linters
+A *linter* is a tool to help you improve your code by analyzing your source code looking for problems. Some popular choices for Python includes `Flake8` and `Pylint`. It is highly recommended to use one that is compatible with your IDE which can help you to increase the quality of your codes from the begining. -->
+
+
+
+### IPython and Jupyter
+<!-- The IPython project began in 2001 as Fernando Pérez’s side project to make a better
+interactive Python interpreter. In the subsequent 16 years it has become one of the
+most important tools in the modern Python data stack. While it does not provide any
+computational or data analytical tools by itself, IPython is designed from the ground
+up to maximize your productivity in both interactive computing and software devel‐
+opment. It encourages an execute-explore workflow instead of the typical edit-compile-
+run workflow of many other programming languages. It also provides easy access to
+your operating system’s shell and filesystem. Since much of data analysis coding
+involves exploration, trial and error, and iteration, IPython can help you get the job
+done faster.
+In 2014, Fernando and the IPython team announced the Jupyter project, a broader
+initiative to design language-agnostic interactive computing tools. The IPython web
+notebook became the Jupyter notebook, with support now for over 40 programming
+languages. The IPython system can now be used as a kernel (a programming language
+mode) for using Python with Jupyter.
+IPython itself has become a component of the much broader Jupyter open source
+project, which provides a productive environment for interactive and exploratory
+computing. Its oldest and simplest “mode” is as an enhanced Python shell designed to
+accelerate the writing, testing, and debugging of Python code. You can also use the
+IPython system through the Jupyter Notebook, an interactive web-based code “note‐
+book” offering support for dozens of programming languages. The IPython shell and
+Jupyter notebooks are especially useful for data exploration and visualization.
+The Jupyter notebook system also allows you to author content in Markdown and
+HTML, providing you a means to create rich documents with code and text. Other
+programming languages have also implemented kernels for Jupyter to enable you to
+use languages other than Python in Jupyter.
+For me personally, IPython is usually involved with the majority of my Python work,
+including running, debugging, and testing code.
+In the accompanying book materials, you will find Jupyter notebooks containing all
+the code examples from each chapter. -->

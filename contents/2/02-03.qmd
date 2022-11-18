@@ -1,0 +1,12 @@
+
+
+## Flows and Logic
+
+### `for` loop
+
+- `range(10)`
+- `list`
+
+### `if` conditional control
+
+

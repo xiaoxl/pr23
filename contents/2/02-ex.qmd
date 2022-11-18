@@ -1,0 +1,185 @@
+
+## Exercises
+Most problems are based on @Sha2017, @You2020 and @Swe2020.
+
+
+::: {#exr-}
+## Indentation
+Please tell the differences between the following codes. If you don't understand `for` don't worry about it. Just focus on the indentation and try to understand how the codes work.
+
+
+```{python}
+#| eval: false
+
+for i in range(5):
+    print('Hello world!')
+print('Hello world!')
+```
+
+```{python}
+#| eval: false
+
+for i in range(5):
+    print('Hello world!')
+    print('Hello world!')
+```
+
+```{python}
+#| eval: false
+
+for i in range(5):
+print('Hello world!')
+print('Hello world!')
+```
+
+```{python}
+#| eval: false
+
+for i in range(5):
+    pass
+print('Hello world!')
+print('Hello world!')
+```
+:::
+
+
+
+
+::: {#exr-}
+## Play with built-in data types
+
+Please first guess the results of all expressions below, and then run them to check your answers.
+```{python}
+#| eval: false
+print(True and True)
+print(True or True)
+print(False and True)
+print((1+1>2) or (1-1<1))
+```
+:::
+
+
+
+::: {#exr-}
+## `==` vs `is`
+Please explain what happens below.
+
+```{python}
+a = 1
+b = 1.0
+print(type(a))
+print(type(b))
+
+print(a == b)
+print(a is b)
+```
+:::
+
+
+::: {#exr-}
+## Play with strings
+Please excute the code below line by line and explain what happens in text cells.
+
+```{python}
+# 1
+answer = 10
+wronganswer = 11
+text1 = "The answer to this question is {}. If you got {}, you are wrong.".format(answer, wronganswer)
+print(text1)
+
+# 2
+var = True
+text2 = "This is {}.".format(var)
+print(text2)
+
+# 3
+word1 = 'Good '
+word2 = 'buy. '
+text3 = (word1 + word2) * 3
+print(text3)
+
+# 4
+sentence = "This is\ngood enough\nfor a exercise to\nhave so many parts. " \
+           "We would also want to try this symbol: '. " \
+           "Do you know how to type \" in double quotes?"
+print(sentence)
+```
+:::
+
+
+
+::: {#exr-}
+## `split` and `join`
+Please excute the code below line by line and explain what happens in text cells.
+
+```{python}
+#| eval: false
+sentence = 'This is an example of a sentence that I expect you to split.'
+
+wordlist = sentence.split(' ')
+
+newsentence = '\n'.join(wordlist)
+print(newsentence)
+```
+:::
+
+
+
+::: {#exr-}
+## List reference
+
+Please finish the following tasks.
+
+1. Given the list `a`, make a new reference `b` to `a`. Update the first entry in `b` to be `0`. What happened to the first entry in `a`? Explain your answer in a text block.
+
+2. Given the list `a`, make a new copy `b` of the list `a` using the function `list`. Update the first entry in `b` to be `0`. What happened to the first entry in `a`? Explain your answer in a text block. 
+:::
+
+
+
+::: {#exr-}
+## List comprehension
+Given a list of numbers, use list comprehension to remove all odd numbers from the list:
+```{python}
+numbers = [3,5,45,97,32,22,10,19,39,43]
+```
+:::
+
+::: {#exr-}
+## More list comprehension
+Use list comprehension to find all of the numbers from 1-1000 that are divisible by 7.
+:::
+
+::: {#exr-}
+## More list comprehension
+Count the number of spaces in a string.
+:::
+
+
+::: {#exr-}
+## More list comprehension
+Use list comprehension to get the index and the value as a tuple for items in the list `['hi', 4, 8.99, 'apple', ('t,b', 'n')]`. Result would look like `[(index, value), (index, value), ...]`.
+:::
+
+::: {#exr-}
+## More list comprehension
+Use list comprehension to find the common numbers in two lists (without using a tuple or set) `list_a = [1, 2, 3, 4]`, `list_b = [2, 3, 4, 5]`.
+:::
+
+
+::: {#exr-}
+## Probability
+Compute the probability that two people out of 23 share the same birthday. The math formula for this is 
+$$1-\frac{365!/(365-23)!}{365^{23}}=1-\frac{365}{365}\cdot\frac{365-1}{365}\cdot\frac{365-2}{365}\cdot\ldots\cdot\frac{365-22}{365}.$$
+
+1. To directly use the formula we have to use a high performance math package, e.g. `math`. Please use `math.factorial` to compute the above formula.
+
+2. Please use the right hand side of the above formula to compute the probability using the following steps.
+    a. Please use the list comprehension to create a list $\left[\frac{365}{365},\frac{365-1}{365},\frac{365-2}{365},\ldots,\frac{365-22}{365}\right]$. 
+    b. Use `numpy.prod` to compute the product of elements of the above list.
+    c. Compute the probability by finishing the formula.
+
+3. Please use `time` to test which method mentioned above is faster.
+:::
+
+

@@ -1,0 +1,27 @@
+## Exercieses
+
+
+::: {#exr-}
+## Heron's formula
+Consider a triangle whose sides are $a$, $b$ and $c$. Heron's formula states that the area of this triangle is 
+$$\sqrt{s(s−a)(s−b)(s−c)}\quad\text{ where } s=\frac12(a+b+c).$$
+
+Please write a function that given three points computes the area of the triangle with vertices being the given points. The input is required to be a `list` of three `tuple`s, where each `tuple` contains two numbers representing the 2d-coordinate of a point.
+:::
+
+
+
+::: {#exr-}
+## array
+Write a function to reverse an 1D NumPy array (first element becomes last).
+:::
+
+
+
+
+::: {#exr-}
+## Compare two `numpy` arraies
+Consider two `numpy` arraies `x` and `y`. Compare them entry by entry. We would like to know how many are the same.
+
+Write a function that the inputs are `x` and `y`, and the output is the number of the same numbers.
+:::

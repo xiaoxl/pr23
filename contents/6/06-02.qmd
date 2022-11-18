@@ -1,0 +1,139 @@
+
+
+## packages / modules
+
+Main reference is [RealPython](https://realpython.com/python-modules-packages/) and @Beu2022.
+
+### `import`
+
+In most cases we won't only write one single Python file. If we want to use codes from other files, we need to `import`.
+
+- If both files are in the same folder, e.g. `file1.py` and `file2.py`, you may just put `import file2` in `file1.py`, and use `file2.myfunction()` to call functions or variables defined in `file2.py`.
+- If both files are in the same folder, and you just want to use one function from `file1.py` in `file2.py`, you may `from file1 import myfunction()`, and then directly write `myfunction()` in `file2.py`.
+
+
+::: {#exm-}
+This is from `file1.py`.
+```{python}
+s = "This is from file1.py."
+a = [100, 200, 300]
+print(s)
+
+def foo(arg):
+    print(f'arg = {arg}')
+
+class Foo:
+    pass
+```
+In `file2.py`, we could get access to these variables and functions and classes as follows.
+
+
+
+```{python}
+#| echo: false
+p = CURRENT_PATH + '/assests/codes/'
+os.chdir(p)
+```
+
+
+```{python}
+import file1
+file1.s
+```
+
+
+```{python}
+file1.a
+```
+
+```{python}
+file1.foo(file1.a)
+```
+
+```{python}
+file1.Foo()
+```
+:::
+
+::: {.callout-note}
+An alternative way is to use `from <module> import <names>` to directly use the names without the `file1.` prefix. 
+:::
+
+Please see the following Example to get a feel about how namespace works.
+
+
+::: {#exm-}
+
+```{python}
+s = 'foo'
+a = ['foo', 'bar', 'baz']
+
+from file1 import s as string, a as alist
+s
+```
+
+```{python}
+string
+```
+
+```{python}
+a
+```
+
+```{python}
+alist
+```
+:::
+
+We may use `dir()` to look at all objects in the current namespace.
+
+### `__name__`
+`__name__` is a variable to tell you want is the current active namespace. See the following example.
+
+::: {#exm-}
+
+```{python}
+import file1
+file1.__name__
+```
+The result `file1` means that the codes in `file1.py` are now treated as a package and are imported into other files.
+```{python}
+__name__
+```
+The result `__main__` means that the codes we are writing now are treated as in the "active" enviroment.
+
+
+You may see the following codes in a lot of places.
+```{python}
+if __name__ == '__main__':
+    pass
+```
+It means that the following codes will only be run in the "active" mode. If you import the codes as a package, these part of codes won't be run.
+
+:::
+
+### Packages
+Pacages is a way to group and organize mutliple modules. It allow for a hierachical structuring of the module namespace using dot notation.
+
+Creating a package is straightforward, since it makes use of the operating system's inherent hierarchical file structure.
+
+Python defines two types of packages, regular packages and namespace packages. The above package is the regular one. Namespace packages allow codes are spread among different folders. We won't talk about it in this course.
+
+To create a regular package, what you need to do is to organize the files in suitable folders, and then add an `__init__.py` in each folder. The file can be empty, or you could add any initialization codes for the package which is represented by the folder.
+
+
+:::{.callout-note}
+In the past `__init__.py` is required for a package. After Python 3.3 the namespace package is introduced, the `__init__.py` is not required (but recommended) for regular packages, and cannot be used for namespace packages. 
+:::
+
+Let us put the previous `file1.py` and `file2.py` into subfolder `assests/codes/`. To make it into a package `assests` and a subpackage `codes`, we need to put `__init__.py` in each folder. 
+```{python}
+#| echo: false
+os.chdir(CURRENT_PATH)
+```
+
+```{python}
+import assests.codes.file1 as f1
+f1.s
+```
+

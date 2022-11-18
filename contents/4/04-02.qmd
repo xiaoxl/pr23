@@ -1,0 +1,271 @@
+
+## Data cleaning
+
+### Handling Missing Data
+
+- `np.nan`, `pd.NA`
+- `pd.isnull()`, `np.isnan()`
+- `dropna`, `fillna`
+
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+import numpy as np
+
+data = pd.DataFrame([[1., 6.5, 3.], [1., np.nan, np.nan], 
+                     [np.nan, np.nan, np.nan], [np.nan, 6.5, 3.]])
+cleaned = data.dropna()
+cleanedrow = data.dropna(how='all')
+data
+```
+```{python}
+cleaned
+```
+```{python}
+cleanedrow
+```
+
+```{python}
+data[4] = np.nan
+cleaned1 = data.dropna(axis=1, how='all')
+cleanedthresh = data.dropna(thresh=2)
+data
+```
+```{python}
+cleaned1
+```
+```{python}
+cleanedthresh
+```
+
+
+```{python}
+fill0 = data.fillna(0)
+filldict = data.fillna({1: 0.5, 2: -0.1})
+data
+```
+
+```{python}
+fill0
+```
+```{python}
+filldict
+```
+
+:::
+
+
+### Data Transformation
+
+- `.duplicated()`, `drop_duplicates()`
+
+
+::: {#exm-}
+
+```{python}
+import numpy as np
+import pandas as pd
+
+data = pd.DataFrame({'k1': ['one', 'two'] * 3 + ['two'], 
+                     'k2': [1, 1, 2, 3, 3, 4, 4]})
+data.drop_duplicates(['k1'], keep='last')
+```
+:::
+
+
+- `pd.Series.map()`, `pd.DataFrame.apply()`
+
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+import numpy as np
+
+data = pd.DataFrame({'food': ['bacon', 'pulled pork', 'bacon',
+                     'Pastrami', 'corned beef', 'Bacon',
+                     'pastrami', 'honey ham', 'nova lox'],
+                     'ounces': [4, 3, 12, 6, 7.5, 8, 3, 5, 6]})
+
+meat_to_animal = {
+    'bacon': 'pig',
+    'pulled pork': 'pig',
+    'pastrami': 'cow',
+    'corned beef': 'cow',
+    'honey ham': 'pig',
+    'nova lox': 'salmon'
+    }
+
+data['animal'] = data['food'].str.lower().map(meat_to_animal)
+
+data['food'].map(lambda x: meat_to_animal[x.lower()])
+```
+
+:::
+
+- `replace`
+- `rename`
+<!-- - `pd.cut(ages, bins)` -->
+- `describe`
+- `permutation`
+- `sample`
+- dummy variables
+
+### Example: Movies
+
+Below we explore the MovieLens 1M datasets. You may download it from this [link](assests/datasets/movies.dat). 
+
+```{python}
+import pandas as pd
+import numpy as np
+mnames = ['movie_id', 'title', 'genres']
+movies = pd.read_table('assests/datasets/movies.dat', sep='::',
+                       header=None, names=mnames, engine="python",
+                       encoding='ISO-8859-1')
+
+all_genres = list()
+movies['genres'].map(lambda x: all_genres.extend(x.split('|')))
+
+genres = pd.unique(all_genres)
+
+dummies = pd.DataFrame(np.zeros((len(movies), len(genres))), columns=genres)
+
+for i, gen in enumerate(movies.genres):
+    indices = dummies.columns.get_indexer(gen.split('|'))
+    dummies.iloc[i, indices] = 1
+
+movies_windic = movies.join(dummies.add_prefix('Genre_'))
+```
+
+
+### String Manipulation
+
+The key idea in this section is that, all methods in `pd.Series.str` will be applied to each entry of the Series.
+
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+import numpy as np
+s = pd.Series(["A ", " B ", "C", "Aaba", " Baca ", np.nan, "CABA", "dog", "cat"])
+
+s.str.lower()
+s.str.split('a')
+s.str.len()
+s.str.strip()
+s.str.replace("A", '1')
+```
+
+:::
+
+
+
+::: {#exm-}
+We could also use `.str` to play with column names and row indexes.
+
+```{python}
+import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.randn(3, 2),
+                  columns=[" Column A ", " Column B "], index=range(3))
+
+df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
+df
+```
+:::
+
+
+
+### Regular expression
+
+*Regular expressions* provide a flexible way to search or match string patterns in text. A single expression, commonly called a *regex*, is a string formed according to the regular expression language. Python’s built-in `re` module is responsible for applying regular expressions to strings.
+
+For details of the regular expression language in Python, please read the official documents from [here](https://docs.python.org/3/library/re.html). There are also many great websites for learning regex. [This](https://regex101.com/) is one example.
+
+We will briefly mentioned a few rules here.
+
+
+- `.`: matches any character except a newline. 
+- `\d`: matches any digit. It is the same as `[0-9]`.
+- `\w`: matches any alphabatic or numeric character. It is the same as `[a-zA-Z0-9_]`.
+- `\s`: matches any whitespaces. It is the same as `[\t\n\r\f\v]`.
+- `*`: Causes the resulting RE to match 0 or more repetitions of the preceding RE, as many repetitions as are possible. 
+- `+`: Causes the resulting RE to match 1 or more repetitions of the preceding RE, as many repetitions as are possible.
+- `?`: Causes the resulting RE to match 0 or 1 repetitions of the preceding RE. 
+- `*?`, `+?`, `??`: The `*`, `+`, and `?` qualifiers are all greedy; they match as much text as possible. Adding `?` after the qualifier makes it perform the match in non-greedy or minimal fashion; as few characters as possible will be matched.
+- `{m}`: Specifies that exactly m copies of the previous RE should be matched.
+- `{m,n}`: Causes the resulting RE to match from `m` to `n` repetitions of the preceding RE, attempting to match as many repetitions as possible. 
+- `{m,n}?`: Causes the resulting RE to match from `m` to `n` repetitions of the preceding RE, attempting to match as few repetitions as possible. 
+- `[]`: Used to indicate a set of characters.
+- `()`: set groups.
+
+
+::: {#exm-}
+
+```{python}
+import re
+text = "foo bar\t baz \tqux"
+pattern = '\s+'
+regex = re.compile(pattern)
+regex.split(text)
+```
+
+:::
+
+- `.match()`
+- `.search()`
+- `.findall()`
+- `.split()`
+- `.sub()`
+
+We can use `()` to specify groups, and use `.groups()` to get access to the results.
+
+
+::: {#exm-}
+
+```{python}
+import re
+pattern = r'([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})'
+regex = re.compile(pattern, flags=re.IGNORECASE)
+m = regex.match('wesm@bright.net')
+m.groups()
+```
+
+:::
+
+To use regex to DataFrame and Series, you may directly apply `.match`, `.findall`, `.replace` after `.str`, with the regex pattern as one of the arguments.
+
+`.extract` is a method that is not from `re`. It is used to extract the matched groups and make them as a DataFrame. 
+
+::: {#exm-}
+```{python}
+import pandas as pd
+import numpy as np
+mnames = ['movie_id', 'title', 'genres']
+movies = pd.read_table('assests/datasets/movies.dat', sep='::',
+                       header=None, names=mnames, engine="python",
+                       encoding='ISO-8859-1')
+
+pattern = r'([a-zA-Z0-9_\s,.?:;\']+)\((\d{4})\)'
+movies = movies.join(movies.title.str.extract(pattern).rename(columns={0: 'movie title', 1: 'year'}))
+```
+:::
+
+
+
+```{python}
+#| eval: false
+#| echo: false
+from functools import reduce
+genresdummylist = df.genres.str.extractall(r"'(\w+)'").unstack()
+dummylist = list()
+for i in genresdummylist.columns:
+    dummylist.append(pd.get_dummies(genresdummylist[i]))
+
+dummy = reduce(lambda x, y: x.add(y, fill_value=0), dummylist).astype(int)
+df = pd.merge(df, dummy, left_index=True, right_index=True)
+
+```
