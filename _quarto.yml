@@ -37,8 +37,8 @@ format:
 
 book:
   title: "Python/R for Data Science"
-  subtitle: "Lecture notes for 2022 Fall at Arkansas Tech University"
-  author: "Xinli Xiao"
+  subtitle: "Lecture notes for Spring 2023 at Arkansas Tech University"
+  author: "Weijia Jia & Xinli Xiao"
   date: last-modified
   downloads: [pdf]
   # crossref:
@@ -70,7 +70,7 @@ book:
     search: true
     collapse-level: 1
   navbar:
-    subtitle: "2022 Fall"
+    subtitle: "Spring 2023"
   page-navigation: true
 
 
