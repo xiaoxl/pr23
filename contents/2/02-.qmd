@@ -1,6 +1,4 @@
----
-jupyter: f22
----
+
 # Python Basics
 
 

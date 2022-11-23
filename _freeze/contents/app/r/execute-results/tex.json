@@ -1,0 +1,10 @@
+{
+  "hash": "e7fefd453317f6fedba100e955972130",
+  "result": {
+    "markdown": "# Using R in VS Code\nAlthough the best R IDE is Posit (formally RStudio), there are still some people willing to try other options. In this document I will briefly describe how to set up R environment in VS Code. The main reference is [the official document](https://code.visualstudio.com/docs/languages/r).\n\n## radian\n\nIf you use conda to install radian, the path is `<anaconda path>/Scripts/radian.exe`\n\n::: {.cell collapse='true' execution_count=1}\n``` {.python .cell-code}\n1+1\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\n2\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "r_files\\figure-pdf"
+    ],
+    "filters": []
+  }
+}
