@@ -1,0 +1,6 @@
+
+HTTP_PROXY=https://proxy.example.com/
+OMP_NUM_THREADS=4
+
+DATABASE_SERVER=https://db.example.com
+DATABASE_API=${DATABASE_SERVER}/api

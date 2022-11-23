@@ -1,0 +1,16 @@
+# Using R in VS Code
+Although the best R IDE is Posit (formally RStudio), there are still some people willing to try other options. In this document I will briefly describe how to set up R environment in VS Code. The main reference is [the official document](https://code.visualstudio.com/docs/languages/r).
+
+## radian
+
+If you use conda to install radian, the path is `<anaconda path>/Scripts/radian.exe`
+
+
+
+```{python}
+#| collapse: true
+1+1
+```
+
+
+

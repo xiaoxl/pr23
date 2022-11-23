@@ -1,3 +1,9 @@
+---
+format:
+   html:
+     code-line-numbers: false
+     code-block-border-left: false 
+---
 
 # Setup
 
@@ -70,9 +76,9 @@ Google Colab is a product from Google Research, that allows anybody to write and
 Here is the link to [Google Colab](https://research.google.com/colaboratory/). To use it you should have a Google account. Otherwise it is very simple to start, since a lot of packages for our course are already installed. 
 
 ### Install packages
-If you would like to install more packages, you can type `%pip install` + package name in a code cell and execute it.
+If you would like to install more packages, you can type `%pip install <pkg name>` or `%conda install <pkg name>` in a code cell and execute it.
 
-The drawback here is that Google Colab can only stay for 24 hours. After that, all additionaly installed packages will be earsed. However you can put `%pip install` + package name at the beginning of your notebook and these packages will be installed every time you run the notebook.
+The drawback here is that Google Colab can only stay for 24 hours. After that, all additionaly installed packages will be earsed. However you can put `%pip install <pkg name>` or `%conda install <pkg name>` at the beginning of your notebook and these packages will be installed every time you run the notebook.
 
 ### Upload files
 You may directly upload files to the working directory of Google Colab. This has to be done in the browser. When working with these files, you may just use relative paths.

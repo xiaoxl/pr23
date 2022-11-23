@@ -31,6 +31,7 @@ print("Time used: ", t1-t0)
 
 
 
+
 ::: {#exr-}
 ## Fancy Basketball plot
 Here is an example of the data analysis. We pull data from a dataset, filter the data according to our needs and plot it to visualize the data. This is just a show case. You are encouraged to play the code, make tweaks and see what would happen. You don't have to turn in anything.

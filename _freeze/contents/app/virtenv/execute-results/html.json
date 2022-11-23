@@ -1,0 +1,11 @@
+{
+  "hash": "7a7196c38639c8beb7feb213a71fac51",
+  "result": {
+    "markdown": "# Virtual environments\n\n## Package management\n\n\n\n## Virtual environments\n\n\n## `conda`\n\n\n## `pip` and `venv`\n\n## `requirement.txt`\n\n\n\n\n\n\n\n\n{{< env test.OMP_NUM_THREADS >}}\n\n\n{{< meta title >}}\n\n\n{{< meta book.title >}}\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nprint(\"{{< meta book.title >}}\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n{{< meta book.title >}}\n```\n:::\n:::\n\n\n{{< env DATABASE_API >}}\n\n",
+    "supporting": [
+      "virtenv_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

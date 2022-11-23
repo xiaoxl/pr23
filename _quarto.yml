@@ -22,7 +22,7 @@ knitr:
     comment: "#>"
     collapse: true
 
-
+jupyter: base23
 
 format:
   html:
@@ -62,6 +62,8 @@ book:
     - contents/app/setup.qmd
     - contents/app/path.qmd
     - contents/app/virtenv.qmd
+    - contents/app/concepts.qmd
+    - contents/app/r.qmd
   sidebar:
     style: floating
     pinned: true
