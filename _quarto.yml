@@ -32,17 +32,12 @@ format:
     # code-block-border-left: true #"#31BAE9"
     code-line-numbers: true
     highlight-style: atom-one
-  pdf:
-    documentclass: scrreprt
 
 book:
   title: "Python/R for Data Science"
   subtitle: "Lecture notes for Spring 2023 at Arkansas Tech University"
   author: "Weijia Jia & Xinli Xiao"
   date: last-modified
-  downloads: [pdf]
-  # crossref:
-  #   app-prefix: Appendix
   chapters: 
     - index.qmd
     - part: "Part I: Python"
