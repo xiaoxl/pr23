@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.262">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -270,7 +270,17 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Virtual environments</span></a>
+  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Package management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Some Hard Python concepts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using R in VS Code</span></a>
   </div>
 </li>
       </ul>
@@ -336,7 +346,7 @@ div.csl-indent {
 
 <section id="sec-path" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-path"><span class="header-section-number">2.1</span> Built-in Types: numeric types and <code>str</code></h2>
-<p>This section is based on <span class="citation" data-cites="You2020">[<a href="#ref-You2020" role="doc-biblioref">1</a>]</span>.</p>
+<p>This section is based on <span class="citation" data-cites="You2020">[<a href="../references.html#ref-You2020" role="doc-biblioref">1</a>]</span>.</p>
 <p>There are several built-in data structures in Python. Here is an (incomplete) list:</p>
 <ul>
 <li><code>None</code></li>
@@ -422,7 +432,7 @@ Note
 </section>
 <section id="fundamentals" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="fundamentals"><span class="header-section-number">2.2</span> Fundamentals</h2>
-<p>This section is mainly based on <span class="citation" data-cites="McK2017">[<a href="#ref-McK2017" role="doc-biblioref">2</a>]</span>.</p>
+<p>This section is mainly based on <span class="citation" data-cites="McK2017">[<a href="../references.html#ref-McK2017" role="doc-biblioref">2</a>]</span>.</p>
 <section id="indentation" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="indentation"><span class="header-section-number">2.2.1</span> Indentation</h3>
 <p>One key feature about Python is that its structures (blocks) is determined by <strong>Indentation</strong>.</p>
@@ -578,11 +588,11 @@ Note
 <span id="cb14-9"><a href="#cb14-9"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list (which is updated) of the new `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is `container`:  ([1], [2])
-This is the id of `container`:  2892710606784
-This is the id of the first list of `container`:  2892710579968
+This is the id of `container`:  1886236174912
+This is the id of the first list of `container`:  1886236166784
 This is the new `container`:  ([1, 2], [2])
-This is the id of the new `container`:  2892710606784
-This is the id of the first list (which is updated) of the new `container`:  2892710579968</code></pre>
+This is the id of the new `container`:  1886236174912
+This is the id of the first list (which is updated) of the new `container`:  1886236166784</code></pre>
 </div>
 </div>
 <p>You can see that the tuple <code>container</code> and its first object stay the same, although we add one element to the first object.</p>
@@ -660,7 +670,7 @@ Note
 </section>
 <section id="exercises" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.6</span> Exercises</h2>
-<p>Most problems are based on <span class="citation" data-cites="Sha2017">[<a href="#ref-Sha2017" role="doc-biblioref">3</a>]</span>, <span class="citation" data-cites="You2020">[<a href="#ref-You2020" role="doc-biblioref">1</a>]</span> and <span class="citation" data-cites="Swe2020">[<a href="#ref-Swe2020" role="doc-biblioref">4</a>]</span>.</p>
+<p>Most problems are based on <span class="citation" data-cites="Sha2017">[<a href="../references.html#ref-Sha2017" role="doc-biblioref">3</a>]</span>, <span class="citation" data-cites="You2020">[<a href="../references.html#ref-You2020" role="doc-biblioref">1</a>]</span> and <span class="citation" data-cites="Swe2020">[<a href="../references.html#ref-Swe2020" role="doc-biblioref">4</a>]</span>.</p>
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 2.1 (Indentation) </strong></span>Please tell the differences between the following codes. If you don’t understand <code>for</code> don’t worry about it. Just focus on the indentation and try to understand how the codes work.</p>
 <div class="cell" data-execution_count="12">
@@ -800,7 +810,7 @@ have so many parts. We would also want to try this symbol: '. Do you know how to
 </section>
 <section id="projects" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="projects"><span class="header-section-number">2.7</span> Projects</h2>
-<p>Most projects are based on <span class="citation" data-cites="McK2017">[<a href="#ref-McK2017" role="doc-biblioref">2</a>]</span>, <span class="citation" data-cites="Klo2021">[<a href="#ref-Klo2021" role="doc-biblioref">5</a>]</span>.</p>
+<p>Most projects are based on <span class="citation" data-cites="McK2017">[<a href="../references.html#ref-McK2017" role="doc-biblioref">2</a>]</span>, <span class="citation" data-cites="Klo2021">[<a href="../references.html#ref-Klo2021" role="doc-biblioref">5</a>]</span>.</p>
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 2.13 (Determine the indefinite article) </strong></span>Please finish the following tasks.</p>
 <ol type="1">
@@ -878,7 +888,7 @@ Click for Hint.
 </div>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
 <div id="ref-You2020" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><span class="smallcaps">Youens-Clark</span>, K. (2020). <em><a href="https://www.manning.com/books/tiny-python-projects">Tiny python projects</a></em>. Manning Publications.</div>
 </div>
