@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python/R for Data Science - Appendix C — Package management</title>
+<title>Python/R for Data Science - Appendix C — Python Virtual Environment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Appendix C — Package management</h1>
+      <h1 class="quarto-secondary-nav-title">Appendix C — Python Virtual Environment</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -240,17 +240,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Setup</span></a>
+  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Python Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title"><code>PATH</code></span></a>
+  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Environemnt Variable <code>PATH</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Package management</span></a>
+  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python Virtual Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using R in VS Code</span></a>
+  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></a>
   </div>
 </li>
       </ul>
@@ -276,8 +276,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#package-management" id="toc-package-management" class="nav-link active" data-scroll-target="#package-management"><span class="toc-section-number">C.1</span>  Package management</a></li>
   <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link" data-scroll-target="#virtual-environments"><span class="toc-section-number">C.2</span>  Virtual environments</a></li>
-  <li><a href="#mamba" id="toc-mamba" class="nav-link" data-scroll-target="#mamba"><span class="toc-section-number">C.3</span>  <code>mamba</code></a></li>
-  <li><a href="#requirement.txt" id="toc-requirement.txt" class="nav-link" data-scroll-target="#requirement.txt"><span class="toc-section-number">C.4</span>  <code>requirement.txt</code></a></li>
+  <li><a href="#building-identical-environments" id="toc-building-identical-environments" class="nav-link" data-scroll-target="#building-identical-environments"><span class="toc-section-number">C.3</span>  Building identical environments</a>
+  <ul class="collapse">
+  <li><a href="#using-conda" id="toc-using-conda" class="nav-link" data-scroll-target="#using-conda"><span class="toc-section-number">C.3.1</span>  Using <code>conda</code></a></li>
+  <li><a href="#using-pip-freeze" id="toc-using-pip-freeze" class="nav-link" data-scroll-target="#using-pip-freeze"><span class="toc-section-number">C.3.2</span>  Using <code>pip freeze</code></a></li>
+  </ul></li>
+  <li><a href="#mamba" id="toc-mamba" class="nav-link" data-scroll-target="#mamba"><span class="toc-section-number">C.4</span>  <code>mamba</code></a></li>
   </ul>
 </nav>
     </div>
@@ -286,7 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Appendix C — Package management</h1>
+<h1 class="title d-none d-lg-block">Appendix C — Python Virtual Environment</h1>
 </div>
 
 
@@ -309,27 +313,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://github.com/conda/conda"><code>conda</code></a> was originally developed by Anaconda Inc., and later became open-sourced.</li>
 </ul>
 <p>In this course, we mainly focus on <code>conda</code> since it is designed towards Data Science.</p>
-<ul>
+<ol type="1">
 <li>Install packages. You may specify the particular version number.</li>
-</ul>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="op">&lt;</span>pkg name<span class="op">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="op">&lt;</span>pkg name<span class="op">&gt;</span>=<span class="op">&lt;</span>version number<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
+<ol start="2" type="1">
 <li>List all installed packages, or list several specific installed packages:</li>
-</ul>
+</ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list <span class="op">&lt;</span>pkg names<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
+<ol start="3" type="1">
 <li>Update packages.</li>
-</ul>
+</ol>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> updata <span class="op">&lt;</span>pkg name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
+<ol start="4" type="1">
 <li>Remove packages.</li>
-</ul>
+</ol>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> remove <span class="op">&lt;</span>pkg name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
+<ol start="5" type="1">
 <li>If the packages you want is in <code>PyPI</code> but not in <code>conda</code> channels, you may use <code>pip</code> to install that package.</li>
-</ul>
+</ol>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="op">&lt;</span>pkg name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that if the package is in both <code>conda</code> channels and <code>PyPI</code>, it is recommended not to mix <code>pip</code> and <code>conda</code>. If you start from <code>conda</code>, just stick to <code>conda</code>. Only use <code>pip</code> when you have to.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -358,7 +362,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="virtual-environments" class="level2" data-number="C.2">
 <h2 data-number="C.2" class="anchored" data-anchor-id="virtual-environments"><span class="header-section-number">C.2</span> Virtual environments</h2>
-<p>Virtual environments provide a project-specific version of installed packages. This both helps you to faithfully reproduce your environment as well as isolate the use of packages so that upgrading a package in one project doesn’t break other projects. In this section we are going to use <code>conda</code> to manage environments.</p>
+<p>Virtual environments provide a project-specific version of installed packages. This both helps you to faithfully reproduce your environment as well as isolate the use of packages so that upgrading a package in one project doesn’t break other projects. In this section we are going to use <code>conda</code> to manage environments. The main reference is the official <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">document</a>. We will just list the minimal working examples here. For more functions please read the official document.</p>
+<ol type="1">
+<li>To create an environment:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> <span class="op">&lt;</span>env name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>To activate an environment:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="op">&lt;</span>env name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After you create a new environment and activate it, you may start to use the commands from the previous section to install packages.</p>
+<ol start="3" type="1">
+<li>To deactivate an environment:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>To remove an environemnt, both of the following commands work:</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> remove <span class="at">--name</span> <span class="op">&lt;</span>env name<span class="op">&gt;</span> --all</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env remove <span class="at">-n</span> <span class="op">&lt;</span>env name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>To get all enviroments in the system:</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env list</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> info <span class="at">--envs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -371,20 +398,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Unlike <code>conda</code>, <code>pip</code> is only a package manager, and it doesn’t provide any virtual environment functions. The default virtual environment tool for Python is <code>venv</code>.</p>
+<p>Unlike <code>conda</code>, <code>pip</code> is only a package manager, and it doesn’t provide any virtual environment functions. The default virtual environment tool for Python is <code>venv</code>. You may go to the official <a href="https://docs.python.org/3/library/venv.html">document</a> for more infomation about <code>venv</code>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="mamba" class="level2" data-number="C.3">
-<h2 data-number="C.3" class="anchored" data-anchor-id="mamba"><span class="header-section-number">C.3</span> <code>mamba</code></h2>
+<section id="building-identical-environments" class="level2" data-number="C.3">
+<h2 data-number="C.3" class="anchored" data-anchor-id="building-identical-environments"><span class="header-section-number">C.3</span> Building identical environments</h2>
+<p>Sometimes people want to build identical environments. This is done by recording the versions of all packages in the current environment into a spec list file. When rebuilding Python will pull the spec list file out and install the packages of the speicific versions based on the list.</p>
+<p>In the process, there are two steps. First generate the pacakge spec list file. Second create an environment based on the list. Note that the spec list file generated by different methods have different formats. Therefore you have to use the correct command to restore the environment.</p>
+<section id="using-conda" class="level3" data-number="C.3.1">
+<h3 data-number="C.3.1" class="anchored" data-anchor-id="using-conda"><span class="header-section-number">C.3.1</span> Using <code>conda</code></h3>
+<p>To produce a spec list, use the following command:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list <span class="at">--explicit</span> <span class="op">&gt;</span> spec-file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To install the packages, use the following command:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> <span class="op">&lt;</span>env name<span class="op">&gt;</span> --file spec-file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A typical <code>conda</code> environment file looks like the following example.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a># This file may be used to create an environment using:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a># $ conda create --name &lt;env&gt; --file &lt;this file&gt;</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a># platform: win-64</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>@EXPLICIT</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>https://repo.anaconda.com/pkgs/main/win-64/conda-env-2.6.0-1.conda</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>https://repo.anaconda.com/pkgs/r/win-64/_r-mutex-1.0.0-anacondar_1.conda</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>https://repo.anaconda.com/pkgs/main/win-64/blas-1.0-mkl.conda</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-pip-freeze" class="level3" data-number="C.3.2">
+<h3 data-number="C.3.2" class="anchored" data-anchor-id="using-pip-freeze"><span class="header-section-number">C.3.2</span> Using <code>pip freeze</code></h3>
+<p>The classic popular way is <code>pip freeze</code>. To produce a spec list, use the following command:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To install the packages, use the following command:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A typical <code>pip requirements.txt</code> file looks like the following example.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>anyio @ file:///C:/ci/anyio_1644481856696/work/dist</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>argon2-cffi @ file:///opt/conda/conda-bld/argon2-cffi_1645000214183/work</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>argon2-cffi-bindings @ file:///C:/ci/argon2-cffi-bindings_1644569876605/work</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>asttokens==2.0.7</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>attrs @ file:///C:/b/abs_09s3y775ra/croot/attrs_1668696195628/work</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>Babel @ file:///tmp/build/80754af9/babel_1620871417480/work</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>backcall==0.2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Actually both ways are NOT satisfying. Therefore there are a lot of new tools coming out to deal with this task, like <code>pipreqs</code> and <code>poetry</code>. Here for simplicity we just briefly introduce the most basic ones.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="mamba" class="level2" data-number="C.4">
+<h2 data-number="C.4" class="anchored" data-anchor-id="mamba"><span class="header-section-number">C.4</span> <code>mamba</code></h2>
 <p><a href="https://github.com/mamba-org/mamba"><code>mamba</code></a> is a reimplementation of the <code>conda</code> package manager in <code>C++</code>. It can be installed directly from <code>conda-forge</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge mamba</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge mamba</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After you install it in one of your environment, you may use it in all your environments.</p>
 <p><code>mamba</code> can be treated as a drop-in replacement of <code>conda</code>. All commands we mentioned above can be rewritten by replacing <code>conda</code> with <code>mamba</code>. One of the reasons to use <code>mamba</code> over <code>conda</code> is that <code>mamba</code> runs so much faster than <code>conda</code>.</p>
-</section>
-<section id="requirement.txt" class="level2" data-number="C.4">
-<h2 data-number="C.4" class="anchored" data-anchor-id="requirement.txt"><span class="header-section-number">C.4</span> <code>requirement.txt</code></h2>
 
 
 </section>
@@ -526,7 +598,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../contents/app/path.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title"><code>PATH</code></span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Environemnt Variable <code>PATH</code></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
