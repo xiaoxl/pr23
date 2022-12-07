@@ -38,19 +38,3 @@ print('Hello world!')
 ```
 There are many options to adjust how the code blocks are excacuted. You don't need to worry about them right now. Currently just try to write your report together with code blocks.
 
-
-### Development tools
-
-#### R Studio
-For R, the almost definite choice of IDE is R Studio. You may download and install it from [the homepage](https://www.rstudio.com/). 
-
-Note that R Studio will soon be renamed to `posit`. Please keep an eye on it if it will make any differences.
-
-#### R Studio Cloud
-You may directly go to the [homepage](https://rstudio.cloud/) to use R Stuido from cloud. If you don't use it a lot it should be free.
-
-#### Google Colab
-You may use R in Google Colab. The link is [colab.to/r](https://colab.research.google.com/notebook#create=true&language=r). After you open the notebook, you may go to `Edit->Notebook settings` to change Runtime type to be `R`.
-
-The rest is similar to Jupyter notebook, while the codes are now R codes.
-

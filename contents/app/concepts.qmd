@@ -70,7 +70,7 @@ The reference Python kernel provided by `IPython` is called `ipykernel`. With `i
 
 A kernel process can be connected to more than one frontend simultaneously. In this case, the different frontends will have access to the same variables.
 
-This design was intended to allow easy development of different frontends based on the same kernel, but it also made it possible to support new languages in the same frontends, by developing kernels in those languages. The `Jupyter` Notebook Application has three main kernels: the `ipykernel`, `irkernel` and `ijulia` kernels. Actually the name of `Jupyter` comes from these three programming languages for data science: `Julia`, `Python` and `R`.
+This design was intended to allow easy development of different frontends based on the same kernel, but it also made it possible to support new languages in the same frontends, by developing kernels in those languages. The `Jupyter` Notebook Application has three main kernels: the `ipykernel`, `irkernel` and `ijulia` kernels. Actually the name of `Jupyter` comes from these three programming languages for data science: [Julia](https://julialang.org/), Python and R.
 
 
 
@@ -92,7 +92,7 @@ conda activate myenv
 conda install jupyter
 python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 ```
-`--user` means that the kernel is installed in the user's folder instead of a system folder. The `--name` value (in this case it is `myenv`) is used by Jupyter internally. These commands will overwrite any existing kernel with the same name. `--display-name` is what you see in the notebook menus.
+`--user` means that the kernel is installed in the user's folder instead of a system folder, and it can be removed. The `--name` value (in this case it is `myenv`) is used by Jupyter internally. These commands will overwrite any existing kernel with the same name. `--display-name` is what you see in the notebook menus.
 
 
 3. You could use the command to find all kernels installed in your system.

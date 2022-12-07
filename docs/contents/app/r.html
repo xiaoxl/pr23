@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python/R for Data Science - Appendix E — Using R in VS Code</title>
+<title>Python/R for Data Science - Appendix E — R Setup</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Appendix E — Using R in VS Code</h1>
+      <h1 class="quarto-secondary-nav-title">Appendix E — R Setup</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -239,17 +239,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Setup</span></a>
+  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Python Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title"><code>PATH</code></span></a>
+  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Environemnt Variable <code>PATH</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Package management</span></a>
+  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python Virtual Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -259,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using R in VS Code</span></a>
+  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></a>
   </div>
 </li>
       </ul>
@@ -273,7 +273,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#radian" id="toc-radian" class="nav-link active" data-scroll-target="#radian"><span class="toc-section-number">E.1</span>  radian</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link active" data-scroll-target="#rstudio"><span class="toc-section-number">E.1</span>  RStudio</a></li>
+  <li><a href="#radian" id="toc-radian" class="nav-link" data-scroll-target="#radian"><span class="toc-section-number">E.2</span>  <code>radian</code></a>
+  <ul class="collapse">
+  <li><a href="#use-the-console" id="toc-use-the-console" class="nav-link" data-scroll-target="#use-the-console"><span class="toc-section-number">E.2.1</span>  Use the console</a></li>
+  </ul></li>
+  <li><a href="#vs-code-configuration" id="toc-vs-code-configuration" class="nav-link" data-scroll-target="#vs-code-configuration"><span class="toc-section-number">E.3</span>  VS Code Configuration</a></li>
+  <li><a href="#cloud-ide-options" id="toc-cloud-ide-options" class="nav-link" data-scroll-target="#cloud-ide-options"><span class="toc-section-number">E.4</span>  Cloud IDE options</a>
+  <ul class="collapse">
+  <li><a href="#posit-cloud-formally-rstudio-cloud" id="toc-posit-cloud-formally-rstudio-cloud" class="nav-link" data-scroll-target="#posit-cloud-formally-rstudio-cloud"><span class="toc-section-number">E.4.1</span>  Posit Cloud (formally RStudio Cloud)</a></li>
+  <li><a href="#google-colab" id="toc-google-colab" class="nav-link" data-scroll-target="#google-colab"><span class="toc-section-number">E.4.2</span>  Google Colab</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -282,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Appendix E — Using R in VS Code</h1>
+<h1 class="title d-none d-lg-block">Appendix E — R Setup</h1>
 </div>
 
 
@@ -297,18 +307,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Although the best R IDE is Posit (formally RStudio), there are still some people willing to try other options. In this document I will briefly describe how to set up R environment in VS Code. The main reference is <a href="https://code.visualstudio.com/docs/languages/r">the official document</a>.</p>
-<section id="radian" class="level2" data-number="E.1">
-<h2 data-number="E.1" class="anchored" data-anchor-id="radian"><span class="header-section-number">E.1</span> radian</h2>
-<p>If you use conda to install radian, the path is <code>&lt;anaconda path&gt;/Scripts/radian.exe</code></p>
-<div class="cell" data-collapse="true" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>2</code></pre>
+<section id="rstudio" class="level2" data-number="E.1">
+<h2 data-number="E.1" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">E.1</span> RStudio</h2>
+<p>For R, the almost definite choice of IDE is RStudio. You may download and install it from <a href="https://posit.co/downloads/">the homepage</a>. The installation and beginning usage is straightforward. RStudio is using the default R console.</p>
+<p>Although the best R IDE is RStudio, there are still some people willing to try other options. In the rest part of this section I will briefly describe how to set up R environment using other IDES/platforms.</p>
+</section>
+<section id="radian" class="level2" data-number="E.2">
+<h2 data-number="E.2" class="anchored" data-anchor-id="radian"><span class="header-section-number">E.2</span> <code>radian</code></h2>
+<p><code>radian</code> is an alternative console for the R program with multiline editing and rich syntax highlight. One would consider <code>radian</code> as a <code>IPython</code> clone for R, though its design is more aligned to <a href="https://julialang.org/">Julia</a>.</p>
+<p><code>radian</code> is a R console. So to install it you should have an installation of R (version 3.4.0 or above). <code>radian</code> is mainly written in Python. Therefore to install it you should have an installation of Python (version 3.6 or above). Then you may use the following command to install <code>radian</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge radian</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-U</span> radian</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="use-the-console" class="level3" data-number="E.2.1">
+<h3 data-number="E.2.1" class="anchored" data-anchor-id="use-the-console"><span class="header-section-number">E.2.1</span> Use the console</h3>
+<p>First find the path to the console. If you use <code>conda</code> to install <code>radian</code>, the path is <code>&lt;anaconda path&gt;/Scripts/radian.exe</code>. When you directly run the executable file <code>radian.exe</code>, the console will be activated. You may start to run R code.</p>
+<p><img src="assests/img/20221206230701.png" class="img-fluid"></p>
+<p>You may use <code>q()</code> to exit <code>radian</code>.</p>
+</section>
+</section>
+<section id="vs-code-configuration" class="level2" data-number="E.3">
+<h2 data-number="E.3" class="anchored" data-anchor-id="vs-code-configuration"><span class="header-section-number">E.3</span> VS Code Configuration</h2>
+<p>The main reference is <a href="https://code.visualstudio.com/docs/languages/r">the official document</a>.</p>
+<p>If you would like to use VS Code as your main IDE for R, it is usually recommended to install the following components.</p>
+<ol type="1">
+<li>R extension for VS Code by REditorSupport. You may get it through <a href="https://marketplace.visualstudio.com/items?itemName=REditorSupport.r">this link</a>, or search for it within VS Code.</li>
+<li>Install <code>languageserver</code> in R.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"languageserver"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li><code>radian</code>. This is an alternative R console introduced above. Note that to use <code>radian</code> in VS Code you need to set the <code>rterm</code> variable in VS Code setting to be the path of your <code>radian</code> installation.</li>
+<li><code>httpgd</code>. This is a R package which is for better plotting in VS Code.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"httpgd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Running R code is simply sending code to the R terminal. Before running R code, you could create an R terminal via command <code>R: Create R terminal</code> in the Command Palette. If you set <code>radian</code> path, this R terminal will be <code>radian</code>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You may adding the following Keyboard Shortcuts to VS Code. These are the same setting used in RStudio which are commonly used. The first two are using <code>alt+-</code> to produce <code>&lt;-</code> and the latter two are using <code>ctrl+shift+m</code> to produce <code>%&gt;%</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"key"</span><span class="fu">:</span> <span class="st">"alt+-"</span><span class="fu">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId =~ /r|rmd|qmd/"</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">" &lt;- "</span><span class="fu">}</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="dt">"key"</span><span class="fu">:</span> <span class="st">"alt+-"</span><span class="fu">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="dt">"command"</span><span class="fu">:</span> <span class="st">"workbench.action.terminal.sendSequence"</span><span class="fu">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="dt">"when"</span><span class="fu">:</span> <span class="st">"terminalFocus"</span><span class="fu">,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">" &lt;- "</span><span class="fu">}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+m"</span><span class="fu">,</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId =~ /r|rmd|quarto/"</span><span class="fu">,</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">" %&gt;% "</span><span class="fu">}</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+m"</span><span class="fu">,</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="dt">"command"</span><span class="fu">:</span> <span class="st">"workbench.action.terminal.sendSequence"</span><span class="fu">,</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="dt">"when"</span><span class="fu">:</span> <span class="st">"terminalFocus"</span><span class="fu">,</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">" %&gt;% "</span><span class="fu">}</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
+</section>
+<section id="cloud-ide-options" class="level2" data-number="E.4">
+<h2 data-number="E.4" class="anchored" data-anchor-id="cloud-ide-options"><span class="header-section-number">E.4</span> Cloud IDE options</h2>
+<p>There are tons of online IDEs that supports R. The following two are the biggest names.</p>
+<section id="posit-cloud-formally-rstudio-cloud" class="level3" data-number="E.4.1">
+<h3 data-number="E.4.1" class="anchored" data-anchor-id="posit-cloud-formally-rstudio-cloud"><span class="header-section-number">E.4.1</span> Posit Cloud (formally RStudio Cloud)</h3>
+<p>You may directly go to the <a href="https://posit.cloud/">homepage</a> to use RStudio from cloud. If you don’t use it a lot it should be free.</p>
+</section>
+<section id="google-colab" class="level3" data-number="E.4.2">
+<h3 data-number="E.4.2" class="anchored" data-anchor-id="google-colab"><span class="header-section-number">E.4.2</span> Google Colab</h3>
+<p>You may use R in Google Colab. Note that by default R is disabled. You have to use a specific version of Google Colab through <a href="https://colab.research.google.com/notebook#create=true&amp;language=r">colab.to/r</a>. After you get into the system, you may go to <code>Edit-&gt;Notebook settings</code> to change Runtime type to be <code>R</code>.</p>
+<p>The rest is similar to Jupyter notebook, while the codes are now R codes.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

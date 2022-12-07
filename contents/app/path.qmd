@@ -1,4 +1,4 @@
-# `PATH` {#sec-path}
+# Environemnt Variable `PATH` {#sec-path}
 
 
 Here are the steps to edit the system environment variables in Windows 10/11. 

@@ -1,16 +1,109 @@
-# Using R in VS Code
-Although the best R IDE is Posit (formally RStudio), there are still some people willing to try other options. In this document I will briefly describe how to set up R environment in VS Code. The main reference is [the official document](https://code.visualstudio.com/docs/languages/r).
+---
+format:
+   html:
+     code-line-numbers: false
+     code-block-border-left: false 
+---
 
-## radian
 
-If you use conda to install radian, the path is `<anaconda path>/Scripts/radian.exe`
+# R Setup
 
+## RStudio
 
+For R, the almost definite choice of IDE is RStudio. You may download and install it from [the homepage](https://posit.co/downloads/). The installation and beginning usage is straightforward. RStudio is using the default R console. 
 
-```{python}
-#| collapse: true
-1+1
+Although the best R IDE is RStudio, there are still some people willing to try other options. In the rest part of this section I will briefly describe how to set up R environment using other IDES/platforms. 
+
+## `radian`
+`radian` is an alternative console for the R program with multiline editing and rich syntax highlight. One would consider `radian` as a `IPython` clone for R, though its design is more aligned to [Julia](https://julialang.org/).
+
+`radian` is a R console. So to install it you should have an installation of R (version 3.4.0 or above). `radian` is mainly written in Python. Therefore to install it you should have an installation of Python (version 3.6 or above). Then you may use the following command to install `radian`.
+
+```{.bash}
+conda install -c conda-forge radian
+```
+or 
+
+```{.bash}
+pip install -U radian
 ```
 
 
+### Use the console
+First find the path to the console. If you use `conda` to install `radian`, the path is `<anaconda path>/Scripts/radian.exe`. When you directly run the executable file `radian.exe`, the console will be activated. You may start to run R code.
+
+![](assests/img/20221206230701.png)  
+
+You may use `q()` to exit `radian`.
+
+## VS Code Configuration
+The main reference is [the official document](https://code.visualstudio.com/docs/languages/r).
+
+
+If you would like to use VS Code as your main IDE for R, it is usually recommended to install the following components.
+
+1. R extension for VS Code by REditorSupport. You may get it through [this link](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r), or search for it within VS Code.
+2. Install `languageserver` in R.
+
+```{r}
+#| eval: false
+install.packages("languageserver")
+```
+
+3. `radian`. This is an alternative R console introduced above. Note that to use `radian` in VS Code you need to set the `rterm` variable in VS Code setting to be the path of your `radian` installation.
+4. `httpgd`. This is a R package which is for better plotting in VS Code. 
+
+```{r}
+#| eval: false
+install.packages("httpgd")
+```
+
+Running R code is simply sending code to the R terminal. Before running R code, you could create an R terminal via command `R: Create R terminal` in the Command Palette. If you set `radian` path, this R terminal will be `radian`.
+
+
+::: {.callout-tip collapse="true"}
+You may adding the following Keyboard Shortcuts to VS Code. These are the same setting used in RStudio which are commonly used. The first two are using `alt+-` to produce `<-` and the latter two are using `ctrl+shift+m` to produce `%>%`.
+
+```{.json}
+{
+"key": "alt+-",
+"command": "type",
+"when": "editorTextFocus && editorLangId =~ /r|rmd|qmd/",
+"args": {"text": " <- "}
+},
+{
+"key": "alt+-",
+"command": "workbench.action.terminal.sendSequence",
+"when": "terminalFocus",
+"args": {"text": " <- "}
+},
+{
+"key": "ctrl+shift+m",
+"command": "type",
+"when": "editorTextFocus && editorLangId =~ /r|rmd|quarto/",
+"args": {"text": " %>% "}
+},
+{
+"key": "ctrl+shift+m",
+"command": "workbench.action.terminal.sendSequence",
+"when": "terminalFocus",
+"args": {"text": " %>% "}
+},
+```
+
+      
+:::
+
+
+
+## Cloud IDE options
+There are tons of online IDEs that supports R. The following two are the biggest names.
+
+### Posit Cloud (formally RStudio Cloud)
+You may directly go to the [homepage](https://posit.cloud/) to use RStudio from cloud. If you don't use it a lot it should be free.
+
+### Google Colab
+You may use R in Google Colab. Note that by default R is disabled. You have to use a specific version of Google Colab through [colab.to/r](https://colab.research.google.com/notebook#create=true&language=r). After you get into the system, you may go to `Edit->Notebook settings` to change Runtime type to be `R`.
+
+The rest is similar to Jupyter notebook, while the codes are now R codes.
 

@@ -240,17 +240,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Setup</span></a>
+  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Python Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title"><code>PATH</code></span></a>
+  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Environemnt Variable <code>PATH</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Package management</span></a>
+  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python Virtual Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using R in VS Code</span></a>
+  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></a>
   </div>
 </li>
       </ul>
@@ -368,7 +368,7 @@ Note
 <p><a href="https://docs.jupyter.org/en/latest/projects/architecture/content-architecture.html"><code>Jupyter</code></a> projects contain many subprojects, which includes <code>Jupyter</code> User Interfaces. The <code>Jupyter</code> user interfaces offer a foundation of interactive computing environments where scientific computing, data science, and analytics can be performed using a wide range of programming languages. This includes <code>Jupyter console</code>, <code>Jupyter qtconsole</code>, and <code>Jupyter notebook</code>. Here we mainly focus on <code>Jupyter notebook</code>.</p>
 <p><code>Jupyter notebooks</code> are structured data that represent your code, metadata, content, and outputs. When saved to disk, the notebook uses the extension <code>.ipynb</code>, and uses a <code>JSON</code> structure. After receiving the user input, the notebook communicates with the kernel using <code>JSON</code> messages sent over <code>ZeroMQ</code> sockets. The protocol used between the frontends and the kernel is described in <a href="https://jupyter-client.readthedocs.io/en/latest/messaging.html#messaging">Messaging in Jupyter</a>.</p>
 <p>A kernel process can be connected to more than one frontend simultaneously. In this case, the different frontends will have access to the same variables.</p>
-<p>This design was intended to allow easy development of different frontends based on the same kernel, but it also made it possible to support new languages in the same frontends, by developing kernels in those languages. The <code>Jupyter</code> Notebook Application has three main kernels: the <code>ipykernel</code>, <code>irkernel</code> and <code>ijulia</code> kernels. Actually the name of <code>Jupyter</code> comes from these three programming languages for data science: <code>Julia</code>, <code>Python</code> and <code>R</code>.</p>
+<p>This design was intended to allow easy development of different frontends based on the same kernel, but it also made it possible to support new languages in the same frontends, by developing kernels in those languages. The <code>Jupyter</code> Notebook Application has three main kernels: the <code>ipykernel</code>, <code>irkernel</code> and <code>ijulia</code> kernels. Actually the name of <code>Jupyter</code> comes from these three programming languages for data science: <a href="https://julialang.org/">Julia</a>, Python and R.</p>
 </section>
 <section id="multi-kernels-setup" class="level2" data-number="D.6">
 <h2 data-number="D.6" class="anchored" data-anchor-id="multi-kernels-setup"><span class="header-section-number">D.6</span> Multi-kernels setup</h2>
@@ -383,7 +383,7 @@ Note
 </ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyter</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span> myenv <span class="at">--display-name</span> <span class="st">"Python (myenv)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>--user</code> means that the kernel is installed in the user’s folder instead of a system folder. The <code>--name</code> value (in this case it is <code>myenv</code>) is used by Jupyter internally. These commands will overwrite any existing kernel with the same name. <code>--display-name</code> is what you see in the notebook menus.</p>
+<p><code>--user</code> means that the kernel is installed in the user’s folder instead of a system folder, and it can be removed. The <code>--name</code> value (in this case it is <code>myenv</code>) is used by Jupyter internally. These commands will overwrite any existing kernel with the same name. <code>--display-name</code> is what you see in the notebook menus.</p>
 <ol start="3" type="1">
 <li>You could use the command to find all kernels installed in your system.</li>
 </ol>
@@ -552,12 +552,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../contents/app/virtenv.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Package management</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python Virtual Environment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../contents/app/r.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using R in VS Code</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
