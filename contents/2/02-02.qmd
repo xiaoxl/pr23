@@ -161,7 +161,9 @@ container = ([1], [2])
 print('This is `container`: ', container)
 print('This is the id of `container`: ', id(container))
 print('This is the id of the first list of `container`: ', id(container[0]))
+```
 
+```{python}
 container[0].append(2)
 print('This is the new `container`: ', container)
 print('This is the id of the new `container`: ', id(container))

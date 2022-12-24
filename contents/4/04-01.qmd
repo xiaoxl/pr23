@@ -52,11 +52,231 @@ data = pd.DataFrame(np.arange(16).reshape((4, 4)),
 
 :::
 
-### Accessing data
-- A column in a DataFrame can be retrieved as a Series either by dict-like notation or by attribute. What one gets from this is a Series object.
-    - dict-like notation: `df['a']`
-    - by attribute: `df.a`. Note that if the name of the column is not suitable for attribute names, this method doesn't work.
-- Rows are retrieved by `.loc` if using the row index, and by `.iloc` if using the row number.
+
+
+
+
+
+## Indexing
+The act of selecting rows or columns to access from a dataframe or series is called *indexing*. 
+
+### `[]`
+
+::: {.callout-note collapse=true}
+## `Series[]`
+
+```{python}
+#| echo: false
+
+from IPython.display import Markdown
+import pandas as pd
+from tabulate import tabulate
+table = [['`Series[label]`', 'scalar value'],
+         ['`Series[list of labels]`', '`Series` corresponding to labels'],
+         ['`Series[slice]`', '`Series` corresponding to the slice'],
+         ['`Series[boolean vector]`', '`Series` corresponding to the boolean vector']]
+        #  ['DataFrame', '`dateframe[colname]`', '`Series` corresponding to colname'],
+        #  ['DataFrame', '`dataframe[list of colnames]`', '`DataFrame` corresponding to colnames']]
+# table = {"Object Type": ['Series', 'DataFrame'],
+        #  "Selection": ['`series[label]`', '`dateframe[colname]`'],
+        #  "Return Value Type": ['scalar value', '`Series` corresponding to colname']}
+# Markdown(pd.DataFrame(table))
+# df = pd.DataFrame(table)
+Markdown(tabulate(table, headers=["Input value type",
+                                  "Return Value Type" ]))
+```
+
+1. For `Series`, values are accessed by labels, not positions. Since `Series` are usually considered as a column, you may think these labels as row indexes. 
+
+2. When using slice, things becomes more complicated. There are two ways of using slice. You may either slice by positions, or slice by labels. The main differences between them is that:
+
+- slice by positions `Series[i:j]` doesn't contain the last index `Series[j]`;
+- slice by labels `Sereies[I:J]` contains the last label `Series[J]`.
+
+3. Sometimes the labels of a series are integers, but different than the position indexes. In `pandas 1.5.1`, slice by positions takes priority. However the whole scenario is very confusing, and this will be changed in future versions. In this cases it is recommanded to use `.loc` and `.iloc`.  
+
+4. When indexing using boolean vector, the vector should be of the same length as the `Series`. In other words, it works as the boolean bector shows which row is selected.
+
+See some examples below.
+
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+
+example = pd.Series({'a': 1.1, 'b': 2.2, 'c': 3.3, 'd': 4.4})
+example
+```
+
+```{python}
+example['b']
+```
+
+```{python}
+example[['b', 'a']]
+```
+
+```{python}
+example[0:2]
+```
+
+```{python}
+example['a':'c']
+```
+
+
+```{python}
+example[[True, False, True, False]]
+```
+
+
+:::
+
+:::
+
+
+::: {.callout-note collapse=true}
+## `DataFrame[]`
+```{python}
+#| echo: false
+
+from IPython.display import Markdown
+import pandas as pd
+from tabulate import tabulate
+table = [[ '`DataFrame[colname]`', 'The column corresponding to colname as a `Series`'],
+         ['`DataFrame[list-of-colnames]`', 'The columns of `DataFrame` corresponding to colnames'],
+         ['`DataFrame[slice]`', 'The rows of `DataFrame` corresponding to the slice' ],
+         ['`DataFrame[boolean list]`', '`DataFrame` corresponding to the boolean list']]
+# table = {"Object Type": ['Series', 'DataFrame'],
+        #  "Selection": ['`series[label]`', '`dateframe[colname]`'],
+        #  "Return Value Type": ['scalar value', '`Series` corresponding to colname']}
+# Markdown(pd.DataFrame(table))
+# df = pd.DataFrame(table)
+Markdown(tabulate(table, headers=["Input value type",
+                                  "Return Value Type" ]))
+```
+
+1. Slice for `DataFrame` behaves exactly like slice for `Series`, that it is selecting rows, and it works for both labels and positions. Similarly, slicing by positions are not recommended and might be deprecated in the future. 
+2. On the other hand side, selecting rows are usually related to querying. Therefore it is better not to focus on slicing.
+3. Inside `[]`, one column name and a list of columna names will result totally different objects: one is a `Series` and the other is a `DataFrame`. 
+4. In prior versions, using `[list-of-colnames]` would work as long as *at least* 1 of the keys was found (otherwise it would raise a `KeyError`). This behavior was changed and will now raise a `KeyError` if at least one label is missing. The recommended alternative is to use `.reindex()`.
+5. When indexing using boolean vector, the vector should be of the same length as the number of rows of the `DataFrame`. In other words, it works as the boolean bector shows which row is selected.
+6. Using `[]` for `DataFrame` cannot give you a single value, since what are inside `[]` is always treated as a row index or a column index. If you want to get access to the value of a single cell by both row index and column index, use other method like `.loc[]`.
+7. If the column name is eligible for attributes, you may also use `df.a` to represent `df['a']` for simplicity.
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+
+example = pd.DataFrame({'a': [1.1, 2.2], 'b': [2.2, 3.3], 'c': [3.3, 4.4]})
+example
+```
+
+```{python}
+example['a']
+```
+
+```{python}
+example.a
+```
+
+```{python}
+example[['a']]
+```
+
+
+```{python}
+example[0:1]
+```
+
+
+```{python}
+example[[False, True]]
+```
+
+
+
+
+
+:::
+
+:::
+
+
+
+
+
+### `.loc[]` and `.iloc[]`
+
+`[]` contains several different types of ways to access data. `.loc[]` and `.iloc[]` are more specific. 
+
+- `.loc[]` is to use labels to access data.
+- `.iloc[]` is to use positions to access data.
+
+
+:::{.callout-note collapse=true}
+## Notes for `.loc[]` and `.iloc[]`
+
+1. When there is only one index is specified, it is refered to rows. 
+2. When using both indexes, the first is row index and the second is column index.
+3. When selecting all rows/columns, you may put `:` in the corresponding place.
+4. `df.loc[1, 'a']` refers to the cell in the DataFrame `df` whose row index is `1` and column index is `a`. `df[1, 'a']` refers to the column in the DataFrame `df` whose column name is `(1, 'a')`.
+5. Many other small details are very similar to `[]`. For example, pay attention to the differences between `df.loc[:, 'a']` and `df.loc[:, ['a']]`.
+
+
+::: {#exm-}
+
+
+```{python}
+import pandas as pd
+example = pd.DataFrame({'a': [1.1, 2.2], 'b': [2.2, 3.3], 'c': [3.3, 4.4]})
+example
+```
+
+
+```{python}
+example.loc[1]
+```
+
+
+```{python}
+example.loc[:, 'a']
+```
+
+```{python}
+example.loc[1, 'a']
+```
+
+```{python}
+example.iloc[0:1, 0:2]
+```
+
+
+```{python}
+example.iloc[1, 0:2]
+```
+
+```{python}
+example.iloc[[1], 0:2]
+```
+:::
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Updating data
 - Assign values to a column of a DataFrame will update that column. If the column doesn't exist, new column will be created.
@@ -238,3 +458,7 @@ print(data.apply(f))
 ### Copies and views
 
 - `inplace`
+
+
+
+

@@ -78,3 +78,40 @@ print(clean_strings(states))
 ```
 
 :::
+
+
+
+::: {.callout-note collapse=true}
+## The importance of documents
+
+
+::: {#exm-}
+## Sorting a list
+Let `a=[3, 1, 2]` be a list. We would like to sort the list. There are two different build-in methods. 
+
+```{python}
+a = [3, 1, 2]
+b = sorted(a)
+b
+```
+The first method is straightforward and we get what we expected. However if we use the same idea, and write the codes in the following way, we will get something unexpected. 
+
+```{python}
+a = [3, 1, 2]
+b = a.sort()
+print(b)
+```
+`b` won't be directly printed since `b` is actually `None`. The way that `.sort()` works is that it sort the list inplace. In other words, the method doesn't have an output. It directly change the original list.
+
+```{python}
+a
+```
+:::
+
+
+This is an example to show that similar functions may behaves differently. It is actually very hard to predict what would happen since it all depends on how the developer of the function thinks about the problems.
+
+Therefore it is very important to know how to find references. Other than simply asking questions on StackOverflow or other forums, the official documents are always your good friend. For example, you may find the answer to the above problems from [`sorted`](https://docs.python.org/3/library/functions.html#sorted) and [`.sort()`](https://docs.python.org/3/library/stdtypes.html#list.sort).
+
+
+:::

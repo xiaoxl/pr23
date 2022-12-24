@@ -1,5 +1,17 @@
 ## Exercises
-Most problems are based on @Pra2018a.
+Many problems are based on @Pra2018a.
+
+
+
+::: {#exr-}
+Let `df` be a `DataFrame`. Please answer the following questions in a Markdown cell.
+
+1. What does `df[0]` do?
+2. What does `df[[0]]` do?
+3. What does `df[0:1]` do?
+:::
+
+
 
 ::: {#exr-}
 Please use the following code to generate a series `ser`, and then finish the following tasks.
