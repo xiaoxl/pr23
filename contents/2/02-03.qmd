@@ -1,6 +1,6 @@
 
 
-## Flows and Logic
+## Flows, Logic and functions
 
 ### `for` loop
 
@@ -10,3 +10,73 @@
 ### `if` conditional control
 
 
+### Functions
+
+Functions are declared with the `def` keyword and returned from the `return` keyword.
+
+::: {#exm-}
+```{python}
+def my_function(x, y, z=1.5):
+    if z > 1:
+        return z * (x + y)
+    else:
+        return z / (x + y)
+```
+:::
+
+Each function can have *positional* arguments and *keyword* arguments. 
+
+- Keyword arguments are most commonly used to specify default values.
+- If no keywords are given, all arguments will be recognized by the positions.
+- If both positional arguments and keyword arguments are given, positional arguments have to be in front. 
+- The order of keyword arguments are not important.
+
+
+::: {.callout-note}
+Although there are global variable, it is always ecouraged to use local variables only. This means that the variables in and out of a function (as well as classes that we will talk about later) are not the same, even if they have the same name.
+:::
+
+
+::: {#exm-}
+#### Mutable objects as default value
+It is highly recommended NOT to set any mutatable objects as the default value of an input of a function. The reason is that this default object is initialized when the function is defined, not when the function is called. Then all function calls will share the same default object.
+
+A typical example is an empty list. If you use an empty list as the defaul value, that list will be passed to the next function call, which is no longer empty. Please see the following example.
+
+```{python}
+def add(x=[]):
+    x.append(1)
+    return x
+
+add()
+```
+
+```{python}
+add()
+```
+```{python}
+add()
+```
+Every time the function is called with no arguments, the default value is used, which is the same list initialized at the beginning. The list at the begining is an empty list. But after we put things inside, it is no longer empyt.
+
+If you want to set a mutable object as a default, the way is as follows:
+
+```{python}
+def add(x=None):
+    if x is None:
+        x = list()
+    x.append(1)
+    return x
+
+add()
+```
+
+```{python}
+add()
+```
+
+```{python}
+add()
+```
+
+:::

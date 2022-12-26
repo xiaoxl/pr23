@@ -20,6 +20,13 @@ Consider `in`, `.lower()` and `if` structure.
 
 
 ::: {#exr-}
+## File names
+
+1. Please use Python code to generate the following list of file names: `file0.txt`, `file1.txt`, `file2.txt`, ... `file9.txt`. 
+2. Please use Python code to generate the following list of file names: `file000.txt`, `file001.txt`, `file002.txt`, ... `file100.txt`. You may consider `.zfill()` to fill the zeros.
+:::
+
+::: {#exr-}
 ## Datetime and files names
 We would like to write a program to quickly generate `N` files. Every time we run the code, `N` files will be generated. We hope to store all files generated and organize them in a neat way. To achieve this, one way is to create a subfolder for each run and store all files generated during that run in the particular subfolder. Since we would like to make it fast, the real point of this task is to find a way to automatically generate the file names for the files generated and the folder names for the subfolders generated. You don't need to worry about the contents of the files and empty files are totally fine for this problem.
 :::
