@@ -5,8 +5,7 @@ Most problems are based on @Sha2017, @You2020, @Swe2020, @McK2017 and @Klo2021..
 
 ::: {#exr-}
 ## Indentation
-Please tell the differences between the following codes. If you don't understand `for` don't worry about it. Just focus on the indentation and try to understand how the codes work.
-
+Please tell the differences between the following codes. Write your answers in the Markdown cells.
 
 ```{python}
 #| eval: false
@@ -51,10 +50,10 @@ print('Hello world!')
 Please first guess the results of all expressions below, and then run them to check your answers.
 ```{python}
 #| eval: false
-print(True and True)
-print(True or True)
-print(False and True)
-print((1+1>2) or (1-1<1))
+True and True
+True or True
+False and True
+(1+1>2) or (1-1<1)
 ```
 :::
 
@@ -67,62 +66,58 @@ Please explain what happens below.
 ```{python}
 a = 1
 b = 1.0
-print(type(a))
-print(type(b))
-
-print(a == b)
-print(a is b)
+type(a)
 ```
+
+```{python}
+type(b)
+```
+
+```{python}
+a == b
+```
+
+```{python}
+a is b
+```
+
 :::
 
 
 ::: {#exr-}
 ## Play with strings
-Please excute the code below line by line and explain what happens in text cells.
+
+1. Please use `.format()` to generate the following sentences.
 
 ```{python}
-# 1
-answer = 10
-wronganswer = 11
-text1 = "The answer to this question is {}. If you got {}, you are wrong.".format(answer, wronganswer)
-print(text1)
-
-# 2
-var = True
-text2 = "This is {}.".format(var)
-print(text2)
-
-# 3
-word1 = 'Good '
-word2 = 'buy. '
-text3 = (word1 + word2) * 3
-print(text3)
-
-# 4
-sentence = "This is\ngood enough\nfor a exercise to\nhave so many parts. " \
-           "We would also want to try this symbol: '. " \
-           "Do you know how to type \" in double quotes?"
-print(sentence)
+#| eval: false
+"The answer to this question is 1. If you got 2, you are wrong."
+"The answer to this question is 2. If you got x, you are wrong."
+"The answer to this question is True. If you got 23, you are wrong."
+"The answer to this question is 4. If you got 32, you are wrong."
 ```
-:::
 
+2. Please use `.format()` and `for` loop to generate the following sentence and replace the number `1` inside with all positive odd numbers under `10`.
+```{python}
+#| eval: false
+"I like 1 most among all numbers."
+```
+
+:::
 
 
 ::: {#exr-}
 ## `split` and `join`
-Please excute the code below line by line and explain what happens in text cells.
+
+1. Please get the list of words `wordlist` of the following sentence.
 
 ```{python}
 #| eval: false
 sentence = 'This is an example of a sentence that I expect you to split.'
-
-wordlist = sentence.split(' ')
-
-newsentence = '\n'.join(wordlist)
-print(newsentence)
 ```
-:::
+2. Please combine the `wordlist` gotten from part 1 to get a string `newsentence`, where all spaces are replaced by `\n`.
 
+:::
 
 
 ::: {#exr-}
@@ -138,45 +133,45 @@ Please finish the following tasks.
 
 
 ::: {#exr-}
+Please tell the differences of the following objects.
+
+1. `[1, 2, 3, 4, 5, 6]`
+2. `[[1, 2], [3, 4], [5, 6]]`
+3. `{1: 2, 3: 4, 5: 6}`
+4. `{1: [2], 3: [4], 5: [6]}`
+5. `[{1: 2}, {3: 4}, {5: 6}]`
+:::
+
+
+::: {#exr-}
 ## List comprehension
-Given a list of numbers, use list comprehension to remove all odd numbers from the list:
+
+1. Given a list of numbers, use list comprehension to remove all odd numbers from the list:
 ```{python}
 numbers = [3,5,45,97,32,22,10,19,39,43]
 ```
-:::
-
-::: {#exr-}
-## More list comprehension
-Use list comprehension to find all of the numbers from 1-1000 that are divisible by 7.
-:::
-
-::: {#exr-}
-## More list comprehension
-Count the number of spaces in a string.
+2. Use list comprehension to find all of the numbers from 1-1000 that are divisible by 7.
+3. Use list comprehension to get the index and the value as a tuple for items in the list `['hi', 4, 8.99, 'apple', ('t,b', 'n')]`. Result would look like `[(index, value), (index, value), ...]`.
+4. Use list comprehension to find the common numbers in two lists (without using a tuple or set) `list_a = [1, 2, 3, 4]`, `list_b = [2, 3, 4, 5]`.
 :::
 
 
 ::: {#exr-}
-## More list comprehension
-Use list comprehension to get the index and the value as a tuple for items in the list `['hi', 4, 8.99, 'apple', ('t,b', 'n')]`. Result would look like `[(index, value), (index, value), ...]`.
-:::
 
-::: {#exr-}
-## More list comprehension
-Use list comprehension to find the common numbers in two lists (without using a tuple or set) `list_a = [1, 2, 3, 4]`, `list_b = [2, 3, 4, 5]`.
+1. Given a string, use list comprehensiopn to count the number of spaces in it.
+2. Write a function that counts the number of spaces in a string.
 :::
-
 
 ::: {#exr-}
 ## Probability
 Compute the probability that two people out of 23 share the same birthday. The math formula for this is 
 $$1-\frac{365!/(365-23)!}{365^{23}}=1-\frac{365}{365}\cdot\frac{365-1}{365}\cdot\frac{365-2}{365}\cdot\ldots\cdot\frac{365-22}{365}.$$
 
-1. To directly use the formula we have to use a high performance math package, e.g. `math`. Please use `math.factorial` to compute the above formula.
+1. To directly use the formula we have to use a high performance math package, e.g. `math`. Please use `math.factorial()` to compute the above formula.
 
 2. Please use the right hand side of the above formula to compute the probability using the following steps.
     a. Please use the list comprehension to create a list $\left[\frac{365}{365},\frac{365-1}{365},\frac{365-2}{365},\ldots,\frac{365-22}{365}\right]$. 
-    b. Use `numpy.prod` to compute the product of elements of the above list.
+    b. Use `numpy.prod()` to compute the product of elements of the above list.
     c. Compute the probability by finishing the formula.
 
 3. Please use `time` to test which method mentioned above is faster.
@@ -262,12 +257,11 @@ You may use `if` to do the conversion. Or you may use `dict` to do the conversio
 
 ::: {#exr-}
 ## `sorted`
-Please read through the [Key funtions](https://docs.python.org/3/howto/sorting.html#key-functions) in this article, and sort the following two lists.
+Please read through the Key Funtions section in this [article](https://docs.python.org/3/howto/sorting.html#key-functions), and sort the following two lists.
 
 1. Sort `list1 = [[11,2,3], [2, 3, 1], [5,-1, 2], [2, 3,-8]]` according to the sum of each list.
 
 2. Sort `list2 = [{'a': 1, 'b': 2}, {'a': 3, 'b': 4},{'a': 5, 'b': 2}]` according to the `b` value of each dictionary.
-
 :::
 
 
@@ -278,7 +272,7 @@ Please read through the [Key funtions](https://docs.python.org/3/howto/sorting.h
 
 You are creating a fantasy video game. The data structure to model the player’s inventory will be a dictionary where the keys are string values describing the item in the inventory and the value is an integer value detailing how many of that item the player has. For example, the dictionary value `{'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}` means the player has 1 rope, 6 torches, 42 gold coins, and so on.
 
-Write a program to take any possible `inventory` and display it like the following:
+Write a program to take any possible `inventory` and display it like the following. Note that the order of items doesn't matter. The purpose of this exercise is to read information from a `dict` and translate it into a format you need.
 
 ```{python}
 #| eval: false
@@ -293,3 +287,11 @@ Total number of items: 62
 :::
 
 
+
+::: {#exr-}
+## Fantasy Game Inventory: function
+The description is the same as @exr-fantasyinventorycode.
+
+Write a function named `displayInventory()` that would take any possible `inventory` and display it in the way of @exr-fantasyinventorycode. 
+
+:::

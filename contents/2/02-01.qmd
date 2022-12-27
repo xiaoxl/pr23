@@ -1,5 +1,5 @@
 
-## Built-in Types: numeric types and `str` {#sec-path}
+## Built-in Types: numeric and `str` {#sec-path}
 
 This section is based on @You2020.
 
@@ -29,6 +29,23 @@ Python can do math just like other programming languages. The basic math operati
 - `%` is the mod operation.
 - `!=` is `not equal`
 
+
+
+::: {.callout-caution collapse="true"}
+## `==` and `is`
+
+Python is centered around objects. There are differences between two objects and the values of two objects. 
+
+- `==` is testing whehter these two objects have the same value.
+- `is` is testing whether these two objects are exactly the same.
+
+You may use `id(x)` to check the id of the object `x`. Two objects are identical if they have the same id.
+
+More details about objects will be discussed in the following courses.
+:::
+
+
+
 ### `str`
 Scalars are represented by numbers and strings are represented by quotes. Example:
 ```{python}
@@ -44,12 +61,26 @@ Here are some facts.
 3. There are several types of scalars, like `int`, `float`, etc.. Usually Python will automatically determine the type of the data, but sometimes you may still want to declare them manually.
 4. You can use `int()`, `str()`, etc. to change types.
 
-Although `str` is a built-in type, there are tons of tricks with `str`, and there are tons of packages related to strings. Generally speaking, to play with strings, we are interested in two types of questions.
+
+::: {.callout-note collapse="true"}
+## `format()` method
+The built-in string class provides the ability to do complex variable substitutions and value formatting via the `format()` method. The basic syntax is to use the inputed augments to fill in the blanks in the formatted string specified by `{}`. Please see the following examples.
+
+```{python}
+'I have {} {} and {} {}.'.format(1, 'apple', 2, 'bananas')
+```
+
+More detailed usage is refered to the official documents [here](https://docs.python.org/3/library/string.html#custom-string-formatting). 
+
+:::
+
+
+Although `str` is a built-in type, there are tons of tricks with `str`, and there are tons of packages related to strings. Generally speaking, to play with strings, we are interested in two types of tasks.
 
 - Put information together to form a string.
 - Extract information from a string.
 
-A lot of tricks of strings are related to lists. We will talk about these two tasks later. The following example is a showcase.
+A lot of tricks of strings are related to lists. We will talk about these two tasks later. The following example is just a showcase.
 
 
 <!-- ::: {.callout-note}
@@ -78,5 +109,4 @@ clean_strings(states)
 ```
 
 :::
-
 

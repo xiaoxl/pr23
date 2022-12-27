@@ -6,20 +6,12 @@ This section is mainly based on @McK2017.
 One key feature about Python is that its structures (blocks) is determined by **Indentation**. 
 
 Let's compare with other languages. Let's take `C` as an example.
-```{python}
-#| eval: false
-#| warning: false
-#| error: false
-
+```C
 /*This is a C function.*/
 int f(int x){return x;}
 ```
 The block is defined by `{}` and lines are separated by `;`. `space` and `newline` are not important when `C` runs the code. It is recommended to write codes in a "beautiful, stylish" format for readibility, as follows. However it is not mandatary.
-```{python}
-#| eval: false
-#| warning: false
-#| error: false
-
+```C
 /*This is a C function.*/
 int f(int x) {
    return x;
@@ -52,26 +44,19 @@ results = shotchartdetail.ShotChartDetail(
             season_type_all_star = 'Regular Season')
 ```
 
+Similarly for long strings, you may use `\` to break it into multiple lines. Here is one example.
+```{python}
+#| eval: false
+sentence = "This is\ngood enough\nfor a exercise to\nhave so many parts. " \
+           "We would also want to try this symbol: '. " \
+           "Do you know how to type \" in double quotes?"
+```
 :::
 
 
 
 
-### Binary operators and comparisons
 
-Most binary operators behaves as you expected. Here I just want to mention `==` and `is`. For more operations please refer to exercises.
-
-- `==` is testing whehter these two objects have the same value.
-- `is` is testing whether these two objects are exactly the same.
-
-
-::: {.callout-note}
-You may use `id(x)` to check the id of the object `x`. Two objects are identical if they have the same id.
-:::
-
-
-
-<!-- ### Duck typing -->
 ### `import`
 
 In Python a module is simply a file with the .py extension containing Python code. Assume that we have a Python file `example.py` stored in the folder `assests/codes/`. The file is as follows.

@@ -376,7 +376,7 @@ Finally double click the variable and add the following path to it. You need to 
 ![](assests/img/20220817233748.png){fig-align="center"} -->
 <p>Take VS Code as an example. In the editor window, type in the code, and run the file in the interactive window.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">print</span>(<span class="st">'Hello World!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -454,45 +454,45 @@ Most problems are based on @Sha2017, @You2020 and @Swe2020.
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1.2 (Define a function and play with <code>time</code>) </strong></span>Please play with the following codes in a Jupyter notebook. We haven’t talked about any of them right now. Try to guess what they do and write your guess in markdown cells.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> time</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">def</span> multistr(x, n<span class="op">=</span><span class="dv">2</span>):</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    <span class="cf">return</span> x <span class="op">*</span> n</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>t0 <span class="op">=</span> time.time()</span>
-<span id="cb2-7"><a href="#cb2-7"></a>x <span class="op">=</span> <span class="st">'Python'</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="bu">print</span>(multistr(x, n<span class="op">=</span><span class="dv">10</span>))</span>
-<span id="cb2-9"><a href="#cb2-9"></a>t1 <span class="op">=</span> time.time()</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="bu">print</span>(<span class="st">"Time used: "</span>, t1<span class="op">-</span>t0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multistr(x, n<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> n</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>t0 <span class="op">=</span> time.time()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">'Python'</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multistr(x, n<span class="op">=</span><span class="dv">10</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.time()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time used: "</span>, t1<span class="op">-</span>t0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1.3 (Fancy Basketball plot) </strong></span>Here is an example of the data analysis. We pull data from a dataset, filter the data according to our needs and plot it to visualize the data. This is just a show case. You are encouraged to play the code, make tweaks and see what would happen. You don’t have to turn in anything.</p>
 <p>The data we choose is Stephen Curry’s shots data in 2021-2022 regular season. First we need to load the data. The data is obtained from <code>nba.com</code> using <code>nba_api</code>.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> nba_api.stats.static <span class="im">import</span> players</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="im">from</span> nba_api.stats.endpoints <span class="im">import</span> shotchartdetail</span>
-<span id="cb3-3"><a href="#cb3-3"></a>player_dict <span class="op">=</span> players.get_players()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nba_api.stats.static <span class="im">import</span> players</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nba_api.stats.endpoints <span class="im">import</span> shotchartdetail</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>player_dict <span class="op">=</span> players.get_players()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The shots data we need is in <code>shotchartdetail</code>. However to use it we need to know the id of <code>Stephen Curry</code> using the dataset <code>player_dict</code>.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> player <span class="kw">in</span> player_dict:</span>
-<span id="cb4-2"><a href="#cb4-2"></a>    <span class="cf">if</span> player[<span class="st">'full_name'</span>] <span class="op">==</span> <span class="st">'Stephen Curry'</span>:</span>
-<span id="cb4-3"><a href="#cb4-3"></a>        <span class="bu">print</span>(player[<span class="st">'id'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> player <span class="kw">in</span> player_dict:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> player[<span class="st">'full_name'</span>] <span class="op">==</span> <span class="st">'Stephen Curry'</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(player[<span class="st">'id'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>201939</code></pre>
 </div>
 </div>
 <p>So the id of <code>Stephen Curry</code> is <code>201939</code>. Let’s pull out his shots data in 2021-2022 season.</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>results <span class="op">=</span> shotchartdetail.ShotChartDetail(</span>
-<span id="cb6-2"><a href="#cb6-2"></a>            team_id <span class="op">=</span> <span class="dv">0</span>,</span>
-<span id="cb6-3"><a href="#cb6-3"></a>            player_id <span class="op">=</span> <span class="dv">201939</span>,</span>
-<span id="cb6-4"><a href="#cb6-4"></a>            context_measure_simple <span class="op">=</span> <span class="st">'FGA'</span>,</span>
-<span id="cb6-5"><a href="#cb6-5"></a>            season_nullable <span class="op">=</span> <span class="st">'2021-22'</span>,</span>
-<span id="cb6-6"><a href="#cb6-6"></a>            season_type_all_star <span class="op">=</span> <span class="st">'Regular Season'</span>)</span>
-<span id="cb6-7"><a href="#cb6-7"></a>df <span class="op">=</span> results.get_data_frames()[<span class="dv">0</span>]</span>
-<span id="cb6-8"><a href="#cb6-8"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> shotchartdetail.ShotChartDetail(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            team_id <span class="op">=</span> <span class="dv">0</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            player_id <span class="op">=</span> <span class="dv">201939</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            context_measure_simple <span class="op">=</span> <span class="st">'FGA'</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            season_nullable <span class="op">=</span> <span class="st">'2021-22'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            season_type_all_star <span class="op">=</span> <span class="st">'Regular Season'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> results.get_data_frames()[<span class="dv">0</span>]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 
 <div>
@@ -654,8 +654,8 @@ Most problems are based on @Sha2017, @You2020 and @Swe2020.
 <p><code>df</code> is the results we get in terms of a <code>DataFrame</code>, and we show the first <code>5</code> records as an example.</p>
 <p>These are all attempts. We are interested in all made. By looking at all the columns, we find a column called <code>SHOT_MADE_FLAG</code> which shows what we want. Therefore we will use it to filter the records.</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>df_made <span class="op">=</span> df[df[<span class="st">'SHOT_MADE_FLAG'</span>]<span class="op">==</span><span class="dv">1</span>]</span>
-<span id="cb7-2"><a href="#cb7-2"></a>df_made.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_made <span class="op">=</span> df[df[<span class="st">'SHOT_MADE_FLAG'</span>]<span class="op">==</span><span class="dv">1</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_made.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 
 <div>
@@ -831,99 +831,99 @@ Note
 <div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">from</span> matplotlib.patches <span class="im">import</span> Circle, Rectangle, Arc</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">def</span> draw_court(ax<span class="op">=</span><span class="va">None</span>, color<span class="op">=</span><span class="st">'gray'</span>, lw<span class="op">=</span><span class="dv">1</span>, outer_lines<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb8-6"><a href="#cb8-6"></a>    <span class="co">"""</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="co">    Returns an axes with a basketball court drawn onto to it.</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="co">    This function draws a court based on the x and y-axis values that the NBA</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="co">    stats API provides for the shot chart data.  For example, the NBA stat API</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="co">    represents the center of the hoop at the (0,0) coordinate.  Twenty-two feet</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="co">    from the left of the center of the hoop in is represented by the (-220,0)</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="co">    coordinates.  So one foot equals +/-10 units on the x and y-axis.</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a><span class="co">    """</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a>    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb8-16"><a href="#cb8-16"></a>        ax <span class="op">=</span> plt.gca()</span>
-<span id="cb8-17"><a href="#cb8-17"></a></span>
-<span id="cb8-18"><a href="#cb8-18"></a>    <span class="co"># Create the various parts of an NBA basketball court</span></span>
-<span id="cb8-19"><a href="#cb8-19"></a></span>
-<span id="cb8-20"><a href="#cb8-20"></a>    <span class="co"># Create the basketball hoop</span></span>
-<span id="cb8-21"><a href="#cb8-21"></a>    hoop <span class="op">=</span> Circle((<span class="dv">0</span>, <span class="dv">0</span>), radius<span class="op">=</span><span class="fl">7.5</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-22"><a href="#cb8-22"></a></span>
-<span id="cb8-23"><a href="#cb8-23"></a>    <span class="co"># Create backboard</span></span>
-<span id="cb8-24"><a href="#cb8-24"></a>    backboard <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">30</span>, <span class="op">-</span><span class="fl">7.5</span>), <span class="dv">60</span>, <span class="op">-</span><span class="dv">1</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
-<span id="cb8-25"><a href="#cb8-25"></a></span>
-<span id="cb8-26"><a href="#cb8-26"></a>    <span class="co"># The paint</span></span>
-<span id="cb8-27"><a href="#cb8-27"></a>    <span class="co"># Create the outer box 0f the paint, width=16ft, height=19ft</span></span>
-<span id="cb8-28"><a href="#cb8-28"></a>    outer_box <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">80</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">160</span>, <span class="dv">190</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color,</span>
-<span id="cb8-29"><a href="#cb8-29"></a>                          fill<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-30"><a href="#cb8-30"></a>    <span class="co"># Create the inner box of the paint, widt=12ft, height=19ft</span></span>
-<span id="cb8-31"><a href="#cb8-31"></a>    inner_box <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">60</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">120</span>, <span class="dv">190</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color,</span>
-<span id="cb8-32"><a href="#cb8-32"></a>                          fill<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-33"><a href="#cb8-33"></a></span>
-<span id="cb8-34"><a href="#cb8-34"></a>    <span class="co"># Create free throw top arc</span></span>
-<span id="cb8-35"><a href="#cb8-35"></a>    top_free_throw <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">142.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">0</span>, theta2<span class="op">=</span><span class="dv">180</span>,</span>
-<span id="cb8-36"><a href="#cb8-36"></a>                         linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-37"><a href="#cb8-37"></a>    <span class="co"># Create free throw bottom arc</span></span>
-<span id="cb8-38"><a href="#cb8-38"></a>    bottom_free_throw <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">142.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb8-39"><a href="#cb8-39"></a>                            linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, linestyle<span class="op">=</span><span class="st">'dashed'</span>)</span>
-<span id="cb8-40"><a href="#cb8-40"></a>    <span class="co"># Restricted Zone, it is an arc with 4ft radius from center of the hoop</span></span>
-<span id="cb8-41"><a href="#cb8-41"></a>    restricted <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">80</span>, <span class="dv">80</span>, theta1<span class="op">=</span><span class="dv">0</span>, theta2<span class="op">=</span><span class="dv">180</span>, linewidth<span class="op">=</span>lw,</span>
-<span id="cb8-42"><a href="#cb8-42"></a>                     color<span class="op">=</span>color)</span>
-<span id="cb8-43"><a href="#cb8-43"></a></span>
-<span id="cb8-44"><a href="#cb8-44"></a>    <span class="co"># Three point line</span></span>
-<span id="cb8-45"><a href="#cb8-45"></a>    <span class="co"># Create the right side 3pt lines, it's 14ft long before it arcs</span></span>
-<span id="cb8-46"><a href="#cb8-46"></a>    corner_three_a <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">220</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">0</span>, <span class="dv">140</span>, linewidth<span class="op">=</span>lw,</span>
-<span id="cb8-47"><a href="#cb8-47"></a>                               color<span class="op">=</span>color)</span>
-<span id="cb8-48"><a href="#cb8-48"></a>    <span class="co"># Create the right side 3pt lines, it's 14ft long before it arcs</span></span>
-<span id="cb8-49"><a href="#cb8-49"></a>    corner_three_b <span class="op">=</span> Rectangle((<span class="dv">220</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">0</span>, <span class="dv">140</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
-<span id="cb8-50"><a href="#cb8-50"></a>    <span class="co"># 3pt arc - center of arc will be the hoop, arc is 23'9" away from hoop</span></span>
-<span id="cb8-51"><a href="#cb8-51"></a>    three_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">475</span>, <span class="dv">475</span>, theta1<span class="op">=</span><span class="dv">22</span>, theta2<span class="op">=</span><span class="dv">158</span>, linewidth<span class="op">=</span>lw,</span>
-<span id="cb8-52"><a href="#cb8-52"></a>                    color<span class="op">=</span>color)</span>
-<span id="cb8-53"><a href="#cb8-53"></a></span>
-<span id="cb8-54"><a href="#cb8-54"></a>    <span class="co"># Center Court</span></span>
-<span id="cb8-55"><a href="#cb8-55"></a>    center_outer_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">422.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb8-56"><a href="#cb8-56"></a>                           linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
-<span id="cb8-57"><a href="#cb8-57"></a>    center_inner_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">422.5</span>), <span class="dv">40</span>, <span class="dv">40</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb8-58"><a href="#cb8-58"></a>                           linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
-<span id="cb8-59"><a href="#cb8-59"></a></span>
-<span id="cb8-60"><a href="#cb8-60"></a>    <span class="co"># List of the court elements to be plotted onto the axes</span></span>
-<span id="cb8-61"><a href="#cb8-61"></a>    court_elements <span class="op">=</span> [hoop, backboard, outer_box, inner_box, top_free_throw,</span>
-<span id="cb8-62"><a href="#cb8-62"></a>                      bottom_free_throw, restricted, corner_three_a,</span>
-<span id="cb8-63"><a href="#cb8-63"></a>                      corner_three_b, three_arc, center_outer_arc,</span>
-<span id="cb8-64"><a href="#cb8-64"></a>                      center_inner_arc]</span>
-<span id="cb8-65"><a href="#cb8-65"></a></span>
-<span id="cb8-66"><a href="#cb8-66"></a>    <span class="cf">if</span> outer_lines:</span>
-<span id="cb8-67"><a href="#cb8-67"></a>        <span class="co"># Draw the half court line, baseline and side out bound lines</span></span>
-<span id="cb8-68"><a href="#cb8-68"></a>        outer_lines <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">250</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">500</span>, <span class="dv">470</span>, linewidth<span class="op">=</span>lw,</span>
-<span id="cb8-69"><a href="#cb8-69"></a>                                color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-70"><a href="#cb8-70"></a>        court_elements.append(outer_lines)</span>
-<span id="cb8-71"><a href="#cb8-71"></a></span>
-<span id="cb8-72"><a href="#cb8-72"></a>    <span class="co"># Add the court elements onto the axes</span></span>
-<span id="cb8-73"><a href="#cb8-73"></a>    <span class="cf">for</span> element <span class="kw">in</span> court_elements:</span>
-<span id="cb8-74"><a href="#cb8-74"></a>        ax.add_patch(element)</span>
-<span id="cb8-75"><a href="#cb8-75"></a></span>
-<span id="cb8-76"><a href="#cb8-76"></a>    <span class="cf">return</span> ax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.patches <span class="im">import</span> Circle, Rectangle, Arc</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_court(ax<span class="op">=</span><span class="va">None</span>, color<span class="op">=</span><span class="st">'gray'</span>, lw<span class="op">=</span><span class="dv">1</span>, outer_lines<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns an axes with a basketball court drawn onto to it.</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">    This function draws a court based on the x and y-axis values that the NBA</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">    stats API provides for the shot chart data.  For example, the NBA stat API</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">    represents the center of the hoop at the (0,0) coordinate.  Twenty-two feet</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">    from the left of the center of the hoop in is represented by the (-220,0)</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">    coordinates.  So one foot equals +/-10 units on the x and y-axis.</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        ax <span class="op">=</span> plt.gca()</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the various parts of an NBA basketball court</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the basketball hoop</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    hoop <span class="op">=</span> Circle((<span class="dv">0</span>, <span class="dv">0</span>), radius<span class="op">=</span><span class="fl">7.5</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create backboard</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    backboard <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">30</span>, <span class="op">-</span><span class="fl">7.5</span>), <span class="dv">60</span>, <span class="op">-</span><span class="dv">1</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The paint</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the outer box 0f the paint, width=16ft, height=19ft</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    outer_box <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">80</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">160</span>, <span class="dv">190</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color,</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>                          fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the inner box of the paint, widt=12ft, height=19ft</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    inner_box <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">60</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">120</span>, <span class="dv">190</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color,</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>                          fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create free throw top arc</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    top_free_throw <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">142.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">0</span>, theta2<span class="op">=</span><span class="dv">180</span>,</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>                         linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create free throw bottom arc</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    bottom_free_throw <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">142.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>                            linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, linestyle<span class="op">=</span><span class="st">'dashed'</span>)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Restricted Zone, it is an arc with 4ft radius from center of the hoop</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    restricted <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">80</span>, <span class="dv">80</span>, theta1<span class="op">=</span><span class="dv">0</span>, theta2<span class="op">=</span><span class="dv">180</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span>color)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Three point line</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the right side 3pt lines, it's 14ft long before it arcs</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    corner_three_a <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">220</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">0</span>, <span class="dv">140</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>                               color<span class="op">=</span>color)</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the right side 3pt lines, it's 14ft long before it arcs</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    corner_three_b <span class="op">=</span> Rectangle((<span class="dv">220</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">0</span>, <span class="dv">140</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3pt arc - center of arc will be the hoop, arc is 23'9" away from hoop</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>    three_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">475</span>, <span class="dv">475</span>, theta1<span class="op">=</span><span class="dv">22</span>, theta2<span class="op">=</span><span class="dv">158</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span>color)</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Center Court</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    center_outer_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">422.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>                           linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>    center_inner_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">422.5</span>), <span class="dv">40</span>, <span class="dv">40</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>                           linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>    <span class="co"># List of the court elements to be plotted onto the axes</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>    court_elements <span class="op">=</span> [hoop, backboard, outer_box, inner_box, top_free_throw,</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>                      bottom_free_throw, restricted, corner_three_a,</span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>                      corner_three_b, three_arc, center_outer_arc,</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>                      center_inner_arc]</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> outer_lines:</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Draw the half court line, baseline and side out bound lines</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>        outer_lines <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">250</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">500</span>, <span class="dv">470</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>                                color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>        court_elements.append(outer_lines)</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add the court elements onto the axes</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> element <span class="kw">in</span> court_elements:</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>        ax.add_patch(element)</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Create figure and axes</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
-<span id="cb9-3"><a href="#cb9-3"></a>ax <span class="op">=</span> fig.add_axes([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
-<span id="cb9-4"><a href="#cb9-4"></a></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="co"># Plot hexbin of shots</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>ax.hexbin(df[<span class="st">'LOC_X'</span>], df[<span class="st">'LOC_Y'</span>], gridsize<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">30</span>), extent<span class="op">=</span>(<span class="op">-</span><span class="dv">300</span>, <span class="dv">300</span>, <span class="dv">0</span>, <span class="dv">940</span>), bins<span class="op">=</span><span class="st">'log'</span>, cmap<span class="op">=</span><span class="st">'Blues'</span>)</span>
-<span id="cb9-7"><a href="#cb9-7"></a>ax <span class="op">=</span> draw_court(ax, <span class="st">'black'</span>)</span>
-<span id="cb9-8"><a href="#cb9-8"></a></span>
-<span id="cb9-9"><a href="#cb9-9"></a><span class="co"># Annotate player name and season</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a>ax.text(<span class="dv">0</span>, <span class="fl">1.05</span>, <span class="st">'Stephen Curry</span><span class="ch">\n</span><span class="st">2021-22 Regular Season'</span>, transform<span class="op">=</span>ax.transAxes, ha<span class="op">=</span><span class="st">'left'</span>, va<span class="op">=</span><span class="st">'baseline'</span>)</span>
-<span id="cb9-11"><a href="#cb9-11"></a></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="co"># Set axis limits</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a>_ <span class="op">=</span> ax.set_xlim(<span class="op">-</span><span class="dv">250</span>, <span class="dv">250</span>)</span>
-<span id="cb9-14"><a href="#cb9-14"></a>_ <span class="op">=</span> ax.set_ylim(<span class="dv">0</span>, <span class="dv">400</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure and axes</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_axes([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot hexbin of shots</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>ax.hexbin(df[<span class="st">'LOC_X'</span>], df[<span class="st">'LOC_Y'</span>], gridsize<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">30</span>), extent<span class="op">=</span>(<span class="op">-</span><span class="dv">300</span>, <span class="dv">300</span>, <span class="dv">0</span>, <span class="dv">940</span>), bins<span class="op">=</span><span class="st">'log'</span>, cmap<span class="op">=</span><span class="st">'Blues'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> draw_court(ax, <span class="st">'black'</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Annotate player name and season</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">0</span>, <span class="fl">1.05</span>, <span class="st">'Stephen Curry</span><span class="ch">\n</span><span class="st">2021-22 Regular Season'</span>, transform<span class="op">=</span>ax.transAxes, ha<span class="op">=</span><span class="st">'left'</span>, va<span class="op">=</span><span class="st">'baseline'</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis limits</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_xlim(<span class="op">-</span><span class="dv">250</span>, <span class="dv">250</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_ylim(<span class="dv">0</span>, <span class="dv">400</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="01-_files/figure-html/cell-9-output-1.png" width="630" height="671"></p>
 </div>
@@ -936,15 +936,15 @@ Click for Hint.
 <div class="solution proof">
 <div class="cell" data-execution_count="9">
 <span class="proof-title"><em>Solution</em> (Hint). </span>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> nba_api.stats.static <span class="im">import</span> players</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="im">from</span> nba_api.stats.endpoints <span class="im">import</span> shotchartdetail</span>
-<span id="cb10-3"><a href="#cb10-3"></a>player_dict <span class="op">=</span> players.get_players()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nba_api.stats.static <span class="im">import</span> players</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nba_api.stats.endpoints <span class="im">import</span> shotchartdetail</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>player_dict <span class="op">=</span> players.get_players()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These lines import some packages and get player information and save them into <code>player_dict</code>.</p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="cf">for</span> player <span class="kw">in</span> player_dict:</span>
-<span id="cb11-2"><a href="#cb11-2"></a>    <span class="cf">if</span> player[<span class="st">'full_name'</span>] <span class="op">==</span> <span class="st">'Stephen Curry'</span>:</span>
-<span id="cb11-3"><a href="#cb11-3"></a>        <span class="bu">print</span>(player[<span class="st">'id'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> player <span class="kw">in</span> player_dict:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> player[<span class="st">'full_name'</span>] <span class="op">==</span> <span class="st">'Stephen Curry'</span>:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(player[<span class="st">'id'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Go through all records in <code>player_dict</code>. If the name of a player is <code>Stephen Curry</code>, get his <code>id</code>. Then we will know the <code>id</code> of <code>Stephen Curry</code>.</p>
 <p><em>To be omitted.</em></p>

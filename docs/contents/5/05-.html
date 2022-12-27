@@ -349,7 +349,7 @@ div.csl-indent {
 <h2 data-number="5.1" class="anchored" data-anchor-id="matplotlib.pyplot"><span class="header-section-number">5.1</span> <code>matplotlib.pyplot</code></h2>
 <p><code>matplotlib</code> is a modern and classic plot library. Its main features are inspired by <code>MATLAB</code>. In this book we mostly use <code>pyplot</code> package from <code>matplotlib</code>. We use the following import convention:</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="matplotlib-interface" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="matplotlib-interface"><span class="header-section-number">5.1.1</span> <code>matplotlib</code> interface</h3>
@@ -360,16 +360,16 @@ div.csl-indent {
 </ul>
 <p>Here is an example of an explicit interface.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>fig <span class="op">=</span> plt.figure()</span>
-<span id="cb2-2"><a href="#cb2-2"></a>ax <span class="op">=</span> fig.subplots()</span>
-<span id="cb2-3"><a href="#cb2-3"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.subplots()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-3-output-1.png" width="571" height="404"></p>
 </div>
 </div>
 <p>Here is an example of an implicit interface.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-4-output-1.png" width="571" height="404"></p>
 </div>
@@ -397,8 +397,8 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.1 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-5-output-1.png" width="287" height="404"></p>
 </div>
@@ -407,10 +407,10 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.2 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span>
-<span id="cb5-3"><a href="#cb5-3"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>plt.plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-6-output-1.png" width="571" height="404"></p>
 </div>
@@ -419,9 +419,9 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.3 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>axs[<span class="dv">0</span>].plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span>
-<span id="cb6-3"><a href="#cb6-3"></a>axs[<span class="dv">1</span>].plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-7-output-1.png" width="571" height="404"></p>
 </div>
@@ -430,13 +430,13 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.4 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a href="#cb7-2"></a>fig <span class="op">=</span> plt.figure()</span>
-<span id="cb7-3"><a href="#cb7-3"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a>ax3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb7-6"><a href="#cb7-6"></a></span>
-<span id="cb7-7"><a href="#cb7-7"></a>ax3.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ax3 <span class="op">=</span> fig.add_subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ax3.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-8-output-1.png" width="571" height="409"></p>
 </div>
@@ -446,13 +446,13 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.5 </strong></span>If you don’t explicitly initialize <code>fig</code> and <code>ax</code>, you may use <code>plt.gcf()</code> and <code>plt.gca()</code> to get the handles for further operations.</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a>ax <span class="op">=</span> plt.gca()</span>
-<span id="cb8-3"><a href="#cb8-3"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb8-6"><a href="#cb8-6"></a>ax <span class="op">=</span> plt.gca()</span>
-<span id="cb8-7"><a href="#cb8-7"></a>ax.plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.gca()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.gca()</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-9-output-1.png" width="571" height="404"></p>
 </div>
@@ -460,17 +460,17 @@ Note
 </div>
 <p>The purpose to explicitly use <code>fig</code> and <code>ax</code> is to have more control over the configurations. For example, when generate a <code>figure</code> object, we may use <code>figsize=(3, 3)</code> as an option to set the figure size to be <code>3x3</code>. <code>dpi</code> is another commonly modified option.</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), dpi<span class="op">=</span><span class="dv">50</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>), dpi<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>If you would like to change this setting later, you may use the following command before plotting.</p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>fig.set_size_inches(<span class="dv">10</span>, <span class="dv">10</span>)</span>
-<span id="cb10-2"><a href="#cb10-2"></a>fig.set_dpi(<span class="dv">300</span>)</span>
-<span id="cb10-3"><a href="#cb10-3"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fig.set_dpi(<span class="dv">300</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-11-output-1.png" width="571" height="404"></p>
 </div>
@@ -483,10 +483,10 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.6 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-3"><a href="#cb11-3"></a>s <span class="op">=</span> pd.Series(np.random.randn(<span class="dv">10</span>).cumsum(), index<span class="op">=</span>np.arange(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span>
-<span id="cb11-4"><a href="#cb11-4"></a>s.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series(np.random.randn(<span class="dv">10</span>).cumsum(), index<span class="op">=</span>np.arange(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>s.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
@@ -495,10 +495,10 @@ Note
 </div>
 </div>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>df <span class="op">=</span> pd.DataFrame(np.random.randn(<span class="dv">10</span>, <span class="dv">4</span>).cumsum(<span class="dv">0</span>),</span>
-<span id="cb13-2"><a href="#cb13-2"></a>                  columns<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>],</span>
-<span id="cb13-3"><a href="#cb13-3"></a>                  index<span class="op">=</span>np.arange(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span>
-<span id="cb13-4"><a href="#cb13-4"></a>df.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.random.randn(<span class="dv">10</span>, <span class="dv">4</span>).cumsum(<span class="dv">0</span>),</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                  columns<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>],</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>np.arange(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>df.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
@@ -542,7 +542,7 @@ Note
 <div id="exm-plot1" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.7 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>plt.plot(np.random.randn(<span class="dv">30</span>).cumsum(), color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.plot(np.random.randn(<span class="dv">30</span>).cumsum(), color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-14-output-1.png" width="559" height="404"></p>
 </div>
@@ -554,12 +554,12 @@ Note
 <h4 data-number="5.1.3.2" class="anchored" data-anchor-id="plt.bar-and-plt.barh"><span class="header-section-number">5.1.3.2</span> <code>plt.bar()</code> and <code>plt.barh()</code></h4>
 <p>The two commands make vertical and horizontal bar plots, respectively. ::: {#exm-}</p>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb16-2"><a href="#cb16-2"></a>data <span class="op">=</span> pd.Series(np.random.rand(<span class="dv">16</span>), index<span class="op">=</span><span class="bu">list</span>(<span class="st">'abcdefghijklmnop'</span>))</span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb16-5"><a href="#cb16-5"></a>axes[<span class="dv">0</span>].bar(x<span class="op">=</span>data.index, height<span class="op">=</span>data, color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb16-6"><a href="#cb16-6"></a>axes[<span class="dv">1</span>].barh(y<span class="op">=</span>data.index, width<span class="op">=</span>data, color<span class="op">=</span><span class="st">'b'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.Series(np.random.rand(<span class="dv">16</span>), index<span class="op">=</span><span class="bu">list</span>(<span class="st">'abcdefghijklmnop'</span>))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].bar(x<span class="op">=</span>data.index, height<span class="op">=</span>data, color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].barh(y<span class="op">=</span>data.index, width<span class="op">=</span>data, color<span class="op">=</span><span class="st">'b'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;BarContainer object of 16 artists&gt;</code></pre>
 </div>
@@ -569,9 +569,9 @@ Note
 </div>
 <p>We may also directly plot the bar plot from the Series.</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a>data.plot.bar(ax<span class="op">=</span>axes[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb18-3"><a href="#cb18-3"></a>data.plot.barh(ax<span class="op">=</span>axes[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'b'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>data.plot.bar(ax<span class="op">=</span>axes[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>data.plot.barh(ax<span class="op">=</span>axes[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'b'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
@@ -584,10 +584,10 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.8 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>df <span class="op">=</span> pd.DataFrame(np.random.rand(<span class="dv">6</span>, <span class="dv">4</span>),</span>
-<span id="cb20-2"><a href="#cb20-2"></a>                  index<span class="op">=</span>[<span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'three'</span>, <span class="st">'four'</span>, <span class="st">'five'</span>, <span class="st">'six'</span>],</span>
-<span id="cb20-3"><a href="#cb20-3"></a>                  columns<span class="op">=</span>pd.Index([<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>], name<span class="op">=</span><span class="st">'Genus'</span>))</span>
-<span id="cb20-4"><a href="#cb20-4"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.random.rand(<span class="dv">6</span>, <span class="dv">4</span>),</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'three'</span>, <span class="st">'four'</span>, <span class="st">'five'</span>, <span class="st">'six'</span>],</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                  columns<span class="op">=</span>pd.Index([<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>], name<span class="op">=</span><span class="st">'Genus'</span>))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 
 <div>
@@ -651,7 +651,7 @@ Note
 </div>
 </div>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df.plot.bar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.plot.bar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
@@ -660,7 +660,7 @@ Note
 </div>
 </div>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>df.plot.barh(stacked<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df.plot.barh(stacked<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
@@ -675,13 +675,13 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.9 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb25-2"><a href="#cb25-2"></a></span>
-<span id="cb25-3"><a href="#cb25-3"></a>N <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a>data <span class="op">=</span> <span class="fl">0.9</span> <span class="op">*</span> np.random.rand(N, <span class="dv">2</span>)</span>
-<span id="cb25-5"><a href="#cb25-5"></a>area <span class="op">=</span> (<span class="dv">20</span> <span class="op">*</span> np.random.rand(N))<span class="op">**</span><span class="dv">2</span> </span>
-<span id="cb25-6"><a href="#cb25-6"></a>c <span class="op">=</span> np.sqrt(area)</span>
-<span id="cb25-7"><a href="#cb25-7"></a>plt.scatter(data[:, <span class="dv">0</span>], data[:, <span class="dv">1</span>], s<span class="op">=</span>area, marker<span class="op">=</span><span class="st">'^'</span>, c<span class="op">=</span>c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fl">0.9</span> <span class="op">*</span> np.random.rand(N, <span class="dv">2</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> (<span class="dv">20</span> <span class="op">*</span> np.random.rand(N))<span class="op">**</span><span class="dv">2</span> </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.sqrt(area)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[:, <span class="dv">0</span>], data[:, <span class="dv">1</span>], s<span class="op">=</span>area, marker<span class="op">=</span><span class="st">'^'</span>, c<span class="op">=</span>c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x1d0cfb66e80&gt;</code></pre>
 </div>
@@ -695,11 +695,11 @@ Note
 <h4 data-number="5.1.3.4" class="anchored" data-anchor-id="plt.hist"><span class="header-section-number">5.1.3.4</span> <code>plt.hist()</code></h4>
 <p>Here are two plots with build-in statistics. The plot command will have statistics as outputs. To disable it we could send the outputs to a temporary variable <code>_</code>. ::: {#exm-histogram1}</p>
 <div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>mu, sigma <span class="op">=</span> <span class="dv">100</span>, <span class="dv">15</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>x <span class="op">=</span> mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
-<span id="cb27-3"><a href="#cb27-3"></a>y <span class="op">=</span> mu<span class="op">-</span><span class="dv">30</span> <span class="op">+</span> sigma<span class="op">*</span><span class="dv">2</span> <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
-<span id="cb27-4"><a href="#cb27-4"></a>_ <span class="op">=</span> plt.hist(x, <span class="dv">50</span>, density<span class="op">=</span><span class="va">True</span>, facecolor<span class="op">=</span><span class="st">'g'</span>, alpha<span class="op">=</span><span class="fl">0.75</span>)</span>
-<span id="cb27-5"><a href="#cb27-5"></a>_ <span class="op">=</span> plt.hist(y, <span class="dv">50</span>, density<span class="op">=</span><span class="va">True</span>, facecolor<span class="op">=</span><span class="st">'r'</span>, alpha<span class="op">=</span><span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> <span class="dv">100</span>, <span class="dv">15</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> mu<span class="op">-</span><span class="dv">30</span> <span class="op">+</span> sigma<span class="op">*</span><span class="dv">2</span> <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> plt.hist(x, <span class="dv">50</span>, density<span class="op">=</span><span class="va">True</span>, facecolor<span class="op">=</span><span class="st">'g'</span>, alpha<span class="op">=</span><span class="fl">0.75</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> plt.hist(y, <span class="dv">50</span>, density<span class="op">=</span><span class="va">True</span>, facecolor<span class="op">=</span><span class="st">'r'</span>, alpha<span class="op">=</span><span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-21-output-1.png" width="588" height="404"></p>
 </div>
@@ -712,13 +712,13 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.10 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>spread <span class="op">=</span> np.random.rand(<span class="dv">50</span>) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>center <span class="op">=</span> np.ones(<span class="dv">30</span>) <span class="op">*</span> <span class="dv">50</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a>flier_high <span class="op">=</span> np.random.rand(<span class="dv">10</span>) <span class="op">*</span> <span class="dv">100</span> <span class="op">+</span> <span class="dv">100</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a>flier_low <span class="op">=</span> np.random.rand(<span class="dv">10</span>) <span class="op">*</span> <span class="op">-</span><span class="dv">100</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a>data <span class="op">=</span> np.concatenate((spread, center, flier_high, flier_low)).reshape(<span class="dv">50</span>, <span class="dv">2</span>)</span>
-<span id="cb28-6"><a href="#cb28-6"></a></span>
-<span id="cb28-7"><a href="#cb28-7"></a>_ <span class="op">=</span> plt.boxplot(data, flierprops<span class="op">=</span>{<span class="st">'markerfacecolor'</span>: <span class="st">'g'</span>, <span class="st">'marker'</span>: <span class="st">'D'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>spread <span class="op">=</span> np.random.rand(<span class="dv">50</span>) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>center <span class="op">=</span> np.ones(<span class="dv">30</span>) <span class="op">*</span> <span class="dv">50</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>flier_high <span class="op">=</span> np.random.rand(<span class="dv">10</span>) <span class="op">*</span> <span class="dv">100</span> <span class="op">+</span> <span class="dv">100</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>flier_low <span class="op">=</span> np.random.rand(<span class="dv">10</span>) <span class="op">*</span> <span class="op">-</span><span class="dv">100</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.concatenate((spread, center, flier_high, flier_low)).reshape(<span class="dv">50</span>, <span class="dv">2</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> plt.boxplot(data, flierprops<span class="op">=</span>{<span class="st">'markerfacecolor'</span>: <span class="st">'g'</span>, <span class="st">'marker'</span>: <span class="st">'D'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-22-output-1.png" width="586" height="406"></p>
 </div>
@@ -755,20 +755,20 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.11 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb29-2"><a href="#cb29-2"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb29-3"><a href="#cb29-3"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'k'</span>, label<span class="op">=</span><span class="st">'one'</span>)</span>
-<span id="cb29-4"><a href="#cb29-4"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'two'</span>)</span>
-<span id="cb29-5"><a href="#cb29-5"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'b.'</span>, label<span class="op">=</span><span class="st">'three'</span>)</span>
-<span id="cb29-6"><a href="#cb29-6"></a></span>
-<span id="cb29-7"><a href="#cb29-7"></a>ax.set_title(<span class="st">'Example'</span>)</span>
-<span id="cb29-8"><a href="#cb29-8"></a>ax.set_xlabel(<span class="st">'x'</span>)</span>
-<span id="cb29-9"><a href="#cb29-9"></a>ax.set_ylabel(<span class="st">'y'</span>)</span>
-<span id="cb29-10"><a href="#cb29-10"></a></span>
-<span id="cb29-11"><a href="#cb29-11"></a>ax.set_yticks([<span class="op">-</span><span class="dv">40</span>, <span class="dv">0</span>, <span class="dv">40</span>])</span>
-<span id="cb29-12"><a href="#cb29-12"></a>ax.set_yticklabels([<span class="st">'good'</span>, <span class="st">'bad'</span>, <span class="st">'ugly'</span>])</span>
-<span id="cb29-13"><a href="#cb29-13"></a></span>
-<span id="cb29-14"><a href="#cb29-14"></a>ax.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'k'</span>, label<span class="op">=</span><span class="st">'one'</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'two'</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'b.'</span>, label<span class="op">=</span><span class="st">'three'</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Example'</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'x'</span>)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'y'</span>)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>ax.set_yticks([<span class="op">-</span><span class="dv">40</span>, <span class="dv">0</span>, <span class="dv">40</span>])</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels([<span class="st">'good'</span>, <span class="st">'bad'</span>, <span class="st">'ugly'</span>])</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>&lt;matplotlib.legend.Legend at 0x1d0d0400b50&gt;</code></pre>
 </div>
@@ -787,12 +787,12 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.12 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>))</span>
-<span id="cb31-2"><a href="#cb31-2"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'k'</span>, label<span class="op">=</span><span class="st">'one'</span>)</span>
-<span id="cb31-3"><a href="#cb31-3"></a>ax.text(<span class="dv">500</span>, <span class="dv">0</span>, <span class="st">'Hello world!'</span>, family<span class="op">=</span><span class="st">'monospace'</span>, fontsize<span class="op">=</span><span class="dv">15</span>, c<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb31-4"><a href="#cb31-4"></a>ax.annotate(<span class="st">'test'</span>, xy<span class="op">=</span>(<span class="dv">400</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="dv">400</span>, <span class="op">-</span><span class="dv">10</span>), c<span class="op">=</span><span class="st">'r'</span>,</span>
-<span id="cb31-5"><a href="#cb31-5"></a>            arrowprops<span class="op">=</span>{<span class="st">'facecolor'</span>: <span class="st">'black'</span>,</span>
-<span id="cb31-6"><a href="#cb31-6"></a>                        <span class="st">'shrink'</span>: <span class="fl">0.05</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>))</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'k'</span>, label<span class="op">=</span><span class="st">'one'</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">500</span>, <span class="dv">0</span>, <span class="st">'Hello world!'</span>, family<span class="op">=</span><span class="st">'monospace'</span>, fontsize<span class="op">=</span><span class="dv">15</span>, c<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">'test'</span>, xy<span class="op">=</span>(<span class="dv">400</span>, <span class="dv">0</span>), xytext<span class="op">=</span>(<span class="dv">400</span>, <span class="op">-</span><span class="dv">10</span>), c<span class="op">=</span><span class="st">'r'</span>,</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span>{<span class="st">'facecolor'</span>: <span class="st">'black'</span>,</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'shrink'</span>: <span class="fl">0.05</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>Text(400, -10, 'test')</code></pre>
 </div>
@@ -807,23 +807,23 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.13 </strong></span>The stock data can be downloaded from <a href="assests/datasets/spx.csv">here</a>.</p>
 <div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb33-2"><a href="#cb33-2"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb33-3"><a href="#cb33-3"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'assests/datasets/spx.csv'</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb33-4"><a href="#cb33-4"></a>spx <span class="op">=</span> data[<span class="st">'SPX'</span>]</span>
-<span id="cb33-5"><a href="#cb33-5"></a>spx.plot(ax<span class="op">=</span>ax, style<span class="op">=</span><span class="st">'k-'</span>)</span>
-<span id="cb33-6"><a href="#cb33-6"></a>crisis_data <span class="op">=</span> [(datetime(<span class="dv">2007</span>, <span class="dv">10</span>, <span class="dv">11</span>), <span class="st">'Peak of bull market'</span>),</span>
-<span id="cb33-7"><a href="#cb33-7"></a>               (datetime(<span class="dv">2008</span>, <span class="dv">3</span>, <span class="dv">12</span>), <span class="st">'Bear Stearns Fails'</span>),</span>
-<span id="cb33-8"><a href="#cb33-8"></a>               (datetime(<span class="dv">2008</span>, <span class="dv">9</span>, <span class="dv">15</span>), <span class="st">'Lehman Bankruptcy'</span>)]</span>
-<span id="cb33-9"><a href="#cb33-9"></a><span class="cf">for</span> date, label <span class="kw">in</span> crisis_data:</span>
-<span id="cb33-10"><a href="#cb33-10"></a>    ax.annotate(label, xy<span class="op">=</span>(date, spx.asof(date) <span class="op">+</span> <span class="dv">75</span>),</span>
-<span id="cb33-11"><a href="#cb33-11"></a>                xytext<span class="op">=</span>(date, spx.asof(date) <span class="op">+</span> <span class="dv">225</span>),</span>
-<span id="cb33-12"><a href="#cb33-12"></a>                arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, headwidth<span class="op">=</span><span class="dv">4</span>, width<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb33-13"><a href="#cb33-13"></a>                                headlength<span class="op">=</span><span class="dv">4</span>),</span>
-<span id="cb33-14"><a href="#cb33-14"></a>                horizontalalignment<span class="op">=</span><span class="st">'left'</span>, verticalalignment<span class="op">=</span><span class="st">'top'</span>)</span>
-<span id="cb33-15"><a href="#cb33-15"></a>ax.set_xlim([<span class="st">'1/1/2007'</span>, <span class="st">'1/1/2011'</span>])</span>
-<span id="cb33-16"><a href="#cb33-16"></a>ax.set_ylim([<span class="dv">600</span>, <span class="dv">1800</span>])</span>
-<span id="cb33-17"><a href="#cb33-17"></a>_ <span class="op">=</span> ax.set_title(<span class="st">'Important dates in the 2008-2009 financial crisis'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'assests/datasets/spx.csv'</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>spx <span class="op">=</span> data[<span class="st">'SPX'</span>]</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>spx.plot(ax<span class="op">=</span>ax, style<span class="op">=</span><span class="st">'k-'</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>crisis_data <span class="op">=</span> [(datetime(<span class="dv">2007</span>, <span class="dv">10</span>, <span class="dv">11</span>), <span class="st">'Peak of bull market'</span>),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>               (datetime(<span class="dv">2008</span>, <span class="dv">3</span>, <span class="dv">12</span>), <span class="st">'Bear Stearns Fails'</span>),</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>               (datetime(<span class="dv">2008</span>, <span class="dv">9</span>, <span class="dv">15</span>), <span class="st">'Lehman Bankruptcy'</span>)]</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date, label <span class="kw">in</span> crisis_data:</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    ax.annotate(label, xy<span class="op">=</span>(date, spx.asof(date) <span class="op">+</span> <span class="dv">75</span>),</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>                xytext<span class="op">=</span>(date, spx.asof(date) <span class="op">+</span> <span class="dv">225</span>),</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>                arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, headwidth<span class="op">=</span><span class="dv">4</span>, width<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>                                headlength<span class="op">=</span><span class="dv">4</span>),</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>                horizontalalignment<span class="op">=</span><span class="st">'left'</span>, verticalalignment<span class="op">=</span><span class="st">'top'</span>)</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="st">'1/1/2007'</span>, <span class="st">'1/1/2011'</span>])</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="dv">600</span>, <span class="dv">1800</span>])</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_title(<span class="st">'Important dates in the 2008-2009 financial crisis'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-25-output-1.png" width="595" height="432"></p>
 </div>
@@ -832,19 +832,19 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.14 </strong></span>Here is an example of arrows with different shapes. For more details please read the official <a href="https://matplotlib.org/stable/tutorials/text/annotations.html#annotating-with-arrow">document</a>.</p>
 <div class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb34-2"><a href="#cb34-2"></a></span>
-<span id="cb34-3"><a href="#cb34-3"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">1000</span>)</span>
-<span id="cb34-4"><a href="#cb34-4"></a>ax.plot(x, np.cos(x))</span>
-<span id="cb34-5"><a href="#cb34-5"></a>ax.axis(<span class="st">'equal'</span>)</span>
-<span id="cb34-6"><a href="#cb34-6"></a></span>
-<span id="cb34-7"><a href="#cb34-7"></a>ax.annotate(<span class="st">'local maximum'</span>, xy<span class="op">=</span>(<span class="fl">6.28</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>),</span>
-<span id="cb34-8"><a href="#cb34-8"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, shrink<span class="op">=</span><span class="fl">0.05</span>))</span>
-<span id="cb34-9"><a href="#cb34-9"></a></span>
-<span id="cb34-10"><a href="#cb34-10"></a>ax.annotate(<span class="st">'local minimum'</span>, xy<span class="op">=</span>(<span class="dv">5</span> <span class="op">*</span> np.pi, <span class="op">-</span><span class="dv">1</span>), xytext<span class="op">=</span>(<span class="dv">2</span>, <span class="op">-</span><span class="dv">6</span>),</span>
-<span id="cb34-11"><a href="#cb34-11"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>,</span>
-<span id="cb34-12"><a href="#cb34-12"></a>                            connectionstyle<span class="op">=</span><span class="st">"angle3,angleA=0,angleB=-90"</span>,</span>
-<span id="cb34-13"><a href="#cb34-13"></a>                            color<span class="op">=</span><span class="st">'r'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">1000</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>ax.plot(x, np.cos(x))</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">'equal'</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">'local maximum'</span>, xy<span class="op">=</span>(<span class="fl">6.28</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>),</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, shrink<span class="op">=</span><span class="fl">0.05</span>))</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">'local minimum'</span>, xy<span class="op">=</span>(<span class="dv">5</span> <span class="op">*</span> np.pi, <span class="op">-</span><span class="dv">1</span>), xytext<span class="op">=</span>(<span class="dv">2</span>, <span class="op">-</span><span class="dv">6</span>),</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>,</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>                            connectionstyle<span class="op">=</span><span class="st">"angle3,angleA=0,angleB=-90"</span>,</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>                            color<span class="op">=</span><span class="st">'r'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>Text(2, -6, 'local minimum')</code></pre>
 </div>
@@ -860,18 +860,18 @@ Note
 <p>There are some new libraries built upon <code>matplotlib</code>, and <code>seaborn</code> is one of them. <code>seaborn</code> is for statistical graphics.</p>
 <p><code>seaborn</code> is used imported in the following way.</p>
 <div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>seaborn</code> also modifies the default <code>matplotlib</code> color schemes and plot styles to improve readability and aesthetics. Even if you do not use the <code>seaborn</code> API, you may prefer to import <code>seaborn</code> as a simple way to improve the visual aesthetics of general <code>matplotlib</code> plots.</p>
 <p>To apply <code>sns</code> theme, run the following code.</p>
 <div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>sns.set_theme()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let us directly run a few codes from the last section and compare the differences between them.</p>
 <div id="exm-plotwithsns" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.15 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>plt.plot(np.random.randn(<span class="dv">30</span>).cumsum(), color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.plot(np.random.randn(<span class="dv">30</span>).cumsum(), color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="05-_files/figure-html/cell-30-output-1.png" width="562" height="408"></p>
 </div>
@@ -891,9 +891,9 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.16 </strong></span>Consider the following example. <code>tips</code> is a DataFrame, which is shown below.</p>
 <div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb39-2"><a href="#cb39-2"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
-<span id="cb39-3"><a href="#cb39-3"></a>tips</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>tips</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 
 <div>
@@ -1029,9 +1029,9 @@ Note
 </div>
 </div>
 <div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>sns.relplot(data<span class="op">=</span>tips,</span>
-<span id="cb40-2"><a href="#cb40-2"></a>            x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, col<span class="op">=</span><span class="st">"time"</span>,</span>
-<span id="cb40-3"><a href="#cb40-3"></a>            hue<span class="op">=</span><span class="st">"smoker"</span>, style<span class="op">=</span><span class="st">"smoker"</span>, size<span class="op">=</span><span class="st">"size"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>tips,</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, col<span class="op">=</span><span class="st">"time"</span>,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>            hue<span class="op">=</span><span class="st">"smoker"</span>, style<span class="op">=</span><span class="st">"smoker"</span>, size<span class="op">=</span><span class="st">"size"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x1d0d3dff880&gt;</code></pre>
 </div>
@@ -1044,11 +1044,11 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.17 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>dots <span class="op">=</span> sns.load_dataset(<span class="st">"dots"</span>)</span>
-<span id="cb42-2"><a href="#cb42-2"></a>sns.relplot(data<span class="op">=</span>dots, kind<span class="op">=</span><span class="st">"line"</span>,</span>
-<span id="cb42-3"><a href="#cb42-3"></a>            x<span class="op">=</span><span class="st">"time"</span>, y<span class="op">=</span><span class="st">"firing_rate"</span>, col<span class="op">=</span><span class="st">"align"</span>,</span>
-<span id="cb42-4"><a href="#cb42-4"></a>            hue<span class="op">=</span><span class="st">"choice"</span>, size<span class="op">=</span><span class="st">"coherence"</span>, style<span class="op">=</span><span class="st">"choice"</span>,</span>
-<span id="cb42-5"><a href="#cb42-5"></a>            facet_kws<span class="op">=</span><span class="bu">dict</span>(sharex<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>dots <span class="op">=</span> sns.load_dataset(<span class="st">"dots"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>dots, kind<span class="op">=</span><span class="st">"line"</span>,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">"time"</span>, y<span class="op">=</span><span class="st">"firing_rate"</span>, col<span class="op">=</span><span class="st">"align"</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>            hue<span class="op">=</span><span class="st">"choice"</span>, size<span class="op">=</span><span class="st">"coherence"</span>, style<span class="op">=</span><span class="st">"choice"</span>,</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>            facet_kws<span class="op">=</span><span class="bu">dict</span>(sharex<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x1d0d3c39700&gt;</code></pre>
 </div>
@@ -1064,7 +1064,7 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.18 </strong></span>We still use <code>tips</code> as an example.</p>
 <div class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>sns.regplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'tip'</span>, data<span class="op">=</span>tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>sns.regplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'tip'</span>, data<span class="op">=</span>tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>&lt;AxesSubplot:xlabel='total_bill', ylabel='tip'&gt;</code></pre>
 </div>
@@ -1080,7 +1080,7 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.19 </strong></span>The following code shows the pairplots among all numeric data in <code>tips</code>.</p>
 <div class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>sns.pairplot(tips, diag_kind<span class="op">=</span><span class="st">'kde'</span>, plot_kws<span class="op">=</span>{<span class="st">'alpha'</span>: <span class="fl">0.2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(tips, diag_kind<span class="op">=</span><span class="st">'kde'</span>, plot_kws<span class="op">=</span>{<span class="st">'alpha'</span>: <span class="fl">0.2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>&lt;seaborn.axisgrid.PairGrid at 0x1d0d0765ca0&gt;</code></pre>
 </div>
@@ -1095,7 +1095,7 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.20 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'day'</span>, data<span class="op">=</span>tips, orient<span class="op">=</span><span class="st">'h'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'day'</span>, data<span class="op">=</span>tips, orient<span class="op">=</span><span class="st">'h'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>&lt;AxesSubplot:xlabel='total_bill', ylabel='day'&gt;</code></pre>
 </div>
@@ -1105,7 +1105,7 @@ Note
 </div>
 <p>In the plot, there are several <code>total_bill</code> during each <code>day</code>. The value in the plot is the average of <code>total_bill</code> in each <code>day</code>, and the black line stands for the <code>95%</code> confidence interval.</p>
 <div class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'day'</span>, hue<span class="op">=</span><span class="st">'time'</span>, data<span class="op">=</span>tips, orient<span class="op">=</span><span class="st">'h'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'day'</span>, hue<span class="op">=</span><span class="st">'time'</span>, data<span class="op">=</span>tips, orient<span class="op">=</span><span class="st">'h'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>&lt;AxesSubplot:xlabel='total_bill', ylabel='day'&gt;</code></pre>
 </div>
@@ -1121,11 +1121,11 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.21 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>mu, sigma <span class="op">=</span> <span class="dv">100</span>, <span class="dv">15</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>x <span class="op">=</span> mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
-<span id="cb52-3"><a href="#cb52-3"></a>y <span class="op">=</span> mu<span class="op">-</span><span class="dv">30</span> <span class="op">+</span> sigma<span class="op">*</span><span class="dv">2</span> <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
-<span id="cb52-4"><a href="#cb52-4"></a>df <span class="op">=</span> pd.DataFrame(np.array([x,y]).T)</span>
-<span id="cb52-5"><a href="#cb52-5"></a>sns.histplot(df, bins<span class="op">=</span><span class="dv">100</span>, kde<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> <span class="dv">100</span>, <span class="dv">15</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> mu<span class="op">-</span><span class="dv">30</span> <span class="op">+</span> sigma<span class="op">*</span><span class="dv">2</span> <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.array([x,y]).T)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>sns.histplot(df, bins<span class="op">=</span><span class="dv">100</span>, kde<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>&lt;AxesSubplot:ylabel='Count'&gt;</code></pre>
 </div>
@@ -1144,24 +1144,24 @@ Note
 <p>In 2011, URL shortening service <code>Bitly</code> partnered with the US government website <code>USA.gov</code> to provide a feed of anonymous data gathered from users who shorten links ending with <code>.gov</code> or <code>.mil</code>. The data is gotten from <span class="citation" data-cites="McK2017">[<a href="../references.html#ref-McK2017" role="doc-biblioref">1</a>]</span>.</p>
 <p>The data file can be downloaded from <a href="assests/datasets/example.txt">here</a>. The file is mostly in JSON. It can be converted into a DataFrame by the following code.</p>
 <div class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb54-2"><a href="#cb54-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb54-3"><a href="#cb54-3"></a><span class="im">import</span> json</span>
-<span id="cb54-4"><a href="#cb54-4"></a>path <span class="op">=</span> <span class="st">'assests/datasets/example.txt'</span></span>
-<span id="cb54-5"><a href="#cb54-5"></a>df <span class="op">=</span> pd.DataFrame([json.loads(line) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(path)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'assests/datasets/example.txt'</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame([json.loads(line) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(path)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We mainly use <code>tz</code> and <code>a</code> columns. So let us clean it.</p>
 <div class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>df[<span class="st">'tz'</span>] <span class="op">=</span> df[<span class="st">'tz'</span>].fillna(<span class="st">'Missing'</span>)</span>
-<span id="cb55-2"><a href="#cb55-2"></a>df[<span class="st">'tz'</span>][df[<span class="st">'tz'</span>] <span class="op">==</span> <span class="st">''</span>] <span class="op">=</span> <span class="st">'Unknown'</span></span>
-<span id="cb55-3"><a href="#cb55-3"></a>df[<span class="st">'a'</span>] <span class="op">=</span> df[<span class="st">'a'</span>].fillna(<span class="st">'Missing'</span>)</span>
-<span id="cb55-4"><a href="#cb55-4"></a>df[<span class="st">'a'</span>][df[<span class="st">'a'</span>] <span class="op">==</span> <span class="st">''</span>] <span class="op">=</span> <span class="st">'Unknown'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'tz'</span>] <span class="op">=</span> df[<span class="st">'tz'</span>].fillna(<span class="st">'Missing'</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'tz'</span>][df[<span class="st">'tz'</span>] <span class="op">==</span> <span class="st">''</span>] <span class="op">=</span> <span class="st">'Unknown'</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'a'</span>] <span class="op">=</span> df[<span class="st">'a'</span>].fillna(<span class="st">'Missing'</span>)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'a'</span>][df[<span class="st">'a'</span>] <span class="op">==</span> <span class="st">''</span>] <span class="op">=</span> <span class="st">'Unknown'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We first want to extract the timezone infomation from it. The timezone info is in the column <code>tz</code>.</p>
 <div class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>tzone <span class="op">=</span> df[<span class="st">'tz'</span>]</span>
-<span id="cb56-2"><a href="#cb56-2"></a>tvc <span class="op">=</span> tzone.value_counts()</span>
-<span id="cb56-3"><a href="#cb56-3"></a>tvc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>tzone <span class="op">=</span> df[<span class="st">'tz'</span>]</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>tvc <span class="op">=</span> tzone.value_counts()</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>tvc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>America/New_York        1251
 Unknown                  521
@@ -1179,8 +1179,8 @@ Name: tz, Length: 98, dtype: int64</code></pre>
 </div>
 <p>After cleaning data, we would like to visulize the value counts.</p>
 <div class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb58-2"><a href="#cb58-2"></a>sns.barplot(x<span class="op">=</span>tvc[:<span class="dv">10</span>].values, y<span class="op">=</span>tvc[:<span class="dv">10</span>].index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>tvc[:<span class="dv">10</span>].values, y<span class="op">=</span>tvc[:<span class="dv">10</span>].index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
@@ -1190,10 +1190,10 @@ Name: tz, Length: 98, dtype: int64</code></pre>
 </div>
 <p>We then would like to extract information from the column <code>a</code>. This column is about the agent of the connection. The important info is the part before the space <code>' '</code>.</p>
 <div class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>agent <span class="op">=</span> df[<span class="st">'a'</span>]</span>
-<span id="cb60-2"><a href="#cb60-2"></a>agent <span class="op">=</span> agent.<span class="bu">str</span>.split(<span class="st">' '</span>).<span class="bu">str</span>[<span class="dv">0</span>]</span>
-<span id="cb60-3"><a href="#cb60-3"></a>avc <span class="op">=</span> agent.value_counts()</span>
-<span id="cb60-4"><a href="#cb60-4"></a>avc[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> df[<span class="st">'a'</span>]</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> agent.<span class="bu">str</span>.split(<span class="st">' '</span>).<span class="bu">str</span>[<span class="dv">0</span>]</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>avc <span class="op">=</span> agent.value_counts()</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>avc[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>Mozilla/5.0                 2594
 Mozilla/4.0                  601
@@ -1210,12 +1210,12 @@ Name: a, dtype: int64</code></pre>
 </div>
 <p>Now let us assume that, if <code>Windows</code> appears in column <code>a</code> the user is using <code>Windows</code> os, if not then not. In this case, the os can be detected by the following code.</p>
 <div class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>df[<span class="st">'os'</span>] <span class="op">=</span> np.where(df[<span class="st">'a'</span>].<span class="bu">str</span>.contains(<span class="st">'Windows'</span>), <span class="st">'Windows'</span>, <span class="st">'Not Windows'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'os'</span>] <span class="op">=</span> np.where(df[<span class="st">'a'</span>].<span class="bu">str</span>.contains(<span class="st">'Windows'</span>), <span class="st">'Windows'</span>, <span class="st">'Not Windows'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can make a bar plot about the counts based on <code>os</code> and <code>timezone</code>.</p>
 <div class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>tz_os_counts <span class="op">=</span> df.groupby([<span class="st">'tz'</span>, <span class="st">'os'</span>]).size().unstack().fillna(<span class="dv">0</span>)</span>
-<span id="cb63-2"><a href="#cb63-2"></a>tz_os_counts.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>tz_os_counts <span class="op">=</span> df.groupby([<span class="st">'tz'</span>, <span class="st">'os'</span>]).size().unstack().fillna(<span class="dv">0</span>)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>tz_os_counts.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="44">
 
 <div>
@@ -1266,13 +1266,13 @@ Name: a, dtype: int64</code></pre>
 </div>
 <p>We then turn it into a DataFrame using the <code>.stack()</code>, <code>.unstack()</code> tricks.</p>
 <div class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>tovc <span class="op">=</span> tz_os_counts.stack()[tz_os_counts.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>).nlargest(<span class="dv">10</span>).index]</span>
-<span id="cb64-2"><a href="#cb64-2"></a>tovc.name <span class="op">=</span> <span class="st">'count'</span></span>
-<span id="cb64-3"><a href="#cb64-3"></a>dftovc <span class="op">=</span> pd.DataFrame(tovc).reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>tovc <span class="op">=</span> tz_os_counts.stack()[tz_os_counts.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>).nlargest(<span class="dv">10</span>).index]</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>tovc.name <span class="op">=</span> <span class="st">'count'</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>dftovc <span class="op">=</span> pd.DataFrame(tovc).reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally we may draw the bar plot.</p>
 <div class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'count'</span>, y<span class="op">=</span><span class="st">'tz'</span>, hue<span class="op">=</span><span class="st">'os'</span>, data<span class="op">=</span>dftovc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'count'</span>, y<span class="op">=</span><span class="st">'tz'</span>, hue<span class="op">=</span><span class="st">'os'</span>, data<span class="op">=</span>dftovc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>&lt;AxesSubplot:xlabel='count', ylabel='tz'&gt;</code></pre>
 </div>
@@ -1286,23 +1286,23 @@ Name: a, dtype: int64</code></pre>
 <p>The United States Social Security Administration (SSA) has made available data on the frequency of baby names from 1880 through the present. Hadley Wickham, an author of several popular R packages, has often made use of this dataset in illustrating data manipulation in <code>R</code>. The dataset can be downloaded from <a href="assests/datasets/babynames.zip">here</a> as a zip file. Please unzip it and put it in your working folder.</p>
 <p>In the folder there are 131 <code>.txt</code> files. The naming scheme is <code>yob</code> + the year. Each file contains 3 columns: <code>name</code>, <code>gender</code>, and <code>counts</code>. We would like to add a column <code>year</code>, and combine all files into a single DataFrame. In our example, the year is from 1880 to 2010.</p>
 <div class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb67-2"><a href="#cb67-2"></a></span>
-<span id="cb67-3"><a href="#cb67-3"></a>path <span class="op">=</span> <span class="st">'assests/datasets/babynames/'</span></span>
-<span id="cb67-4"><a href="#cb67-4"></a>dflist <span class="op">=</span> <span class="bu">list</span>()</span>
-<span id="cb67-5"><a href="#cb67-5"></a><span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1880</span>, <span class="dv">2011</span>):</span>
-<span id="cb67-6"><a href="#cb67-6"></a>    filename <span class="op">=</span> path <span class="op">+</span> <span class="st">'yob'</span> <span class="op">+</span> <span class="bu">str</span>(year) <span class="op">+</span> <span class="st">'.txt'</span></span>
-<span id="cb67-7"><a href="#cb67-7"></a>    df <span class="op">=</span> pd.read_csv(filename, names<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'gender'</span>, <span class="st">'counts'</span>])</span>
-<span id="cb67-8"><a href="#cb67-8"></a>    df[<span class="st">'year'</span>] <span class="op">=</span> year</span>
-<span id="cb67-9"><a href="#cb67-9"></a>    dflist.append(df)</span>
-<span id="cb67-10"><a href="#cb67-10"></a>df <span class="op">=</span> pd.concat(dflist, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'assests/datasets/babynames/'</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>dflist <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1880</span>, <span class="dv">2011</span>):</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>    filename <span class="op">=</span> path <span class="op">+</span> <span class="st">'yob'</span> <span class="op">+</span> <span class="bu">str</span>(year) <span class="op">+</span> <span class="st">'.txt'</span></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(filename, names<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'gender'</span>, <span class="st">'counts'</span>])</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'year'</span>] <span class="op">=</span> year</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>    dflist.append(df)</span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dflist, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can plot the total births by sex and year.</p>
 <div class="cell" data-execution_count="48">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb68-2"><a href="#cb68-2"></a></span>
-<span id="cb68-3"><a href="#cb68-3"></a>sns.relplot(data<span class="op">=</span>df.groupby([<span class="st">'gender'</span>, <span class="st">'year'</span>]).<span class="bu">sum</span>().reset_index(),</span>
-<span id="cb68-4"><a href="#cb68-4"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'gender'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>df.groupby([<span class="st">'gender'</span>, <span class="st">'year'</span>]).<span class="bu">sum</span>().reset_index(),</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'gender'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="49">
 <div class="cell-output cell-output-display" data-execution_count="47">
@@ -1314,12 +1314,12 @@ Name: a, dtype: int64</code></pre>
 </div>
 <p>For further analysis, we would like to compute the proportions of each name relative to the total number of births per year per gender.</p>
 <div class="cell" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a><span class="kw">def</span> add_prop(group):</span>
-<span id="cb70-2"><a href="#cb70-2"></a>    group[<span class="st">'prop'</span>] <span class="op">=</span> group.counts <span class="op">/</span> group.counts.<span class="bu">sum</span>()</span>
-<span id="cb70-3"><a href="#cb70-3"></a>    <span class="cf">return</span> group</span>
-<span id="cb70-4"><a href="#cb70-4"></a></span>
-<span id="cb70-5"><a href="#cb70-5"></a>df <span class="op">=</span> df.groupby([<span class="st">'gender'</span>, <span class="st">'year'</span>]).<span class="bu">apply</span>(add_prop)</span>
-<span id="cb70-6"><a href="#cb70-6"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_prop(group):</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    group[<span class="st">'prop'</span>] <span class="op">=</span> group.counts <span class="op">/</span> group.counts.<span class="bu">sum</span>()</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> group</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.groupby([<span class="st">'gender'</span>, <span class="st">'year'</span>]).<span class="bu">apply</span>(add_prop)</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="51">
 <div class="cell-output cell-output-display" data-execution_count="48">
@@ -1385,14 +1385,14 @@ Name: a, dtype: int64</code></pre>
 </div>
 <p>Now we would like to keep the first 100 names in each year, and save it as a new DataFrame <code>top100</code>.</p>
 <div class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a>top100 <span class="op">=</span> (</span>
-<span id="cb71-2"><a href="#cb71-2"></a>    df.groupby([<span class="st">'year'</span>, <span class="st">'gender'</span>])</span>
-<span id="cb71-3"><a href="#cb71-3"></a>    .<span class="bu">apply</span>(<span class="kw">lambda</span> x: df.loc[x[<span class="st">'counts'</span>].nlargest(<span class="dv">100</span>).index])</span>
-<span id="cb71-4"><a href="#cb71-4"></a>    .drop(columns<span class="op">=</span>[<span class="st">'year'</span>, <span class="st">'gender'</span>])</span>
-<span id="cb71-5"><a href="#cb71-5"></a>    .reset_index()</span>
-<span id="cb71-6"><a href="#cb71-6"></a>    .drop(columns<span class="op">=</span><span class="st">'level_2'</span>)</span>
-<span id="cb71-7"><a href="#cb71-7"></a>)</span>
-<span id="cb71-8"><a href="#cb71-8"></a>top100.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>top100 <span class="op">=</span> (</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>    df.groupby([<span class="st">'year'</span>, <span class="st">'gender'</span>])</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">apply</span>(<span class="kw">lambda</span> x: df.loc[x[<span class="st">'counts'</span>].nlargest(<span class="dv">100</span>).index])</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    .drop(columns<span class="op">=</span>[<span class="st">'year'</span>, <span class="st">'gender'</span>])</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>    .reset_index()</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    .drop(columns<span class="op">=</span><span class="st">'level_2'</span>)</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>top100.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="53">
 <div class="cell-output cell-output-display" data-execution_count="49">
@@ -1459,9 +1459,9 @@ Name: a, dtype: int64</code></pre>
 <p>Note that <code>level_2</code> is related to the original index after <code>reset_index()</code>. That’s why we don’t need it here.</p>
 <p>Now we would like to draw the trend of some names.</p>
 <div class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a>namelist <span class="op">=</span> [<span class="st">'John'</span>, <span class="st">'Harry'</span>, <span class="st">'Mary'</span>]</span>
-<span id="cb72-2"><a href="#cb72-2"></a>sns.relplot(data<span class="op">=</span>top100[top100[<span class="st">'name'</span>].isin(namelist)],</span>
-<span id="cb72-3"><a href="#cb72-3"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'name'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>namelist <span class="op">=</span> [<span class="st">'John'</span>, <span class="st">'Harry'</span>, <span class="st">'Mary'</span>]</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>top100[top100[<span class="st">'name'</span>].isin(namelist)],</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'name'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="55">
 <div class="cell-output cell-output-display" data-execution_count="50">
@@ -1473,19 +1473,19 @@ Name: a, dtype: int64</code></pre>
 </div>
 <p>Now we would like to analyze the ending of names.</p>
 <div class="cell" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>df[<span class="st">'ending'</span>] <span class="op">=</span> df[<span class="st">'name'</span>].<span class="bu">str</span>[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb74-2"><a href="#cb74-2"></a>endingcount <span class="op">=</span> df.groupby([<span class="st">'gender'</span>, <span class="st">'year'</span>, <span class="st">'ending'</span>]).<span class="bu">sum</span>().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'ending'</span>] <span class="op">=</span> df[<span class="st">'name'</span>].<span class="bu">str</span>[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>endingcount <span class="op">=</span> df.groupby([<span class="st">'gender'</span>, <span class="st">'year'</span>, <span class="st">'ending'</span>]).<span class="bu">sum</span>().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We would like to draw barplots to show the distributions in year 1910, 1960 and 2010.</p>
 <div class="cell" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>certainyear <span class="op">=</span> endingcount[endingcount[<span class="st">'year'</span>].isin([<span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">2010</span>])]</span>
-<span id="cb75-2"><a href="#cb75-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb75-3"><a href="#cb75-3"></a></span>
-<span id="cb75-4"><a href="#cb75-4"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">7</span>))</span>
-<span id="cb75-5"><a href="#cb75-5"></a>sns.barplot(data<span class="op">=</span>certainyear[endingcount[<span class="st">'gender'</span>]<span class="op">==</span><span class="st">'M'</span>],</span>
-<span id="cb75-6"><a href="#cb75-6"></a>            x<span class="op">=</span><span class="st">'ending'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'year'</span>, ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
-<span id="cb75-7"><a href="#cb75-7"></a>sns.barplot(data<span class="op">=</span>certainyear[endingcount[<span class="st">'gender'</span>]<span class="op">==</span><span class="st">'F'</span>],</span>
-<span id="cb75-8"><a href="#cb75-8"></a>            x<span class="op">=</span><span class="st">'ending'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'year'</span>, ax<span class="op">=</span>axs[<span class="dv">1</span>]).legend_.remove()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>certainyear <span class="op">=</span> endingcount[endingcount[<span class="st">'year'</span>].isin([<span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">2010</span>])]</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">7</span>))</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>certainyear[endingcount[<span class="st">'gender'</span>]<span class="op">==</span><span class="st">'M'</span>],</span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'ending'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'year'</span>, ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>certainyear[endingcount[<span class="st">'gender'</span>]<span class="op">==</span><span class="st">'F'</span>],</span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'ending'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'year'</span>, ax<span class="op">=</span>axs[<span class="dv">1</span>]).legend_.remove()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="58">
 <div class="cell-output cell-output-display">
@@ -1494,8 +1494,8 @@ Name: a, dtype: int64</code></pre>
 </div>
 <p>We would also like to draw the line plot to show the trending of certain letters through years.</p>
 <div class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a>sns.relplot(data<span class="op">=</span>endingcount[endingcount.ending.isin([<span class="st">'d'</span>, <span class="st">'n'</span>, <span class="st">'y'</span>])],</span>
-<span id="cb76-2"><a href="#cb76-2"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'ending'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>endingcount[endingcount.ending.isin([<span class="st">'d'</span>, <span class="st">'n'</span>, <span class="st">'y'</span>])],</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'ending'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="60">
 <div class="cell-output cell-output-display" data-execution_count="52">

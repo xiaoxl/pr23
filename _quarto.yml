@@ -29,8 +29,8 @@ format:
     theme: 
       - cosmo
     code-block-bg: true
-    # code-block-border-left: true #"#31BAE9"
-    code-line-numbers: true
+    code-block-border-left: true #"#31BAE9"
+    # code-line-numbers: true
     highlight-style: atom-one
 
 book:
