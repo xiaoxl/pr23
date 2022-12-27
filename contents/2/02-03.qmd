@@ -1,22 +1,90 @@
 
 
-## Flows, Logic and functions
+## Flows and Functions
 
 ### `for` loop
+A `for` loop is used for iterating over an *iterator*. Iterators can be gotten from lists, tuples, strings, etc.. The basic syntax of a `for` loop is as follows.
+
+```{python}
+#| eval: false
+for i in aniterator:
+    do thing
+```
+In each iteration, the `aniterator` will produce a value and assign it to `i`. Then the code in the `for` loop will run with `i` being assigned to the specific value. 
+
+Let's look at three typical examples of iterators.
+
+::: {.callout-note collapse="true"}
+## `range()`
+`range(N)` is an iterator which will produce integers from `0` to `N-1`. This is the most basic way to use `for` loop that you may treat `i` as the index of an iteration. Note that similar to the list index rule (which will be discussed later), the right end point `N` is not included.
+
+```{python}
+for i in range(3):
+    print(i)
+```
+There are two more versions of `range()`:
+
+- `range(M, N)` can generate integers from `M` to `N-1`.
+- `range(M, N, s)` can generate integers from `M` to `N-1`, with the step size `s`.
+Similarly, in both cases, the right end point `N` is not included.
+
+```{python}
+for i in range(1, 3):
+    print(i)
+```
+
+```{python}
+for i in range(1, 5, 2):
+    print(i)
+```
+:::
 
 
+::: {.callout-note collapse="true"}
+## Strings
+You may use a string as an iterator. It will go through the string and generate the letter in it one by one from the beginning to the end. Note that escaped letters will be captured. Please see the following example.
 
-- `range(10)`
-- `list`
+```{python}
+s = 'abc\"'
+for i in s:
+    print(i)
+```
+:::
 
-### `if` conditional control
 
+::: {.callout-note collapse="true"}
+## Lists
+We will talk about lists in details in next section. We will briefly mention it here since lists are the most common iterators in Python. Roughly speaking, a list is an ordered sequence of Python objects. As an iterator, it just goes through the sequence and generates the object in it one by one from the beginning to the end. Please see the following example.
+
+```{python}
+s = [1, 'a', -3.1, 'abc']
+for i in s:
+    print(i)
+```
+:::
+
+### `if` statement
+The `if` statement is straightforword. Here is a typical example.
+
+```{python}
+x = -1
+
+if x < 0:
+    x = 0
+    print('Negative changed to zero')
+elif x == 0:
+    print('Zero')
+elif x == 1:
+    print('Single')
+else:
+    print('More')
+```
+There can be zero or more `elif` parts, and the `else` part is optional.
 
 ### Functions
 
-Functions are declared with the `def` keyword and returned from the `return` keyword.
+Functions are declared with the `def` keyword and returned from the `return` keyword. Here is a typical example of a function.
 
-::: {#exm-}
 ```{python}
 def my_function(x, y, z=1.5):
     if z > 1:
@@ -24,7 +92,6 @@ def my_function(x, y, z=1.5):
     else:
         return z / (x + y)
 ```
-:::
 
 Each function can have *positional* arguments and *keyword* arguments. 
 

@@ -6,18 +6,45 @@
 Main questions in `list` contain creating, indexing and applications.
 
 ### Creating lists
-A `list` can be created simply by writing down all the elements in order and enclosed by `[]`
 
-::: {#exm-}
+There are two built-in methods to create lists. 
+
+::: {.callout-note collapse="true"}
+## Naive way 
+A `list` can be created simply by writing down all the elements in order and enclosed by `[]`. Please see the following typical example.
 
 ```{python}
 L = [0, 1, 2]
 L
 ```
 
+An empty list can be denoted by `[]`. 
 :::
 
-An empty list can be denoted by `[]`. 
+::: {.callout-note collapse="true"}
+## Use `list()` to convert objects into a list
+
+Similar to the type change for numeric types and `str`, you may use `list()` to convert other objects into a list, if able. The typical example is to convert other iterators into lists.
+
+::: {#exm-}
+## Convert to lists
+
+```{python}
+s = 'abc'
+list(s)
+```
+
+```{python}
+list(range(1, 5, 2))
+```
+Empty list can be created by `list()`.
+:::
+:::
+
+::: {.callout-tip}
+The real difference between this two methods are very subtle. You may just focus on which one can create the list you want, for now.
+:::
+
 
 
 ### Indexing
@@ -31,6 +58,19 @@ Let `L` be a list. Then `L[i]` will return the `i`-th element in the list.
 
 - All index in Python starts from `0`. Therefore the first element is `L[0]`, the second is `L[1]`, etc..
 - Negative position means go backwards. So `L[-1]` means the last element, `L[-2]` means the second last element, etc..
+
+::: {#exm-}
+
+```{python}
+L = [1, 2, 3]
+L[0]
+```
+
+```{python}
+L[-2]
+```
+:::
+
 :::
 
 
@@ -77,58 +117,102 @@ L[-1:0:-1]
 
 
 
-- Access to the data
-- Slicing
-
 ### Methods
-- Methods
-    - `append` 
-    - `extend` and `+`
-    <!-- - `pop` -->
-    <!-- - `remove` -->
-- `in`
+
+::: {.callout-note collapse="true"}
+## `in`
+`in` is used to check whether one object is in a list. Please see the following example.
+
+```{python}
+L = ['1', '2', '3']
+'1' in L
+```
+
+```{python}
+1 in L
+```
+:::
+
+
+::: {.callout-note collapse="true"}
+## `.append()`
+`.append()` method is used to add one object to the list. The default setting is to add the object to the end of the list. Please see the following example.
+
+```{python}
+L = [1, 2, 3]
+L.append(4)
+L
+```
+Note that you may input any Python object. If appending another list, that list will be treated as an object. Please see the following example.
+
+```{python}
+L = [1, 2, 3]
+L.append([4, 5])
+L
+```
+
+:::
+
+
+::: {.callout-note collapse="true"}
+## `.extend()` and `+`
+`.extend()` method is used to extend the original list by another list. The input has to be a list. Please see the following example.
+
+```{python}
+L = [1, 2, 3]
+L.extend([4, 5])
+L
+```
+
+```{python}
+#| error: true
+L = [1, 2, 3]
+L.extend(4)
+L
+```
+You may use `+` to represent `.extend()`. Please see the following example. It is exactly the same as `[1, 2, 3].extend(['a', 'b'])`.
+
+```{python}
+[1, 2, 3] + ['a', 'b']
+```
+
+:::
 
 
 
-::: {.callout-caution collapse=true}
-## The importance of documents
+::: {.callout-note collapse=true}
+## `sorted()` and `.sort()`
+Let `L` be a list of numbers. We could use `sorted(L)` or `L.sort()` to sort this list `L`. 
 
-::: {#exm-}
-## Sorting a list
-Let `a=[3, 1, 2]` be a list. We would like to sort the list. There are two different built-in methods. 
+- `sorted()` is a Python built-in function. The syntax is straightforward.
 
 ```{python}
 a = [3, 1, 2]
 b = sorted(a)
 b
 ```
-The first method is straightforward and we get what we expected. However if we use the same idea, and write the codes in the following way, we will get something unexpected. 
 
+- `.sort()` is a `list` method. It sorts the list in place.
 ```{python}
 a = [3, 1, 2]
-b = a.sort()
-print(b)
-```
-`b` won't be directly printed since `b` is actually `None`. The way that `.sort()` works is that it sort the list inplace. In other words, the method doesn't have an output. It directly change the original list.
-
-```{python}
+a.sort()
 a
 ```
+Note that `a.sort()` doesn't have any return values. `a` is altered during the process. If you want to catch the return value, you will get a `None` object.
+
+```{python}
+b = a.sort()
+b is None
+```
+
+::: {.callout-caution}
+## The importance of documents
+This example shows that similar functions may behaves differently. It is actually very hard to predict what would happen since it all depends on how the developer of the function thinks about the problems.
+
+Therefore it is very important to know how to find references. Other than simply asking questions on StackOverflow or other forums, the official documents are always your good friend. For example, you may find how these two functions work from [`sorted()`](https://docs.python.org/3/library/functions.html#sorted) and [`.sort()`](https://docs.python.org/3/library/stdtypes.html#list.sort).
 :::
 
-
-This is an example to show that similar functions may behaves differently. It is actually very hard to predict what would happen since it all depends on how the developer of the function thinks about the problems.
-
-Therefore it is very important to know how to find references. Other than simply asking questions on StackOverflow or other forums, the official documents are always your good friend. For example, you may find the answer to the above problems from [`sorted`](https://docs.python.org/3/library/functions.html#sorted) and [`.sort()`](https://docs.python.org/3/library/stdtypes.html#list.sort).
-
-
 :::
-
-
-
-### Work with `for` loop
-
-- `for`
 
 
 ### Work with `str`
@@ -138,17 +222,3 @@ Therefore it is very important to know how to find references. Other than simply
 
 - `str.split`
 - `str.join`
-
-
-
-
-### List Comprehension
-List Comprehension is a convenient way to create lists based on the values of an existing list. It cannot provide any real improvement to the performance of the codes, but it can make the codes shorter and easier to read.
-
-The format of list Comprehension is
-```{python}
-#| eval: false
-newlist = [expression for item in iterable if condition == True]
-```
-   
-

@@ -13,6 +13,8 @@
 
 {{< include 02-05.qmd >}}
 
+{{< include 02-06.qmd >}}
+
 {{< include 02-ex.qmd >}}
 
 

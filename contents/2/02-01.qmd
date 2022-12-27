@@ -22,6 +22,8 @@ Numeric types are represented by numbers. If there are no confusions, Python wil
 x = 1 # x is an int.
 y = 2.0 # y is a float.
 ```
+There are several types of numeric types, like `int`, `float`, etc.. Usually Python will automatically determine the type of the data, but sometimes you may still want to declare them manually. To change types you may apply `int()`, `float()`, etc. to the values you want to change.
+
 Python can do math just like other programming languages. The basic math operations are listed as follows.
 
 - `+`, `-`, `*`, `/`, `>`, `<`, `>=`, `<=` works as normal.
@@ -41,25 +43,41 @@ Python is centered around objects. There are differences between two objects and
 
 You may use `id(x)` to check the id of the object `x`. Two objects are identical if they have the same id.
 
-More details about objects will be discussed in the following courses.
+For beginners, in most cases, you should use `==` to check values of variables. The most common case to use `is` is to check whether something is a `None` object. In other words, you should use `a is None` other than `a == None`.
+
+More details about objects will be discussed later in this course.
 :::
 
 
 
 ### `str`
-Scalars are represented by numbers and strings are represented by quotes. Example:
+Scalars are represented by numbers and strings are represented by quotes. Examples:
+
 ```{python}
 x = 1       # x is a scalar.
 y = 's'     # y is a string with one letter.
 z = '0'     # z loos like a number, but it is a string.
 w = "Hello" # w is a string with double quotes.
 ```
+
 Here are some facts.
 
-1. For strings, you can use either single quotes `'` or double quotes `"`.
-2. `\` is used to denote escaped words. You may find the list [Here](https://www.w3schools.com/python/gloss_python_escape_characters.asp). 
-3. There are several types of scalars, like `int`, `float`, etc.. Usually Python will automatically determine the type of the data, but sometimes you may still want to declare them manually.
-4. You can use `int()`, `str()`, etc. to change types.
+1. For strings, you can use either single quotes `'` or double quotes `"`. The tricky part here is that you may use `'` in `"`, or `"` in `'`. If you want to use `'` in `'` or `"` in `"`, use `\` below.
+2. `\` is used to denote escaped words. You may find the list [here](https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals). 
+3. You can use `str()` to change other values to a string, if able.
+4. You may use `string[n]` to read the nth letter of `string`. Note that the index starts from `0`. This part is very similar to list. We will come back to it later after we talked about list.
+
+```{python}
+s = 'abcdef'
+s[3]
+```
+
+5. To concatenate two strings, you may simply use `+`. See the following example.
+
+```{python}
+s = 'abc' + 'def'
+s
+```
 
 
 ::: {.callout-note collapse="true"}

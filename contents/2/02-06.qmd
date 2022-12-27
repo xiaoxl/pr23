@@ -1,0 +1,17 @@
+## More advanced topics
+
+### List Comprehension
+List Comprehension is a convenient way to create lists based on the values of an existing list. It cannot provide any real improvement to the performance of the codes, but it can make the codes shorter and easier to read.
+
+The format of list Comprehension is
+```{python}
+#| eval: false
+newlist = [expression for item in iterable if condition == True]
+```
+   
+
+### Dictionary Comprehension
+
+
+
+### `re`
