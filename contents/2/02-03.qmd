@@ -26,7 +26,7 @@ def my_function(x, y, z=1.5):
 
 Each function can have *positional* arguments and *keyword* arguments. 
 
-- Keyword arguments are most commonly used to specify default values.
+- `z=1.5` in above example means that the default value for `z` is `1.5`. Keyword arguments are most commonly used to specify default values.
 - If no keywords are given, all arguments will be recognized by the positions.
 - If both positional arguments and keyword arguments are given, positional arguments have to be in front. 
 - The order of keyword arguments are not important.
@@ -37,8 +37,53 @@ Although there are global variable, it is always ecouraged to use local variable
 :::
 
 
+
+
+::: {.callout-note collapse="true"}
+## Lambda function
+*lambda* function is a way of writing functions consisting of a single statment. The format is `lambda x: output of x`. 
+
+Please see the following examples.
+
 ::: {#exm-}
-#### Mutable objects as default value
+```{python}
+#| eval: false
+f = lambda x: 2*x+1
+
+f(3)
+```
+:::
+
+::: {#exm-}
+```{python}
+def apply_to_list(some_list, f):
+    return [f(x) for x in some_list]
+
+ints = [4, 0, 1, 5, 6]
+apply_to_list(ints, lambda x: x * 2)
+```
+:::
+
+::: {#exm-}
+```{python}
+fruits = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+
+fruits_sorted = sorted(fruits.items(), key=lambda x: x[1])
+fruits_sorted
+```
+:::
+
+
+Lambda function is always used as a input parameter when it is not worth to use extra space to write a one line function. You will see several examples in the Chapter of `pandas`.
+
+:::
+
+
+
+
+
+::: {.callout-caution collapse="true"}
+## This is a tricky but not very rare case: mutable objects as default values.
 It is highly recommended NOT to set any mutatable objects as the default value of an input of a function. The reason is that this default object is initialized when the function is defined, not when the function is called. Then all function calls will share the same default object.
 
 A typical example is an empty list. If you use an empty list as the defaul value, that list will be passed to the next function call, which is no longer empty. Please see the following example.
@@ -78,5 +123,6 @@ add()
 ```{python}
 add()
 ```
+
 
 :::

@@ -37,7 +37,9 @@ def f(x):
 The default value for indentation is 4 spaces, which can be changed by users. We will just use the default value in this course.
 
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
+## Line break
+
 It is usually recommended that one line of code should not be very long. If you do have one, and it cannot be shortened, you may break it into multiline codes directly in Python. However, since indentation is super important in Python, when break one line code into multilines, please make sure that everything is aligned perfectly. Please see the following example.
 
 ```{python}
@@ -57,7 +59,7 @@ results = shotchartdetail.ShotChartDetail(
 
 ### Binary operators and comparisons
 
-Most binary operators behaves as you expected. Here I just want to mention `==` and `is`. 
+Most binary operators behaves as you expected. Here I just want to mention `==` and `is`. For more operations please refer to exercises.
 
 - `==` is testing whehter these two objects have the same value.
 - `is` is testing whether these two objects are exactly the same.
@@ -136,7 +138,7 @@ Each object might have attributes and/or methods attached.
 
 
 ### Mutable and immutable objects
-An object whose internal state can be changed is *mutable*. On the other hand, *immutable* doesn’t allow any change in the object once it has been created.
+An object whose internal state can be changed is *mutable*. On the other hand, *immutable* doesn’t allow any change in the object once it has been created. 
 
 Some objects of built-in type that are mutable are:
 
@@ -151,9 +153,10 @@ Some objects of built-in type that are immutable are:
 - Strings
 - Tuples
 
+In the following courses, you will learn some of these objects. You will see that for mutable objects, there are built-in methods to modify them, like `.append()` for `list`, which append element to the end of a list. There are none for immutable objects.
 
-::: {#exm-}
-## Tuples are not really "immutable"
+::: {.callout-caution collapse="true"}
+## A tricky case: Tuples are not really "immutable"
 You can treat a tuple as a container, which contains some objects. The relations between the container and its contents are immutable, but the objects it holds might be mutable. Please check the following example.
 
 ```{python}
@@ -170,5 +173,7 @@ print('This is the id of the new `container`: ', id(container))
 print('This is the id of the first list (which is updated) of the new `container`: ', id(container[0]))
 ```
 You can see that the tuple `container` and its first object stay the same, although we add one element to the first object.
+
+You may understand how objects are stored by considering this example.
 :::
 
