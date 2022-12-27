@@ -294,7 +294,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-path" id="toc-sec-path" class="nav-link active" data-scroll-target="#sec-path"><span class="toc-section-number">2.1</span>  Built-in Types: numeric types and <code>str</code></a>
+  <li><a href="#sec-path" id="toc-sec-path" class="nav-link active" data-scroll-target="#sec-path"><span class="toc-section-number">2.1</span>  Built-in Types: numeric and <code>str</code></a>
   <ul class="collapse">
   <li><a href="#numeric-types-and-math-expressions" id="toc-numeric-types-and-math-expressions" class="nav-link" data-scroll-target="#numeric-types-and-math-expressions"><span class="toc-section-number">2.1.1</span>  Numeric types and math expressions</a></li>
   <li><a href="#str" id="toc-str" class="nav-link" data-scroll-target="#str"><span class="toc-section-number">2.1.2</span>  <code>str</code></a></li>
@@ -350,7 +350,7 @@ div.csl-indent {
 </header>
 
 <section id="sec-path" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="sec-path"><span class="header-section-number">2.1</span> Built-in Types: numeric types and <code>str</code></h2>
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-path"><span class="header-section-number">2.1</span> Built-in Types: numeric and <code>str</code></h2>
 <p>This section is based on <span class="citation" data-cites="You2020">[<a href="../references.html#ref-You2020" role="doc-biblioref">1</a>]</span>.</p>
 <p>There are several built-in data structures in Python. Here is an (incomplete) list:</p>
 <ul>
@@ -419,7 +419,7 @@ There is a very subtle relations between the variable / constant and the name of
 <span id="cb3-12"><a href="#cb3-12"></a>states <span class="op">=</span> [<span class="st">' Alabama '</span>, <span class="st">'Georgia!'</span>, <span class="st">'Georgia'</span>, <span class="st">'georgia'</span>, <span class="st">'FlOrIda'</span>,</span>
 <span id="cb3-13"><a href="#cb3-13"></a>          <span class="st">'south carolina##'</span>, <span class="st">'West virginia?'</span>]</span>
 <span id="cb3-14"><a href="#cb3-14"></a>clean_strings(states)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="116">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>['Alabama',
  'Georgia',
  'Georgia',
@@ -600,8 +600,8 @@ A tricky case: Tuples are not really “immutable”
 <span id="cb14-4"><a href="#cb14-4"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list of `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is `container`:  ([1], [2])
-This is the id of `container`:  1839693670272
-This is the id of the first list of `container`:  1839693581120</code></pre>
+This is the id of `container`:  2462133910528
+This is the id of the first list of `container`:  2462134308544</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="12">
@@ -611,8 +611,8 @@ This is the id of the first list of `container`:  1839693581120</code></pre>
 <span id="cb16-4"><a href="#cb16-4"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list (which is updated) of the new `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is the new `container`:  ([1, 2], [2])
-This is the id of the new `container`:  1839693670272
-This is the id of the first list (which is updated) of the new `container`:  1839693581120</code></pre>
+This is the id of the new `container`:  2462133910528
+This is the id of the first list (which is updated) of the new `container`:  2462134308544</code></pre>
 </div>
 </div>
 <p>You can see that the tuple <code>container</code> and its first object stay the same, although we add one element to the first object.</p>
@@ -697,7 +697,7 @@ Lambda function
 <span id="cb20-3"><a href="#cb20-3"></a></span>
 <span id="cb20-4"><a href="#cb20-4"></a>ints <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb20-5"><a href="#cb20-5"></a>apply_to_list(ints, <span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="123">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[8, 0, 2, 10, 12]</code></pre>
 </div>
 </div>
@@ -709,7 +709,7 @@ Lambda function
 <span id="cb22-2"><a href="#cb22-2"></a></span>
 <span id="cb22-3"><a href="#cb22-3"></a>fruits_sorted <span class="op">=</span> <span class="bu">sorted</span>(fruits.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>])</span>
 <span id="cb22-4"><a href="#cb22-4"></a>fruits_sorted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="124">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)]</code></pre>
 </div>
 </div>
@@ -738,19 +738,19 @@ This is a tricky but not very rare case: mutable objects as default values.
 <span id="cb24-3"><a href="#cb24-3"></a>    <span class="cf">return</span> x</span>
 <span id="cb24-4"><a href="#cb24-4"></a></span>
 <span id="cb24-5"><a href="#cb24-5"></a>add()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="125">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[1]</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>add()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="126">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>[1, 1]</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>add()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="127">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>[1, 1, 1]</code></pre>
 </div>
 </div>
@@ -764,19 +764,19 @@ This is a tricky but not very rare case: mutable objects as default values.
 <span id="cb30-5"><a href="#cb30-5"></a>    <span class="cf">return</span> x</span>
 <span id="cb30-6"><a href="#cb30-6"></a></span>
 <span id="cb30-7"><a href="#cb30-7"></a>add()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="128">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>[1]</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>add()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="129">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>[1]</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>add()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="130">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>[1]</code></pre>
 </div>
 </div>
@@ -797,7 +797,7 @@ This is a tricky but not very rare case: mutable objects as default values.
 <div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>L <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
 <span id="cb36-2"><a href="#cb36-2"></a>L</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="131">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>[0, 1, 2]</code></pre>
 </div>
 </div>
@@ -856,25 +856,25 @@ By slicing
 <div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>L <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>]</span>
 <span id="cb39-2"><a href="#cb39-2"></a>L[<span class="dv">1</span>:<span class="dv">5</span>:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="132">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>['b', 'd']</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>L[<span class="dv">1</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="133">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>['b', 'c']</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>L[:<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="134">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>['a', 'b', 'c', 'd']</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>L[<span class="op">-</span><span class="dv">1</span>:<span class="dv">0</span>:<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="135">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>['e', 'd', 'c', 'b']</code></pre>
 </div>
 </div>
@@ -915,7 +915,7 @@ The importance of documents
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>a <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
 <span id="cb47-2"><a href="#cb47-2"></a>b <span class="op">=</span> <span class="bu">sorted</span>(a)</span>
 <span id="cb47-3"><a href="#cb47-3"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="136">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
@@ -931,7 +931,7 @@ The importance of documents
 <p><code>b</code> won’t be directly printed since <code>b</code> is actually <code>None</code>. The way that <code>.sort()</code> works is that it sort the list inplace. In other words, the method doesn’t have an output. It directly change the original list.</p>
 <div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="138">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
@@ -1092,25 +1092,35 @@ have so many parts. We would also want to try this symbol: '. Do you know how to
 </ol>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.7 (List comprehension) </strong></span>Given a list of numbers, use list comprehension to remove all odd numbers from the list:</p>
+<p><span class="theorem-title"><strong>Exercise 2.7 </strong></span>Please tell the differences of the following objects.</p>
+<ol type="1">
+<li><code>[1, 2, 3, 4, 5, 6]</code></li>
+<li><code>[[1, 2], [3, 4], [5, 6]]</code></li>
+<li><code>{1: 2, 3: 4, 5: 6}</code></li>
+<li><code>{1: [2], 3: [4], 5: [6]}</code></li>
+<li><code>[{1: 2}, {3: 4}, {5: 6}]</code></li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2.8 (List comprehension) </strong></span>Given a list of numbers, use list comprehension to remove all odd numbers from the list:</p>
 <div class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">45</span>,<span class="dv">97</span>,<span class="dv">32</span>,<span class="dv">22</span>,<span class="dv">10</span>,<span class="dv">19</span>,<span class="dv">39</span>,<span class="dv">43</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.8 (More list comprehension) </strong></span>Use list comprehension to find all of the numbers from 1-1000 that are divisible by 7.</p>
+<p><span class="theorem-title"><strong>Exercise 2.9 (More list comprehension) </strong></span>Use list comprehension to find all of the numbers from 1-1000 that are divisible by 7.</p>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.9 (More list comprehension) </strong></span>Count the number of spaces in a string.</p>
+<p><span class="theorem-title"><strong>Exercise 2.10 (More list comprehension) </strong></span>Count the number of spaces in a string.</p>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.10 (More list comprehension) </strong></span>Use list comprehension to get the index and the value as a tuple for items in the list <code>['hi', 4, 8.99, 'apple', ('t,b', 'n')]</code>. Result would look like <code>[(index, value), (index, value), ...]</code>.</p>
+<p><span class="theorem-title"><strong>Exercise 2.11 (More list comprehension) </strong></span>Use list comprehension to get the index and the value as a tuple for items in the list <code>['hi', 4, 8.99, 'apple', ('t,b', 'n')]</code>. Result would look like <code>[(index, value), (index, value), ...]</code>.</p>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.11 (More list comprehension) </strong></span>Use list comprehension to find the common numbers in two lists (without using a tuple or set) <code>list_a = [1, 2, 3, 4]</code>, <code>list_b = [2, 3, 4, 5]</code>.</p>
+<p><span class="theorem-title"><strong>Exercise 2.12 (More list comprehension) </strong></span>Use list comprehension to find the common numbers in two lists (without using a tuple or set) <code>list_a = [1, 2, 3, 4]</code>, <code>list_b = [2, 3, 4, 5]</code>.</p>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.12 (Probability) </strong></span>Compute the probability that two people out of 23 share the same birthday. The math formula for this is <span class="math display">\[1-\frac{365!/(365-23)!}{365^{23}}=1-\frac{365}{365}\cdot\frac{365-1}{365}\cdot\frac{365-2}{365}\cdot\ldots\cdot\frac{365-22}{365}.\]</span></p>
+<p><span class="theorem-title"><strong>Exercise 2.13 (Probability) </strong></span>Compute the probability that two people out of 23 share the same birthday. The math formula for this is <span class="math display">\[1-\frac{365!/(365-23)!}{365^{23}}=1-\frac{365}{365}\cdot\frac{365-1}{365}\cdot\frac{365-2}{365}\cdot\ldots\cdot\frac{365-22}{365}.\]</span></p>
 <ol type="1">
 <li><p>To directly use the formula we have to use a high performance math package, e.g.&nbsp;<code>math</code>. Please use <code>math.factorial</code> to compute the above formula.</p></li>
 <li><p>Please use the right hand side of the above formula to compute the probability using the following steps.</p>
@@ -1123,7 +1133,7 @@ have so many parts. We would also want to try this symbol: '. Do you know how to
 </ol>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.13 (Determine the indefinite article) </strong></span>Please finish the following tasks.</p>
+<p><span class="theorem-title"><strong>Exercise 2.14 (Determine the indefinite article) </strong></span>Please finish the following tasks.</p>
 <ol type="1">
 <li>Please construct a list <code>aeiou</code> that contains all vowels.</li>
 <li>Given a word <code>word</code>, we would like to find the indefinite article <code>article</code> before <code>word</code>. (Hint: the article should be <code>an</code> if the first character of <code>word</code> is a vowel, and <code>a</code> if not.)</li>
@@ -1138,7 +1148,7 @@ Click for Hint.
 </div>
 </details>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.14 (File names) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 2.15 (File names) </strong></span>&nbsp;</p>
 <ol type="1">
 <li>Please use Python code to generate the following list of file names: <code>file0.txt</code>, <code>file1.txt</code>, <code>file2.txt</code>, … <code>file9.txt</code>.</li>
 <li>Please use Python code to generate the following list of file names: <code>file0.txt</code>, <code>file1.txt</code>, <code>file2.txt</code>, … <code>file10.txt</code>, <code>file11.txt</code>, …, <code>file99.txt</code>, <code>file100.txt</code>.</li>
@@ -1146,7 +1156,7 @@ Click for Hint.
 </ol>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.15 (Datetime and files names) </strong></span>We would like to write a program to quickly generate <code>N</code> files. (For example, we want to take random samples multiple times and we want to keep all our samples. Another example is to generate AI pictures.)</p>
+<p><span class="theorem-title"><strong>Exercise 2.16 (Datetime and files names) </strong></span>We would like to write a program to quickly generate <code>N</code> files. (For example, we want to take random samples multiple times and we want to keep all our samples. Another example is to generate AI pictures.)</p>
 <p>Every time we run the code, <code>N</code> files will be generated. We hope to store all files generated and organize them in a neat way. To achieve this, one way is to create a subfolder for each run and store all files generated during that run in the particular subfolder. Since we would like to make it fast, the real point of this task is to find a way to automatically generate the file names for the files generated and the folder names for the subfolders generated. You don’t need to worry about the contents of the files and empty files are totally fine for this problem.</p>
 </div>
 <details>
@@ -1158,7 +1168,7 @@ Click for Hint.
 </div>
 </details>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.16 (Color the Gnomic data) </strong></span>We can use ASCII color codes in the string to change the color of strings, as an example <code>\033[91m</code> for red and <code>\033[94m</code> for blue. See the following example.</p>
+<p><span class="theorem-title"><strong>Exercise 2.17 (Color the Gnomic data) </strong></span>We can use ASCII color codes in the string to change the color of strings, as an example <code>\033[91m</code> for red and <code>\033[94m</code> for blue. See the following example.</p>
 <div class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\033</span><span class="st">[91m'</span><span class="op">+</span><span class="st">'red'</span><span class="op">+</span><span class="st">'</span><span class="ch">\033</span><span class="st">[92m'</span><span class="op">+</span><span class="st">'green'</span><span class="op">+</span><span class="st">'</span><span class="ch">\033</span><span class="st">[94m'</span><span class="op">+</span><span class="st">'blue'</span><span class="op">+</span><span class="st">'</span><span class="ch">\033</span><span class="st">[93m'</span><span class="op">+</span><span class="st">'yellow'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1187,14 +1197,14 @@ Click for Hint.
 </div>
 </details>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.17 (<code>sorted</code>) </strong></span>Please read through the <a href="https://docs.python.org/3/howto/sorting.html#key-functions">Key funtions</a> in this article, and sort the following two lists.</p>
+<p><span class="theorem-title"><strong>Exercise 2.18 (<code>sorted</code>) </strong></span>Please read through the <a href="https://docs.python.org/3/howto/sorting.html#key-functions">Key funtions</a> in this article, and sort the following two lists.</p>
 <ol type="1">
 <li><p>Sort <code>list1 = [[11,2,3], [2, 3, 1], [5,-1, 2], [2, 3,-8]]</code> according to the sum of each list.</p></li>
 <li><p>Sort <code>list2 = [{'a': 1, 'b': 2}, {'a': 3, 'b': 4},{'a': 5, 'b': 2}]</code> according to the <code>b</code> value of each dictionary.</p></li>
 </ol>
 </div>
 <div id="exr-fantasyinventorycode" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.18 (Fantasy Game Inventory) </strong></span>You are creating a fantasy video game. The data structure to model the player’s inventory will be a dictionary where the keys are string values describing the item in the inventory and the value is an integer value detailing how many of that item the player has. For example, the dictionary value <code>{'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}</code> means the player has 1 rope, 6 torches, 42 gold coins, and so on.</p>
+<p><span class="theorem-title"><strong>Exercise 2.19 (Fantasy Game Inventory) </strong></span>You are creating a fantasy video game. The data structure to model the player’s inventory will be a dictionary where the keys are string values describing the item in the inventory and the value is an integer value detailing how many of that item the player has. For example, the dictionary value <code>{'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}</code> means the player has 1 rope, 6 torches, 42 gold coins, and so on.</p>
 <p>Write a program to take any possible <code>inventory</code> and display it like the following:</p>
 <div class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>Inventory:</span>
