@@ -354,8 +354,8 @@ div.csl-indent {
 <section id="hello-world-for-r" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="hello-world-for-r"><span class="header-section-number">7.1</span> Hello world for R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">print</span>(<span class="st">'Hello world!'</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#&gt; [1] "Hello world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Hello world!'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "Hello world!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="essential-concepts" class="level2" data-number="7.2">
@@ -385,9 +385,13 @@ Note
 </div>
 </div>
 <p>The most import part of R Markdown / Quarto is the code block, that is</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>print('Hello world!')</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">'Hello world!'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In Quarto, you may also write</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {{python}} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>print('Hello world!')</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello world!'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>There are many options to adjust how the code blocks are excacuted. You don’t need to worry about them right now. Currently just try to write your report together with code blocks.</p>
 </section>
 </section>
@@ -399,13 +403,13 @@ Note
 <p>Vector is one of the basic data structure in R. It is created by <code>c()</code> function. Sometimes it is called <code>atomic vector</code>. You may store any data types in it. R recognizes six basic types: <em>double</em>, <em>integers</em>, <em>characters</em>, <em>logicals</em>, <em>complex</em> and <em>raw</em>.</p>
 <p>The data type inside a vector can be checked by <code>typeof</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">typeof</span>(die)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; [1] "double"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(die)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "double"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For consecutive numbers, an easier way to create vector is to use <code>:</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout-caution callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -421,22 +425,22 @@ Danger
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>die[<span class="dv">1</span>]</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; [1] 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>die[<span class="dv">1</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When slicing with vectors, don’t forget to use <code>c()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>die[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="co">#&gt; [1] 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>die[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>die[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#&gt; [1] 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>die[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You may use <code>length()</code> function to get its length.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">length</span>(die)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#&gt; [1] 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(die)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="attributes" class="level3" data-number="7.3.2">
@@ -444,21 +448,21 @@ Danger
 <p>R objects may have attributes. Attributes won’t be shown by default when you show the object. You may find the attributes of a R object by calling the <code>attributes()</code> function.</p>
 <p>The following example show that the vector <code>die</code> defined in <a href="#sec-r-rb-ds-vectors"><span>Section&nbsp;7.3.1</span></a> doesn’t have attributes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">attributes</span>(die)</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="co">#&gt; NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(die)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Attributes can be read and write using <code>attr</code> function. See the following example.</p>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.1 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">attr</span>(die, <span class="st">'date'</span>) <span class="ot">&lt;-</span> <span class="st">'2022-01-01'</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>die</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="co">#&gt; attr(,"date")</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="co">#&gt; [1] "2022-01-01"</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="fu">attr</span>(die, <span class="st">'date'</span>) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a>die</span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(die, <span class="st">'date'</span>) <span class="ot">&lt;-</span> <span class="st">'2022-01-01'</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; attr(,"date")</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "2022-01-01"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(die, <span class="st">'date'</span>) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>You may think attributes as metadata attached to a R object. They are used to tell some useful infomation of the object. Some functions will interact with certain attributes. R itself treat attributes <code>class</code>, <code>comment</code>, <code>dim</code>, <code>dimnames</code>, <code>names</code>, <code>row.names</code> and <code>tsp</code> specially. We will only talk about <code>class</code> and <code>names</code> here. <code>dim</code> will be discussed in the next section. Others will be discussed when we use them.</p>
@@ -469,15 +473,15 @@ Danger
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.2 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">attr</span>(die, <span class="st">'class'</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="co">#&gt; NULL</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">class</span>(die)</span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co">#&gt; [1] "integer"</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">class</span>(die) <span class="ot">&lt;-</span> <span class="st">'a die'</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">attr</span>(die, <span class="st">'class'</span>)</span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="co">#&gt; [1] "a die"</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="fu">class</span>(die)</span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="co">#&gt; [1] "a die"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(die, <span class="st">'class'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NULL</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(die)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "integer"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(die) <span class="ot">&lt;-</span> <span class="st">'a die'</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(die, <span class="st">'class'</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "a die"</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(die)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "a die"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -489,17 +493,17 @@ Danger
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.3 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">names</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'three'</span>, <span class="st">'four'</span>, <span class="st">'five'</span>, <span class="st">'six'</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a>die</span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="co">#&gt;   one   two three  four  five   six </span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="co">#&gt;     1     2     3     4     5     6</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="fu">attributes</span>(die)</span>
-<span id="cb13-6"><a href="#cb13-6"></a><span class="co">#&gt; $names</span></span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="co">#&gt; [1] "one"   "two"   "three" "four"  "five"  "six"</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="fu">names</span>(die)</span>
-<span id="cb13-9"><a href="#cb13-9"></a><span class="co">#&gt; [1] "one"   "two"   "three" "four"  "five"  "six"</span></span>
-<span id="cb13-10"><a href="#cb13-10"></a><span class="fu">is.vector</span>(die)</span>
-<span id="cb13-11"><a href="#cb13-11"></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'three'</span>, <span class="st">'four'</span>, <span class="st">'five'</span>, <span class="st">'six'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   one   two three  four  five   six </span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     1     2     3     4     5     6</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(die)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $names</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "one"   "two"   "three" "four"  "five"  "six"</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(die)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "one"   "two"   "three" "four"  "five"  "six"</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(die)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -518,10 +522,10 @@ Tip
 <li>if characters are presented, all are converted to characters by what it is.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="co">#&gt; [1] 1 1</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="fu">c</span>(<span class="st">'1'</span>, <span class="dv">1</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="co">#&gt; [1] "1"    "1"    "TRUE"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 1</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">'1'</span>, <span class="dv">1</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "1"    "1"    "TRUE"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -542,36 +546,36 @@ Note
 <section id="matrices-and-arrays" class="level3" data-number="7.3.3">
 <h3 data-number="7.3.3" class="anchored" data-anchor-id="matrices-and-arrays"><span class="header-section-number">7.3.3</span> matrices and arrays</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb15-2"><a href="#cb15-2"></a>m[<span class="dv">1</span>, ]</span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="co">#&gt; [1] 1 3 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">1</span>, ]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 3 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A matrix has <code>dim</code> attribute.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">dim</span>(m)</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="co">#&gt; [1] 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(m)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that by assigning and removing <code>dim</code> attribute, you may change the object between vectors and matrices.</p>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.4 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>m</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="co">#&gt;      [,1] [,2] [,3]</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a><span class="co">#&gt; [1,]    1    3    5</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#&gt; [2,]    2    4    6</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a><span class="fu">is.matrix</span>(m)</span>
-<span id="cb17-6"><a href="#cb17-6"></a><span class="co">#&gt; [1] TRUE</span></span>
-<span id="cb17-7"><a href="#cb17-7"></a><span class="fu">is.vector</span>(m)</span>
-<span id="cb17-8"><a href="#cb17-8"></a><span class="co">#&gt; [1] FALSE</span></span>
-<span id="cb17-9"><a href="#cb17-9"></a><span class="fu">dim</span>(m)</span>
-<span id="cb17-10"><a href="#cb17-10"></a><span class="co">#&gt; [1] 2 3</span></span>
-<span id="cb17-11"><a href="#cb17-11"></a><span class="fu">dim</span>(m) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb17-12"><a href="#cb17-12"></a>m</span>
-<span id="cb17-13"><a href="#cb17-13"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
-<span id="cb17-14"><a href="#cb17-14"></a><span class="fu">is.matrix</span>(m)</span>
-<span id="cb17-15"><a href="#cb17-15"></a><span class="co">#&gt; [1] FALSE</span></span>
-<span id="cb17-16"><a href="#cb17-16"></a><span class="fu">is.vector</span>(m)</span>
-<span id="cb17-17"><a href="#cb17-17"></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1] [,2] [,3]</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,]    1    3    5</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,]    2    4    6</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">is.matrix</span>(m)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(m)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(m)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 3</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(m) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="fu">is.matrix</span>(m)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(m)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -594,27 +598,27 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.5 </strong></span>We would like to talk about all months. We first define a vector of the valid levels:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>month_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>, <span class="st">"May"</span>, <span class="st">"Jun"</span>, <span class="st">"Jul"</span>, <span class="st">"Aug"</span>, <span class="st">"Sep"</span>, <span class="st">"Oct"</span>, <span class="st">"Nov"</span>, <span class="st">"Dec"</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>month_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>, <span class="st">"May"</span>, <span class="st">"Jun"</span>, <span class="st">"Jul"</span>, <span class="st">"Aug"</span>, <span class="st">"Sep"</span>, <span class="st">"Oct"</span>, <span class="st">"Nov"</span>, <span class="st">"Dec"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then we could start to transform some month vector into factors, by the function <code>factor()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Dec"</span>, <span class="st">"Apr"</span>, <span class="st">"Jan"</span>, <span class="st">"Mar"</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>y1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x1, <span class="at">level=</span>month_levels)</span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">sort</span>(x1)</span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="co">#&gt; [1] "Apr" "Dec" "Jan" "Mar"</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="fu">sort</span>(y1)</span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="co">#&gt; [1] Jan Mar Apr Dec</span></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="co">#&gt; Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Dec"</span>, <span class="st">"Apr"</span>, <span class="st">"Jan"</span>, <span class="st">"Mar"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x1, <span class="at">level=</span>month_levels)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(x1)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "Apr" "Dec" "Jan" "Mar"</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(y1)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] Jan Mar Apr Dec</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that sorting <code>y1</code> is based on the levels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Dec"</span>, <span class="st">"Apr"</span>, <span class="st">"Jam"</span>, <span class="st">"Mar"</span>)</span>
-<span id="cb20-2"><a href="#cb20-2"></a>y2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x2, <span class="at">level=</span>month_levels)</span>
-<span id="cb20-3"><a href="#cb20-3"></a>y2</span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="co">#&gt; [1] Dec  Apr  &lt;NA&gt; Mar </span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="co">#&gt; Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Dec"</span>, <span class="st">"Apr"</span>, <span class="st">"Jam"</span>, <span class="st">"Mar"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x2, <span class="at">level=</span>month_levels)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>y2</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] Dec  Apr  &lt;NA&gt; Mar </span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that <code>y2</code> contains <code>NA</code> value since there is an entry in <code>x2</code> that is not valid.</p>
 </div>
@@ -625,14 +629,14 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.6 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>)</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="co">#&gt; [1] 1 2 3 4</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>)</span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="co">#&gt; [1] 1 2</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a><span class="co">#&gt; </span></span>
-<span id="cb21-7"><a href="#cb21-7"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb21-8"><a href="#cb21-8"></a><span class="co">#&gt; [1] 3 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [[2]]</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 3 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -647,10 +651,10 @@ Note
 <div class="callout-body-container callout-body">
 <p>The attributes of an object is stored in an array.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb22-2"><a href="#cb22-2"></a>a <span class="ot">&lt;-</span> <span class="fu">attributes</span>(m)</span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">class</span>(a)</span>
-<span id="cb22-4"><a href="#cb22-4"></a><span class="co">#&gt; [1] "list"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">attributes</span>(m)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "list"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -659,14 +663,14 @@ Note
 <h3 data-number="7.3.6" class="anchored" data-anchor-id="data.frame"><span class="header-section-number">7.3.6</span> <code>data.frame</code></h3>
 <p>Data.Frame is a list with the <code>class</code> attribute <code>data.frame</code>, together with some restriction on the shape of each columns. You may think about it in terms of tables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">face =</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"two"</span>, <span class="st">"six"</span>),</span>
-<span id="cb23-2"><a href="#cb23-2"></a>                 <span class="at">suit =</span> <span class="fu">c</span>(<span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>),</span>
-<span id="cb23-3"><a href="#cb23-3"></a>                 <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb23-4"><a href="#cb23-4"></a>df</span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="co">#&gt;   face  suit value</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a><span class="co">#&gt; 1  ace clubs     1</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="co">#&gt; 2  two clubs     2</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="co">#&gt; 3  six clubs     3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">face =</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"two"</span>, <span class="st">"six"</span>),</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">suit =</span> <span class="fu">c</span>(<span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>),</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   face  suit value</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  ace clubs     1</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  two clubs     2</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  six clubs     3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Data Frame group vectors. Each vector represents a column.</li>
@@ -680,41 +684,41 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.7 </strong></span>Consider a date.frame representing a deck of cards. Here we use <code>expand.grid()</code> to perform the Cartesian product.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
-<span id="cb24-2"><a href="#cb24-2"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="fu">head</span>(deck)</span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="co">#&gt;       Var1 Var2</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a><span class="co">#&gt; 1   spades    1</span></span>
-<span id="cb24-7"><a href="#cb24-7"></a><span class="co">#&gt; 2   hearts    1</span></span>
-<span id="cb24-8"><a href="#cb24-8"></a><span class="co">#&gt; 3    clubs    1</span></span>
-<span id="cb24-9"><a href="#cb24-9"></a><span class="co">#&gt; 4 diamonds    1</span></span>
-<span id="cb24-10"><a href="#cb24-10"></a><span class="co">#&gt; 5   spades    2</span></span>
-<span id="cb24-11"><a href="#cb24-11"></a><span class="co">#&gt; 6   hearts    2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(deck)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Var1 Var2</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   spades    1</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   hearts    1</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    clubs    1</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 diamonds    1</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5   spades    2</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   hearts    2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We may assign names to change the column names.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">names</span>(deck) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'suit'</span>, <span class="st">'face'</span>)</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">head</span>(deck)</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="co">#&gt;       suit face</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="co">#&gt; 1   spades    1</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="co">#&gt; 2   hearts    1</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="co">#&gt; 3    clubs    1</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="co">#&gt; 4 diamonds    1</span></span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="co">#&gt; 5   spades    2</span></span>
-<span id="cb25-9"><a href="#cb25-9"></a><span class="co">#&gt; 6   hearts    2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(deck) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'suit'</span>, <span class="st">'face'</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(deck)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       suit face</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   spades    1</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   hearts    1</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    clubs    1</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 diamonds    1</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5   spades    2</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   hearts    2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that since <code>suit</code> and <code>face</code> are two vectors, <code>merge()</code> can also do the Cartesian product. <code>expand.grid()</code> is good for both vectors and data.frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">merge</span>(suit, face)</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">head</span>(deck)</span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#&gt;          x y</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="co">#&gt; 1   spades 1</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="co">#&gt; 2   hearts 1</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="co">#&gt; 3    clubs 1</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a><span class="co">#&gt; 4 diamonds 1</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a><span class="co">#&gt; 5   spades 2</span></span>
-<span id="cb26-9"><a href="#cb26-9"></a><span class="co">#&gt; 6   hearts 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">merge</span>(suit, face)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(deck)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          x y</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   spades 1</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   hearts 1</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    clubs 1</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 diamonds 1</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5   spades 2</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   hearts 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -727,31 +731,31 @@ Note
 <li><code>mtcars</code>: Motor Trend Car Road Tests: The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">data</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>iris</code>: iris data set gives the measurements in centimeters of the variables sepal length, sepal width, petal length and petal width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">data</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>ToothGrowth</code>: ToothGrowth data set contains the result from an experiment studying the effect of vitamin C on tooth growth in 60 Guinea pigs.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">data</span>(ToothGrowth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(ToothGrowth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>PlantGrowth</code>: Results obtained from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment condition.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">data</span>(PlantGrowth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(PlantGrowth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>USArrests</code>: This data set contains statistics about violent crime rates by us state.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">data</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="read-from-files" class="level4" data-number="7.3.8.2">
@@ -760,23 +764,23 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.8 </strong></span>We use the file <code>yob1880.txt</code> from Chapter 5 here. Put the file in the working folder and run the following code.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'yob1880.txt'</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'yob1880.txt'</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
 </div>
 <p>We may also manually assign columns names.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">names</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'name'</span>, <span class="st">'sex'</span>, <span class="st">'counts'</span>)</span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">head</span>(df)</span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="co">#&gt;        name sex counts</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a><span class="co">#&gt; 1      Mary   F   7065</span></span>
-<span id="cb33-5"><a href="#cb33-5"></a><span class="co">#&gt; 2      Anna   F   2604</span></span>
-<span id="cb33-6"><a href="#cb33-6"></a><span class="co">#&gt; 3      Emma   F   2003</span></span>
-<span id="cb33-7"><a href="#cb33-7"></a><span class="co">#&gt; 4 Elizabeth   F   1939</span></span>
-<span id="cb33-8"><a href="#cb33-8"></a><span class="co">#&gt; 5    Minnie   F   1746</span></span>
-<span id="cb33-9"><a href="#cb33-9"></a><span class="co">#&gt; 6  Margaret   F   1578</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'name'</span>, <span class="st">'sex'</span>, <span class="st">'counts'</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        name sex counts</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      Mary   F   7065</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2      Anna   F   2604</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      Emma   F   2003</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Elizabeth   F   1939</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    Minnie   F   1746</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  Margaret   F   1578</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -791,7 +795,7 @@ Note
 <div class="callout-body-container callout-body">
 <p>To save data is straightforward.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">write.csv</span>(df, <span class="at">file=</span><span class="st">'df.csv'</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file=</span><span class="st">'df.csv'</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -804,19 +808,19 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.9 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb35-2"><a href="#cb35-2"></a>    <span class="fu">print</span>(x)</span>
-<span id="cb35-3"><a href="#cb35-3"></a>}</span>
-<span id="cb35-4"><a href="#cb35-4"></a><span class="co">#&gt; [1] 1</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a><span class="co">#&gt; [1] 2</span></span>
-<span id="cb35-6"><a href="#cb35-6"></a><span class="co">#&gt; [1] 3</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a><span class="co">#&gt; [1] 4</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a><span class="co">#&gt; [1] 5</span></span>
-<span id="cb35-9"><a href="#cb35-9"></a><span class="co">#&gt; [1] 6</span></span>
-<span id="cb35-10"><a href="#cb35-10"></a><span class="co">#&gt; [1] 7</span></span>
-<span id="cb35-11"><a href="#cb35-11"></a><span class="co">#&gt; [1] 8</span></span>
-<span id="cb35-12"><a href="#cb35-12"></a><span class="co">#&gt; [1] 9</span></span>
-<span id="cb35-13"><a href="#cb35-13"></a><span class="co">#&gt; [1] 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 3</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 5</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 6</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 7</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 8</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 9</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -825,17 +829,17 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.10 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>a <span class="ot">&lt;-</span> <span class="dv">200</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>b <span class="ot">&lt;-</span> <span class="dv">33</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a></span>
-<span id="cb36-4"><a href="#cb36-4"></a><span class="cf">if</span> (b <span class="sc">&gt;</span> a) {</span>
-<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">print</span>(<span class="st">"b is greater than a"</span>)</span>
-<span id="cb36-6"><a href="#cb36-6"></a>} <span class="cf">else</span> <span class="cf">if</span> (a <span class="sc">==</span> b) {</span>
-<span id="cb36-7"><a href="#cb36-7"></a>  <span class="fu">print</span>(<span class="st">"a and b are equal"</span>)</span>
-<span id="cb36-8"><a href="#cb36-8"></a>} <span class="cf">else</span> {</span>
-<span id="cb36-9"><a href="#cb36-9"></a>  <span class="fu">print</span>(<span class="st">"a is greater than b"</span>)</span>
-<span id="cb36-10"><a href="#cb36-10"></a>}</span>
-<span id="cb36-11"><a href="#cb36-11"></a><span class="co">#&gt; [1] "a is greater than b"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">33</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (b <span class="sc">&gt;</span> a) {</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"b is greater than a"</span>)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (a <span class="sc">==</span> b) {</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"a and b are equal"</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"a is greater than b"</span>)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "a is greater than b"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -845,21 +849,21 @@ Note
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.11 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb37-2"><a href="#cb37-2"></a>    die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a>    <span class="fu">sum</span>(die)</span>
-<span id="cb37-4"><a href="#cb37-4"></a>}</span>
-<span id="cb37-5"><a href="#cb37-5"></a></span>
-<span id="cb37-6"><a href="#cb37-6"></a><span class="fu">myfunction</span>()</span>
-<span id="cb37-7"><a href="#cb37-7"></a><span class="co">#&gt; [1] 21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(die)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="fu">myfunction</span>()</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you just type the function name without <code>()</code>, R will return the definition of the function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>myfunction</span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="co">#&gt; function() {</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a><span class="co">#&gt;     die &lt;- 1:6</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="co">#&gt;     sum(die)</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a><span class="co">#&gt; }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>myfunction</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; function() {</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     die &lt;- 1:6</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     sum(die)</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -905,39 +909,39 @@ Tip
 
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="co">#&gt;     Var1 Var2</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a><span class="co">#&gt; 1 spades    1</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="co">#&gt; 2 hearts    1</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb39-6"><a href="#cb39-6"></a><span class="co">#&gt; [1] spades hearts</span></span>
-<span id="cb39-7"><a href="#cb39-7"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span>
-<span id="cb39-8"><a href="#cb39-8"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span>, drop<span class="ot">=</span><span class="cn">FALSE</span>]</span>
-<span id="cb39-9"><a href="#cb39-9"></a><span class="co">#&gt;     Var1</span></span>
-<span id="cb39-10"><a href="#cb39-10"></a><span class="co">#&gt; 1 spades</span></span>
-<span id="cb39-11"><a href="#cb39-11"></a><span class="co">#&gt; 2 hearts</span></span>
-<span id="cb39-12"><a href="#cb39-12"></a>deck[<span class="dv">1</span>]</span>
-<span id="cb39-13"><a href="#cb39-13"></a><span class="co">#&gt;        Var1</span></span>
-<span id="cb39-14"><a href="#cb39-14"></a><span class="co">#&gt; 1    spades</span></span>
-<span id="cb39-15"><a href="#cb39-15"></a><span class="co">#&gt; 2    hearts</span></span>
-<span id="cb39-16"><a href="#cb39-16"></a><span class="co">#&gt; 3     clubs</span></span>
-<span id="cb39-17"><a href="#cb39-17"></a><span class="co">#&gt; 4  diamonds</span></span>
-<span id="cb39-18"><a href="#cb39-18"></a><span class="co">#&gt; 5    spades</span></span>
-<span id="cb39-19"><a href="#cb39-19"></a><span class="co">#&gt; 6    hearts</span></span>
-<span id="cb39-20"><a href="#cb39-20"></a><span class="co">#&gt; 7     clubs</span></span>
-<span id="cb39-21"><a href="#cb39-21"></a><span class="co">#&gt; 8  diamonds</span></span>
-<span id="cb39-22"><a href="#cb39-22"></a><span class="co">#&gt; 9    spades</span></span>
-<span id="cb39-23"><a href="#cb39-23"></a><span class="co">#&gt; 10   hearts</span></span>
-<span id="cb39-24"><a href="#cb39-24"></a><span class="co">#&gt; 11    clubs</span></span>
-<span id="cb39-25"><a href="#cb39-25"></a><span class="co">#&gt; 12 diamonds</span></span>
-<span id="cb39-26"><a href="#cb39-26"></a><span class="co">#&gt; 13   spades</span></span>
-<span id="cb39-27"><a href="#cb39-27"></a><span class="co">#&gt; 14   hearts</span></span>
-<span id="cb39-28"><a href="#cb39-28"></a><span class="co">#&gt; 15    clubs</span></span>
-<span id="cb39-29"><a href="#cb39-29"></a><span class="co">#&gt; 16 diamonds</span></span>
-<span id="cb39-30"><a href="#cb39-30"></a><span class="co">#&gt; 17   spades</span></span>
-<span id="cb39-31"><a href="#cb39-31"></a><span class="co">#&gt; 18   hearts</span></span>
-<span id="cb39-32"><a href="#cb39-32"></a><span class="co">#&gt; 19    clubs</span></span>
-<span id="cb39-33"><a href="#cb39-33"></a><span class="co">#&gt; 20 diamonds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     Var1 Var2</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 spades    1</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 hearts    1</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] spades hearts</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">1</span>, drop<span class="ot">=</span><span class="cn">FALSE</span>]</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     Var1</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 spades</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 hearts</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span>]</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        Var1</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    spades</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    hearts</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     clubs</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  diamonds</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    spades</span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6    hearts</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7     clubs</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  diamonds</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9    spades</span></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10   hearts</span></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11    clubs</span></span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12 diamonds</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13   spades</span></span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14   hearts</span></span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15    clubs</span></span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16 diamonds</span></span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17   spades</span></span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18   hearts</span></span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19    clubs</span></span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 diamonds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="2" type="1">
@@ -953,44 +957,44 @@ Tip
 <li>Blank Spaces: want every value in the dimension.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>deck[, <span class="dv">1</span>]</span>
-<span id="cb40-2"><a href="#cb40-2"></a><span class="co">#&gt;  [1] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
-<span id="cb40-3"><a href="#cb40-3"></a><span class="co">#&gt;  [9] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
-<span id="cb40-4"><a href="#cb40-4"></a><span class="co">#&gt; [17] spades   hearts   clubs    diamonds</span></span>
-<span id="cb40-5"><a href="#cb40-5"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span>
-<span id="cb40-6"><a href="#cb40-6"></a>deck[<span class="dv">1</span>, ]</span>
-<span id="cb40-7"><a href="#cb40-7"></a><span class="co">#&gt;     Var1 Var2</span></span>
-<span id="cb40-8"><a href="#cb40-8"></a><span class="co">#&gt; 1 spades    1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>deck[, <span class="dv">1</span>]</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [17] spades   hearts   clubs    diamonds</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span>, ]</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     Var1 Var2</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 spades    1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Logical values: select the rows or columns according to the value. The dimension should have exactly the same number of elements as the logical vector.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>rows <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb41-2"><a href="#cb41-2"></a>deck[rows,]</span>
-<span id="cb41-3"><a href="#cb41-3"></a><span class="co">#&gt;        Var1 Var2</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="co">#&gt; 1    spades    1</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a><span class="co">#&gt; 3     clubs    1</span></span>
-<span id="cb41-6"><a href="#cb41-6"></a><span class="co">#&gt; 5    spades    2</span></span>
-<span id="cb41-7"><a href="#cb41-7"></a><span class="co">#&gt; 6    hearts    2</span></span>
-<span id="cb41-8"><a href="#cb41-8"></a><span class="co">#&gt; 8  diamonds    2</span></span>
-<span id="cb41-9"><a href="#cb41-9"></a><span class="co">#&gt; 10   hearts    3</span></span>
-<span id="cb41-10"><a href="#cb41-10"></a><span class="co">#&gt; 11    clubs    3</span></span>
-<span id="cb41-11"><a href="#cb41-11"></a><span class="co">#&gt; 13   spades    4</span></span>
-<span id="cb41-12"><a href="#cb41-12"></a><span class="co">#&gt; 15    clubs    4</span></span>
-<span id="cb41-13"><a href="#cb41-13"></a><span class="co">#&gt; 16 diamonds    4</span></span>
-<span id="cb41-14"><a href="#cb41-14"></a><span class="co">#&gt; 18   hearts    5</span></span>
-<span id="cb41-15"><a href="#cb41-15"></a><span class="co">#&gt; 20 diamonds    5</span></span>
-<span id="cb41-16"><a href="#cb41-16"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span>
-<span id="cb41-17"><a href="#cb41-17"></a><span class="co">#&gt; [1] spades hearts</span></span>
-<span id="cb41-18"><a href="#cb41-18"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>rows <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>deck[rows,]</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        Var1 Var2</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    spades    1</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     clubs    1</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    spades    2</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6    hearts    2</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  diamonds    2</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10   hearts    3</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11    clubs    3</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13   spades    4</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15    clubs    4</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16 diamonds    4</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18   hearts    5</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 diamonds    5</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] spades hearts</span></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
 <li>Names: select columns based on <code>names</code> attribute.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>deck[, <span class="st">'Var2'</span>]</span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="co">#&gt;  [1] 1 1 1 1 2 2 2 2 3 3 3 3 4 4 4 4 5 5 5 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>deck[, <span class="st">'Var2'</span>]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 1 1 1 1 2 2 2 2 3 3 3 3 4 4 4 4 5 5 5 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dollar-signs-and-double-brackets" class="level3" data-number="7.4.2">
@@ -999,59 +1003,59 @@ Tip
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.13 </strong></span>Here is an exmaple about data.frames.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>deck[, <span class="dv">1</span>]</span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="co">#&gt;  [1] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="co">#&gt;  [9] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a><span class="co">#&gt; [17] spades   hearts   clubs    diamonds</span></span>
-<span id="cb43-5"><a href="#cb43-5"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span>
-<span id="cb43-6"><a href="#cb43-6"></a>deck<span class="sc">$</span>Var1</span>
-<span id="cb43-7"><a href="#cb43-7"></a><span class="co">#&gt;  [1] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
-<span id="cb43-8"><a href="#cb43-8"></a><span class="co">#&gt;  [9] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
-<span id="cb43-9"><a href="#cb43-9"></a><span class="co">#&gt; [17] spades   hearts   clubs    diamonds</span></span>
-<span id="cb43-10"><a href="#cb43-10"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>deck[, <span class="dv">1</span>]</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [17] spades   hearts   clubs    diamonds</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>deck<span class="sc">$</span>Var1</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] spades   hearts   clubs    diamonds spades   hearts   clubs    diamonds</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [17] spades   hearts   clubs    diamonds</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Levels: spades hearts clubs diamonds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that if we select from the data.frame using index, we will get a data.frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>deck[<span class="dv">1</span>]</span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="co">#&gt;        Var1</span></span>
-<span id="cb44-3"><a href="#cb44-3"></a><span class="co">#&gt; 1    spades</span></span>
-<span id="cb44-4"><a href="#cb44-4"></a><span class="co">#&gt; 2    hearts</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a><span class="co">#&gt; 3     clubs</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a><span class="co">#&gt; 4  diamonds</span></span>
-<span id="cb44-7"><a href="#cb44-7"></a><span class="co">#&gt; 5    spades</span></span>
-<span id="cb44-8"><a href="#cb44-8"></a><span class="co">#&gt; 6    hearts</span></span>
-<span id="cb44-9"><a href="#cb44-9"></a><span class="co">#&gt; 7     clubs</span></span>
-<span id="cb44-10"><a href="#cb44-10"></a><span class="co">#&gt; 8  diamonds</span></span>
-<span id="cb44-11"><a href="#cb44-11"></a><span class="co">#&gt; 9    spades</span></span>
-<span id="cb44-12"><a href="#cb44-12"></a><span class="co">#&gt; 10   hearts</span></span>
-<span id="cb44-13"><a href="#cb44-13"></a><span class="co">#&gt; 11    clubs</span></span>
-<span id="cb44-14"><a href="#cb44-14"></a><span class="co">#&gt; 12 diamonds</span></span>
-<span id="cb44-15"><a href="#cb44-15"></a><span class="co">#&gt; 13   spades</span></span>
-<span id="cb44-16"><a href="#cb44-16"></a><span class="co">#&gt; 14   hearts</span></span>
-<span id="cb44-17"><a href="#cb44-17"></a><span class="co">#&gt; 15    clubs</span></span>
-<span id="cb44-18"><a href="#cb44-18"></a><span class="co">#&gt; 16 diamonds</span></span>
-<span id="cb44-19"><a href="#cb44-19"></a><span class="co">#&gt; 17   spades</span></span>
-<span id="cb44-20"><a href="#cb44-20"></a><span class="co">#&gt; 18   hearts</span></span>
-<span id="cb44-21"><a href="#cb44-21"></a><span class="co">#&gt; 19    clubs</span></span>
-<span id="cb44-22"><a href="#cb44-22"></a><span class="co">#&gt; 20 diamonds</span></span>
-<span id="cb44-23"><a href="#cb44-23"></a><span class="fu">class</span>(deck[<span class="dv">1</span>])</span>
-<span id="cb44-24"><a href="#cb44-24"></a><span class="co">#&gt; [1] "data.frame"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span>]</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        Var1</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    spades</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    hearts</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     clubs</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  diamonds</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    spades</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6    hearts</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7     clubs</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  diamonds</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9    spades</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10   hearts</span></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11    clubs</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12 diamonds</span></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13   spades</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14   hearts</span></span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15    clubs</span></span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16 diamonds</span></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17   spades</span></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18   hearts</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19    clubs</span></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 diamonds</span></span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(deck[<span class="dv">1</span>])</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "data.frame"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.14 </strong></span>Here is an example about lists.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>lst <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">numbers =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">logical =</span> <span class="cn">TRUE</span>, <span class="at">strings =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>))</span>
-<span id="cb45-2"><a href="#cb45-2"></a>lst<span class="sc">$</span>numbers</span>
-<span id="cb45-3"><a href="#cb45-3"></a><span class="co">#&gt; [1] 1 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">numbers =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">logical =</span> <span class="cn">TRUE</span>, <span class="at">strings =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>))</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>lst<span class="sc">$</span>numbers</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that if we select from the list using index, we will get a list.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>lst[<span class="dv">1</span>]</span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="co">#&gt; $numbers</span></span>
-<span id="cb46-3"><a href="#cb46-3"></a><span class="co">#&gt; [1] 1 2</span></span>
-<span id="cb46-4"><a href="#cb46-4"></a><span class="fu">class</span>(lst[<span class="dv">1</span>])</span>
-<span id="cb46-5"><a href="#cb46-5"></a><span class="co">#&gt; [1] "list"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>lst[<span class="dv">1</span>]</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $numbers</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lst[<span class="dv">1</span>])</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "list"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Please think through these two examples and figure out the similarity between them.</p>
@@ -1095,12 +1099,12 @@ Warning
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.15 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
-<span id="cb47-2"><a href="#cb47-2"></a><span class="co">#&gt; [1] 2 4 4 6</span></span>
-<span id="cb47-3"><a href="#cb47-3"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
-<span id="cb47-4"><a href="#cb47-4"></a><span class="co">#&gt; Warning in 1:4 + 1:3: longer object length is not a multiple of shorter object</span></span>
-<span id="cb47-5"><a href="#cb47-5"></a><span class="co">#&gt; length</span></span>
-<span id="cb47-6"><a href="#cb47-6"></a><span class="co">#&gt; [1] 2 4 6 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 4 4 6</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning in 1:4 + 1:3: longer object length is not a multiple of shorter object</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; length</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 4 6 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -1109,27 +1113,27 @@ Warning
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.16 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>vec <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a>vec</span>
-<span id="cb48-3"><a href="#cb48-3"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
-<span id="cb48-4"><a href="#cb48-4"></a>vec[<span class="dv">7</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb48-5"><a href="#cb48-5"></a>vec</span>
-<span id="cb48-6"><a href="#cb48-6"></a><span class="co">#&gt; [1] 1 2 3 4 5 6 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>vec</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5 6</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>vec[<span class="dv">7</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>vec</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5 6 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.17 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">b=</span><span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>))</span>
-<span id="cb49-2"><a href="#cb49-2"></a>df</span>
-<span id="cb49-3"><a href="#cb49-3"></a><span class="co">#&gt;   a b</span></span>
-<span id="cb49-4"><a href="#cb49-4"></a><span class="co">#&gt; 1 1 a</span></span>
-<span id="cb49-5"><a href="#cb49-5"></a><span class="co">#&gt; 2 2 b</span></span>
-<span id="cb49-6"><a href="#cb49-6"></a>df<span class="sc">$</span>c <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span></span>
-<span id="cb49-7"><a href="#cb49-7"></a>df</span>
-<span id="cb49-8"><a href="#cb49-8"></a><span class="co">#&gt;   a b c</span></span>
-<span id="cb49-9"><a href="#cb49-9"></a><span class="co">#&gt; 1 1 a 3</span></span>
-<span id="cb49-10"><a href="#cb49-10"></a><span class="co">#&gt; 2 2 b 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">b=</span><span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>))</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   a b</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 1 a</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 2 b</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>c <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   a b c</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 1 a 3</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 2 b 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1139,49 +1143,49 @@ Warning
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.18 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
-<span id="cb50-2"><a href="#cb50-2"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb50-3"><a href="#cb50-3"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="co">#&gt;  [1] FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></span>
-<span id="cb51-3"><a href="#cb51-3"></a><span class="co">#&gt; [13] FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></span>
-<span id="cb51-4"><a href="#cb51-4"></a>deck<span class="sc">$</span>Var2[deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span>]</span>
-<span id="cb51-5"><a href="#cb51-5"></a><span class="co">#&gt; [1] 1 2 3 4 5</span></span>
-<span id="cb51-6"><a href="#cb51-6"></a>deck[deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span>,]</span>
-<span id="cb51-7"><a href="#cb51-7"></a><span class="co">#&gt;      Var1 Var2</span></span>
-<span id="cb51-8"><a href="#cb51-8"></a><span class="co">#&gt; 2  hearts    1</span></span>
-<span id="cb51-9"><a href="#cb51-9"></a><span class="co">#&gt; 6  hearts    2</span></span>
-<span id="cb51-10"><a href="#cb51-10"></a><span class="co">#&gt; 10 hearts    3</span></span>
-<span id="cb51-11"><a href="#cb51-11"></a><span class="co">#&gt; 14 hearts    4</span></span>
-<span id="cb51-12"><a href="#cb51-12"></a><span class="co">#&gt; 18 hearts    5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [13] FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>deck<span class="sc">$</span>Var2[deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span>]</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>deck[deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span>,]</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Var1 Var2</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  hearts    1</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  hearts    2</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 hearts    3</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14 hearts    4</span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18 hearts    5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We could directly assign values to the subset. Note that the following assignment create a new column with <code>NA</code> values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>deck<span class="sc">$</span>Var3[deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>deck</span>
-<span id="cb52-3"><a href="#cb52-3"></a><span class="co">#&gt;        Var1 Var2 Var3</span></span>
-<span id="cb52-4"><a href="#cb52-4"></a><span class="co">#&gt; 1    spades    1   NA</span></span>
-<span id="cb52-5"><a href="#cb52-5"></a><span class="co">#&gt; 2    hearts    1    1</span></span>
-<span id="cb52-6"><a href="#cb52-6"></a><span class="co">#&gt; 3     clubs    1   NA</span></span>
-<span id="cb52-7"><a href="#cb52-7"></a><span class="co">#&gt; 4  diamonds    1   NA</span></span>
-<span id="cb52-8"><a href="#cb52-8"></a><span class="co">#&gt; 5    spades    2   NA</span></span>
-<span id="cb52-9"><a href="#cb52-9"></a><span class="co">#&gt; 6    hearts    2    1</span></span>
-<span id="cb52-10"><a href="#cb52-10"></a><span class="co">#&gt; 7     clubs    2   NA</span></span>
-<span id="cb52-11"><a href="#cb52-11"></a><span class="co">#&gt; 8  diamonds    2   NA</span></span>
-<span id="cb52-12"><a href="#cb52-12"></a><span class="co">#&gt; 9    spades    3   NA</span></span>
-<span id="cb52-13"><a href="#cb52-13"></a><span class="co">#&gt; 10   hearts    3    1</span></span>
-<span id="cb52-14"><a href="#cb52-14"></a><span class="co">#&gt; 11    clubs    3   NA</span></span>
-<span id="cb52-15"><a href="#cb52-15"></a><span class="co">#&gt; 12 diamonds    3   NA</span></span>
-<span id="cb52-16"><a href="#cb52-16"></a><span class="co">#&gt; 13   spades    4   NA</span></span>
-<span id="cb52-17"><a href="#cb52-17"></a><span class="co">#&gt; 14   hearts    4    1</span></span>
-<span id="cb52-18"><a href="#cb52-18"></a><span class="co">#&gt; 15    clubs    4   NA</span></span>
-<span id="cb52-19"><a href="#cb52-19"></a><span class="co">#&gt; 16 diamonds    4   NA</span></span>
-<span id="cb52-20"><a href="#cb52-20"></a><span class="co">#&gt; 17   spades    5   NA</span></span>
-<span id="cb52-21"><a href="#cb52-21"></a><span class="co">#&gt; 18   hearts    5    1</span></span>
-<span id="cb52-22"><a href="#cb52-22"></a><span class="co">#&gt; 19    clubs    5   NA</span></span>
-<span id="cb52-23"><a href="#cb52-23"></a><span class="co">#&gt; 20 diamonds    5   NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>deck<span class="sc">$</span>Var3[deck<span class="sc">$</span>Var1 <span class="sc">==</span> <span class="st">'hearts'</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>deck</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        Var1 Var2 Var3</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    spades    1   NA</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    hearts    1    1</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     clubs    1   NA</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  diamonds    1   NA</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    spades    2   NA</span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6    hearts    2    1</span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7     clubs    2   NA</span></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  diamonds    2   NA</span></span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9    spades    3   NA</span></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10   hearts    3    1</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11    clubs    3   NA</span></span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12 diamonds    3   NA</span></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13   spades    4   NA</span></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14   hearts    4    1</span></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15    clubs    4   NA</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16 diamonds    4   NA</span></span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17   spades    5   NA</span></span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18   hearts    5    1</span></span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19    clubs    5   NA</span></span>
+<span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 diamonds    5   NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -1226,10 +1230,10 @@ Tip
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7.19 </strong></span>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>))</span>
-<span id="cb53-2"><a href="#cb53-2"></a><span class="co">#&gt; [1] NA</span></span>
-<span id="cb53-3"><a href="#cb53-3"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb53-4"><a href="#cb53-4"></a><span class="co">#&gt; [1] 25.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>))</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] NA</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 25.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="2" type="1">
@@ -1267,9 +1271,9 @@ Tip
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.6 </strong></span>Consider the following data.frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
-<span id="cb55-2"><a href="#cb55-2"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb55-3"><a href="#cb55-3"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Please write some codes to count how many rows whose <code>Var1</code> are equal to <code>hearts</code>.</p>
 </div>
@@ -1285,9 +1289,9 @@ Tip
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.9 </strong></span>Please write a function to shuffle the row of a data.frame. You may use the following data.frame <code>deck</code> for test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
-<span id="cb56-2"><a href="#cb56-2"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span></span>
-<span id="cb56-3"><a href="#cb56-3"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>suit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>face <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(suit, face)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 
