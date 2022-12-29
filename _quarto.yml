@@ -8,7 +8,7 @@ top-level-division: part
 toc-depth: 3
 number-depth: 4
 bibliography: book.bib
-csl: C:/Users/Xinli/Documents/ims.csl
+csl: "C:/Users/Xinli/Documents/ims.csl"
 
 crossref:
   labels: arabic        # (default is arabic)
@@ -60,8 +60,6 @@ book:
     - contents/app/concepts.qmd
     - contents/app/r.qmd
   sidebar:
-    style: floating
-    pinned: true
     align: center
     border: true
     search: true

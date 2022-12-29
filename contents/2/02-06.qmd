@@ -1,17 +1,41 @@
 ## More advanced topics
 
-### List Comprehension
-List Comprehension is a convenient way to create lists based on the values of an existing list. It cannot provide any real improvement to the performance of the codes, but it can make the codes shorter and easier to read.
+### `list`/`dict` comprehension
+`list` comprehension is a convenient way to create lists based on the values of an existing `list`. It cannot provide any real improvement to the performance of the codes, but it can make the codes shorter and easier to read.
 
-The format of list Comprehension is
+The format of `list` comprehension is
 ```{python}
 #| eval: false
 newlist = [expression for item in iterable if condition == True]
 ```
-   
+It is equivalent to the folowing code:
 
-### Dictionary Comprehension
+```{python}
+#| eval: false
+newlist = []
+for item in iterable:
+    if condition == True:
+        newlist.append(expression)
+```
 
+Similarly, there is a `dict` comprehension.
+
+```{python}
+#| eval: false
+newdict = {key-expr: value-expr for item in iterable if condition == True}
+```
+
+
+::: {.callout-caution}
+`list`/`dict` comprehension is very powerful, and it is able to create very complex nested `list`/`dict` comprehension to squeeze some complicated codes into one line. It is highly recommended **NOT** to do so. 
+
+The purpose of `list`/`dict` comprehension is to improve readablity. Complicated nested `list`/`dict` comprehension actually makes your code hard to read. You can make `list`/`dict` comprehension with more than one layer only if you have a very good reason.
+:::
+
+
+::: {#exm-}
+
+:::
 
 
 ### `re`

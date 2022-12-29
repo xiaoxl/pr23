@@ -1,6 +1,6 @@
 
 ## Exercises
-Most problems are based on @Sha2017, @You2020, @Swe2020, @McK2017 and @Klo2021..
+Most problems are based on @Sha2017, @You2020, @Swe2020, @McK2017 and @Klo2021.
 
 
 ::: {#exr-}
@@ -205,15 +205,17 @@ Consider `in`, `.lower()` and `if` structure.
 
 ::: {#exr-}
 ## Datetime and files names
-We would like to write a program to quickly generate `N` files. (For example, we want to take random samples multiple times and we want to keep all our samples. Another example is to generate AI pictures.)
+We would like to write a program to quickly generate many files. (For example, we want to take random samples multiple times and we want to keep all our samples. Another example is to generate AI pictures.) Every time we run the code, many files will be generated. We hope to store all files generated and organize them in a neat way. To achieve this, one way is to create a subfolder for each run and store all files generated during that run in the particular subfolder. Since we would like to make it fast, the real point of this task is to find a way to automatically generate the filenames for the files generated and the folder names for the subfolders generated. 
 
-Every time we run the code, `N` files will be generated. We hope to store all files generated and organize them in a neat way. To achieve this, one way is to create a subfolder for each run and store all files generated during that run in the particular subfolder. Since we would like to make it fast, the real point of this task is to find a way to automatically generate the file names for the files generated and the folder names for the subfolders generated. You don't need to worry about the contents of the files and empty files are totally fine for this problem.
+One way to automatically generate file names and folder names is to use the date and the time when the code is run. Please check `datetime` package for getting and formatting date/time, and `os` packages for playing with files and folders. Here are some suggested steps.
+
+1. Use `datetime` packages to get the current date and time. You may read [this article](https://docs.python.org/3/library/datetime.html) to learn how to use `datetime` package.
+2. Use the current date and time to form two strings `currentdate` and `currenttime`.
+3. Assume that we would like to generate 100 files. Then please generate a list of strings that each one is string that represents a path with folder `currentdate`, subfolder `currenttime` and file name `X.txt` where `X` is a number from `0` to `99`.
 :::
 <details>
 <summary>Click for Hint.</summary>
-::: {.solution}
-One way to automatically generate file names and folder names is to use the date and the time when the code is run. Please check `datetime` package for getting and formatting date/time, and `os` packages for playing with files and folders.
-:::
+You may try `datetime.datetime.now()` and `.strftime()` method for the `datetime` object.
 </details>
 
 
@@ -226,6 +228,9 @@ We can use ASCII color codes in the string to change the color of strings, as an
 #| eval: false
 print('\033[91m'+'red'+'\033[92m'+'green'+'\033[94m'+'blue'+'\033[93m'+'yellow')
 ```
+This example works in IPython console or Jupyter notebook. 
+
+
 Consider an (incomplete) Gnomic data given below which is represented by a long sequence of `A`, `C`, `T` and `G`. Please color it using ASCII color codes.
 
 ```{python}
@@ -294,4 +299,18 @@ The description is the same as @exr-fantasyinventorycode.
 
 Write a function named `displayInventory()` that would take any possible `inventory` and display it in the way of @exr-fantasyinventorycode. 
 
+:::
+
+
+
+
+::: {#exr-montyhallproblemnaive}
+## Monty Hall problem
+The Monty Hall problem is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show *Let's Make a Deal* and named after its original host, Monty Hall. The problem is stated as follows:
+
+Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+
+We would like to use code to simulate this process. Here is a suggested process.
+
+1. 
 :::

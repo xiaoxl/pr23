@@ -216,9 +216,75 @@ Therefore it is very important to know how to find references. Other than simply
 
 
 ### Work with `str`
+There are many operations of `str` are related to `list`.
 
-- `list()`
-- `sorted`
 
-- `str.split`
-- `str.join`
+::: {.callout-note collapse="true"}
+## Slicing
+We already mentioned that we could use `s[n]` to get the nth letter of a string `s`. Similarly we could use slice to get part of a string. Note that the index shares the same rule as lists.
+
+```{python}
+s = 'abcdef'
+s[1]
+```
+
+```{python}
+s[1:3]
+```
+
+```{python}
+s[1:5:2]
+```
+
+:::
+
+
+::: {.callout-note collapse='true'}
+## `.split()`
+`split` is used to split a string `original_string` by a given substring `sep`. The result is a list of the remaining parts. The syntax is 
+
+```{python}
+#| eval: false
+original_string.split(sep)
+```
+Please see the following example.
+
+```{python}
+s = 'abcabcadedeb'
+s.split('b')
+```
+Note that the last element of the result is an empty string `''` since the last letter of `s` is `b`.
+
+```{python}
+s = 'abcabcadedeb'
+s.split('ca')
+```
+
+
+::: {.callout-tip}
+This `.split()` is a very simple way to recognize patterns in a string. To fully explore this topic, the best practice is to use regular expressions.
+:::
+:::
+
+
+
+::: {.callout-note collapse='true'}
+## `.join()`
+Let `L` be a list of strings. We could connect them together to form a single string, by using `.join()`. We could put a separator string `sep` between each part in the list `L`. The result is the connected string. The syntax is 
+
+```{python}
+#| eval: false
+sep.join(L)
+```
+Please see the following example.
+
+```{python}
+L = ['a', 'b', 'c', 'd']
+'+'.join(L)
+```
+
+```{python}
+''.join(L)
+```
+Note that in this example the separtor string is an empty string.
+:::

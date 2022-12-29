@@ -63,44 +63,12 @@ This feature actually mimic the notebook. We may start a real Python Notebook fi
 The layout is straightforward. 
 
 
+
+
+
 ### Linters
+A *linter* is a tool to help you improve your code by analyzing your source code looking for problems. Some popular choices for Python includes `Flake8` and `Pylint`. It is highly recommended to use one that is compatible with your IDE which can help you to increase the quality of your codes from the begining.
 
-<!-- go here @sec-vscode -->
-
-<!-- 
-### Linters
-A *linter* is a tool to help you improve your code by analyzing your source code looking for problems. Some popular choices for Python includes `Flake8` and `Pylint`. It is highly recommended to use one that is compatible with your IDE which can help you to increase the quality of your codes from the begining. -->
+To install `Flake8` please go to [its homepage](https://flake8.pycqa.org/en/latest/). It works well with VS Code.
 
 
-
-### IPython and Jupyter
-<!-- The IPython project began in 2001 as Fernando Pérez’s side project to make a better
-interactive Python interpreter. In the subsequent 16 years it has become one of the
-most important tools in the modern Python data stack. While it does not provide any
-computational or data analytical tools by itself, IPython is designed from the ground
-up to maximize your productivity in both interactive computing and software devel‐
-opment. It encourages an execute-explore workflow instead of the typical edit-compile-
-run workflow of many other programming languages. It also provides easy access to
-your operating system’s shell and filesystem. Since much of data analysis coding
-involves exploration, trial and error, and iteration, IPython can help you get the job
-done faster.
-In 2014, Fernando and the IPython team announced the Jupyter project, a broader
-initiative to design language-agnostic interactive computing tools. The IPython web
-notebook became the Jupyter notebook, with support now for over 40 programming
-languages. The IPython system can now be used as a kernel (a programming language
-mode) for using Python with Jupyter.
-IPython itself has become a component of the much broader Jupyter open source
-project, which provides a productive environment for interactive and exploratory
-computing. Its oldest and simplest “mode” is as an enhanced Python shell designed to
-accelerate the writing, testing, and debugging of Python code. You can also use the
-IPython system through the Jupyter Notebook, an interactive web-based code “note‐
-book” offering support for dozens of programming languages. The IPython shell and
-Jupyter notebooks are especially useful for data exploration and visualization.
-The Jupyter notebook system also allows you to author content in Markdown and
-HTML, providing you a means to create rich documents with code and text. Other
-programming languages have also implemented kernels for Jupyter to enable you to
-use languages other than Python in Jupyter.
-For me personally, IPython is usually involved with the majority of my Python work,
-including running, debugging, and testing code.
-In the accompanying book materials, you will find Jupyter notebooks containing all
-the code examples from each chapter. -->

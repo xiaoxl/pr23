@@ -28,4 +28,3 @@ Python is well suited for rapid application development. It isn’t unusual for 
 
 {{< include 01-ex.qmd >}}
 
-{{< include 01-proj.qmd >}}
