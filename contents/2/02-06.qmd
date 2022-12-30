@@ -33,9 +33,85 @@ The purpose of `list`/`dict` comprehension is to improve readablity. Complicated
 :::
 
 
+
 ::: {#exm-}
+Consider the following `dict`.
+
+```{python}
+example_dict = {'key1': 'value1',
+                'key2': 'value2',
+                'key3': 'value3'}
+```
+
+1. We want to go through the keys and generate a list whose elements are gotten by concatnating the keys and a fixed prefix `pre`. 
+2. We want to go through the values and generate a list whose elements are gotten by concatnating the values and a fixed postfix `post`. 
+
+
+::: {.callout-note collapse="true"}
+## Solution
+
+a. `.keys()` can give an iterator which helps us to loop through all the keys.
+b. For each key, we may add `pre` to the front of it, and then put the result into a `list`.
+c. This process is exactly what `list` comprehension can do.
+
+Here is the sample code.
+
+```{python}
+prekeys = ['pre'+key for key in example_dict.keys()]
+postvalues = [value+'post' for value in example_dict.values()]
+```
 
 :::
 
 
+:::
+
+::: {#exm-}
+Given a string `s=abcde`, create a `dict` that relates a letter with its next (and the next of `e` is back to `a`).
+
+::: {.callout-note collapse="true"}
+## Solution
+The problem actually creates a circle consisting of `a`, `b`, `c`, `d` and `e`. See the following diagram.  
+
+```{dot}
+//| fig-width: 4
+//| fig-height: 3
+
+digraph G {
+  layout = neato;
+  overlap = false;
+  a [label="s[0]=a"];
+  b [label="s[1]=b"];
+  c [label="s[2]=c"];
+  d [label="s[3]=d"];
+  e [label="s[4]=e"];
+  a -> b -> c -> d -> e -> a;
+}
+```
+If we focus on the index, the transformation can be formulated as "add 1 and then mod 5". Therefore, every time when we get a letter `s[i]`, its next is `s[(i+1)%5]`. Then our code is as follows.
+
+```{python}
+s = 'abcde'
+transform_dict = {}
+for i in range(len(s)):
+    transform_dict[s[i]] = s[(i+1)%5]
+```
+
+Note that this process is exactly what a `dict` comprehension can do. Therefore we can simplify the above code as follows.
+
+```{python}
+s = 'abcde'
+transform_dict = {s[i]: s[(i+1)%5] for i in range(len(s))}
+```
+
+:::
+:::
+
+
+
+
+
+
 ### `re`
+
+

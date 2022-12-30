@@ -179,6 +179,48 @@ You may use `+` to represent `.extend()`. Please see the following example. It i
 :::
 
 
+::: {.callout-note collapse="true"}
+## `del`, `.remove()` and `.pop()`
+There are multiple ways to remove an element from a list.
+
+- `.remove()` is a `list` method, that is used as `L.remove(a)`. It removes element in-place and is based on values. In other words, it will remove the first element whose value equals to `a`.
+
+```{python}
+L = [2, 3, 1, 3, 1, 2]
+L.remove(1)
+L
+```
+- `.pop()` is also a `list` method. It removes element in-place, is based on position index, and will return the element removed. The default choice is to pop the last element.
+
+```{python}
+L = [1, 2, 3, 4]
+element_popped = L.pop()
+element_popped
+```
+
+```{python}
+L
+```
+
+```{python}
+L = [1, 2, 3, 4]
+element_popped = L.pop(2)
+element_popped
+```
+
+```{python}
+L
+```
+- `del` is a Python command, that is used to delete elements in a `list` based on position index. 
+
+```{python}
+L = [3, 1, 2, 1, 2, 3]
+del L[3]
+L
+```
+
+:::
+
 
 ::: {.callout-note collapse=true}
 ## `sorted()` and `.sort()`

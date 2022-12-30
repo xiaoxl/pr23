@@ -167,11 +167,11 @@ numbers = [3,5,45,97,32,22,10,19,39,43]
 Compute the probability that two people out of 23 share the same birthday. The math formula for this is 
 $$1-\frac{365!/(365-23)!}{365^{23}}=1-\frac{365}{365}\cdot\frac{365-1}{365}\cdot\frac{365-2}{365}\cdot\ldots\cdot\frac{365-22}{365}.$$
 
-1. To directly use the formula we have to use a high performance math package, e.g. `math`. Please use `math.factorial()` to compute the above formula.
+1. To directly use the formula we have to use a high performance math package, e.g. `math`. Please use `math.factorial()` to compute the above formula. You should `import math` to use the function since it is in the `math` package.
 
 2. Please use the right hand side of the above formula to compute the probability using the following steps.
     a. Please use the list comprehension to create a list $\left[\frac{365}{365},\frac{365-1}{365},\frac{365-2}{365},\ldots,\frac{365-22}{365}\right]$. 
-    b. Use `numpy.prod()` to compute the product of elements of the above list.
+    b. Use `math.prod()` to compute the product of elements of the above list. You should `import math` to use the function since it is in the `math` package.
     c. Compute the probability by finishing the formula.
 
 3. Please use `time` to test which method mentioned above is faster.
@@ -222,41 +222,16 @@ You may try `datetime.datetime.now()` and `.strftime()` method for the `datetime
 
 
 ::: {#exr-}
-## Color the Gnomic data
-We can use ASCII color codes in the string to change the color of strings, as an example `\033[91m` for red and `\033[94m` for blue. See the following example.
-```{python}
-#| eval: false
-print('\033[91m'+'red'+'\033[92m'+'green'+'\033[94m'+'blue'+'\033[93m'+'yellow')
-```
-This example works in IPython console or Jupyter notebook. 
+## Caesar cipher
+In cryptography, a *Caesar cipher* is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, `D` would be replaced by `A`, `E` would become `B`, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
 
+Please write two functions to implement Caesar cipher and decipher. To make things easier, we implement the following two rules.
 
-Consider an (incomplete) Gnomic data given below which is represented by a long sequence of `A`, `C`, `T` and `G`. Please color it using ASCII color codes.
+1. Spaces, `,`, numbers or other non-alphabic letters will NOT be changed.
+2. Upper case and lower case will NOT be changed.
 
-```{python}
-Gnomicdata = 'TCGATCTCTTGTAGATCTGTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGG'\
-             'CTGCATGCTTAGTGCACTCACGCAGTATAATTAATAACTAATTACTGTCGTTGACAGGAC'\
-             'ACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTGTTGCAGCCGATC'\
-             'ATCAGCACATCTAGGTTTTGTCCGGGTGTGACCGAAAGGTAAGATGGAGAGCCTTGTCCC'\
-             'TGGTTTCAACGAGAAAACACACGTCCAACTCAGTTTGCCTGTTTTACAGGTTCGCGACGT'\
-             'GCTCGTACGTGGCTTTGGAGACTCCGTGGAGGAGGTCTTATCAGAGGCACGTCAACATCT'\
-             'TAAAGATGGCACTTGTGGCTTAGTAGAAGTTGAAAAAGGCGTTTTGCCTCAACTTGAACA'\
-             'GCCCTATGTGTTCATCAAACGTTCGGATGCTCGAACTGCACCTCATGGTCATGTTATGGT'\
-             'TGAGCTGGTAGCAGAACTCGAAGGCATTCAGTACGGTCGTAGTGGTGAGACACTTGGTGT'\
-             'CCTTGTCCCTCATGTGGGCGAAATACCAGTGGCTTACCGCAAGGTTCTTCTTCGTAAGAA'\
-             'CGGTAATAAAGGAGCTGGTGGCCATAGTTACGGCGCCGATCTAAAGTCATTTGACTTAGG'\
-             'CGACGAGCTTGGCACTGATCCTTATGAAGATTTTCAAGAAAACTGGAACACTAAACATAG'
-```
+Note that you may add the number of shifts as a parameter in your function.
 :::
-
-<details>
-<summary>Click for Hint.</summary>
-
-::: {.solution}
-## Hint
-You may use `if` to do the conversion. Or you may use `dict` to do the conversion.
-:::
-</details>
 
 
 
@@ -277,7 +252,7 @@ Please read through the Key Funtions section in this [article](https://docs.pyth
 
 You are creating a fantasy video game. The data structure to model the player’s inventory will be a dictionary where the keys are string values describing the item in the inventory and the value is an integer value detailing how many of that item the player has. For example, the dictionary value `{'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}` means the player has 1 rope, 6 torches, 42 gold coins, and so on.
 
-Write a program to take any possible `inventory` and display it like the following. Note that the order of items doesn't matter. The purpose of this exercise is to read information from a `dict` and translate it into a format you need.
+1. Write some code to take any possible `inventory` and display it like the following. Note that the order of items doesn't matter. The purpose of this exercise is to read information from a `dict` and translate it into a format you need.
 
 ```{python}
 #| eval: false
@@ -289,28 +264,7 @@ Inventory:
 1 dagger
 Total number of items: 62
 ```
+2. Write a function named `displayInventory()` that would take any possible `inventory` and display it in the above way.
 :::
 
 
-
-::: {#exr-}
-## Fantasy Game Inventory: function
-The description is the same as @exr-fantasyinventorycode.
-
-Write a function named `displayInventory()` that would take any possible `inventory` and display it in the way of @exr-fantasyinventorycode. 
-
-:::
-
-
-
-
-::: {#exr-montyhallproblemnaive}
-## Monty Hall problem
-The Monty Hall problem is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show *Let's Make a Deal* and named after its original host, Monty Hall. The problem is stated as follows:
-
-Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
-
-We would like to use code to simulate this process. Here is a suggested process.
-
-1. 
-:::

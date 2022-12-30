@@ -1,5 +1,5 @@
 
-## Built-in Types: numeric and `str` {#sec-path}
+## numeric and `str` {#sec-path}
 
 This section is based on @You2020.
 
@@ -81,8 +81,8 @@ s
 
 
 ::: {.callout-note collapse="true"}
-## `format()` method
-The built-in string class provides the ability to do complex variable substitutions and value formatting via the `format()` method. The basic syntax is to use the inputed augments to fill in the blanks in the formatted string specified by `{}`. Please see the following examples.
+## `.format()` method
+The built-in string class provides the ability to do complex variable substitutions and value formatting via the `.format()` method. The basic syntax is to use the inputed augments to fill in the blanks in the formatted string specified by `{}`. Please see the following examples.
 
 ```{python}
 'I have {} {} and {} {}.'.format(1, 'apple', 2, 'bananas')
