@@ -1,9 +1,12 @@
 ## Examples
 
 ### Monty Hall problem
+
+
 The Monty Hall problem is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show *Let's Make a Deal* and named after its original host, Monty Hall. The problem is stated as follows:
 
 Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+
 
 We would like to use code to simulate this process. Here are the steps. 
 
@@ -196,7 +199,11 @@ From this result, you may guess that switch might be the better strategy.
 
 
 ### `N`-door Monty Hall problem
-The Monty Hall problem can be modified to `N` doors. We only need to modify our codes a little bit for the change. You may bring the idea "there are `N` doors" to the process mentioned above to see what should be modified. However when writing the code, you may still set `N=3` and change it later after you finish.
+
+
+The Monty Hall problem can be modified to `N` doors. The host will open `N-2` doors which don't have the car behind, and only leave one door left for us to choose. What will you choose?
+
+We only need to modify our codes a little bit for the change. You may bring the idea "there are `N` doors" to the process mentioned above to see what should be modified. However when writing the code, you may still set `N=3` and change it later after you finish.
 
 ::: {.callout-note collapse="true"}
 ## 1. Change `doors`
@@ -312,15 +319,16 @@ The result also shows that switch is a better strategy. This is the simulation a
 
 
 ### Color the Gnomic data
-We can use ASCII color codes in the string to change the color of strings, as an example `\033[91m` for red and `\033[94m` for blue. See the following example.
+
+We can use ASCII color codes in the string to change the color of strings. As an example, `\033[91m` is for red and `\033[94m` is for blue. See the following example.
 ```{python}
 #| eval: false
 print('\033[91m'+'red'+'\033[92m'+'green'+'\033[94m'+'blue'+'\033[93m'+'yellow')
 ```
 This example works in IPython console or Jupyter notebook. 
 
-Consider an (incomplete) Gnomic data given below which is represented by a long sequence of `A`, `C`, `T` and `G`. Please color it using ASCII color codes.
 
+Consider an (incomplete) Gnomic data given below which is represented by a long sequence of `A`, `C`, `T` and `G`. Please color it using ASCII color codes.
 ```{python}
 gnomicdata = 'TCGATCTCTTGTAGATCTGTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGG'\
              'CTGCATGCTTAGTGCACTCACGCAGTATAATTAATAACTAATTACTGTCGTTGACAGGAC'\
@@ -335,6 +343,7 @@ gnomicdata = 'TCGATCTCTTGTAGATCTGTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGG'\
              'CGGTAATAAAGGAGCTGGTGGCCATAGTTACGGCGCCGATCTAAAGTCATTTGACTTAGG'\
              'CGACGAGCTTGGCACTGATCCTTATGAAGATTTTCAAGAAAACTGGAACACTAAACATAG'
 ```
+
 
 The way to color `A` as a red `A` is to change the character into `\033[91mA`. Then using in IPython console or Jupyter notebook after you print it, you can see a red `A`. Therefore the core idea to solve this problem is to replace `A` in the string by `\033[91mA`, etc..
 

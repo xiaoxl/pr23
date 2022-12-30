@@ -114,16 +114,12 @@ Although there are global variable, it is always ecouraged to use local variable
 
 Please see the following examples.
 
-::: {#exm-}
 ```{python}
-#| eval: false
 f = lambda x: 2*x+1
 
 f(3)
 ```
-:::
 
-::: {#exm-}
 ```{python}
 def apply_to_list(some_list, f):
     return [f(x) for x in some_list]
@@ -131,16 +127,13 @@ def apply_to_list(some_list, f):
 ints = [4, 0, 1, 5, 6]
 apply_to_list(ints, lambda x: x * 2)
 ```
-:::
 
-::: {#exm-}
 ```{python}
 fruits = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
 
 fruits_sorted = sorted(fruits.items(), key=lambda x: x[1])
 fruits_sorted
 ```
-:::
 
 
 Lambda function is always used as a input parameter when it is not worth to use extra space to write a one line function. You will see several examples in the Chapter of `pandas`.

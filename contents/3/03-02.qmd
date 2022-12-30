@@ -1,0 +1,161 @@
+## Indexing
+
+### Basic indexing and slicing
+
+First see the following example.
+
+
+::: {#exm-}
+```{python}
+import numpy as np
+arr = np.arange(10)
+
+print(arr[5])
+print(arr[5:8])
+
+arr[5:8] = 12
+print(arr)
+
+print(arr[5:8:2])
+print(arr[8:5:-1])
+print(arr[::-1])
+```
+:::
+
+
+To do slicing in higher dimensional case, you may either treat a `numpy` array as a nested list, or you may directly work with it with multiindexes.
+
+
+::: {#exm-}
+
+```{python}
+import numpy as np
+arr3d = np.arange(12).reshape(2, 2, 3)
+
+print('case 1:\n {}'.format(arr3d))
+print('case 2:\n {}'.format(arr3d[0, 1, 2]))
+print('case 3:\n {}'.format(arr3d[:, 0: 2, 1]))
+print('case 4:\n {}'.format(arr3d[:, 0: 2, 1:2]))
+```
+
+:::
+
+
+### Boolean Indexing
+`numpy` array can accept index in terms of numpy arries with boolean indexing.
+
+
+::: {#exm-}
+
+```{python}
+import numpy as np
+a = np.arange(4)
+b = np.array([True, True, False, True])
+print(a)
+print(b)
+print(a[b])
+```
+:::
+
+We could combine this way with the logic computation to filter out the elements we don't want.
+
+
+::: {#exm-}
+Please replace the odd number in the array by its negative.
+
+```{python}
+import numpy as np
+arr = np.arange(10)
+odd = arr %2 == 1
+arr[odd] = arr[odd] * (-1)
+
+print(arr)
+```
+
+
+:::
+
+### Fancy indexing
+Fancy indexing is a term adopted by NumPy to describe indexing using integer arrays. 
+
+::: {#exm-}
+
+```{python}
+import numpy as np
+
+arr = np.zeros((8, 4))
+for i in range(8):
+    arr[i] = i
+
+arr[[4, 3, 0, 6]]
+```
+
+:::
+
+::: {#exm-}
+
+```{python}
+import numpy as np
+
+arr = np.arange(32).reshape((8, 4))
+print(arr)
+print(arr[[1, 5, 7, 2], [0, 3, 1, 2]])
+print(arr[[1, 5, 7, 2]][:, [0, 3, 1, 2]])
+```
+
+:::
+
+
+### [Copies and views](https://numpy.org/doc/stable/user/basics.copies.html)
+The view of an numpy array is a way to get access to the array without copying internel data. When operating with a view, the original data as well as all other views of the original data will be modified simutanously. 
+
+The default setting for copies and views is that, basic indexing and slicing will make views, and advanced indexing and slicing (e.g. boolean indexing, fancy indexing, etc.) will make copies. For other operations, you need to check the documents to know how they work. For example, `np.reshape` creates a view where possible, and `np.flatten` always creates a copy.
+
+You may use `np.view()` or `np.copy()` to make views or copies explicitly. 
+::: {#exm-}
+
+```{python}
+import numpy as np
+arr = np.arange(10)
+b = arr[5:8]
+print('arr is {}'.format(arr))
+print('b is {}'.format(b))
+
+b[0] = -1
+print('arr is {}'.format(arr))
+print('b is {}'.format(b))
+
+
+arr[6] = -2
+print('arr is {}'.format(arr))
+print('b is {}'.format(b))
+
+print('The base of b is {}'.format(b.base))
+```
+:::
+
+
+The way to make explicit copy is `.copy()`.
+
+
+::: {#exm-}
+
+```{python}
+import numpy as np
+arr = np.arange(10)
+b = arr[5:8].copy()
+print('arr is {}'.format(arr))
+print('b is {}'.format(b))
+
+b[0] = -1
+print('arr is {}'.format(arr))
+print('b is {}'.format(b))
+
+
+arr[6] = -2
+print('arr is {}'.format(arr))
+print('b is {}'.format(b))
+
+print('The base of b is {}'.format(b.base))
+```
+:::

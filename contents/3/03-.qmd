@@ -7,7 +7,13 @@ The main reference for this chapter is @McK2017.
 {{< include 03-01.qmd >}}
 
 
+{{< include 03-02.qmd >}}
+
+
+{{< include 03-03.qmd >}}
+
+
+{{< include 03-04.qmd >}}
+
 
 {{< include 03-ex.qmd >}}
-
-{{< include 03-proj.qmd >}}

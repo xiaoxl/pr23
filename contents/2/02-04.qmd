@@ -26,9 +26,6 @@ An empty list can be denoted by `[]`.
 
 Similar to the type change for numeric types and `str`, you may use `list()` to convert other objects into a list, if able. The typical example is to convert other iterators into lists.
 
-::: {#exm-}
-## Convert to lists
-
 ```{python}
 s = 'abc'
 list(s)
@@ -38,7 +35,6 @@ list(s)
 list(range(1, 5, 2))
 ```
 Empty list can be created by `list()`.
-:::
 :::
 
 ::: {.callout-tip}
@@ -59,7 +55,6 @@ Let `L` be a list. Then `L[i]` will return the `i`-th element in the list.
 - All index in Python starts from `0`. Therefore the first element is `L[0]`, the second is `L[1]`, etc..
 - Negative position means go backwards. So `L[-1]` means the last element, `L[-2]` means the second last element, etc..
 
-::: {#exm-}
 
 ```{python}
 L = [1, 2, 3]
@@ -69,7 +64,6 @@ L[0]
 ```{python}
 L[-2]
 ```
-:::
 
 :::
 
@@ -91,7 +85,6 @@ L[start:stop:step]
 4. `start` and `stop` follows the rules of negative positions. 
 5. When slicing, the result is always a list, even if it only contains one element.
 
-::: {#exm-}
 
 ```{python}
 L = ['a', 'b', 'c', 'd', 'e']
@@ -111,7 +104,6 @@ L[:-1]
 L[-1:0:-1]
 ```
 
-:::
 
 :::
 
