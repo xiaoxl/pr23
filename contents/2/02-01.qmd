@@ -41,7 +41,27 @@ Python is centered around objects. There are differences between two objects and
 - `==` is testing whehter these two objects have the same value.
 - `is` is testing whether these two objects are exactly the same.
 
-You may use `id(x)` to check the id of the object `x`. Two objects are identical if they have the same id.
+You may use `id(x)` to check the id of the object `x`. Two objects are identical if they have the same id. Please see the following example.
+
+`a` and `b` are two lists. They are different objects, but their contents are the same.
+
+```{python}
+a = [1, 2]
+b = [1, 2]
+a == b
+```
+
+```{python}
+a is b
+```
+
+You may check their ids and find that their ids are different.
+```{python}
+id(a) == id(b)
+```
+
+
+
 
 For beginners, in most cases, you should use `==` to check values of variables. The most common case to use `is` is to check whether something is a `None` object. In other words, you should use `a is None` other than `a == None`.
 
@@ -76,6 +96,12 @@ s[3]
 
 ```{python}
 s = 'abc' + 'def'
+s
+```
+6. We can also multiply a string with a positive integer. What it does is to repeat the string multiple times. See the following example.
+
+```{python}
+s = 'abc'*5
 s
 ```
 

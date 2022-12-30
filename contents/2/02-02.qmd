@@ -18,7 +18,7 @@ int f(int x) {
 }
 ```
 
-In Python, blocks starts from `:` and then are determined by indents. Therefore you won't see a lot of `{}` in Python, and the "beautiful, stylish" format is mandatary. 
+In Python, blocks starts from `:` and then are determined by indents. Therefore you won't see a lot of `{}` in Python, and the "beautiful, stylish" format is **mandatary**. 
 ```{python}
 # This is a Python function.
 def f(x):

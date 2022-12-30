@@ -5,7 +5,7 @@
 ::: {#exr-}
 ## Hello world!
 
-Please set up a Python developing environment, including for `.py` file and for notebook, that will be used across the semester. Then print `Hello World!`.
+Please set up a Python developing environment, for both `.py` file and `.ipynb` notebook file, that will be used across the semester. Then print `Hello World!`.
 :::
 
 
@@ -175,7 +175,7 @@ _ = ax.set_ylim(0, 400)
 ```
 :::
 
-
+<!-- 
 <details>
 <summary>Click for Hint.</summary>
 
@@ -200,4 +200,4 @@ Go through all records in `player_dict`. If the name of a player is `Stephen Cur
 
 *To be omitted.*
 :::
-</details>
+</details> -->
