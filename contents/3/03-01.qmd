@@ -1,6 +1,6 @@
 ## Basics
 
-The basic data structure for `numpy` is `numpy.ndarray`. You may treat it as a generalized version of lists. However it can do so much more than the build-in `list`. 
+The core data structure for `numpy` is `numpy.ndarray`. It is called *NumPy N-d array*. In most cases we will use its alias `array` for simplicity. You may treat it as a generalized version of `list`. However it can do so much more than the built-in `list`. 
 
 To use `numpy`, we just import it. In most cases you would like to use the alias `np`.
 
@@ -8,15 +8,20 @@ To use `numpy`, we just import it. In most cases you would like to use the alias
 #| eval: false
 import numpy as np
 ```
+Using alias, we will just call NumPy N-d array `np.array`.
+
+### The dimension of `np.array`
+There is a very confusing terminology for `np.array`: dimension. The actual word using in documents is actually `axes`, but all these words are used everywhere so it is benefitial to discuss it at the beginning. 
+
+For an `np.array`, you could think it in terms of grids. You could read 
 
 
-::: {.callout-note}
-In many cases, `numpy.ndarray` is a huge object since it stores tons of data. Therefore many of the operations related to `numpy.ndarray` are "in-place" by default. This means that if you don't explicitly ask for a copy, there will be only one copy of the array and all later operations make changes to the original one. 
+### Create `np.array`
+`np.array` is called Numpy Ndarray. It is a table of elements (usually numbers), all of the same type, indexed by a tuple of non-negative integers. In NumPy dimensions are called *axes*. It refers to the number of axes need to index it., and it is NOT the dimension of the vector spaces.
 
-However there are many cases that 
-:::
 
-### Create `np.ndarray`
+
+There are many ways to do that. 
 
 - convert a list into a numpy array.
 - `np.zeros`, `np.zeros_like`

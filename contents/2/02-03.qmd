@@ -128,6 +128,7 @@ ints = [4, 0, 1, 5, 6]
 apply_to_list(ints, lambda x: x * 2)
 ```
 
+To fully understand the following example requires knowledge from @sec-dict.
 ```{python}
 fruits = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
 
@@ -164,7 +165,7 @@ add()
 ```{python}
 add()
 ```
-Every time the function is called with no arguments, the default value is used, which is the same list initialized at the beginning. The list at the begining is an empty list. But after we put things inside, it is no longer empyt.
+Every time the function is called with no arguments, the default value is used, which is the same list initialized at the beginning. The list at the begining is an empty list. But after we put things inside, it is no longer empty.
 
 If you want to set a mutable object as a default, the way is as follows:
 

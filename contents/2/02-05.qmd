@@ -1,5 +1,5 @@
 
-## `dict` 
+## `dict` {#sec-dict}
 
 Dictionary `dict` is also very important built-in Python data structure. It is a flexibly sized collection of *key-value* pairs, where key and value are Python objects. One approach for creating a dictionary is to use `{}` and colons to separate keys and values.
 

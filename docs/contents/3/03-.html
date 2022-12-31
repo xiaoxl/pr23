@@ -314,6 +314,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="toc-section-number">3.4</span>  Examples</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">3.5</span>  Exercises</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -337,30 +338,23 @@ div.csl-indent {
 
 </header>
 
-<p>The main reference for this chapter is <span class="citation" data-cites="McK2017">[<a href="../references.html#ref-McK2017" role="doc-biblioref">1</a>]</span>.</p>
+<p>The main reference for this chapter is <span class="citation" data-cites="McK2017">[<a href="../1/01-.html#ref-McK2017" role="doc-biblioref">1</a>]</span>.</p>
 <section id="basics" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">3.1</span> Basics</h2>
-<p>The basic data structure for <code>numpy</code> is <code>numpy.ndarray</code>. You may treat it as a generalized version of lists. However it can do so much more than the build-in <code>list</code>.</p>
+<p>The core data structure for <code>numpy</code> is <code>numpy.ndarray</code>. You may treat it as a generalized version of <code>list</code>. However it can do so much more than the build-in <code>list</code>.</p>
 <p>To use <code>numpy</code>, we just import it. In most cases you would like to use the alias <code>np</code>.</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In many cases, <code>numpy.ndarray</code> is a huge object since it stores tons of data. Therefore many of the operations related to <code>numpy.ndarray</code> are “in-place” by default. This means that if you don’t explicitly ask for a copy, there will be only one copy of the array and all later operations make changes to the original one.</p>
-<p>However there are many cases that</p>
-</div>
-</div>
+<!-- 
+::: {.callout-note}
+In many cases, `numpy.ndarray` is a huge object since it stores tons of data. Therefore many of the operations related to `numpy.ndarray` are "in-place" by default. This means that if you don't explicitly ask for a copy, there will be only one copy of the array and all later operations make changes to the original one. 
+
+However there are many cases that 
+::: -->
 <section id="create-np.ndarray" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="create-np.ndarray"><span class="header-section-number">3.1.1</span> Create <code>np.ndarray</code></h3>
+<p>There are many ways to do that.</p>
 <ul>
 <li>convert a list into a numpy array.</li>
 <li><code>np.zeros</code>, <code>np.zeros_like</code></li>
@@ -765,7 +759,7 @@ The base of b is None</code></pre>
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    plt.plot(row)</span>
 <span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>plt.legend([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>&lt;matplotlib.legend.Legend at 0x210acabf5e0&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend at 0x231ffcb7b20&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="03-_files/figure-html/cell-17-output-2.png" class="img-fluid"></p>
@@ -780,7 +774,7 @@ The base of b is None</code></pre>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>positions.<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>3.0</code></pre>
+<pre><code>10.0</code></pre>
 </div>
 </div>
 <ul>
@@ -789,7 +783,7 @@ The base of b is None</code></pre>
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>positions.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>array([2., 3., 0.])</code></pre>
+<pre><code>array([ 6., 10.,  7.])</code></pre>
 </div>
 </div>
 <ul>
@@ -798,9 +792,9 @@ The base of b is None</code></pre>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>positions.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<pre><code>array([ 0.,  1.,  0., -1.,  0., -1.,  0.,  1.,  0., -1.,  0., -1.,  0.,
-        1.,  0.,  1.,  0., -1.,  0., -1.,  0.,  1.,  2.,  3.,  2.,  1.,
-        0., -1.,  0.,  1.,  2.])</code></pre>
+<pre><code>array([ 0.,  1.,  0.,  1.,  0.,  1.,  0.,  1.,  2.,  3.,  4.,  3.,  2.,
+        1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  7.,  8.,  7.,  8.,  9.,
+       10.,  9.,  8.,  7.,  8.])</code></pre>
 </div>
 </div>
 <ul>
@@ -809,7 +803,7 @@ The base of b is None</code></pre>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>(positions<span class="op">&gt;=</span><span class="dv">3</span>).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<pre><code>array([False,  True, False])</code></pre>
+<pre><code>array([ True,  True,  True])</code></pre>
 </div>
 </div>
 <ul>
@@ -818,7 +812,7 @@ The base of b is None</code></pre>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>(positions<span class="op">&gt;=</span><span class="dv">3</span>).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
-<pre><code>1</code></pre>
+<pre><code>3</code></pre>
 </div>
 </div>
 <ul>
@@ -827,14 +821,14 @@ The base of b is None</code></pre>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>positions.argmax(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>array([30, 23,  0], dtype=int64)</code></pre>
+<pre><code>array([30, 26, 29], dtype=int64)</code></pre>
 </div>
 </div>
 </div>
 </section>
 <section id="exercises" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.5</span> Exercises</h2>
-<p>Many exercises are from <span class="citation" data-cites="Pra2018">[<a href="../references.html#ref-Pra2018" role="doc-biblioref">2</a>]</span>.</p>
+<p>Many exercises are from <span class="citation" data-cites="Pra2018">[<a href="../1/01-.html#ref-Pra2018" role="doc-biblioref">2</a>]</span>.</p>
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3.1 </strong></span>&nbsp;</p>
 <ol type="1">
@@ -976,8 +970,9 @@ The following ideas can be used to solve the problem.
 <p><span class="theorem-title"><strong>Exercise 3.15 </strong></span>Consider <code>arr = np.arange(8)</code>. A stride of <code>arr</code> with a window length of <code>4</code> and strides of <code>2</code> is a 2d <code>np.array</code> that looks like <code>[[0,1,2,3], [2,3,4,5], [4,5,6,7]]</code>.</p>
 <p>Please write a function that takes <code>arr</code> and <code>length</code> and <code>strides</code> as inputs, and its stride as outputs.</p>
 </div>
-
-
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
 <div id="ref-McK2017" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><span class="smallcaps">McKinney</span>, W. (2017). <em>Python for data analysis: Data wrangling with pandas, NumPy, and IPython</em>. O’Reilly Media.</div>
@@ -986,6 +981,8 @@ The following ideas can be used to solve the problem.
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline"><span class="smallcaps">Prabhakaran</span>, S. (2018). <a href="https://www.machinelearningplus.com/python/101-numpy-exercises-python/">101 NumPy exercises for data analysis (python)</a>.</div>
 </div>
 </div>
+
+
 </section>
 
 </main> <!-- /main -->

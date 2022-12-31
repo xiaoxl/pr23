@@ -17,3 +17,10 @@ The main reference for this chapter is @McK2017.
 
 
 {{< include 03-ex.qmd >}}
+
+
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

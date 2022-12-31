@@ -20,3 +20,9 @@
 {{< include 02-ex.qmd >}}
 
 
+
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
