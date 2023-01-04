@@ -5,15 +5,81 @@ The core data structure for `numpy` is `numpy.ndarray`. It is called *NumPy N-d 
 To use `numpy`, we just import it. In most cases you would like to use the alias `np`.
 
 ```{python}
-#| eval: false
 import numpy as np
 ```
 Using alias, we will just call NumPy N-d array `np.array`.
 
-### The dimension of `np.array`
-There is a very confusing terminology for `np.array`: dimension. The actual word using in documents is actually `axes`, but all these words are used everywhere so it is benefitial to discuss it at the beginning. 
+### Understanding `np.array`
+The simplest way to look at an `np.array` is to think it as lists of list. Here are some examples.
 
-For an `np.array`, you could think it in terms of grids. You could read 
+- This is an example of a 1d array. Note that it can be treated as a list. You may get access to its entries by 1 index, e.g. `a[0]`. This means that: we have a list, and we want to get the `0`th element in the list.
+
+```{python}
+a = np.array([1, 2])
+a
+```
+
+- This is an example of a 2d array. Note that it can be treated as a list of lists. You may get access to its entries by 2 indexes, e.g. `b[0, 0]`. This means that: we have a list of lists. We first get the `0`th element (which is a list), and then get the `0`th element from this `0`th list (which is a number).
+
+```{python}
+b = np.array([[1, 2], [3,4]])
+b
+```
+
+- This is an example of a 3d array. Note that it can be treated as a list of lists of lists. You may get access to its entries by 3 indexes, e.g. `c[0, 0, 0]`. This means that: we have a list of lists of lists. We first get the `0`th element (which is a list of lists), and then get the `0`th element (which is a list) from this `0`th list of lists, and then get the `0`th element (which is a number) from the previous list.
+
+```{python}
+c = np.array([[[1, 2], [3,4]], [[1, 2], [3,4]]])
+c
+```
+
+
+#### The dimension of `np.array`
+There is a very confusing terminology for `np.array`: dimension. The actual word using in documents is actually `axes`. It refers to the number of coordinates required to describe the location. 
+
+In the previous example, `a` is a 1d array since you only need 1 index to get entries, `b` is a 2d array since you need 2 indexes to get entries, and `c` is a 3d array since you need 3 indexes to get entries.
+
+We could use `.ndim` to check the dimension of a `np.array`.
+
+```{python}
+d = np.array([[1, 2, 3], [4, 5, 6]])
+d.ndim
+```
+
+
+::: {.callout-note}
+## Comparing to Linear algebras
+The dimension of an `np.array` and the dimenion of a vector in Linear algebras are totally different. In this example, as a `np.array`, `a` is a 1d `np.array`, of length `3`. As a vector, it is a 3d vector.
+:::
+
+To describe the length of each axes, we could use `.shape`. It will tells us the length of each axis. In other words, it tells us the maximal index of each axis.
+
+
+::: {#exm-}
+```{python}
+d = np.array([[1, 2, 3], [4, 5, 6]])
+d.shape
+```
+The shape of `d` is `(2, 3)`, which means that the length of axis 0 is `2` and the length of axis 1 is `3`. 
+
+- Axis 0 is the vertical axis, and its index is corresponding to rows. The length of axis 0 is actually the number of rows.
+- Axis 1 is the horizental axis, and its index is corresponding to columns. The length of axis 1 is actually the number of columns.
+
+So a 2d array can be treated as a matrix, and the shape being `(2, 3)` means that the matrix has `2` rows and `3` columns.
+:::
+
+::: {.callout-caution}
+`.ndim` and `.shape` are not methods. There is no `()` behind.
+:::
+
+
+#### Moving along axis
+A lot of `numpy` methods has an argument `axis=`, which let you to specify performing the action along which axis. You may understand this "along axis" in the following way. `axis=i` means that when we perform the action, we keep all other indexes the same, only changing the index on axis `i`.
+
+For example, `b.sum(axis=0)` means that we want to add all entries along axis `0`. So we start from a certain entry, keeping all other index the same when changing index on axis `0` only, and add all these entries together. Since axis `0` is corresponding to rows index, only changing row index means we are moving vertically. So if `b` is a 2d array, `b.sum(axis=0)` means we are adding all column together.
+
+We will do more examples later this section.
+
 
 
 ### Create `np.array`
