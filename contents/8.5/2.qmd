@@ -1,0 +1,159 @@
+
+## US Babynames
+
+Let us use R to solve the babynames dataset again. 
+
+The first task is to read those files.
+
+
+::: {#exm-}
+Please read files and put the data into one tibble. The dataset can be downloaded from [here](assests/datasets/babynames.zip) as a zip file.
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+```
+
+::: {.callout-tip collapse="true"}
+
+
+```{r}
+path <- 'assessts/datasets/babynames/yob'
+dfs <- map(1880:2010, function(y){
+    filepath <- paste0(path, as.character(y), '.txt')
+    df_individual <- tibble(read.csv(filepath, header=FALSE))
+    names(df_individual) <- c('name', 'gender', 'counts')
+    df_individual$year <- y
+    df_individual
+})
+df <- bind_rows(dfs)
+```
+:::
+:::
+
+
+
+::: {#exm-}
+Please plot the total births by gender and year.
+
+::: {.callout-tip collapse="true"}
+
+```{r}
+df %>% 
+    group_by(gender, year) %>% 
+    summarize(total_num=sum(counts)) %>% 
+    ggplot() +
+        geom_line(mapping = aes(x=year, y=total_num, color=gender))
+
+```
+
+:::
+
+:::
+
+
+::: {#exm-}
+Please compute the proportions of each name relateive to the total number of births per year per gender. 
+
+::: {.callout-tip collapse='true'}
+
+```{r}
+df %>% 
+    group_by(gender, year) %>% 
+    mutate(prop=counts/sum(counts))
+```
+
+:::
+:::
+
+
+
+::: {#exm-}
+We would like to keep the first 100 names (by counts) in each year and save it as a new tibble `top100`.
+
+::: {.callout-tip collapse="true"}
+
+```{r}
+top100 <- df %>% 
+        group_by(gender, year) %>% 
+        top_n(100, wt=counts)
+```
+
+:::
+:::
+
+
+::: {#exm-}
+Please draw the trend of `John`, `Harry`, `Mary` in `top100` by counts.
+
+::: {.callout-tip collapse="true"}
+
+```{r}
+namelist <- c('John', 'Harry', 'Mary')
+top100 %>% 
+    filter(name %in% namelist) %>% 
+    ggplot() +
+        geom_line(mapping=aes(x=year, y=counts, color=name))
+```
+
+:::
+:::
+
+
+::: {#exm-}
+Now we would like to analyze the ending of names. Please get a `tibble` that contains the counts of ending letter per year per gender. We mainly focus on 1910, 1960 and 2010.
+
+::: {.callout-tip collapse="true"}
+
+```{r}
+#| warning: false
+df %>% 
+    filter(year %in% c(1910, 1960, 2010)) %>% 
+    mutate(ending=str_sub(name, -1, -1)) %>% 
+    group_by(gender, year, ending) %>% 
+    summarise(ending_counts=sum(counts)) %>% 
+    ggplot() +
+        geom_bar(
+            mapping = aes(
+                x=ending, 
+                y=ending_counts, 
+                fill=year,
+                group=year
+                ), 
+            stat = "identity", 
+            position = "dodge",
+        ) +
+        facet_wrap(~gender, nrow=2)
+```
+
+:::
+:::
+
+
+::: {#exm-}
+Please draw the line plot to show the trending of certain letters through years. Here we choose `d`, `n` and `y`.
+
+
+
+::: {.callout-tip collapse="true"}
+
+```{r}
+#| warning: false
+df %>% 
+    mutate(ending=str_sub(name, -1, -1)) %>% 
+    group_by(year, ending) %>% 
+    summarise(ending_counts=sum(counts)) %>% 
+    filter(ending %in% c('d', 'n', 'y')) %>% 
+    ggplot() +
+        geom_line(
+            mapping = aes(
+                x=year, 
+                y=ending_counts, 
+                color=ending
+            )
+        )
+```
+
+:::
+:::

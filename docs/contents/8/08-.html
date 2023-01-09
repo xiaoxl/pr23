@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python/R for Data Science - 8&nbsp; R for Data Sciences</title>
+<title>Python/R for Data Science - 9&nbsp; R for Data Sciences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../contents/references.html" rel="next">
+<link href="../../contents/8.5/intro.html" rel="next">
 <link href="../../contents/7/07-.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -162,7 +162,7 @@ div.csl-indent {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -195,17 +195,17 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/1/01-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></a>
+  <a href="../../contents/1/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/2/02-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python Basics</span></a>
+  <a href="../../contents/2/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/3/03-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></a>
+  <a href="../../contents/3/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -220,7 +220,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/6/06-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Classes/Packages for Python</span></a>
+  <a href="../../contents/5.5/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Projects with Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/6/06-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classes/Packages for Python</span></a>
   </div>
 </li>
       </ul>
@@ -235,12 +240,17 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/7/07-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Fundamentals</span></a>
+  <a href="../../contents/7/07-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Fundamentals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/8/08-.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></a>
+  <a href="../../contents/8/08-.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/8.5/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projects with R</span></a>
   </div>
 </li>
       </ul>
@@ -294,36 +304,30 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#tibble" id="toc-tibble" class="nav-link active" data-scroll-target="#tibble"><span class="toc-section-number">8.1</span>  <code>tibble</code></a>
+  <li><a href="#tibble" id="toc-tibble" class="nav-link active" data-scroll-target="#tibble"><span class="toc-section-number">9.1</span>  <code>tibble</code></a>
   <ul class="collapse">
-  <li><a href="#create-tibbles" id="toc-create-tibbles" class="nav-link" data-scroll-target="#create-tibbles"><span class="toc-section-number">8.1.1</span>  Create tibbles</a></li>
-  <li><a href="#differences-between-tibble-and-data.frame." id="toc-differences-between-tibble-and-data.frame." class="nav-link" data-scroll-target="#differences-between-tibble-and-data.frame."><span class="toc-section-number">8.1.2</span>  Differences between tibble and data.frame.</a></li>
-  <li><a href="#symbol" id="toc-symbol" class="nav-link" data-scroll-target="#symbol"><span class="toc-section-number">8.1.3</span>  <code>%&gt;%</code> symbol</a></li>
+  <li><a href="#create-tibbles" id="toc-create-tibbles" class="nav-link" data-scroll-target="#create-tibbles"><span class="toc-section-number">9.1.1</span>  Create tibbles</a></li>
+  <li><a href="#differences-between-tibble-and-data.frame." id="toc-differences-between-tibble-and-data.frame." class="nav-link" data-scroll-target="#differences-between-tibble-and-data.frame."><span class="toc-section-number">9.1.2</span>  Differences between tibble and data.frame.</a></li>
+  <li><a href="#symbol" id="toc-symbol" class="nav-link" data-scroll-target="#symbol"><span class="toc-section-number">9.1.3</span>  <code>%&gt;%</code> symbol</a></li>
   </ul></li>
-  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="toc-section-number">8.2</span>  Tidy Data</a>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="toc-section-number">9.2</span>  Tidy Data</a>
   <ul class="collapse">
-  <li><a href="#tidying-datasets" id="toc-tidying-datasets" class="nav-link" data-scroll-target="#tidying-datasets"><span class="toc-section-number">8.2.1</span>  Tidying datasets</a></li>
+  <li><a href="#tidying-datasets" id="toc-tidying-datasets" class="nav-link" data-scroll-target="#tidying-datasets"><span class="toc-section-number">9.2.1</span>  Tidying datasets</a></li>
   </ul></li>
-  <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><span class="toc-section-number">8.3</span>  <code>dplyr</code></a>
+  <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><span class="toc-section-number">9.3</span>  <code>dplyr</code></a>
   <ul class="collapse">
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">8.3.1</span>  <code>filter()</code></a></li>
-  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="toc-section-number">8.3.2</span>  <code>select()</code></a></li>
-  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="toc-section-number">8.3.3</span>  <code>mutate()</code></a></li>
-  <li><a href="#summarize-and-group_by" id="toc-summarize-and-group_by" class="nav-link" data-scroll-target="#summarize-and-group_by"><span class="toc-section-number">8.3.4</span>  <code>summarize()</code> and <code>group_by()</code></a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">9.3.1</span>  <code>filter()</code></a></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="toc-section-number">9.3.2</span>  <code>select()</code></a></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="toc-section-number">9.3.3</span>  <code>mutate()</code></a></li>
+  <li><a href="#summarize-and-group_by" id="toc-summarize-and-group_by" class="nav-link" data-scroll-target="#summarize-and-group_by"><span class="toc-section-number">9.3.4</span>  <code>summarize()</code> and <code>group_by()</code></a></li>
   </ul></li>
-  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="toc-section-number">8.4</span>  <code>ggplot2</code></a>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="toc-section-number">9.4</span>  <code>ggplot2</code></a>
   <ul class="collapse">
-  <li><a href="#aesthetic-mappings" id="toc-aesthetic-mappings" class="nav-link" data-scroll-target="#aesthetic-mappings"><span class="toc-section-number">8.4.1</span>  Aesthetic mappings</a></li>
-  <li><a href="#facet" id="toc-facet" class="nav-link" data-scroll-target="#facet"><span class="toc-section-number">8.4.2</span>  <code>facet</code></a></li>
-  <li><a href="#geom-objects" id="toc-geom-objects" class="nav-link" data-scroll-target="#geom-objects"><span class="toc-section-number">8.4.3</span>  <code>geom</code> objects</a></li>
+  <li><a href="#aesthetic-mappings" id="toc-aesthetic-mappings" class="nav-link" data-scroll-target="#aesthetic-mappings"><span class="toc-section-number">9.4.1</span>  Aesthetic mappings</a></li>
+  <li><a href="#facet" id="toc-facet" class="nav-link" data-scroll-target="#facet"><span class="toc-section-number">9.4.2</span>  <code>facet</code></a></li>
+  <li><a href="#geom-objects" id="toc-geom-objects" class="nav-link" data-scroll-target="#geom-objects"><span class="toc-section-number">9.4.3</span>  <code>geom</code> objects</a></li>
   </ul></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="toc-section-number">8.5</span>  Examples</a>
-  <ul class="collapse">
-  <li><a href="#who-tb-dataset" id="toc-who-tb-dataset" class="nav-link" data-scroll-target="#who-tb-dataset"><span class="toc-section-number">8.5.1</span>  WHO TB dataset</a></li>
-  <li><a href="#us-babynames" id="toc-us-babynames" class="nav-link" data-scroll-target="#us-babynames"><span class="toc-section-number">8.5.2</span>  US Babynames</a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">8.6</span>  Exercises</a></li>
-  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"><span class="toc-section-number">8.7</span>  Projects</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">9.5</span>  Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -332,7 +336,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></h1>
 </div>
 
 
@@ -347,9 +351,9 @@ div.csl-indent {
 
 </header>
 
-<p>The main reference for this Chapter is <span class="citation" data-cites="Wic2017">[<a href="../1/01-.html#ref-Wic2017" role="doc-biblioref">1</a>]</span>.</p>
-<section id="tibble" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="tibble"><span class="header-section-number">8.1</span> <code>tibble</code></h2>
+<p>The main reference for this Chapter is <span class="citation" data-cites="Wic2017">[<a href="../1/intro.html#ref-Wic2017" role="doc-biblioref">1</a>]</span>.</p>
+<section id="tibble" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="tibble"><span class="header-section-number">9.1</span> <code>tibble</code></h2>
 <p><code>tidyverse</code> mainly deals with <code>tibble</code> instead of <code>data.frame</code>. Therefore this is where we start.</p>
 <p><code>tibble</code> is a <code>data.frame</code> with different attributes and requirements. The package <code>tibble</code> provides support for <code>tibble</code>. It is included in <code>tidyverse</code>. To load it, you just use the code:</p>
 <div class="cell">
@@ -363,11 +367,11 @@ div.csl-indent {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="create-tibbles" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="create-tibbles"><span class="header-section-number">8.1.1</span> Create tibbles</h3>
+<section id="create-tibbles" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="create-tibbles"><span class="header-section-number">9.1.1</span> Create tibbles</h3>
 <p>Here is an example of creating tibbles.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.1 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9.1 </strong></span>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">y=</span><span class="dv">1</span>, <span class="at">z=</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>y)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tbl</span>
@@ -431,10 +435,10 @@ Note
 </div>
 </div>
 </section>
-<section id="differences-between-tibble-and-data.frame." class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="differences-between-tibble-and-data.frame."><span class="header-section-number">8.1.2</span> Differences between tibble and data.frame.</h3>
-<section id="printing" class="level4" data-number="8.1.2.1">
-<h4 data-number="8.1.2.1" class="anchored" data-anchor-id="printing"><span class="header-section-number">8.1.2.1</span> Printing</h4>
+<section id="differences-between-tibble-and-data.frame." class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="differences-between-tibble-and-data.frame."><span class="header-section-number">9.1.2</span> Differences between tibble and data.frame.</h3>
+<section id="printing" class="level4" data-number="9.1.2.1">
+<h4 data-number="9.1.2.1" class="anchored" data-anchor-id="printing"><span class="header-section-number">9.1.2.1</span> Printing</h4>
 <p>Tibbles have a refined print method that shows only the first 10 rows and all the columns that fit on screen.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">suit=</span><span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'spades'</span>, <span class="st">'hearts'</span>, <span class="st">'clubs'</span>, <span class="st">'diamonds'</span>), <span class="dv">13</span>), <span class="at">face=</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>, <span class="dv">4</span>))</span>
@@ -455,8 +459,8 @@ Note
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 42 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="subsetting" class="level4" data-number="8.1.2.2">
-<h4 data-number="8.1.2.2" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">8.1.2.2</span> Subsetting</h4>
+<section id="subsetting" class="level4" data-number="9.1.2.2">
+<h4 data-number="9.1.2.2" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">9.1.2.2</span> Subsetting</h4>
 <p>To get a single value, <code>[[]]</code> or <code>$</code> should be used, just like for <code>data.frame</code>. These two are almost the same. The only difference is that <code>[[]]</code> accepts positions, but <code>$</code> only accepts names.</p>
 <p>To be used in a pipe, the special placeholder <code>.</code> will be used.</p>
 <div class="cell">
@@ -468,8 +472,8 @@ Note
 <p>We will talk about pipes later.</p>
 </section>
 </section>
-<section id="symbol" class="level3" data-number="8.1.3">
-<h3 data-number="8.1.3" class="anchored" data-anchor-id="symbol"><span class="header-section-number">8.1.3</span> <code>%&gt;%</code> symbol</h3>
+<section id="symbol" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="symbol"><span class="header-section-number">9.1.3</span> <code>%&gt;%</code> symbol</h3>
 <p><code>%&gt;%</code> is the pipeline symbol, which is another way to connect several functions. Most functions in tidyverse have the first argument <code>data</code>, and both the input <code>data</code> and the output are tibbles. The syntax here is that <code>data %&gt;% function(arguments)</code> is the same as <code>function(data, arguments)</code>. The benefit is that it is easier to have many functions consecutively applied to the data. Please see the following example.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">function1</span>(arguments1)</span>
@@ -487,11 +491,11 @@ Note
 <p>The readability of the first one is much better than the second one. Comparing to the third one, we don’t need to create a lot of intermedia temporary variables.</p>
 </section>
 </section>
-<section id="tidy-data" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">8.2</span> Tidy Data</h2>
+<section id="tidy-data" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">9.2</span> Tidy Data</h2>
 <p>The same underlying data can be represented in multiple ways. The following example shows the same data organized in four different ways.</p>
 <div id="exm-tidydatasets" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.2 </strong></span>These tibbles are provided by <code>tidyr</code>. You could directly load it from <code>tidyverse</code>.</p>
+<p><span class="theorem-title"><strong>Example 9.2 </strong></span>These tibbles are provided by <code>tidyr</code>. You could directly load it from <code>tidyverse</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(table1, <span class="at">package=</span><span class="st">'tidyr'</span>)</span>
@@ -573,7 +577,7 @@ Note
 </div>
 </div>
 <div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8.1 </strong></span>A dataset is <em>tidy</em> if</p>
+<p><span class="theorem-title"><strong>Definition 9.1 </strong></span>A dataset is <em>tidy</em> if</p>
 <ol type="1">
 <li>Each variable have its own column.</li>
 <li>Each observation have its own row.</li>
@@ -591,15 +595,15 @@ Note
 <li>To placing variables in columns allows R’s vectorized nature to shine.</li>
 </ol>
 <p>All packages in the tidyverse are designed to work with tidy data.</p>
-<section id="tidying-datasets" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="tidying-datasets"><span class="header-section-number">8.2.1</span> Tidying datasets</h3>
+<section id="tidying-datasets" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="tidying-datasets"><span class="header-section-number">9.2.1</span> Tidying datasets</h3>
 <p>Most datasets are untidy:</p>
 <ul>
 <li>One variable might be spread across multiple columns.</li>
 <li>One observation might be scattered across multiple rows.</li>
 </ul>
-<section id="pivot_longer" class="level4" data-number="8.2.1.1">
-<h4 data-number="8.2.1.1" class="anchored" data-anchor-id="pivot_longer"><span class="header-section-number">8.2.1.1</span> <code>pivot_longer()</code></h4>
+<section id="pivot_longer" class="level4" data-number="9.2.1.1">
+<h4 data-number="9.2.1.1" class="anchored" data-anchor-id="pivot_longer"><span class="header-section-number">9.2.1.1</span> <code>pivot_longer()</code></h4>
 <p>A common problem is that the column names are not names of variables, but values of a variable. For example, <code>table4a</code> above has columns <code>1999</code> and <code>2000</code>. These two names are actually the values of a variable <code>year</code>. In addition, each row represents two observations, not one.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>table4a</span>
@@ -661,8 +665,8 @@ Note
 </div>
 <p><code>pivot_longer()</code> is an updated approach to <code>gather()</code>, designed to be both simpler to use and to handle more use cases. We recommend you use <code>pivot_longer()</code> for new code; <code>gather()</code> isn’t going away but is no longer under active development.</p>
 </section>
-<section id="pivot_wider" class="level4" data-number="8.2.1.2">
-<h4 data-number="8.2.1.2" class="anchored" data-anchor-id="pivot_wider"><span class="header-section-number">8.2.1.2</span> <code>pivot_wider()</code></h4>
+<section id="pivot_wider" class="level4" data-number="9.2.1.2">
+<h4 data-number="9.2.1.2" class="anchored" data-anchor-id="pivot_wider"><span class="header-section-number">9.2.1.2</span> <code>pivot_wider()</code></h4>
 <p>Another issuse is that an observation is scattered across multiple rows. Take <code>table2</code> as an example. An observation is a country in a year, but each observation is spread across two rows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>table2</span>
@@ -714,8 +718,8 @@ Note
 </div>
 <p><code>pivot_wider()</code> is an updated approach to <code>spread()</code>, designed to be both simpler to use and to handle more use cases. We recommend you use <code>pivot_wider()</code> for new code; <code>spread()</code> isn’t going away but is no longer under active development.</p>
 </section>
-<section id="separate" class="level4" data-number="8.2.1.3">
-<h4 data-number="8.2.1.3" class="anchored" data-anchor-id="separate"><span class="header-section-number">8.2.1.3</span> <code>separate()</code></h4>
+<section id="separate" class="level4" data-number="9.2.1.3">
+<h4 data-number="9.2.1.3" class="anchored" data-anchor-id="separate"><span class="header-section-number">9.2.1.3</span> <code>separate()</code></h4>
 <p>If we would like to split one columns into multiple columns since there are more than one values in a cell, we could use <code>separate()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">separate</span>(table3, rate, <span class="at">into=</span><span class="fu">c</span>(<span class="st">'cases'</span>, <span class="st">'population'</span>))</span>
@@ -786,8 +790,8 @@ Note
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 China        2000 213766 1280428583</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="unite" class="level4" data-number="8.2.1.4">
-<h4 data-number="8.2.1.4" class="anchored" data-anchor-id="unite"><span class="header-section-number">8.2.1.4</span> <code>unite()</code></h4>
+<section id="unite" class="level4" data-number="9.2.1.4">
+<h4 data-number="9.2.1.4" class="anchored" data-anchor-id="unite"><span class="header-section-number">9.2.1.4</span> <code>unite()</code></h4>
 <p><code>unite()</code> is the inverse of <code>separate()</code>. The syntax is straghtforward. The default separator is <code>_</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>table3 <span class="sc">%&gt;%</span> <span class="fu">unite</span>(new, year, rate, <span class="at">sep=</span><span class="st">'_'</span>)</span>
@@ -804,8 +808,8 @@ Note
 </section>
 </section>
 </section>
-<section id="dplyr" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="dplyr"><span class="header-section-number">8.3</span> <code>dplyr</code></h2>
+<section id="dplyr" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="dplyr"><span class="header-section-number">9.3</span> <code>dplyr</code></h2>
 <p><code>dplyr</code> is a package used to manipulate data. Here we will just introduce the most basic functions. We will use <code>nycflights13::flights</code> as the example. This dataset comes from the US Bureau of Transportation Statistics. The document can be found <a href="https://github.com/tidyverse/nycflights13">here</a>.</p>
 <p>To load the dataset, please use the following code.</p>
 <div class="cell">
@@ -831,8 +835,8 @@ Note
 <span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,</span></span>
 <span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="filter" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">8.3.1</span> <code>filter()</code></h3>
+<section id="filter" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">9.3.1</span> <code>filter()</code></h3>
 <p><code>filter()</code> allows you to subset observations based on their values. The first argument is the name of the tibble. The rest are the expressions that filter the data. Please see the following examples.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> <span class="fu">filter</span>(month<span class="sc">==</span><span class="dv">1</span>, day<span class="sc">==</span><span class="dv">1</span>)</span>
@@ -854,12 +858,12 @@ Note
 <span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="select" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="select"><span class="header-section-number">8.3.2</span> <code>select()</code></h3>
+<section id="select" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="select"><span class="header-section-number">9.3.2</span> <code>select()</code></h3>
 <p><code>select()</code> allows you to filter columns. It is very similar to slicing <code>[]</code>.</p>
 </section>
-<section id="mutate" class="level3" data-number="8.3.3">
-<h3 data-number="8.3.3" class="anchored" data-anchor-id="mutate"><span class="header-section-number">8.3.3</span> <code>mutate()</code></h3>
+<section id="mutate" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="mutate"><span class="header-section-number">9.3.3</span> <code>mutate()</code></h3>
 <p><code>mutate()</code> is used to add new columns that are functions of existing columns.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">gain=</span>arr_delay<span class="sc">-</span>dep_delay, <span class="at">hours=</span>air_time<span class="sc">/</span><span class="dv">60</span>, <span class="at">gain_per_hour=</span>gain<span class="sc">/</span>hours)</span>
@@ -908,11 +912,11 @@ Note
 <li>Logical comparisons: <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>!=</code>.</li>
 </ul>
 </section>
-<section id="summarize-and-group_by" class="level3" data-number="8.3.4">
-<h3 data-number="8.3.4" class="anchored" data-anchor-id="summarize-and-group_by"><span class="header-section-number">8.3.4</span> <code>summarize()</code> and <code>group_by()</code></h3>
+<section id="summarize-and-group_by" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="summarize-and-group_by"><span class="header-section-number">9.3.4</span> <code>summarize()</code> and <code>group_by()</code></h3>
 <p><code>summarize()</code> collapses a dataset to a single row. It computes values across all rows. It is usually paired with <code>group_by()</code>. Here are some examples.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.3 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9.3 </strong></span>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year, month, day) <span class="sc">%&gt;%</span> </span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">delay=</span><span class="fu">mean</span>(dep_delay, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
@@ -936,7 +940,7 @@ Note
 </div>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.4 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9.4 </strong></span>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>delays <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(dest) <span class="sc">%&gt;%</span> </span>
@@ -965,7 +969,7 @@ Note
 </div>
 <p><code>group_by()</code> can also be used together with <code>mutate()</code> and <code>filter()</code>.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.5 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9.5 </strong></span>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(dest) <span class="sc">%&gt;%</span></span>
@@ -1005,8 +1009,8 @@ Note
 </div>
 </section>
 </section>
-<section id="ggplot2" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">8.4</span> <code>ggplot2</code></h2>
+<section id="ggplot2" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">9.4</span> <code>ggplot2</code></h2>
 <p>This is the graphing package for R in <code>tidyverse</code>. <code>ggplot2</code> implements the <em>grammar of graphics</em>, a coherent system for describing and building graphs. With <code>ggplot2</code>, you can do more faster by learning one system and applying it in many places. The main function is <code>ggplot()</code>.</p>
 <p><code>ggplot2</code> will be uploaded with <code>tidyverse</code>.</p>
 <div class="cell">
@@ -1045,8 +1049,8 @@ Note
 <p><img src="08-_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="aesthetic-mappings" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="aesthetic-mappings"><span class="header-section-number">8.4.1</span> Aesthetic mappings</h3>
+<section id="aesthetic-mappings" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="aesthetic-mappings"><span class="header-section-number">9.4.1</span> Aesthetic mappings</h3>
 <p>An <em>aesthetic</em> is a visual property of the objects in your plot. It include things like the size, the shape or the color of the points. The variables set in <code>aes()</code> will change the aesthetic apperance of the geometric objects according to the variables. If the variables are set outside <code>aes()</code>, the apperance will be fixed. Please see the following examples.</p>
 <p>Note that the variables in <code>aes()</code> other than <code>x</code> and <code>y</code> will automatically get legends.</p>
 <div class="cell">
@@ -1062,15 +1066,15 @@ Note
 </div>
 </div>
 </section>
-<section id="facet" class="level3" data-number="8.4.2">
-<h3 data-number="8.4.2" class="anchored" data-anchor-id="facet"><span class="header-section-number">8.4.2</span> <code>facet</code></h3>
+<section id="facet" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="facet"><span class="header-section-number">9.4.2</span> <code>facet</code></h3>
 <p>For categorical data, you can split the plot into <code>facets</code>. This <code>facet</code> function will be attached as a layer followed by a <code>+</code> sign.</p>
 <ul>
 <li>To facet your plot by a single variable, use <code>facet_wrap()</code>. The first argument should be a formula, which you create with <code>~</code> followed by a variable name.</li>
 <li>To facet your plot by two variables, use <code>facet_grid()</code>. The first argument is a formula which contains two variable names separated by a <code>~</code>.</li>
 </ul>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.6 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9.6 </strong></span>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
@@ -1087,7 +1091,7 @@ Note
 </div>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.7 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9.7 </strong></span>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
@@ -1118,8 +1122,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="geom-objects" class="level3" data-number="8.4.3">
-<h3 data-number="8.4.3" class="anchored" data-anchor-id="geom-objects"><span class="header-section-number">8.4.3</span> <code>geom</code> objects</h3>
+<section id="geom-objects" class="level3" data-number="9.4.3">
+<h3 data-number="9.4.3" class="anchored" data-anchor-id="geom-objects"><span class="header-section-number">9.4.3</span> <code>geom</code> objects</h3>
 <p>A <code>geom</code> is the geometrical object that a plot uses to represent data. When drawing plots, you just need to attach those geometrical objects to a <code>ggplot</code> canvas with <code>+</code> symbol. Some of the geometrical objects can automatically do statistical transformations. The statistical transformations is short for <code>stat</code>, and the <code>stat</code> argument in those <code>geom</code> will show which statistical transformations are applied.</p>
 <ul>
 <li><code>geom_point()</code> draws scatter plot.</li>
@@ -1129,7 +1133,7 @@ Tip
 </ul>
 <p>The arguments can be written in <code>ggplot()</code>. All the later <code>geom</code> will get those arguments from <code>ggplot()</code>. If the arguments are written again in <code>geom</code> object, it will override the <code>ggplot()</code> arguments.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.8 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9.8 </strong></span>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1170,431 +1174,46 @@ Tip
 </div>
 </section>
 </section>
-<section id="examples" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="examples"><span class="header-section-number">8.5</span> Examples</h2>
-<section id="who-tb-dataset" class="level3" data-number="8.5.1">
-<h3 data-number="8.5.1" class="anchored" data-anchor-id="who-tb-dataset"><span class="header-section-number">8.5.1</span> WHO TB dataset</h3>
-<p>Let us explore the tuberculosis cases data. The dataset is provided by WHO and can be downloaded from <a href="https://www.who.int/teams/global-tuberculosis-programme/data">here</a>. <code>tidyr</code> also provides the dataset. You may directly get the dataset after you load <code>tidyr</code> from <code>tidyverse</code>. The variable description can be found from <a href="https://tidyr.tidyverse.org/reference/who.html"><code>tidyr</code> documentations</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>who</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7,240 × 60</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    country  iso2  iso3   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;int&gt;       &lt;int&gt;        &lt;int&gt;        &lt;int&gt;        &lt;int&gt;</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 Afghani… AF    AFG    1980          NA           NA           NA           NA</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 Afghani… AF    AFG    1981          NA           NA           NA           NA</span></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 Afghani… AF    AFG    1982          NA           NA           NA           NA</span></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 Afghani… AF    AFG    1983          NA           NA           NA           NA</span></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 Afghani… AF    AFG    1984          NA           NA           NA           NA</span></span>
-<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 Afghani… AF    AFG    1985          NA           NA           NA           NA</span></span>
-<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 Afghani… AF    AFG    1986          NA           NA           NA           NA</span></span>
-<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 Afghani… AF    AFG    1987          NA           NA           NA           NA</span></span>
-<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 Afghani… AF    AFG    1988          NA           NA           NA           NA</span></span>
-<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 Afghani… AF    AFG    1989          NA           NA           NA           NA</span></span>
-<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 7,230 more rows, and 52 more variables: new_sp_m4554 &lt;int&gt;,</span></span>
-<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   new_sp_m5564 &lt;int&gt;, new_sp_m65 &lt;int&gt;, new_sp_f014 &lt;int&gt;,</span></span>
-<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   new_sp_f1524 &lt;int&gt;, new_sp_f2534 &lt;int&gt;, new_sp_f3544 &lt;int&gt;,</span></span>
-<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   new_sp_f4554 &lt;int&gt;, new_sp_f5564 &lt;int&gt;, new_sp_f65 &lt;int&gt;,</span></span>
-<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   new_sn_m014 &lt;int&gt;, new_sn_m1524 &lt;int&gt;, new_sn_m2534 &lt;int&gt;,</span></span>
-<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   new_sn_m3544 &lt;int&gt;, new_sn_m4554 &lt;int&gt;, new_sn_m5564 &lt;int&gt;,</span></span>
-<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   new_sn_m65 &lt;int&gt;, new_sn_f014 &lt;int&gt;, new_sn_f1524 &lt;int&gt;, …</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Based on the description of varaibles, we understand that</p>
-<ol type="1">
-<li><code>country</code>, <code>iso2</code>, <code>iso3</code> are all refered to country names (and thus they are redundant).</li>
-<li>Columns after <code>year</code>, like <code>new_sp_m014</code> etc., are counts of new TB cases recorded by groups. The code has three parts, most of which are separated by <code>_</code> (but there are some exceptions).
-<ul>
-<li>The first part is always <code>new</code>.</li>
-<li>The second part is a code for method of diagnosis:
-<ul>
-<li><code>rel</code> = relapse,</li>
-<li><code>sn</code> = negative pulmonary smear,</li>
-<li><code>sp</code> = positive pulmonary smear,</li>
-<li><code>ep</code> = extrapulmonary.</li>
-</ul></li>
-<li>The third part is a code for gender (<code>f</code> = female, <code>m</code> = male) and a code for age group:
-<ul>
-<li><code>014</code> = 0-14 yrs of age,</li>
-<li><code>1524</code> = 15-24 years of age,</li>
-<li><code>2534</code> = 25 to 34 years of age,</li>
-<li><code>3544</code> = 35 to 44 years of age,</li>
-<li><code>4554</code> = 45 to 54 years of age,</li>
-<li><code>5564</code> = 55 to 64 years of age,</li>
-<li><code>65</code> = 65 years of age or older</li>
-</ul></li>
-</ul></li>
-</ol>
-<p>Therefore to clean the data, we need the following steps.</p>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.9 </strong></span>Gather together all the columns from <code>new_sp_m014</code> to <code>newrel_f65</code>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>wholonger <span class="ot">&lt;-</span> who <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">60</span>, <span class="at">names_to=</span><span class="st">'group'</span>, <span class="at">values_to=</span><span class="st">'counts'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>Then we use <code>stringr::str_replace()</code> to replace <code>newrel</code> by <code>new_rel</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>wholonger2 <span class="ot">&lt;-</span> wholonger <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">key=</span><span class="fu">str_replace</span>(group, <span class="st">'newrel'</span>, <span class="st">'new_rel'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.10 </strong></span>Parse the column <code>group</code> into columns.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>wholonger3 <span class="ot">&lt;-</span> wholonger2 <span class="sc">%&gt;%</span> </span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">separate</span>(key, <span class="at">into=</span><span class="fu">c</span>(<span class="st">'new'</span>, <span class="st">'type'</span>, <span class="st">'genderage'</span>), <span class="at">sep=</span><span class="st">'_'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">separate</span>(genderage, <span class="at">into=</span><span class="fu">c</span>(<span class="st">'gender'</span>, <span class="st">'age'</span>), <span class="at">sep=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.11 </strong></span>Pick the columns that matters.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>tidywho <span class="ot">&lt;-</span> wholonger3[<span class="fu">c</span>(<span class="st">'country'</span>, <span class="st">'year'</span>, <span class="st">'type'</span>, <span class="st">'gender'</span>, <span class="st">'age'</span>, <span class="st">'counts'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>We could use the pipe symbol to connect all the above steps.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>tidywho <span class="ot">&lt;-</span> who <span class="sc">%&gt;%</span> </span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">60</span>, <span class="at">names_to=</span><span class="st">'group'</span>, <span class="at">values_to=</span><span class="st">'counts'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">key=</span><span class="fu">str_replace</span>(group, <span class="st">'newrel'</span>, <span class="st">'new_rel'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate</span>(key, <span class="at">into=</span><span class="fu">c</span>(<span class="st">'new'</span>, <span class="st">'type'</span>, <span class="st">'genderage'</span>), <span class="at">sep=</span><span class="st">'_'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate</span>(genderage, <span class="at">into=</span><span class="fu">c</span>(<span class="st">'gender'</span>, <span class="st">'age'</span>), <span class="at">sep=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="st">'country'</span>, <span class="st">'year'</span>, <span class="st">'type'</span>, <span class="st">'gender'</span>, <span class="st">'age'</span>, <span class="st">'counts'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="us-babynames" class="level3" data-number="8.5.2">
-<h3 data-number="8.5.2" class="anchored" data-anchor-id="us-babynames"><span class="header-section-number">8.5.2</span> US Babynames</h3>
-<p>Let us use R to solve the babynames dataset again.</p>
-<p>The first task is to read those files.</p>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.12 </strong></span>Please read files and put the data into one tibble. The dataset can be downloaded from <a href="assests/datasets/babynames.zip">here</a> as a zip file.</p>
-<div class="cell">
-
-</div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">'assessts/datasets/babynames/yob'</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>dfs <span class="ot">&lt;-</span> <span class="fu">map</span>(<span class="dv">1880</span><span class="sc">:</span><span class="dv">2010</span>, <span class="cf">function</span>(y){</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    filepath <span class="ot">&lt;-</span> <span class="fu">paste0</span>(path, <span class="fu">as.character</span>(y), <span class="st">'.txt'</span>)</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    df_individual <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="fu">read.csv</span>(filepath, <span class="at">header=</span><span class="cn">FALSE</span>))</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(df_individual) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'name'</span>, <span class="st">'gender'</span>, <span class="st">'counts'</span>)</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    df_individual<span class="sc">$</span>year <span class="ot">&lt;-</span> y</span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    df_individual</span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(dfs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.13 </strong></span>Please plot the total births by gender and year.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(gender, year) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">total_num=</span><span class="fu">sum</span>(counts)) <span class="sc">%&gt;%</span> </span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>total_num, <span class="at">color=</span>gender))</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; `summarise()` has grouped output by 'gender'. You can override using the</span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; `.groups` argument.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="08-_files/figure-html/unnamed-chunk-51-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.14 </strong></span>Please compute the proportions of each name relateive to the total number of births per year per gender.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(gender, year) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">prop=</span>counts<span class="sc">/</span><span class="fu">sum</span>(counts))</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1,690,784 × 5</span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # Groups:   gender, year [262]</span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    name      gender counts  year   prop</span></span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;</span></span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 Mary      F        7065  1880 0.0776</span></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 Anna      F        2604  1880 0.0286</span></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 Emma      F        2003  1880 0.0220</span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 Elizabeth F        1939  1880 0.0213</span></span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 Minnie    F        1746  1880 0.0192</span></span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 Margaret  F        1578  1880 0.0173</span></span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 Ida       F        1472  1880 0.0162</span></span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 Alice     F        1414  1880 0.0155</span></span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 Bertha    F        1320  1880 0.0145</span></span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 Sarah     F        1288  1880 0.0142</span></span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 1,690,774 more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.15 </strong></span>We would like to keep the first 100 names (by counts) in each year and save it as a new tibble <code>top100</code>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>top100 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(gender, year) <span class="sc">%&gt;%</span> </span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">top_n</span>(<span class="dv">100</span>, <span class="at">wt=</span>counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.16 </strong></span>Please draw the trend of <code>John</code>, <code>Harry</code>, <code>Mary</code> in <code>top100</code> by counts.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>namelist <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'John'</span>, <span class="st">'Harry'</span>, <span class="st">'Mary'</span>)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>top100 <span class="sc">%&gt;%</span> </span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(name <span class="sc">%in%</span> namelist) <span class="sc">%&gt;%</span> </span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>(<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>counts, <span class="at">color=</span>name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="08-_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.17 </strong></span>Now we would like to analyze the ending of names. Please get a <code>tibble</code> that contains the counts of ending letter per year per gender. We mainly focus on 1910, 1960 and 2010.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">2010</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">ending=</span><span class="fu">str_sub</span>(name, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(gender, year, ending) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">ending_counts=</span><span class="fu">sum</span>(counts)) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_bar</span>(</span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">x=</span>ending, </span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span>ending_counts, </span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill=</span>year,</span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">group=</span>year</span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>                ), </span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">stat =</span> <span class="st">"identity"</span>, </span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="st">"dodge"</span>,</span>
-<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">+</span></span>
-<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">facet_wrap</span>(<span class="sc">~</span>gender, <span class="at">nrow=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="08-_files/figure-html/unnamed-chunk-55-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8.18 </strong></span>Please draw the line plot to show the trending of certain letters through years. Here we choose <code>d</code>, <code>n</code> and <code>y</code>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">ending=</span><span class="fu">str_sub</span>(name, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year, ending) <span class="sc">%&gt;%</span> </span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">ending_counts=</span><span class="fu">sum</span>(counts)) <span class="sc">%&gt;%</span> </span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ending <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'d'</span>, <span class="st">'n'</span>, <span class="st">'y'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>(</span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">x=</span>year, </span>
-<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span>ending_counts, </span>
-<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">color=</span>ending</span>
-<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>            )</span>
-<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="08-_files/figure-html/unnamed-chunk-56-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="exercises" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">8.6</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">9.5</span> Exercises</h2>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.1 </strong></span>How can you tell if an object is a tibble?</p>
+<p><span class="theorem-title"><strong>Exercise 9.1 </strong></span>How can you tell if an object is a tibble?</p>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.2 </strong></span>Compare and contrast the following operations on a <code>data.frame</code> and equivalent <code>tibble</code>. What is different? Why might the default data frame behaviors cause you frustration?</p>
+<p><span class="theorem-title"><strong>Exercise 9.2 </strong></span>Compare and contrast the following operations on a <code>data.frame</code> and equivalent <code>tibble</code>. What is different? Why might the default data frame behaviors cause you frustration?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">abc =</span> <span class="dv">1</span>, <span class="at">xyz =</span> <span class="st">"a"</span>)</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>x</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>df[, <span class="st">"xyz"</span>]</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>df[, <span class="fu">c</span>(<span class="st">"abc"</span>, <span class="st">"xyz"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">abc =</span> <span class="dv">1</span>, <span class="at">xyz =</span> <span class="st">"a"</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>x</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>df[, <span class="st">"xyz"</span>]</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>df[, <span class="fu">c</span>(<span class="st">"abc"</span>, <span class="st">"xyz"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.3 </strong></span>If you have the name of a variable stored in an object, e.g., <code>var &lt;- "xyz"</code>, how can you extract the reference variable from a tibble? You may use the following codes to get a tibble.</p>
+<p><span class="theorem-title"><strong>Exercise 9.3 </strong></span>If you have the name of a variable stored in an object, e.g., <code>var &lt;- "xyz"</code>, how can you extract the reference variable from a tibble? You may use the following codes to get a tibble.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">abc =</span> <span class="dv">1</span>, <span class="at">xyz =</span> <span class="st">"a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">abc =</span> <span class="dv">1</span>, <span class="at">xyz =</span> <span class="st">"a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.4 </strong></span>Practice referring to nonsyntactic names in the following data.frame by:</p>
+<p><span class="theorem-title"><strong>Exercise 9.4 </strong></span>Practice referring to nonsyntactic names in the following data.frame by:</p>
 <ol type="a">
 <li>Extracting the variable called 1.</li>
 <li>Creating a new column called 3, which is 2 divided by 1.</li>
 <li>Renaming the columns to one, two, and three:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>annoying <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(<span class="st">`</span><span class="at">1</span><span class="st">`</span>))</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>annoying <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(<span class="st">`</span><span class="at">1</span><span class="st">`</span>))</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.5 </strong></span>Both <code>unite()</code> and <code>separate()</code> have a <code>remove</code> argument. What does it do? Why would you set it to <code>FALSE</code>?</p>
+<p><span class="theorem-title"><strong>Exercise 9.5 </strong></span>Both <code>unite()</code> and <code>separate()</code> have a <code>remove</code> argument. What does it do? Why would you set it to <code>FALSE</code>?</p>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.6 </strong></span>Use <code>flights</code> dataset. Currently <code>dep_time</code> and <code>sched_dep_time</code> are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.</p>
+<p><span class="theorem-title"><strong>Exercise 9.6 </strong></span>Use <code>flights</code> dataset. Currently <code>dep_time</code> and <code>sched_dep_time</code> are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.</p>
 </div>
-</section>
-<section id="projects" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="projects"><span class="header-section-number">8.7</span> Projects</h2>
 <div class="cell">
 
 </div>
@@ -1650,14 +1269,14 @@ table4a %>%
 
 ::: -->
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.7 </strong></span>Please make the following data tidy.</p>
+<p><span class="theorem-title"><strong>Exercise 9.7 </strong></span>Please make the following data tidy.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Day=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="st">`</span><span class="at">Plant_A_Height (cm)</span><span class="st">`</span><span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.9</span>, <span class="fl">1.3</span>, <span class="fl">1.8</span>), <span class="st">`</span><span class="at">Plant_B_Height (cm)</span><span class="st">`</span><span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.7</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.8</span>, <span class="fl">2.2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Day=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="st">`</span><span class="at">Plant_A_Height (cm)</span><span class="st">`</span><span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.9</span>, <span class="fl">1.3</span>, <span class="fl">1.8</span>), <span class="st">`</span><span class="at">Plant_B_Height (cm)</span><span class="st">`</span><span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.7</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">1.8</span>, <span class="fl">2.2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.8 </strong></span>Please use the <code>flights</code> dataset. Please find all flights that :</p>
+<p><span class="theorem-title"><strong>Exercise 9.8 </strong></span>Please use the <code>flights</code> dataset. Please find all flights that :</p>
 <ol type="1">
 <li>Had an arrival delay of two or more hours.</li>
 <li>Flew to <code>IAH</code> or <code>HOU</code>.</li>
@@ -1669,16 +1288,16 @@ table4a %>%
 </ol>
 </div>
 <div id="exr-" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.9 </strong></span>Re-create the R code necessary to generate the following graphs. The dataset is <code>mpg</code>.</p>
+<p><span class="theorem-title"><strong>Exercise 9.9 </strong></span>Re-create the R code necessary to generate the following graphs. The dataset is <code>mpg</code>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="08-_files/figure-html/unnamed-chunk-64-1.png" class="img-fluid" width="672"></p>
+<p><img src="08-_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="08-_files/figure-html/unnamed-chunk-64-2.png" class="img-fluid" width="672"></p>
+<p><img src="08-_files/figure-html/unnamed-chunk-50-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="08-_files/figure-html/unnamed-chunk-64-3.png" class="img-fluid" width="672"></p>
+<p><img src="08-_files/figure-html/unnamed-chunk-50-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -1828,12 +1447,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../contents/7/07-.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Fundamentals</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Fundamentals</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../contents/references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../contents/8.5/intro.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projects with R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

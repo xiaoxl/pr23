@@ -1,0 +1,26 @@
+
+# Package: `numpy`
+
+The main reference for this chapter is @McK2017.
+
+
+{{< include 1.qmd >}}
+
+
+{{< include 2.qmd >}}
+
+
+{{< include 3.qmd >}}
+
+
+{{< include 4.qmd >}}
+
+
+{{< include ex.qmd >}}
+
+
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

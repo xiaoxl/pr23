@@ -1,0 +1,74 @@
+
+## Example 1: `USA.gov` Data From `Bitly`
+In 2011, URL shortening service `Bitly` partnered with the US government website
+`USA.gov` to provide a feed of anonymous data gathered from users who shorten links
+ending with `.gov` or `.mil`. The data is gotten from @McK2017.
+
+The data file can be downloaded from [here](assests/datasets/example.txt). The file is mostly in JSON. It can be converted into a DataFrame by the following code.
+```{python}
+import pandas as pd
+import numpy as np
+import json
+path = 'assests/datasets/example.txt'
+df = pd.DataFrame([json.loads(line) for line in open(path)])
+```
+We mainly use `tz` and `a` columns. So let us clean it.
+
+```{python}
+#| warning: false
+df['tz'] = df['tz'].fillna('Missing')
+df['tz'][df['tz'] == ''] = 'Unknown'
+df['a'] = df['a'].fillna('Missing')
+df['a'][df['a'] == ''] = 'Unknown'
+```
+
+
+We first want to extract the timezone infomation from it. The timezone info is in the column `tz`.
+
+```{python}
+tzone = df['tz']
+tvc = tzone.value_counts()
+tvc
+```
+After cleaning data, we would like to visulize the value counts.
+
+```{python}
+import seaborn as sns
+sns.barplot(x=tvc[:10].values, y=tvc[:10].index)
+```
+
+We then would like to extract information from the column `a`. This column is about the agent of the connection. The important info is the part before the space `' '`.
+
+
+```{python}
+agent = df['a']
+agent = agent.str.split(' ').str[0]
+avc = agent.value_counts()
+avc[:10]
+```
+
+Now let us assume that, if `Windows` appears in column `a` the user is using `Windows` os, if not then not. In this case, the os can be detected by the following code.
+
+```{python}
+df['os'] = np.where(df['a'].str.contains('Windows'), 'Windows', 'Not Windows')
+```
+
+Now we can make a bar plot about the counts based on `os` and `timezone`.
+
+```{python}
+
+tz_os_counts = df.groupby(['tz', 'os']).size().unstack().fillna(0)
+tz_os_counts.head()
+```
+We then turn it into a DataFrame using the `.stack()`, `.unstack()` tricks.
+
+```{python}
+tovc = tz_os_counts.stack()[tz_os_counts.sum(axis=1).nlargest(10).index]
+tovc.name = 'count'
+dftovc = pd.DataFrame(tovc).reset_index()
+```
+Finally we may draw the bar plot.
+
+```{python}
+sns.barplot(x='count', y='tz', hue='os', data=dftovc)
+```

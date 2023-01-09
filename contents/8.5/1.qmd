@@ -1,0 +1,94 @@
+## WHO TB dataset
+Let us explore the tuberculosis cases data. The dataset is provided by WHO and can be downloaded from [here](https://www.who.int/teams/global-tuberculosis-programme/data). `tidyr` also provides the dataset. You may directly get the dataset after you load `tidyr` from `tidyverse`. The variable description can be found from [`tidyr` documentations](https://tidyr.tidyverse.org/reference/who.html).
+
+
+```{r}
+library(tidyverse)
+who
+```
+Based on the description of varaibles, we understand that
+
+1. `country`, `iso2`, `iso3` are all refered to country names (and thus they are redundant).
+2. Columns after `year`, like `new_sp_m014` etc., are counts of new TB cases recorded by groups. The code has three parts, most of which are separated by `_` (but there are some exceptions). 
+    - The first part is always `new`.
+    - The second part is a code for method of diagnosis:
+        - `rel` = relapse,
+        - `sn` = negative pulmonary smear,
+        - `sp` = positive pulmonary smear, 
+        - `ep` = extrapulmonary.
+    - The third part is a code for gender (`f` = female, `m` = male) and a code for age group:
+        - `014` = 0-14 yrs of age, 
+        - `1524` = 15-24 years of age, 
+        - `2534` = 25 to 34 years of age,
+        - `3544` = 35 to 44 years of age,
+        - `4554` = 45 to 54 years of age,
+        - `5564` = 55 to 64 years of age,
+        - `65` = 65 years of age or older
+
+Therefore to clean the data, we need the following steps.
+
+
+::: {#exm-}
+Gather together all the columns from `new_sp_m014` to `newrel_f65`.
+
+::: {.callout-tip collapse='true'}
+
+```{r}
+wholonger <- who %>% pivot_longer(cols=5:60, names_to='group', values_to='counts')
+```
+
+:::
+
+:::
+
+
+Then we use `stringr::str_replace()` to replace `newrel` by `new_rel`.
+
+```{r}
+wholonger2 <- wholonger %>% mutate(key=str_replace(group, 'newrel', 'new_rel'))
+```
+
+
+::: {#exm-}
+Parse the column `group` into columns.
+
+::: {.callout-tip collapse='true'}
+
+```{r}
+wholonger3 <- wholonger2 %>% 
+        separate(key, into=c('new', 'type', 'genderage'), sep='_') %>% 
+        separate(genderage, into=c('gender', 'age'), sep=1)
+```
+:::
+:::
+
+
+
+::: {#exm-}
+Pick the columns that matters.
+
+::: {.callout-tip collapse='true'}
+
+```{r}
+tidywho <- wholonger3[c('country', 'year', 'type', 'gender', 'age', 'counts')]
+```
+
+:::
+:::
+
+
+We could use the pipe symbol to connect all the above steps.
+
+
+::: {.callout-tip collapse='true'}
+
+```{r}
+tidywho <- who %>% 
+    pivot_longer(cols=5:60, names_to='group', values_to='counts') %>% 
+    mutate(key=str_replace(group, 'newrel', 'new_rel')) %>% 
+    separate(key, into=c('new', 'type', 'genderage'), sep='_') %>% 
+    separate(genderage, into=c('gender', 'age'), sep=1) %>% 
+    select('country', 'year', 'type', 'gender', 'age', 'counts')
+```
+
+:::

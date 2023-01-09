@@ -42,16 +42,18 @@ book:
     - index.qmd
     - part: "Part I: Python"
       chapters: 
-        - contents/1/01-.qmd
-        - contents/2/02-.qmd
-        - contents/3/03-.qmd
+        - contents/1/intro.qmd
+        - contents/2/intro.qmd
+        - contents/3/intro.qmd
         - contents/4/04-.qmd
         - contents/5/05-.qmd
+        - contents/5.5/intro.qmd
         - contents/6/06-.qmd
     - part: "Part II: R"
       chapters:
         - contents/7/07-.qmd
         - contents/8/08-.qmd
+        - contents/8.5/intro.qmd
     - contents/references.qmd
   appendices:
     - contents/app/setup.qmd
