@@ -53,7 +53,7 @@ book:
       chapters:
         - contents/7/07-.qmd
         - contents/8/08-.qmd
-        - contents/8.5/intro.qmd
+        - contents/10/intro.qmd
     - contents/references.qmd
   appendices:
     - contents/app/setup.qmd
