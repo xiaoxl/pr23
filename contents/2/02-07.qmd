@@ -198,7 +198,7 @@ results
 From this result, you may guess that switch might be the better strategy.
 
 
-### `N`-door Monty Hall problem
+### `N`-door Monty Hall problem {#sec-ndoormh}
 
 
 The Monty Hall problem can be modified to `N` doors. The host will open `N-2` doors which don't have the car behind, and only leave one door left for us to choose. What will you choose?
@@ -207,9 +207,10 @@ We only need to modify our codes a little bit for the change. You may bring the 
 
 ::: {.callout-note collapse="true"}
 ## 1. Change `doors`
-The initial setup for `doors` becomes `list(range(1, N+1))`.
+<!-- The initial setup for `doors` becomes `list(range(1, N+1))`. -->
 
 ```{python}
+#| echo: false
 N = 3
 doors = list(range(1, N+1))
 ```
@@ -218,11 +219,12 @@ doors = list(range(1, N+1))
 
 ::: {.callout-note collapse="true"}
 ## 2. The host opens multiple doors
-The major change is that now the host has to open `N-2` to only leave one unopened door for us. In other words, during Step 3, we need to take a length `N-2` sample for the host to open. 
+<!-- The major change is that now the host has to open `N-2` to only leave one unopened door for us. In other words, during Step 3, we need to take a length `N-2` sample for the host to open. 
 
-Using the package `random`, to take a length `N-2` sample, we could use the function `random.sample(L, N-2)`. Please go to [the official document](https://docs.python.org/3/library/random.html#random.sample) for more information.
+Using the package `random`, to take a length `N-2` sample, we could use the function `random.sample(L, N-2)`. Please go to [the official document](https://docs.python.org/3/library/random.html#random.sample) for more information. -->
 
 ```{python}
+#| echo: false
 rest_doors = doors[:]
 if door_with_car == initial_choice:
     rest_doors.remove(door_with_car)
@@ -232,16 +234,17 @@ elif door_with_car != initial_choice:
     rest_doors.remove(initial_choice)
     door_host_open = random.sample(rest_doors, N-2)
 ```
-Note that the logic of the last line is similar to `N=3` case. The host has to open `N-2` doors that are neither `door_with_car` nor `initial_choice`. If the two doors are different, the host has to open all the rest doors. That's why `door_host_open = rest_doors`.
+<!-- Note that the logic of the last line is similar to `N=3` case. The host has to open `N-2` doors that are neither `door_with_car` nor `initial_choice`. If the two doors are different, the host has to open all the rest doors. That's why `door_host_open = rest_doors`. -->
 
 :::
 
 
 ::: {.callout-note collapse="true"}
 ## 3. Remove multiple `door_host_open`
-Because now the host opens more than 1 door, `door_host_open` is now a list, which contains all the doors opened by the host. Then in Step 4 when we remove `door_host_open`, we have to run a `for` loop to remove those doors one by one.
+<!-- Because now the host opens more than 1 door, `door_host_open` is now a list, which contains all the doors opened by the host. Then in Step 4 when we remove `door_host_open`, we have to run a `for` loop to remove those doors one by one. -->
 
 ```{python}
+#| echo: false
 tmpdoors = doors[:]
 tmpdoors.remove(initial_choice)
 for door in tmpdoors:
@@ -249,15 +252,16 @@ for door in tmpdoors:
 door_unopened = tmpdoors[0]
 ```
 
-Then the codes are 
+<!-- Then the codes are  -->
 :::
 
 
 ::: {.callout-note collapse="true"}
 ## Put things together
-Here is the updated function.
+<!-- Here is the updated function. -->
 
 ```{python}
+#| echo: false
 import random
 
 def MontyHall(N=3):
@@ -287,12 +291,13 @@ def MontyHall(N=3):
         winner = 'switch'
     return winner
 ```
-Note that we set the default value of `N` is `3`. So if we call `MontyHall()` it will run the `3`-door version. 
+<!-- Note that we set the default value of `N` is `3`. So if we call `MontyHall()` it will run the `3`-door version.  -->
 :::
 
 Now we can start to play the game. We may test our code by using the default `N` which is `3`.
 
 ```{python}
+#| eval: false
 results = {'remain': 0, 'switch': 0}
 
 for i in range(100):
@@ -301,10 +306,16 @@ for i in range(100):
 
 results
 ```
+
+```
+{'remain': 34, 'switch': 66}
+```
+
 You will see that we get a similar result as our previous version.
 
 Now we will try `10`-door version.
 ```{python}
+#| eval: false
 results = {'remain': 0, 'switch': 0}
 
 for i in range(100):
@@ -313,6 +324,11 @@ for i in range(100):
 
 results
 ```
+
+```
+{'remain': 9, 'switch': 91}
+```
+
 The result also shows that switch is a better strategy. This is the simulation approach for this classic problem. You may compare it with theorical calculations using Probability theory.
 
 

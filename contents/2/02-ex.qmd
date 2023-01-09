@@ -268,3 +268,8 @@ Total number of items: 62
 :::
 
 
+
+::: {#exr-ndoormontyhall}
+# `N`-door Monty Hall problem
+Please finish the function `MontyHall()` for the `N`-door Monty Hall problem described in @sec-ndoormh.
+:::

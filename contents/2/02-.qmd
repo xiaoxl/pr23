@@ -3,6 +3,17 @@
 
 
 
+```{python}
+#| include: false
+## haha
+1+1
+
+## ddd
+2+2
+```
+
+
+
 {{< include 02-01.qmd >}}
 
 {{< include 02-02.qmd >}}
