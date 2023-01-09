@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python/R for Data Science - 1&nbsp; Preliminaries</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../contents/2/intro.html" rel="next">
+<link href="../../index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Python/R for Data Science</span>
+    </a>
+  </div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Part I: Python</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/1/intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/2/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/3/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/4/04-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Package: <code>pandas</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/5/05-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/5.5/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Projects with Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/6/06-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classes/Packages for Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Part II: R</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/7/07-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/8/08-.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/8.5/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projects with R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Appendices</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Python Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Environemnt Variable <code>PATH</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python Virtual Environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Some Hard Python concepts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-python" id="toc-why-python" class="nav-link active" data-scroll-target="#why-python"><span class="toc-section-number">1.1</span>  Why Python?</a>
+  <ul class="collapse">
+  <li><a href="#python-is-easy-to-learn-and-use" id="toc-python-is-easy-to-learn-and-use" class="nav-link" data-scroll-target="#python-is-easy-to-learn-and-use"><span class="toc-section-number">1.1.1</span>  Python is easy to learn and use</a></li>
+  <li><a href="#python-is-easy-to-read" id="toc-python-is-easy-to-read" class="nav-link" data-scroll-target="#python-is-easy-to-read"><span class="toc-section-number">1.1.2</span>  Python is easy to read</a></li>
+  <li><a href="#python-community-is-mature-and-supportive" id="toc-python-community-is-mature-and-supportive" class="nav-link" data-scroll-target="#python-community-is-mature-and-supportive"><span class="toc-section-number">1.1.3</span>  Python Community is mature and supportive</a></li>
+  </ul></li>
+  <li><a href="#hello-world" id="toc-hello-world" class="nav-link" data-scroll-target="#hello-world"><span class="toc-section-number">1.2</span>  Hello world!</a>
+  <ul class="collapse">
+  <li><a href="#setup-the-python-environment" id="toc-setup-the-python-environment" class="nav-link" data-scroll-target="#setup-the-python-environment"><span class="toc-section-number">1.2.1</span>  Setup the Python environment</a></li>
+  <li><a href="#hello-world-1" id="toc-hello-world-1" class="nav-link" data-scroll-target="#hello-world-1"><span class="toc-section-number">1.2.2</span>  <code>Hello World!</code></a></li>
+  <li><a href="#python-code-cells-and-notebooks" id="toc-python-code-cells-and-notebooks" class="nav-link" data-scroll-target="#python-code-cells-and-notebooks"><span class="toc-section-number">1.2.3</span>  Python code cells and Notebooks</a></li>
+  <li><a href="#linters" id="toc-linters" class="nav-link" data-scroll-target="#linters"><span class="toc-section-number">1.2.4</span>  Linters</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">1.3</span>  Exercises</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="why-python" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="why-python"><span class="header-section-number">1.1</span> Why Python?</h2>
+<section id="python-is-easy-to-learn-and-use" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="python-is-easy-to-learn-and-use"><span class="header-section-number">1.1.1</span> Python is easy to learn and use</h3>
+<!-- Programmers familiar with traditional languages will find it easy to learn Python. All of the familiar constructs—loops, conditional statements, arrays, and so forth—are included, but many are easier to use in Python. Here are a few of the reasons why:
+
+- Types are associated with objects, not variables. A variable can be assigned a value of any type, and a list can contain objects of many types. This also means that type casting usually isn’t necessary and that your code isn’t locked into the straitjacket of predeclared types.
+
+- Python typically operates at a much higher level of abstraction. This is partly the result of the way the language is built and partly the result of an extensive standard code library that comes with the Python distribution. A program to download a web page can be written in two or three lines!
+
+- Syntax rules are very simple. Although becoming an expert Pythonista takes time
+and effort, even beginners can absorb enough Python syntax to write useful
+code quickly.
+
+Python is well suited for rapid application development. It isn’t unusual for coding an application in Python to take one-fifth the time it would in C or Java and to take as little as one-fifth the number of lines of the equivalent C program. This depends on the particular application, of course; for a numerical algorithm performing mostly integer arithmetic in for loops, there would be much less of a productivity gain. For the average application, the productivity gain can be significant.  -->
+</section>
+<section id="python-is-easy-to-read" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="python-is-easy-to-read"><span class="header-section-number">1.1.2</span> Python is easy to read</h3>
+</section>
+<section id="python-community-is-mature-and-supportive" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="python-community-is-mature-and-supportive"><span class="header-section-number">1.1.3</span> Python Community is mature and supportive</h3>
+</section>
+</section>
+<section id="hello-world" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="hello-world"><span class="header-section-number">1.2</span> Hello world!</h2>
+<!-- 
+We will mainly focus on this code editor mode at the beginning and check our results or do some simple computations in the console.
+
+Notebook is another very popular mode to use Python. We will talk about it later.
+
+ -->
+<section id="setup-the-python-environment" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="setup-the-python-environment"><span class="header-section-number">1.2.1</span> Setup the Python environment</h3>
+<p>In this section we are going to setup the Python developing environment.</p>
+<section id="vs-code-anaconda" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="vs-code-anaconda"><span class="header-section-number">1.2.1.1</span> VS Code + Anaconda</h4>
+<p>Click <a href="../app/setup.html#sec-vscode">Appendix&nbsp;<span>A.1</span></a> to see the detailed steps for VS Code and Anaconda. You may also check out <a href="https://code.visualstudio.com/docs/languages/python">the official document</a>. It contains more features but less details.</p>
+<p>We will talk about the relation between Python and Anaconda and more about packages sometime later.</p>
+</section>
+<section id="google-colab" class="level4" data-number="1.2.1.2">
+<h4 data-number="1.2.1.2" class="anchored" data-anchor-id="google-colab"><span class="header-section-number">1.2.1.2</span> Google Colab</h4>
+<p>Click <a href="../app/setup.html#sec-googlecolab">Appendix&nbsp;<span>A.2</span></a> for more details.</p>
+</section>
+</section>
+<section id="hello-world-1" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="hello-world-1"><span class="header-section-number">1.2.2</span> <code>Hello World!</code></h3>
+<!-- 5. Here are the steps to edit the system environment variables. First in the start menu search for `Edit the system environment variables`. 
+
+![](assests/img/20220817235031.png){fig-align="center"}
+
+Then click the `Environment Variables...` button at the right lower corner. 
+
+![](assests/img/20220817235002.png){fig-align="center"} 
+
+Find the `Path` variable in either the upper window or the lower window. Use which one depends on whether you want to register the variable for the user or for the machine. In this example I add for the user.
+
+Finally double click the variable and add the following path to it. You need to make changes according to your installation. I recommend you to locate your Anaconda installation first to get the path.
+
+![](assests/img/20220817233748.png){fig-align="center"} -->
+<p>Take VS Code as an example. In the editor window, type in the code, and run the file in the interactive window.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello World!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assests/img/20220817235844.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>If you see a small green check mark in the interactive window and also the output <code>Hello World!</code>, you are good to go!</p>
+</section>
+<section id="python-code-cells-and-notebooks" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="python-code-cells-and-notebooks"><span class="header-section-number">1.2.3</span> Python code cells and Notebooks</h3>
+<p>In VS Code you can run codes cell by cell. Each cell is separated by the symbol <code># %%</code>. Each cell may contain multiple lines. You may click the small button on top of the cell or use keybindings.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assests/img/20220818000531.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>This feature actually mimic the notebook. We may start a real Python Notebook file by directly creating a file with extension <code>.ipynb</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assests/img/20220818000752.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The layout is straightforward.</p>
+</section>
+<section id="linters" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="linters"><span class="header-section-number">1.2.4</span> Linters</h3>
+<p>A <em>linter</em> is a tool to help you improve your code by analyzing your source code looking for problems. Some popular choices for Python includes <code>Flake8</code> and <code>Pylint</code>. It is highly recommended to use one that is compatible with your IDE which can help you to increase the quality of your codes from the begining.</p>
+<p>To install <code>Flake8</code> please go to <a href="https://flake8.pycqa.org/en/latest/">its homepage</a>. It works well with VS Code.</p>
+</section>
+</section>
+<section id="exercises" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.3</span> Exercises</h2>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1.1 (Hello world!) </strong></span>Please set up a Python developing environment, for both <code>.py</code> file and <code>.ipynb</code> notebook file, that will be used across the semester. Then print <code>Hello World!</code>.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1.2 (Define a function and play with <code>time</code>) </strong></span>Please play with the following codes in a Jupyter notebook. We haven’t talked about any of them right now. Try to guess what they do and write your guess in markdown cells.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multistr(x, n<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> n</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>t0 <span class="op">=</span> time.time()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">'Python'</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multistr(x, n<span class="op">=</span><span class="dv">10</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.time()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time used: "</span>, t1<span class="op">-</span>t0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1.3 (Fancy Basketball plot) </strong></span>Here is an example of the data analysis. We pull data from a dataset, filter the data according to our needs and plot it to visualize the data. This is just a show case. You are encouraged to play the code, make tweaks and see what would happen. You don’t have to turn in anything.</p>
+<p>The data we choose is Stephen Curry’s shots data in 2021-2022 regular season. First we need to load the data. The data is obtained from <code>nba.com</code> using <code>nba_api</code>. To install this package please go to <a href="https://pypi.org/project/nba-api/">its PyPI page</a>.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nba_api.stats.static <span class="im">import</span> players</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nba_api.stats.endpoints <span class="im">import</span> shotchartdetail</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>player_dict <span class="op">=</span> players.get_players()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The shots data we need is in <code>shotchartdetail</code>. However to use it we need to know the id of <code>Stephen Curry</code> using the dataset <code>player_dict</code>.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> player <span class="kw">in</span> player_dict:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> player[<span class="st">'full_name'</span>] <span class="op">==</span> <span class="st">'Stephen Curry'</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(player[<span class="st">'id'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>201939</code></pre>
+</div>
+</div>
+<p>So the id of <code>Stephen Curry</code> is <code>201939</code>. Let’s pull out his shots data in 2021-2022 season.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> shotchartdetail.ShotChartDetail(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            team_id <span class="op">=</span> <span class="dv">0</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            player_id <span class="op">=</span> <span class="dv">201939</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            context_measure_simple <span class="op">=</span> <span class="st">'FGA'</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            season_nullable <span class="op">=</span> <span class="st">'2021-22'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            season_type_all_star <span class="op">=</span> <span class="st">'Regular Season'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> results.get_data_frames()[<span class="dv">0</span>]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>GRID_TYPE</th>
+      <th>GAME_ID</th>
+      <th>GAME_EVENT_ID</th>
+      <th>PLAYER_ID</th>
+      <th>PLAYER_NAME</th>
+      <th>TEAM_ID</th>
+      <th>TEAM_NAME</th>
+      <th>PERIOD</th>
+      <th>MINUTES_REMAINING</th>
+      <th>SECONDS_REMAINING</th>
+      <th>...</th>
+      <th>SHOT_ZONE_AREA</th>
+      <th>SHOT_ZONE_RANGE</th>
+      <th>SHOT_DISTANCE</th>
+      <th>LOC_X</th>
+      <th>LOC_Y</th>
+      <th>SHOT_ATTEMPTED_FLAG</th>
+      <th>SHOT_MADE_FLAG</th>
+      <th>GAME_DATE</th>
+      <th>HTM</th>
+      <th>VTM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>26</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>1</td>
+      <td>10</td>
+      <td>9</td>
+      <td>...</td>
+      <td>Left Side Center(LC)</td>
+      <td>24+ ft.</td>
+      <td>28</td>
+      <td>-109</td>
+      <td>260</td>
+      <td>1</td>
+      <td>0</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>34</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>1</td>
+      <td>9</td>
+      <td>41</td>
+      <td>...</td>
+      <td>Center(C)</td>
+      <td>24+ ft.</td>
+      <td>26</td>
+      <td>48</td>
+      <td>257</td>
+      <td>1</td>
+      <td>0</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>37</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>1</td>
+      <td>9</td>
+      <td>10</td>
+      <td>...</td>
+      <td>Left Side Center(LC)</td>
+      <td>24+ ft.</td>
+      <td>25</td>
+      <td>-165</td>
+      <td>189</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>75</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>1</td>
+      <td>6</td>
+      <td>17</td>
+      <td>...</td>
+      <td>Center(C)</td>
+      <td>Less Than 8 ft.</td>
+      <td>1</td>
+      <td>-13</td>
+      <td>12</td>
+      <td>1</td>
+      <td>0</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>130</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>1</td>
+      <td>3</td>
+      <td>11</td>
+      <td>...</td>
+      <td>Center(C)</td>
+      <td>Less Than 8 ft.</td>
+      <td>2</td>
+      <td>-15</td>
+      <td>22</td>
+      <td>1</td>
+      <td>0</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div>
+</div>
+</div>
+<p><code>df</code> is the results we get in terms of a <code>DataFrame</code>, and we show the first <code>5</code> records as an example.</p>
+<p>These are all attempts. We are interested in all made. By looking at all the columns, we find a column called <code>SHOT_MADE_FLAG</code> which shows what we want. Therefore we will use it to filter the records.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_made <span class="op">=</span> df[df[<span class="st">'SHOT_MADE_FLAG'</span>]<span class="op">==</span><span class="dv">1</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_made.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>GRID_TYPE</th>
+      <th>GAME_ID</th>
+      <th>GAME_EVENT_ID</th>
+      <th>PLAYER_ID</th>
+      <th>PLAYER_NAME</th>
+      <th>TEAM_ID</th>
+      <th>TEAM_NAME</th>
+      <th>PERIOD</th>
+      <th>MINUTES_REMAINING</th>
+      <th>SECONDS_REMAINING</th>
+      <th>...</th>
+      <th>SHOT_ZONE_AREA</th>
+      <th>SHOT_ZONE_RANGE</th>
+      <th>SHOT_DISTANCE</th>
+      <th>LOC_X</th>
+      <th>LOC_Y</th>
+      <th>SHOT_ATTEMPTED_FLAG</th>
+      <th>SHOT_MADE_FLAG</th>
+      <th>GAME_DATE</th>
+      <th>HTM</th>
+      <th>VTM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>37</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>1</td>
+      <td>9</td>
+      <td>10</td>
+      <td>...</td>
+      <td>Left Side Center(LC)</td>
+      <td>24+ ft.</td>
+      <td>25</td>
+      <td>-165</td>
+      <td>189</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>176</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>1</td>
+      <td>0</td>
+      <td>27</td>
+      <td>...</td>
+      <td>Center(C)</td>
+      <td>Less Than 8 ft.</td>
+      <td>2</td>
+      <td>-7</td>
+      <td>29</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>352</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>2</td>
+      <td>1</td>
+      <td>29</td>
+      <td>...</td>
+      <td>Center(C)</td>
+      <td>Less Than 8 ft.</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>10</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>510</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>3</td>
+      <td>2</td>
+      <td>23</td>
+      <td>...</td>
+      <td>Center(C)</td>
+      <td>Less Than 8 ft.</td>
+      <td>1</td>
+      <td>7</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Shot Chart Detail</td>
+      <td>0022100002</td>
+      <td>642</td>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>1610612744</td>
+      <td>Golden State Warriors</td>
+      <td>4</td>
+      <td>5</td>
+      <td>34</td>
+      <td>...</td>
+      <td>Center(C)</td>
+      <td>24+ ft.</td>
+      <td>26</td>
+      <td>48</td>
+      <td>260</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20211019</td>
+      <td>LAL</td>
+      <td>GSW</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div>
+</div>
+</div>
+<p>We also notice that there are two columns <code>LOC_X</code> and <code>LOC_Y</code> shows the coordinates of the attempts. We will use it to draw the heatmap. The full code for drawing out the court <code>draw_court</code> is folded below. It is from <a href="https://github.com/bradleyfay/py-Goldsberry/blob/master/docs/Visualizing%20NBA%20Shots%20with%20py-Goldsberry.ipynb">Bradley Fay GitHub</a>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that, although <code>draw_cort</code> is long, it is not hard to understand. It just draws a court piece by piece.</p>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.patches <span class="im">import</span> Circle, Rectangle, Arc</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_court(ax<span class="op">=</span><span class="va">None</span>, color<span class="op">=</span><span class="st">'gray'</span>, lw<span class="op">=</span><span class="dv">1</span>, outer_lines<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns an axes with a basketball court drawn onto to it.</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">    This function draws a court based on the x and y-axis values that the NBA</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">    stats API provides for the shot chart data.  For example, the NBA stat API</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">    represents the center of the hoop at the (0,0) coordinate.  Twenty-two feet</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">    from the left of the center of the hoop in is represented by the (-220,0)</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">    coordinates.  So one foot equals +/-10 units on the x and y-axis.</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        ax <span class="op">=</span> plt.gca()</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the various parts of an NBA basketball court</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the basketball hoop</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    hoop <span class="op">=</span> Circle((<span class="dv">0</span>, <span class="dv">0</span>), radius<span class="op">=</span><span class="fl">7.5</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create backboard</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    backboard <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">30</span>, <span class="op">-</span><span class="fl">7.5</span>), <span class="dv">60</span>, <span class="op">-</span><span class="dv">1</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The paint</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the outer box 0f the paint, width=16ft, height=19ft</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    outer_box <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">80</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">160</span>, <span class="dv">190</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color,</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>                          fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the inner box of the paint, widt=12ft, height=19ft</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    inner_box <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">60</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">120</span>, <span class="dv">190</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color,</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>                          fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create free throw top arc</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    top_free_throw <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">142.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">0</span>, theta2<span class="op">=</span><span class="dv">180</span>,</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>                         linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create free throw bottom arc</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    bottom_free_throw <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">142.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>                            linewidth<span class="op">=</span>lw, color<span class="op">=</span>color, linestyle<span class="op">=</span><span class="st">'dashed'</span>)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Restricted Zone, it is an arc with 4ft radius from center of the hoop</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    restricted <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">80</span>, <span class="dv">80</span>, theta1<span class="op">=</span><span class="dv">0</span>, theta2<span class="op">=</span><span class="dv">180</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>                     color<span class="op">=</span>color)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Three point line</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the right side 3pt lines, it's 14ft long before it arcs</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    corner_three_a <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">220</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">0</span>, <span class="dv">140</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>                               color<span class="op">=</span>color)</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the right side 3pt lines, it's 14ft long before it arcs</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    corner_three_b <span class="op">=</span> Rectangle((<span class="dv">220</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">0</span>, <span class="dv">140</span>, linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3pt arc - center of arc will be the hoop, arc is 23'9" away from hoop</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>    three_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">475</span>, <span class="dv">475</span>, theta1<span class="op">=</span><span class="dv">22</span>, theta2<span class="op">=</span><span class="dv">158</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span>color)</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Center Court</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    center_outer_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">422.5</span>), <span class="dv">120</span>, <span class="dv">120</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>                           linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>    center_inner_arc <span class="op">=</span> Arc((<span class="dv">0</span>, <span class="fl">422.5</span>), <span class="dv">40</span>, <span class="dv">40</span>, theta1<span class="op">=</span><span class="dv">180</span>, theta2<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>                           linewidth<span class="op">=</span>lw, color<span class="op">=</span>color)</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>    <span class="co"># List of the court elements to be plotted onto the axes</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>    court_elements <span class="op">=</span> [hoop, backboard, outer_box, inner_box, top_free_throw,</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>                      bottom_free_throw, restricted, corner_three_a,</span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>                      corner_three_b, three_arc, center_outer_arc,</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>                      center_inner_arc]</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> outer_lines:</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Draw the half court line, baseline and side out bound lines</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>        outer_lines <span class="op">=</span> Rectangle((<span class="op">-</span><span class="dv">250</span>, <span class="op">-</span><span class="fl">47.5</span>), <span class="dv">500</span>, <span class="dv">470</span>, linewidth<span class="op">=</span>lw,</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>                                color<span class="op">=</span>color, fill<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>        court_elements.append(outer_lines)</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add the court elements onto the axes</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> element <span class="kw">in</span> court_elements:</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>        ax.add_patch(element)</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure and axes</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_axes([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot hexbin of shots</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>ax.hexbin(df[<span class="st">'LOC_X'</span>], df[<span class="st">'LOC_Y'</span>], gridsize<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">30</span>), extent<span class="op">=</span>(<span class="op">-</span><span class="dv">300</span>, <span class="dv">300</span>, <span class="dv">0</span>, <span class="dv">940</span>), bins<span class="op">=</span><span class="st">'log'</span>, cmap<span class="op">=</span><span class="st">'Blues'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> draw_court(ax, <span class="st">'black'</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Annotate player name and season</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">0</span>, <span class="fl">1.05</span>, <span class="st">'Stephen Curry</span><span class="ch">\n</span><span class="st">2021-22 Regular Season'</span>, transform<span class="op">=</span>ax.transAxes, ha<span class="op">=</span><span class="st">'left'</span>, va<span class="op">=</span><span class="st">'baseline'</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis limits</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_xlim(<span class="op">-</span><span class="dv">250</span>, <span class="dv">250</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> ax.set_ylim(<span class="dv">0</span>, <span class="dv">400</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="intro_files/figure-html/cell-9-output-1.png" width="630" height="671"></p>
+</div>
+</div>
+</div>
+<!-- 
+<details>
+<summary>Click for Hint.</summary>
+
+::: {.solution}
+## Hint
+
+::: {.cell execution_count=9}
+``` {.python .cell-code}
+from nba_api.stats.static import players
+from nba_api.stats.endpoints import shotchartdetail
+player_dict = players.get_players()
+```
+:::
+
+
+These lines import some packages and get player information and save them into `player_dict`.
+
+::: {.cell execution_count=10}
+``` {.python .cell-code}
+for player in player_dict:
+    if player['full_name'] == 'Stephen Curry':
+        print(player['id'])
+```
+:::
+
+
+Go through all records in `player_dict`. If the name of a player is `Stephen Curry`, get his `id`. Then we will know the `id` of `Stephen Curry`.
+
+*To be omitted.*
+:::
+</details> -->
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-Klo2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline"><span class="smallcaps">Klosterman</span>, S.
+(2021). <em><a href="https://www.packtpub.com/product/data-science-projects-with-python/9781838551025">Data
+science projects with python: A case study approach to gaining valuable
+insights from real data with machine learning</a></em>. Packt
+Publishing, Limited.</div>
+</div>
+<div id="ref-McK2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline"><span class="smallcaps">McKinney</span>, W.
+(2017). <em>Python for data analysis: Data wrangling with pandas, NumPy,
+and IPython</em>. O’Reilly Media.</div>
+</div>
+<div id="ref-Sha2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline"><span class="smallcaps">Shaw</span>, Z. A.
+(2017). <em><a href="https://www.pearson.com/us/higher-education/program/Shaw-Learn-Python-3-the-Hard-Way-A-Very-Simple-Introduction-to-the-Terrifyingly-Beautiful-World-of-Computers-and-Code/PGM1768668.html">Learn
+python 3 the hard way</a></em>. Addison Wesley.</div>
+</div>
+<div id="ref-Swe2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline"><span class="smallcaps">Sweigart</span>, A.
+(2020). <em><a href="https://automatetheboringstuff.com/">Automate the
+boring stuff with python, 2nd edition practical programming for total
+beginners: Practical programming for total beginners</a></em>. No Starch
+Press.</div>
+</div>
+<div id="ref-Pra2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline"><span class="smallcaps">Prabhakaran</span>, S.
+(2018). <a href="https://www.machinelearningplus.com/python/101-numpy-exercises-python/">101
+NumPy exercises for data analysis (python)</a>.</div>
+</div>
+<div id="ref-Gro2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline"><span class="smallcaps">Grolemund</span>, G.
+(2014). <em>Hands-on programming with r: Write your own functions and
+simulations</em>. O’Reilly Media.</div>
+</div>
+<div id="ref-Pra2018a" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline"><span class="smallcaps">Prabhakaran</span>, S.
+(2018). <a href="https://www.machinelearningplus.com/python/101-pandas-exercises-python/">101
+pandas exercises for data analysis</a>.</div>
+</div>
+<div id="ref-Beu2022" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline"><span class="smallcaps">Beuzen</span>, T. and
+<span class="smallcaps">Timbers</span>, T. (2022). <em>Python
+packages</em>. Taylor &amp; Francis Group.</div>
+</div>
+<div id="ref-Wic2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline"><span class="smallcaps">Wickham</span>, H. and
+<span class="smallcaps">Grolemund</span>, G. (2017). <em><a href="https://r4ds.had.co.nz/">R for data science: Import, tidy,
+transform, visualize, and model data</a></em>. O’Reilly Media.</div>
+</div>
+<div id="ref-You2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline"><span class="smallcaps">Youens-Clark</span>, K.
+(2020). <em><a href="https://www.manning.com/books/tiny-python-projects">Tiny python
+projects</a></em>. Manning Publications.</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../contents/2/intro.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python Basics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
