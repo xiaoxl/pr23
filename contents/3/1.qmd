@@ -49,7 +49,7 @@ d.ndim
 
 ::: {.callout-note}
 ## Comparing to Linear algebras
-The dimension of an `np.array` and the dimenion of a vector in Linear algebras are totally different. In this example, as a `np.array`, `a` is a 1d `np.array`, of length `3`. As a vector, it is a 3d vector.
+The dimension of an `np.array` and the dimenion of a vector in Linear algebras are totally different. In this example, as a `np.array`, `a=np.array([1, 2])` is a 1d `np.array`, of length `2`. As a vector, it is a 2d vector.
 :::
 
 To describe the length of each axes, we could use `.shape`. It will tells us the length of each axis. In other words, it tells us the maximal index of each axis.
@@ -83,21 +83,72 @@ We will do more examples later this section.
 
 
 ### Create `np.array`
-`np.array` is called Numpy Ndarray. It is a table of elements (usually numbers), all of the same type, indexed by a tuple of non-negative integers. In NumPy dimensions are called *axes*. It refers to the number of axes need to index it., and it is NOT the dimension of the vector spaces.
+There are many ways to create `np.array`. We list some basic ways below.
+
+
+::: {.callout-note collapse="true"}
+# Converting from a Python list
+You may apply `np.array()` to a list to convert it into a `np.array`.
+
+1. A list of numbers will create a 1d array.
+2. A list of lists will create a 2d array.
+3. Further nested lists will create higher-dimensional arrays.
+
+All arraies in the previous sections are created in this way.
+:::
+
+::: {.callout-note collapse="true"}
+# Intrinsic NumPy array creation functions
+Here is an incomplete list of such functions.
+
+1. `np.ones()` and `np.zeros()`
+    - Both of them will create `np.array` with the specified shape.
+2. `np.eye()` and `np.diag()`
+    - Both will create 2d array. So they can also be treated as creating matrices.
+
+3. `np.arange(start, end, step)`
+    - It will only create 1d array, which start from `start` to `end` with the step size `step`.
+    - `start` is by default `0` and `step` is by default `1`.
+    - In most cases the `stop` is NOT included, which is similar to Python list.
+    - The syntax is very similar to `range()`. The main difference between them is the object type of the output.
+
+4. `np.linspace(start, end, num)`
+    - It will only create 1d array, which starts from `start`, ends at `end` with totally `num` of points in the array, each of which are equally spread.
+    - `start` and `end` are always INCLUDED in the array.
+
+5. `np.random.rand()` and many other functions in `np.random`
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# Read from files
+`numpy` provides several functions to read and write files. We discuss the most common one: `np.genfromtxt()` and binary .
+:::
+
+
+::: {.callout-note collapse="true"}
+# Concatenate
+- `np.concatenate`
 
 
 
-There are many ways to do that. 
+::: {#exm-}
+## Axis
+Given `A = np.array([[1,2],[3,4]])` and `B = np.array([[5,6],[7,8]])`, please use `np.concatenate` to concatencate these two matrices to get a new matrix, in the order:
 
-- convert a list into a numpy array.
-- `np.zeros`, `np.zeros_like`
-- `np.ones`, `np.ones_like`
-- `np.eye`
-- `np.random.rand`
-- `np.arange`
-- `np.linspace`
+- `A` left, `B` right
+- `A` right, `B` left
+- `A` up, `B` down
+- `A` down, `B` up
+:::
 
-::: {.callout-note}
+
+:::
+
+
+::: {.callout-caution collapse="true"}
+# Pay attention to the format of inputs
 Please be very careful about the format of the input. For example, when you want to specify the dimension of the array, using `np.zeros`, you need to input a `tuple`. On the other hand, when using `np.random.rand`, you just directly input the dimensions one by one.
 
 ```{python}
@@ -127,41 +178,14 @@ In this case, the official documents are always your friend.
 - `np.unique`, `np.any`
 
 - `np.dot`: Matrix multiplication
-- `np.concatenate`
 
+
+
+- vectorization
 - Broadcast
 
 
-::: {#exm-}
-## Axis
-Given `A = np.array([[1,2],[3,4]])` and `B = np.array([[5,6],[7,8]])`, please use `np.concatenate` to concatencate these two matrices to get a new matrix, in the order:
-
-- `A` left, `B` right
-- `A` right, `B` left
-- `A` up, `B` down
-- `A` down, `B` up
-:::
 
 
-### Common attributes and methods
-
-- `shape`
-- `dtype`
-- `ndim`
-- Any arithmetic operations between equal-size arrays applies the operation element-wise. 
-
-
-
-::: {#exm-}
-`MNIST` is a very famous dataset of hand written images. Here is how to load it. Note that in this instance of the dataset the data are stored as `numpy` arraies.
-```{python}
-#| eval: false
-import tensorflow as tf
-
-(X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
-X_train.shape
-```
-
-:::
 
 

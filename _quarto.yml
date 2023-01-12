@@ -14,6 +14,7 @@ crossref:
   labels: arabic        # (default is arabic)
   subref-labels: roman i # (default is alpha a)
 
+
 execute:
   freeze: auto
 
@@ -54,7 +55,7 @@ book:
         - contents/7/07-.qmd
         - contents/8/08-.qmd
         - contents/10/intro.qmd
-    - contents/references.qmd
+    # - contents/references.qmd
   appendices:
     - contents/app/setup.qmd
     - contents/app/path.qmd

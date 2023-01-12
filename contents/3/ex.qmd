@@ -1,7 +1,7 @@
 
 ## Exercises
 
-Many exercises are from @Pra2018.
+Many exercises are from [@Pra2018].
 
 ::: {#exr-}
 

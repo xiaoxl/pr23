@@ -61,7 +61,7 @@ sentence = "This is\ngood enough\nfor a exercise to\nhave so many parts. " \
 
 In Python a module is simply a file with the .py extension containing Python code. Assume that we have a Python file `example.py` stored in the folder `assests/codes/`. The file is as follows.
 
-```{python}
+```{python filename='example.py'}
 #| eval: false
 
 # from assests/codes/example.py
@@ -90,8 +90,7 @@ Any text preceded by the hash mark (pound sign) `#` is ignored by the Python int
 
 In some programming languages, you have to declare the variable’s name and what type of data it will hold. If a variable is declared to be a number, it can never hold a different type of value, like a string. This is called *static typing* because the type of the variable can never change.
 
-Python is a *dynamically typed* language, which means you do not have to declare a variable or what kind of
-data the variable will hold. You can change the value and type of data at any time. This could be either great or terrible news. 
+Python is a *dynamically typed* language, which means you do not have to declare a variable or what kind of data the variable will hold. You can change the value and type of data at any time. This could be either great or terrible news. 
 
 On the other side, "dynamic typed" doesn't mean that types are not important in Python. You still have to make sure that the types of all variables meet the requirements of the operations used.
 
@@ -104,7 +103,7 @@ b = '2'
 c = a + b
 ```
 
-In this example, `b` was first assigned by a number, and then it was reassigned by a `str`. This is totally fine since Python is dynamically types. However later when adding `a` and `b`, the type error occurs since you cannot add a number and a `str`.
+In this example, `b` was first assigned by a number, and then it was reassigned by a `str`. This is totally fine since Python is dynamically typed. However later when adding `a` and `b`, the type error occurs since you cannot add a number and a `str`.
 
 
 ::: {.callout-note}

@@ -30,7 +30,3 @@ Python is well suited for rapid application development. It isn’t unusual for 
 
 
 
-## References {.unnumbered}
-
-::: {#refs}
-:::

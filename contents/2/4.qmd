@@ -79,7 +79,7 @@ Let `L` be a list, and `s=slice(start, stop, step)` be a slice. `L[s]` is the po
 L[start:stop:step]
 ```
 
-1. The slice endes before `stop`. Therefore the right end point `stop` is not in the slice.
+1. The slice ends before `stop`. Therefore the right end point `stop` is not in the slice.
 2. If `step` is not specified, `step=1` is the default value.
 3. If `start` or `stop` is not specified, the default value is the first of the list or the last.
 4. `start` and `stop` follows the rules of negative positions. 

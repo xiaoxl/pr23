@@ -21,9 +21,3 @@
 {{< include ex.qmd >}}
 
 
-
-
-## References {.unnumbered}
-
-::: {#refs}
-:::
