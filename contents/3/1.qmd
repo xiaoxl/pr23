@@ -325,6 +325,10 @@ Here is an incomplete list of these functions. Some functions come with brief in
     - `.sort()`: Sort the array. There is also a `np.sort()` function.
 
 
+::: {.callout-tip}
+Don't forget that most functions and methods have `axis` arguments to specify which axis you want to move along with.
+:::
+
 #### Broadcasting 
 
 Although most `numpy` functions and `np.array` methods are computing entry-wise, when we perform binary operations, the size of the two arrays don't have to be the same. If they are not the same, the Broadcasting Rule applies, and some entries will be filled automatically by repeating themselves.
