@@ -73,7 +73,7 @@ So a 2d array can be treated as a matrix, and the shape being `(2, 3)` means tha
 :::
 
 
-#### Moving along axis
+#### Moving along axis {#sec-moving-along-axis}
 A lot of `numpy` methods has an argument `axis=`, which let you to specify performing the action along which axis. You may understand this "along axis" in the following way. `axis=i` means that when we perform the action, we keep all other indexes the same, only changing the index on axis `i`.
 
 For example, `b.sum(axis=0)` means that we want to add all entries along axis `0`. So we start from a certain entry, keeping all other index the same when changing index on axis `0` only, and add all these entries together. Since axis `0` is corresponding to rows index, only changing row index means we are moving vertically. So if `b` is a 2d array, `b.sum(axis=0)` means we are adding all column together.
@@ -106,43 +106,162 @@ Here is an incomplete list of such functions.
 2. `np.eye()` and `np.diag()`
     - Both will create 2d array. So they can also be treated as creating matrices.
 
-3. `np.arange(start, end, step)`
-    - It will only create 1d array, which start from `start` to `end` with the step size `step`.
+3. `np.arange(start, stop, step)`
+    - It will only create 1d array, which start from `start` to `stop` with the step size `step`.
     - `start` is by default `0` and `step` is by default `1`.
     - In most cases the `stop` is NOT included, which is similar to Python list.
     - The syntax is very similar to `range()`. The main difference between them is the object type of the output.
 
-4. `np.linspace(start, end, num)`
-    - It will only create 1d array, which starts from `start`, ends at `end` with totally `num` of points in the array, each of which are equally spread.
-    - `start` and `end` are always INCLUDED in the array.
+4. `np.linspace(start, stop, num)`
+    - It will only create 1d array, which starts from `start`, stops at `stop` with totally `num` of points in the array, each of which are equally spread.
+    - `start` and `stop` are always INCLUDED in the array.
 
-5. `np.random.rand()` and many other functions in `np.random`
+5. `np.random.rand()` and many other functions in `np.random` package.
 
+These functions are straightforward. You may go to the official documents for more details. For example [this](https://numpy.org/doc/stable/reference/generated/numpy.arange.html) is the page for `np.arange()`. You may find other functions on the left navigation bar, or you may use the search function to locate them.
 :::
 
 
 ::: {.callout-note collapse="true"}
 # Read from files
-`numpy` provides several functions to read and write files. We discuss the most common one: `np.genfromtxt()` and binary .
+`numpy` provides several functions to read and write files. We discuss the most commonly used one: `np.genfromtxt()`.
+
+`np.genfromtxt()` is used to load data from a text file, with missing values handled as specified. The idea of this function is to first read the file as a string and then parse the structure of the string, automatically. 
+
+There are many arguments. Here are a few commonly used. For more details please read the [official tutorial](https://numpy.org/doc/stable/user/basics.io.genfromtxt.html).
+
+- `dtype`: Data type of the resulting array. If `None`, the dtypes will be determined by the contents of each column, individually.
+- `delimiter`: The string used to separate values. By default, any consecutive whitespaces act as delimiter. 
+- `usecols`: Which columns to read, with 0 being the first. 
+- `encoding`: This is used to decode the inputfile. The default setting for `encoding` is `bytes`. If it is set to `None` the system default is used. Please pay attention to the differences between these two.
+
+Note that when choosing `dtype`, if the type is NOT a single type, the output will be a 1d array with each entry being a tuple. If it is a single type, the output will be a 2d array. Please see the following example.
+
+```{python}
+import numpy as np
+
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris_1d = np.genfromtxt(url, delimiter=',', dtype=None, encoding=None)
+iris_2d = np.genfromtxt(url, delimiter=',', dtype='float', encoding=None)
+iris_2d_str = np.genfromtxt(url, delimiter=',', dtype='str', encoding=None)
+iris_1d[:10]
+```
+
+```{python}
+iris_2d[:10]
+```
+
+```{python}
+iris_2d_str[:10]
+```
+
+We only show the first 10 rows to save some display room.
+
+You may also download the datafile from the `url` provided in the code. The file can be opened with any editor. It is displayed below for reference. 
+
+```{python}
+#| echo: false
+import urllib
+datafile = urllib.request.urlopen(url).read()
+print(datafile)
+```
+The file can be understood as follows. `\n` separates rows and `,` separates columns. Each row contains five columns, where the last one is definitely a string, and the first four are numeric. Therefore the whole dataset is a mixed type dataset. 
+
+1. In the first command, `dtype=None`. Since any types are accepted, it returns an 1d array with each row being a tuple. 
+2. In the second command, `dtype='float'`. Then only `float` data is accepted. Then we have a 2d array with the last column (string data that cannot be tranlated into a float) being `np.nan`.
+3. In the third command, `dtype='string'`. Then all data are tranlated into strings, and we get a 2d array.
+
+
+
+<!-- - Binary files
+    - `np.save()` is used to save one `np.array` array into the binary `.npy` format. 
+    - `np.savez()` is used to save multiple `np.array` arries into one uncompressed `.npz` format. 
+    - `np.load()` is used to load the `np.array` data from either `.npy` or `.npz`.
+
+    `.npy` is the standard binary file format in `numpy`. `.npz` is a ZipFile containing multiple `.npy` files. These file formats are used in `numpy` naively so `numpy` work with them very fast, comparing to other file formats like `.txt` and `.csv`. 
+    
+    The downside is that these files are not human-readable, and are hard to be understood by other programs. So if you would use other ways to deal with these data, you may want to save the data in other formats. -->
 :::
 
 
+
 ::: {.callout-note collapse="true"}
-# Concatenate
-- `np.concatenate`
+# Change the shape of other arrays
+There are multiple ways to manipulate the shapes of `np.array`. We will only mention some commonly used ones in this section.
 
+1. `np.concatenate()`
 
+`np.concatenate()` is used to join a sequence of arrays along an existing axis. Therefore the major input arugments including:
+
+- A tuple which represents the sequence of arrays.
+- The axis for the arrays to be concatenated. The default is `axis=0`.
+
+The setting for `axis` is the same as in @sec-moving-along-axis. That is, `axis=i` along the axis `i` means that all we collect all the entries with the same other indexes and different `i`th index.
+
+A quick example is about a 2d array. When talking about `axis=0`, we are looking at entries that have the same `1st` index and different `0th` index. This refers to all the entries in one column. So if we want to do something vertically, we need to set `axis=0`.
+
+Similarly, `axis=1` means that we are looking at the entries wich the same `0th` index and different `1st` index. These are entries in the same row. So `axis=1` menas horizontally. Please see the following example.
 
 ::: {#exm-}
 ## Axis
 Given `A = np.array([[1,2],[3,4]])` and `B = np.array([[5,6],[7,8]])`, please use `np.concatenate` to concatencate these two matrices to get a new matrix, in the order:
 
+```{python}
+#| echo: false
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+```
+
 - `A` left, `B` right
+
+```{python}
+np.concatenate((A, B), axis=1)
+```
+
 - `A` right, `B` left
+
+```{python}
+np.concatenate((B, A), axis=1)
+```
+
 - `A` up, `B` down
+
+```{python}
+np.concatenate((A, B), axis=0)
+```
+
 - `A` down, `B` up
+
+```{python}
+np.concatenate((B, A), axis=0)
+```
+
 :::
 
+2. Reshape
+
+`np.reshape()` functions and `.reshape()` methods are equivalent. They are used to change the shape of the original `np.array`. Please see the following example.
+
+
+```{python}
+A = np.array([[1, 2, 3], [4, 5, 6]])
+A.reshape((6, 1))
+```
+
+3. Transpose
+
+There are three ways to perform transpose.
+
+- `np.transpose()` function
+- `.transpose()` method
+- `.T` attribute
+Please see the following example.
+
+```{python}
+A = np.array([[1, 2, 3], [4, 5, 6]])
+A.T
+```
+Note that in the third method, `.T` is NOT a function that there are no `()` at the end.
 
 :::
 
@@ -165,27 +284,72 @@ In this case, the official documents are always your friend.
 
 
 ### Mathematical and Statistical Methods
+Most functions performs element-wise operations on data in `np.array`. Therefore using `np.array` enables you to express many kinds of data processing tasks as concise array expressions that might otherwise require writing loops. This practice of replacing explicit loops with array expressions is commonly referred to as *vectorization*.
 
-- `+`, `-`, `*`, `/`, `**`, etc.. 
-- `np.sin`, `np.exp`, `np.sqrt`, etc..
+Please see the following example.
 
-- `mean`, `sum`, `std`, `var`, `cumsum`
-- `max` and `min`
-- `maximum` and `minimum`
-- `argmin` and `argmax`
+::: {#exm-}
 
-- `np.sort`
-- `np.unique`, `np.any`
-
-- `np.dot`: Matrix multiplication
-
-
-
-- vectorization
-- Broadcast
+```{python}
+import numpy as np
+x = np.linspace(0, 1, 101)
+y = np.sin(x)
+z = y**2 + 2*y-3
+```
+This example defines two functions $y=\sin(x)$ and $z=y^2+2y-3$. The syntax is very similar to the math language.
+:::
 
 
+::: {.callout-caution} 
+Please pay attention to the difference between `numpy` functions and `np.array` methods. `numpy` functions are functions defined in the `numpy` package that you use it by applying it to the arguments. `np.array` methods are function defined specific for one `np.array`, and it is used by calling it after the array. In the official documents, a `numpy` function looks like `numpy.XXX` while a `np.array` method looks like `numpy.ndarray.XXX`. Please see the following example.
+
+- [`np.amax()`](https://numpy.org/doc/stable/reference/generated/numpy.amax.html#numpy.amax) is a numpy function. It is used to find the maximum of an array. Assuming `a` is a `np.array`, then the syntax is `np.amax(a)`.
+- [`.max()`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.max.html) is a `np.array` method. It is used to find the maximum of an array. Assuming `a` is a `np.array`, then the syntax is `a.max()`.
+:::
+Here is an incomplete list of these functions. Some functions come with brief introductions. For more details please read the official documents.
+
+- `numpy` functions
+    - `+`, `-`, `*`, `/`, `**`, etc.. 
+    - `>`, `<`, `>=`, `<=`, `==`, `!=`, etc..
+    - `np.sin()`, `np.exp()`, `np.sqrt()`, etc..
+    - `np.dot()`: Matrix multiplication.
+    - `np.unique()`: Find out all unique values from the array.
+    - `np.maximum()` and `np.minimum()`: These are used to find the maximum/minimum between two `np.array`.
+    - `np.argmax()` and `np.argmin()`: Return the indices of the maximum/minimum values. There are also `.argmin()` and `.argmax()` methods.
+    - `np.sort()`: Sort the array. There is also a `.sort()` method.    
+- `np.array` methods
+    - `.mean()`, `.sum()`, `.std()`, `.var()`: Array methods that are used to compute corresponding properties of the array.
+    - `.cumsum()`: Return the cumulative sum of the elements along a given axis. 
+    - `.max()` and `.min()`: This is used to find the maximal/minimal entry of one `np.array`.    
+    - `.argmax()` and `.argmin()`: Return the indices of the maximum/minimum values. There are also `np.argmax()` and `np.argmin()` functions.
+    - `.sort()`: Sort the array. There is also a `np.sort()` function.
 
 
+#### Broadcasting 
 
+Although most `numpy` functions and `np.array` methods are computing entry-wise, when we perform binary operations, the size of the two arrays don't have to be the same. If they are not the same, the Broadcasting Rule applies, and some entries will be filled automatically by repeating themselves.
+
+
+::: {.callout-note}
+# The Broadcasting Rule
+Two arrays are compatible for broadcasting if for each dimension the axis lengths match or if either of the lengths is 1. Broadcasting is then performed over the missing or length 1 dimensions.
+:::
+
+Please see the following examples.
+
+```{python}
+import numpy as np
+a = np.array([1, 2])
+a + 1
+```
+
+```{python}
+b = np.array([[3, 4], [5, 6]])
+a + b
+```
+
+```{python}
+c = np.array([[1], [2]])
+b + c
+```
 

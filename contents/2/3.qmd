@@ -61,6 +61,16 @@ s = [1, 'a', -3.1, 'abc']
 for i in s:
     print(i)
 ```
+
+If you want to loop through two lists simutanously, you may use `zip()` function. It will create a new list which combines two lists. Please see the following example: elements from list `a` and list `b` are zipped into tuples.
+
+```{python}
+a = [1, 2, 3]
+b = ['a', 'b', 'c']
+for i in zip(a, b):
+    print(i)
+```
+
 :::
 
 ### `if` statement
