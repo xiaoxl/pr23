@@ -12,10 +12,10 @@ for i in aniterator:
 ```
 In each iteration, the `aniterator` will produce a value and assign it to `i`. Then the code in the `for` loop will run with `i` being assigned to the specific value. 
 
-Let's look at three typical examples of iterators.
+Let's look at some typical examples of iterators.
 
 ::: {.callout-note collapse="true"}
-## `range()`
+# `range()`
 `range(N)` is an iterator which will produce integers from `0` to `N-1`. This is the most basic way to use `for` loop that you may treat `i` as the index of an iteration. Note that similar to the list index rule (which will be discussed later), the right end point `N` is not included.
 
 ```{python}
@@ -41,7 +41,7 @@ for i in range(1, 5, 2):
 
 
 ::: {.callout-note collapse="true"}
-## Strings
+# Strings
 You may use a string as an iterator. It will go through the string and generate the letter in it one by one from the beginning to the end. Note that escaped letters will be captured. Please see the following example.
 
 ```{python}
@@ -53,7 +53,7 @@ for i in s:
 
 
 ::: {.callout-note collapse="true"}
-## Lists
+# Lists
 We will talk about lists in details in next section. We will briefly mention it here since lists are the most common iterators in Python. Roughly speaking, a list is an ordered sequence of Python objects. As an iterator, it just goes through the sequence and generates the object in it one by one from the beginning to the end. Please see the following example.
 
 ```{python}
@@ -62,16 +62,31 @@ for i in s:
     print(i)
 ```
 
-If you want to loop through two lists simutanously, you may use `zip()` function. It will create a new list which combines two lists. Please see the following example: elements from list `a` and list `b` are zipped into tuples.
+:::
+
+
+::: {.callout-tip collapse="true"}
+# `zip()`
+The "Pythonic way" to write loops is to NOT use indexes. In this case how do we loop through two iterators if no indexes are used? We could use `zip()`.
+
+`zip()` is used to "zip" two iterators together to form one. Then we can use the zipped one for the loop and elements from both iterators are zipped into tuples. Please see the following examples.
 
 ```{python}
 a = [1, 2, 3]
 b = ['a', 'b', 'c']
-for i in zip(a, b):
-    print(i)
+for item in zip(a, b):
+    print(item)
+```
+
+```{python}
+c = range(3)
+d = 'abc'
+for item in zip(c, d):
+    print(item)
 ```
 
 :::
+
 
 ### `if` statement
 The `if` statement is straightforword. Here is a typical example.

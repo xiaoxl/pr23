@@ -1,16 +1,16 @@
 ## Basics
 
-The core data structure for `numpy` is `numpy.ndarray`. It is called *NumPy N-d array*. In most cases we will use its alias `array` for simplicity. You may treat it as a generalized version of `list`. However it can do so much more than the built-in `list`. 
+The core data structure for `numpy` is `numpy.ndarray`. It is called *NumPy Nd array*. In most cases we will use its alias `array` for simplicity. You may treat it as a generalized version of `list`. However it can do so much more than the built-in `list`. 
 
 To use `numpy`, we just import it. In most cases you would like to use the alias `np`.
 
 ```{python}
 import numpy as np
 ```
-Using alias, we will just call NumPy N-d array `np.array`.
+<!-- Using alias, we will just call NumPy Nd array `np.array`. -->
 
-### Understanding `np.array`
-The simplest way to look at an `np.array` is to think it as lists of list. Here are some examples.
+### Understanding `ndarray`
+The simplest way to look at an `ndarray` is to think it as lists of list. Here are some examples.
 
 - This is an example of a 1d array. Note that it can be treated as a list. You may get access to its entries by 1 index, e.g. `a[0]`. This means that: we have a list, and we want to get the `0`th element in the list.
 
@@ -34,12 +34,12 @@ c
 ```
 
 
-#### The dimension of `np.array`
-There is a very confusing terminology for `np.array`: dimension. The actual word using in documents is actually `axes`. It refers to the number of coordinates required to describe the location. 
+#### The dimension of `ndarray`
+There is a very confusing terminology for `ndarray`: dimension. The actual word using in documents is actually `axes`. It refers to the number of coordinates required to describe the location. 
 
 In the previous example, `a` is a 1d array since you only need 1 index to get entries, `b` is a 2d array since you need 2 indexes to get entries, and `c` is a 3d array since you need 3 indexes to get entries.
 
-We could use `.ndim` to check the dimension of a `np.array`.
+We could use `.ndim` to check the dimension of a `ndarray`.
 
 ```{python}
 d = np.array([[1, 2, 3], [4, 5, 6]])
@@ -49,7 +49,7 @@ d.ndim
 
 ::: {.callout-note}
 ## Comparing to Linear algebras
-The dimension of an `np.array` and the dimenion of a vector in Linear algebras are totally different. In this example, as a `np.array`, `a=np.array([1, 2])` is a 1d `np.array`, of length `2`. As a vector, it is a 2d vector.
+The dimension of an `ndarray` and the dimenion of a vector in Linear algebras are totally different. In this example, as a `ndarray`, `a=np.array([1, 2])` is a 1d `ndarray`, of length `2`. As a vector, it is a 2d vector.
 :::
 
 To describe the length of each axes, we could use `.shape`. It will tells us the length of each axis. In other words, it tells us the maximal index of each axis.
@@ -82,27 +82,27 @@ We will do more examples later this section.
 
 
 
-### Create `np.array`
-There are many ways to create `np.array`. We list some basic ways below.
+### Create `ndarrays`
+There are many ways to create `ndarrays`. We list some basic ways below.
 
 
 ::: {.callout-note collapse="true"}
-# Converting from a Python list
-You may apply `np.array()` to a list to convert it into a `np.array`.
+# Converting from a Python `list`
+You may apply `np.array()` to a `list` to convert it into a `ndarray`.
 
-1. A list of numbers will create a 1d array.
-2. A list of lists will create a 2d array.
-3. Further nested lists will create higher-dimensional arrays.
+1. A list of numbers will create a 1d `ndarray`.
+2. A list of lists will create a 2d `ndarray`.
+3. Further nested lists will create a higher-dimensional `ndarray`.
 
-All arraies in the previous sections are created in this way.
+All arrays in the previous sections are created in this way.
 :::
 
 ::: {.callout-note collapse="true"}
-# Intrinsic NumPy array creation functions
+# Intrinsic `numpy` array creation functions
 Here is an incomplete list of such functions.
 
 1. `np.ones()` and `np.zeros()`
-    - Both of them will create `np.array` with the specified shape.
+    - Both of them will create `ndarrays` with the specified shape.
 2. `np.eye()` and `np.diag()`
     - Both will create 2d array. So they can also be treated as creating matrices.
 
@@ -123,7 +123,7 @@ These functions are straightforward. You may go to the official documents for mo
 
 
 ::: {.callout-note collapse="true"}
-# Read from files
+# Reading from files
 `numpy` provides several functions to read and write files. We discuss the most commonly used one: `np.genfromtxt()`.
 
 `np.genfromtxt()` is used to load data from a text file, with missing values handled as specified. The idea of this function is to first read the file as a string and then parse the structure of the string, automatically. 
@@ -186,19 +186,19 @@ The file can be understood as follows. `\n` separates rows and `,` separates col
 
 
 ::: {.callout-note collapse="true"}
-# Change the shape of other arrays
-There are multiple ways to manipulate the shapes of `np.array`. We will only mention some commonly used ones in this section.
+# Changing the shape of other `ndarrays`
+There are multiple ways to manipulate the shapes of `ndarrays`. We will only mention some commonly used ones in this section.
 
 1. `np.concatenate()`
 
-`np.concatenate()` is used to join a sequence of arrays along an existing axis. Therefore the major input arugments including:
+`np.concatenate()` is used to join a sequence of `ndarrays` along an existing axis. Therefore the major input arugments including:
 
-- A tuple which represents the sequence of arrays.
-- The axis for the arrays to be concatenated. The default is `axis=0`.
+- A tuple which represents the sequence of `ndarrays`.
+- The axis for the `ndarrays` to be concatenated. The default is `axis=0`.
 
 The setting for `axis` is the same as in @sec-moving-along-axis. That is, `axis=i` along the axis `i` means that all we collect all the entries with the same other indexes and different `i`th index.
 
-A quick example is about a 2d array. When talking about `axis=0`, we are looking at entries that have the same `1st` index and different `0th` index. This refers to all the entries in one column. So if we want to do something vertically, we need to set `axis=0`.
+A quick example is about a 2d `ndarrays`. When talking about `axis=0`, we are looking at entries that have the same `1st` index and different `0th` index. This refers to all the entries in one column. So if we want to do something vertically, we need to set `axis=0`.
 
 Similarly, `axis=1` means that we are looking at the entries wich the same `0th` index and different `1st` index. These are entries in the same row. So `axis=1` menas horizontally. Please see the following example.
 
@@ -240,7 +240,7 @@ np.concatenate((B, A), axis=0)
 
 2. Reshape
 
-`np.reshape()` functions and `.reshape()` methods are equivalent. They are used to change the shape of the original `np.array`. Please see the following example.
+`np.reshape()` functions and `.reshape()` methods are equivalent. They are used to change the shape of the original `ndarray`. Please see the following example.
 
 
 ```{python}
@@ -284,7 +284,7 @@ In this case, the official documents are always your friend.
 
 
 ### Mathematical and Statistical Methods
-Most functions performs element-wise operations on data in `np.array`. Therefore using `np.array` enables you to express many kinds of data processing tasks as concise array expressions that might otherwise require writing loops. This practice of replacing explicit loops with array expressions is commonly referred to as *vectorization*.
+Most functions performs element-wise operations on data in `ndarrays`. Therefore using `ndarrays` enables you to express many kinds of data processing tasks as concise array expressions that might otherwise require writing loops. This practice of replacing explicit loops with array expressions is commonly referred to as *vectorization*.
 
 Please see the following example.
 
@@ -301,7 +301,7 @@ This example defines two functions $y=\sin(x)$ and $z=y^2+2y-3$. The syntax is v
 
 
 ::: {.callout-caution} 
-Please pay attention to the difference between `numpy` functions and `np.array` methods. `numpy` functions are functions defined in the `numpy` package that you use it by applying it to the arguments. `np.array` methods are function defined specific for one `np.array`, and it is used by calling it after the array. In the official documents, a `numpy` function looks like `numpy.XXX` while a `np.array` method looks like `numpy.ndarray.XXX`. Please see the following example.
+Please pay attention to the difference between `numpy` functions and `ndarray` methods. `numpy` functions are functions defined in the `numpy` package that you use it by applying it to the arguments. `ndarray` methods are function defined specific for one `ndarray`, and it is used by calling it after the `ndarray` with `.` symbol. In the official documents, a `numpy` function looks like `numpy.XXX()` while a `ndarray` method looks like `numpy.ndarray.XXX()`. Please see the following example.
 
 - [`np.amax()`](https://numpy.org/doc/stable/reference/generated/numpy.amax.html#numpy.amax) is a numpy function. It is used to find the maximum of an array. Assuming `a` is a `np.array`, then the syntax is `np.amax(a)`.
 - [`.max()`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.max.html) is a `np.array` method. It is used to find the maximum of an array. Assuming `a` is a `np.array`, then the syntax is `a.max()`.
@@ -317,7 +317,7 @@ Here is an incomplete list of these functions. Some functions come with brief in
     - `np.maximum()` and `np.minimum()`: These are used to find the maximum/minimum between two `np.array`.
     - `np.argmax()` and `np.argmin()`: Return the indices of the maximum/minimum values. There are also `.argmin()` and `.argmax()` methods.
     - `np.sort()`: Sort the array. There is also a `.sort()` method.    
-- `np.array` methods
+- `ndarray` methods
     - `.mean()`, `.sum()`, `.std()`, `.var()`: Array methods that are used to compute corresponding properties of the array.
     - `.cumsum()`: Return the cumulative sum of the elements along a given axis. 
     - `.max()` and `.min()`: This is used to find the maximal/minimal entry of one `np.array`.    
@@ -331,7 +331,7 @@ Don't forget that most functions and methods have `axis` arguments to specify wh
 
 #### Broadcasting 
 
-Although most `numpy` functions and `np.array` methods are computing entry-wise, when we perform binary operations, the size of the two arrays don't have to be the same. If they are not the same, the Broadcasting Rule applies, and some entries will be filled automatically by repeating themselves.
+Although most `numpy` functions and `ndarray` methods are computing entry-wise, when we perform binary operations, the size of the two arrays don't have to be the same. If they are not the same, the Broadcasting Rule applies, and some entries will be filled automatically by repeating themselves.
 
 
 ::: {.callout-note}

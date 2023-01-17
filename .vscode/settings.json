@@ -1,13 +1,7 @@
 {
     "jupyter.kernels.filter": [
-        {
-            "path": "c:\\Users\\Xinli\\anaconda3\\python.exe",
-            "type": "pythonEnvironment"
-        },
-        {
-            "path": "c:\\ProgramData\\jupyter\\kernels\\base23\\kernel.json",
-            "type": "jupyterKernelspec"
-        },
+
+
         {
             "path": "c:\\Program Files\\Python310\\python.exe",
             "type": "pythonEnvironment"

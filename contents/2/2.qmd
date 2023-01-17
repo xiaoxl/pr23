@@ -61,11 +61,7 @@ sentence = "This is\ngood enough\nfor a exercise to\nhave so many parts. " \
 
 In Python a module is simply a file with the .py extension containing Python code. Assume that we have a Python file `example.py` stored in the folder `assests/codes/`. The file is as follows.
 
-```{python filename='example.py'}
-#| eval: false
-
-# from assests/codes/example.py
-
+```{.python filename='assests/codes/example.py'}
 def f(x):
     print(x)
 

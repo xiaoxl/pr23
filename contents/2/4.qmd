@@ -10,7 +10,7 @@ Main questions in `list` contain creating, indexing and applications.
 There are two built-in methods to create lists. 
 
 ::: {.callout-note collapse="true"}
-## Naive way 
+# Naive way 
 A `list` can be created simply by writing down all the elements in order and enclosed by `[]`. Please see the following typical example.
 
 ```{python}
@@ -22,7 +22,7 @@ An empty list can be denoted by `[]`.
 :::
 
 ::: {.callout-note collapse="true"}
-## Use `list()` to convert objects into a list
+# Use `list()` to convert objects into a list
 
 Similar to the type change for numeric types and `str`, you may use `list()` to convert other objects into a list, if able. The typical example is to convert other iterators into lists.
 
@@ -32,14 +32,22 @@ list(s)
 ```
 
 ```{python}
-list(range(1, 5, 2))
+r = range(1, 6, 2)
+list(r)
 ```
+
+
+```{python}
+list(zip(s, r))
+```
+
 Empty list can be created by `list()`.
 :::
 
 ::: {.callout-tip}
-The real difference between this two methods are very subtle. You may just focus on which one can create the list you want, for now.
+The real difference between this above two methods are very subtle. You may just focus on which one can create the list you want, for now.
 :::
+
 
 
 

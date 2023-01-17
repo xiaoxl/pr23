@@ -33,6 +33,7 @@ format:
     code-block-border-left: true #"#31BAE9"
     # code-line-numbers: true
     highlight-style: atom-one
+    # page-layout: article
 
 book:
   title: "Python/R for Data Science"
@@ -64,11 +65,12 @@ book:
     - contents/app/r.qmd
   sidebar:
     # style: docked
-    # pinned: true
+    pinned: true
     align: center
     border: true
     search: true
     collapse-level: 1
+    alignment: "center"
   navbar:
     subtitle: "Spring 2023"
   page-navigation: true
