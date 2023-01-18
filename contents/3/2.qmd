@@ -1,8 +1,8 @@
 ## Indexing
 
-### Basic indexing and slicing
+### Basic indexing
 
-Basic indexing and slicing is very similar to indexing and slicing for `list`. Please see the following examples.
+Basic indexing is very similar to indexing and slicing for `list`. Please see the following examples.
 
 
 ::: {#exm-}
@@ -71,11 +71,126 @@ arr3d[:, 0: 2, 1:2]
 # Nested indexes
 In theory, since `ndarrys` can be treated as lists of list, it is possible to use nested index to get access to entries. For example, assuming `a` is a 2d `ndarray`, we might use `a[0][0]` to get access to `a[0, 0]`. This is a legal syntax.
 
-However it is almost required NOT to do so. The main reason is due to the copy/view rules that will be described later. Nested index might cause many confusions and it is highly possible to casue unexpected errors.
+However it is almost required NOT to do so. The main reason is due to the copy/view rules that will be described later. Nested indexes might cause many confusions and it is highly possible to casue unexpected errors.
+:::
+
+### Advanced Indexing
+Advanced indexing is triggered when the selection object satisfies some conditions. The concrete definition is technical and abstract. You may (not entirely correctly) understand it as "everything other than basic indexing (concrete coordinates or slicing)". Please read the [official document](https://numpy.org/doc/stable/user/basics.indexing.html#advanced-indexing) for more details. 
+
+Here we mainly focus on some typical advaced indexing methods. 
+
+::: {.callout-caution}
+There are some very exotic examples that are very hard to tell whether they belong to basic indexing or advanced indexing. Our suggestion is to avoid this type of code, and try to code in the most straight forward way. You could come back to understand this problem later when you are more expericened, but it is more of a Programming Language problem, instead of a Data Science problem.
 :::
 
 
-### Boolean Indexing
+
+
+::: {.callout-note collapse="true"}
+# Fancy indexing
+Fancy indexing is a term adopted by `numpy` to describe indexing using integer arrays. 
+
+The basic idea is to use a `list` of indexes to select entries. 
+
+When dealing with a 1d `ndarray`, indexing by a `list` is straight forward. Please see the following example.
+
+```{python}
+import numpy as np
+arr = np.arange(16)
+
+arr[[1, 3, 0, 2]]
+```
+
+
+::: {.callout-caution collapse="true"}
+# A trick example
+Please consider the following two indexings. 
+
+```{python}
+arr[1:2]
+```
+
+```{python}
+arr[[1]].base
+```
+From the first glance, the two outputs look the same. However they are from two different techniques. 
+
+- The `1:2` in `arr[1:2]` is a `slice`. Therefore the first indexing is basic indexing. 
+- The `[1]` in `arr[[1]]` is a `list`. Therefore the second indexing is advanced indexing.
+
+The main reason to distinguish these two indexings is about view and copy, which will be discussed in the next section.
+:::
+
+
+When dealing with a 2d `ndarray`, there are multiple possibilities. In the following discussion we will use the following example.
+
+```{python}
+A = np.arange(16).reshape((4, 4))
+A
+```
+
+
+::: {.callout-note collapse="true"}
+# 1. If only one `list` is given
+If only one `list` is given, this `list` is considered as the list of row indexes. The resulted `ndarray` is always 1d.
+
+```{python}
+A[[3, 1]]
+```
+:::
+
+
+::: {.callout-note collapse="true"}
+# 2. If two arguments are given, one is a `list`, the other is `:`
+If two arguments are given, one is a `list`, the other is `:`, this `list` refers to row indexes if it is in the first argument place, and refers to column indexes if it is in the second argument place. The resulted `ndarray` is always 2d.
+
+```{python}
+A[[3, 1], :]
+```
+```{python}
+A[:, [3, 1]]
+```
+:::
+
+
+::: {.callout-note collapse="true"}
+# 3. If both two arguments are `lists` of the same length
+If both two arguments are `lists` of the same length, it is considered as the `list` of `axis 0` coordinates and the `list` of `axis 1` coordinates. In this case, the resulted `ndarray` is 1d.
+
+```{python}
+A[[0, 1], [3, 1]]
+```
+In this example, the two `lists` together gives two entries. 
+
+- The coordinate of the first entry is `(0, 3)` since they are the first entry of each `list`. The `(0, 3)` entry in `A` is `3`.
+- The coordinate of the second entry is `(1, 1)` since they are the second entry of each `list`. The `(1, 1)` entry in `A` is `5`. 
+
+Then the result is `array([3, 5])`, as shown above.
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# 4. If both two arguments are `lists`, and one of the `lists` is of length `1`
+If both two arguments are `lists`, and one of the `lists` is of length `1`, it is the same as the previous case, with the `list` of length `1` being broadcasted.
+
+
+```{python}
+A[[0], [3, 1]]
+```
+In this example, after broadcasting, the result is the same as `A[[0,0], [3,1]]`.
+
+
+:::
+
+For higher dimensions, please read the documents to understand how it actually works. 
+
+:::
+
+
+
+::: {.callout-note collapse="true"}
+# Boolean Indexing
 `ndarray` can accept index in terms of `ndarrays` with boolean indexing.
 
 
@@ -98,60 +213,26 @@ a[b]
 
 :::
 
-We could combine this way with the logic computation to filter out the elements we don't want.
-
+We could combine this way with the logic computation to filter out the elements we want/don't want.
 
 ::: {#exm-}
-Please replace the odd number in the array by its negative.
+Please find the odd numbers in `arr`. 
 
 ```{python}
-import numpy as np
 arr = np.arange(10)
 odd = (arr %2 == 1)
-arr[odd] = arr[odd] * (-1)
-arr
+arr[odd] 
 ```
-
-
+:::
 :::
 
-### Fancy indexing
-Fancy indexing is a term adopted by `numpy` to describe indexing using integer arrays. 
 
-::: {#exm-}
 
-```{python}
-import numpy as np
-
-arr = np.zeros((8, 4))
-for i in range(8):
-    arr[i] = i
-
-arr[[4, 3, 0, 6]]
-```
-
-:::
-
-::: {#exm-}
-
-```{python}
-import numpy as np
-
-arr = np.arange(32).reshape((8, 4))
-print(arr)
-print(arr[[1, 5, 7, 2], [0, 3, 1, 2]])
-print(arr[[1, 5, 7, 2]][:, [0, 3, 1, 2]])
-```
-
-:::
 
 
 ### [Copies and views](https://numpy.org/doc/stable/user/basics.copies.html)
-The view of an numpy array is a way to get access to the array without copying internel data. When operating with a view, the original data as well as all other views of the original data will be modified simutanously. 
+The view of an `ndarray` is a way to get access to the array without copying internel data. When operating with a view, the original data as well as all other views of the original data will be modified simutanously. 
 
-The default setting for copies and views is that, basic indexing and slicing will make views, and advanced indexing and slicing (e.g. boolean indexing, fancy indexing, etc.) will make copies. For other operations, you need to check the documents to know how they work. For example, `np.reshape` creates a view where possible, and `np.flatten` always creates a copy.
-
-You may use `np.view()` or `np.copy()` to make views or copies explicitly. 
 ::: {#exm-}
 
 ```{python}
@@ -160,42 +241,79 @@ arr = np.arange(10)
 b = arr[5:8]
 print('arr is {}'.format(arr))
 print('b is {}'.format(b))
+```
 
+```{python}
 b[0] = -1
 print('arr is {}'.format(arr))
 print('b is {}'.format(b))
+```
 
 
+```{python}
 arr[6] = -2
 print('arr is {}'.format(arr))
 print('b is {}'.format(b))
-
-print('The base of b is {}'.format(b.base))
 ```
+
+
 :::
 
 
-The way to make explicit copy is `.copy()`.
+
+The default setting for copies and views is that, basic indexing will always make views, and advanced indexing (e.g. boolean indexing, fancy indexing, etc.) will make copies. For other operations, you need to check the documents to know how they work. For example, `np.reshape()` creates a view where possible, and `np.flatten()` always creates a copy.
+
+The way to check whether something is a view or not is the attribute `.base`. If it is a view of another `ndarray`, you may see that `ndarray` in the attribute `.base`. If it is not a view, in other words, if it is a copy, the `.base` attribute is `None`.
 
 
 ::: {#exm-}
 
 ```{python}
-import numpy as np
+A = np.random.rand(3, 3)
+A
+```
+
+
+```{python}
+A[1:2].base
+```
+Basic indexing creates views. In this example, the `base` of `A[1:2]` is `A`, which means that `A[1:2]` is a view of `A`.
+
+```{python}
+print(A[[1]].base)
+```
+Advanced indexing creates copys. In this example, the `base` is `None`. So `A[[1]]` is NOT a view of anything.
+:::
+
+
+
+
+You may use `np.view()` or `np.copy()` to make views or copies explicitly. 
+
+::: {#exm-}
+
+```{python}
 arr = np.arange(10)
 b = arr[5:8].copy()
 print('arr is {}'.format(arr))
 print('b is {}'.format(b))
+```
 
+```{python}
 b[0] = -1
 print('arr is {}'.format(arr))
 print('b is {}'.format(b))
+```
 
 
+```{python}
 arr[6] = -2
 print('arr is {}'.format(arr))
 print('b is {}'.format(b))
+```
 
+
+```{python}
 print('The base of b is {}'.format(b.base))
 ```
 :::

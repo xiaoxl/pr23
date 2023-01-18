@@ -9,7 +9,7 @@ There are several built-in data structures in Python. Here is an (incomplete) li
 - Boolean -- `True`, `False`
 - Numeric Types — `int`, `float`, `complex`
 - Text Sequence Type — `str`
-- Sequence Types — `list`
+- Sequence Types — `list`, `tuple`
 - Map type - `dict`
 
 We will cover numeric types and strings in this section. The rests are either simple that are self-explained, or not simple that will be discussed later.
