@@ -1,21 +1,117 @@
 
-## More commands
+## More functions
 
-- `.T`
-- `axis=n` is very important.
-- `np.reshape()`
-- `np.tile()`
-- `np.repeat()`
+We introduce a few more advanced functions here. All the following functions are somehow related to the indexes of entries.
+
+::: {.callout-note collapse="true"}
+# `np.where()`
+`np.where()` is a very powerful function. The basic usage is `np.where(A satisfies condition)`. The output is an `ndarray` of indexes of entries of `A` that satisfies the condition.
+
+- When the `ndarray` in question is 1d, the output is a 1d `ndarray` of indexes.
+
+```{python}
+import numpy as np
+a = np.random.randint(10, size=10)
+a
+```
+
+```{python}
+np.where(a%3 == 1)
+```
+Since the output is the `ndarray` of indexes, it is possible to directly use it to get those entries. 
+
+```{python}
+a[np.where(a%3 == 1)]
+```
+Note that this is a fancy indexing, so the result is a copy.
+
+- When the `ndarray` in question is 2d, the output is a tuple which consists of two 2d `ndarray` of indexes. The two `ndarrays` are the arrays of the `axis 0` indexes and the `axis 1` indexes of the very entries. 
+
+```{python}
+b = np.random.randint(10, size=(3, 3))
+b
+```
+
+```{python}
+np.where(b%2 == 0)
+```
+Similar to the previous case, we may directly using fancy indexing to get an `ndarray` of the entries, and what we get is a copy.
+
+```{python}
+b[np.where(b%2 == 0)]
+```
+
+- `np.where()` has two more optional arguments. 
+
+```{python}
+#| eval: false
+np.where(arr satisfies condition, x, y)
+```
+The output is an `ndarray` of the same shape as `arr`. For each entry, if it satisfies the `condition`, the entry is `x`. Otherwise it is `y`.
 
 
-### More advanced commands
+```{python}
+arr = np.arange(10)
+np.where(arr<5, 0, 1)
+```
+`numpy` will go over all entries in `arr`, and check whether they are smaller than `5`. If an entry is smaller than `5`, it is set to `0`. If an entry is not smaller than `5`, it is set to `1`.
 
-- `np.where()`
-- `np.any()`
-- `np.all()`
-- `np.argsort()`
+This is a very convenient way to do some aggragation operations. 
+
+:::
 
 
+::: {.callout-note collapse="true"}
+# `np.any()` and `np.all()`
+Both of them will check each entry of an `ndarray` satisfies certain conditions. `np.any()` will return `True` if any one entry satisfies the condition. `np.all()` will return `True` if all entries satisfy the condition.
+
+Both of them also accept `axis` argument. In this case output will be an `ndarray` which gives results along the specific axis.
+
+Please see the following examples.
+
+```{python}
+a = np.array([[1,2],[2,4], [3,5]])
+np.any(a%2==0)
+```
+
+```{python}
+np.any(a%2==0, axis=0)
+```
+```{python}
+np.any(a%2==0, axis=1)
+```
+```{python}
+np.all(a%2==0)
+```
+
+```{python}
+np.all(a%2==0, axis=0)
+```
+```{python}
+np.all(a%2==0, axis=1)
+```
+:::
+
+
+::: {.callout-note collapse="true"}
+# `np.argsort()`
+`np.argsort()` returns the indices that would sort an array. It is easy to think of that indexing using this output indices can resulted a sorted `ndarray`, which is a copy of the original one since this indexing is a fancy indexing.
+
+
+```{python}
+import numpy as np
+a = np.random.randint(100, size=10)
+a
+```
+
+```{python}
+a[np.argsort(a)]
+```
+
+
+:::
+
+### Some examples
 
 
 ::: {#exm-}
@@ -42,27 +138,63 @@ np.where(a == b, a*2, b+1)
 :::
 
 
+
+
+
 ::: {#exm-}
 ## Playing with axis
-
+Please think through the example and understand what actually happens in each case.
 
 ```{python}
 import numpy as np
 a = np.array([[[1,2],[3,4]],[[5,6],[7,8]]])
-
-np.any(a==1, axis=0)
-np.any(a==1, axis=1)
-np.any(a==1, axis=2)
-
-
-np.any(a==2, axis=0)
-np.any(a==2, axis=1)
-np.any(a==2, axis=2)
-
-np.any(a==5, axis=0)
-np.any(a==5, axis=1)
-np.any(a==5, axis=2)
+a
 ```
 
+
+```{python}
+np.any(a==1, axis=0)
+```
+
+
+```{python}
+np.any(a==1, axis=1)
+```
+
+
+```{python}
+np.any(a==1, axis=2)
+```
+
+
+```{python}
+np.any(a==2, axis=0)
+```
+
+
+```{python}
+np.any(a==2, axis=1)
+```
+
+
+```{python}
+np.any(a==2, axis=2)
+```
+
+
+
+```{python}
+np.any(a==5, axis=0)
+```
+
+
+```{python}
+np.any(a==5, axis=1)
+```
+
+
+```{python}
+np.any(a==5, axis=2)
+```
 
 :::

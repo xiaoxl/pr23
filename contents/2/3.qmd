@@ -155,7 +155,7 @@ apply_to_list(ints, lambda x: x * 2)
 
 To fully understand the following example requires knowledge from @sec-dict.
 ```{python}
-fruits = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+fruits = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
 
 fruits_sorted = sorted(fruits.items(), key=lambda x: x[1])
 fruits_sorted

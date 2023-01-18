@@ -185,6 +185,8 @@ In this example, after broadcasting, the result is the same as `A[[0,0], [3,1]]`
 
 For higher dimensions, please read the documents to understand how it actually works. 
 
+Note that `ndarray` can also be used as indexes and it behaves very similar to `list`.
+
 :::
 
 
