@@ -1,4 +1,4 @@
 def f(x):
     print(x)
 
-A = 'You get me!'
+A = 'You found me!'

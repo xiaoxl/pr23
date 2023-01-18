@@ -603,7 +603,7 @@ Line break
 <div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="st">'You get me!'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="st">'You found me!'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You may get access to this function and this string in the following way.</p>
 <div class="cell" data-execution_count="14">
@@ -611,7 +611,7 @@ Line break
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>example.f(example.A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>You get me!</code></pre>
+<pre><code>You found me!</code></pre>
 </div>
 </div>
 </section>
@@ -690,8 +690,8 @@ A tricky case: Tuples are not really “immutable”
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list of `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is `container`:  ([1], [2])
-This is the id of `container`:  2065260785344
-This is the id of the first list of `container`:  2065260759040</code></pre>
+This is the id of `container`:  2296835174400
+This is the id of the first list of `container`:  2296835183232</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="17">
@@ -701,8 +701,8 @@ This is the id of the first list of `container`:  2065260759040</code></pre>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list (which is updated) of the new `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is the new `container`:  ([1, 2], [2])
-This is the id of the new `container`:  2065260785344
-This is the id of the first list (which is updated) of the new `container`:  2065260759040</code></pre>
+This is the id of the new `container`:  2296835174400
+This is the id of the first list (which is updated) of the new `container`:  2296835183232</code></pre>
 </div>
 </div>
 <p>You can see that the tuple <code>container</code> and its first object stay the same, although we add one element to the first object.</p>
@@ -2098,7 +2098,7 @@ Wrapped in a function
 <span id="cb176-6"><a href="#cb176-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb176-7"><a href="#cb176-7" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="91">
-<pre><code>{'remain': 39, 'switch': 61}</code></pre>
+<pre><code>{'remain': 30, 'switch': 70}</code></pre>
 </div>
 </div>
 <p>From this result, you may guess that switch might be the better strategy.</p>

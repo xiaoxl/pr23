@@ -65,7 +65,7 @@ In Python a module is simply a file with the .py extension containing Python cod
 def f(x):
     print(x)
 
-A = 'You get me!'
+A = 'You found me!'
 ```
 You may get access to this function and this string in the following way.
 
