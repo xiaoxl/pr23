@@ -284,7 +284,9 @@ In this case, the official documents are always your friend.
 
 
 ### Mathematical and Statistical Methods
-Most functions performs element-wise operations on data in `ndarrays`. Therefore using `ndarrays` enables you to express many kinds of data processing tasks as concise array expressions that might otherwise require writing loops. This practice of replacing explicit loops with array expressions is commonly referred to as *vectorization*.
+Many functions performs element-wise operations on data in `ndarrays`, and supports array broadcasting, type casting, and several other standard features. This type of functions is called a universal function (or *ufunc* for short). 
+
+With ufuncs, using `ndarrays` enables you to express many kinds of data processing tasks as concise array expressions that might otherwise require writing loops. This practice of replacing explicit loops with array expressions is commonly referred to as *vectorization*.
 
 Please see the following example.
 
@@ -306,7 +308,7 @@ Please pay attention to the difference between `numpy` functions and `ndarray` m
 - [`np.amax()`](https://numpy.org/doc/stable/reference/generated/numpy.amax.html#numpy.amax) is a numpy function. It is used to find the maximum of an array. Assuming `a` is a `np.array`, then the syntax is `np.amax(a)`.
 - [`.max()`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.max.html) is a `np.array` method. It is used to find the maximum of an array. Assuming `a` is a `np.array`, then the syntax is `a.max()`.
 :::
-Here is an incomplete list of these functions. Some functions come with brief introductions. For more details please read the official documents.
+Here is an incomplete list of ufuncs. Some functions come with brief introductions. For more details please read the official documents.
 
 - `numpy` functions
     - `+`, `-`, `*`, `/`, `**`, etc.. 

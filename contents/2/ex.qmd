@@ -106,6 +106,27 @@ a is b
 :::
 
 
+
+
+::: {#exr-}
+# Toss a coin
+
+1. Please write a function `tossacoin()` to simulate tossing a coin. The output is `H` or `T`, and each call of the function has a 50/50 chance of getting `H` or `T`. Please use the following code to get a random number between `0` and `1`.
+
+```{python}
+#| eval: false
+import numpy as np
+np.random.rand()
+```
+
+2. Please simulate tossing a coin 20 times, and print out the results.
+3. The coin might be uneven. In this case the probability to get `H` is no longer `0.5`. We would like to use an argument `p` to represent the probability of getting `H`. Please upgrade your function `tossacoin()` to be compatible with uneven coins. Then please simulate tossing a coin  (with `p=0.1`, for example) 20 times, and print out the results.
+4. Tossing a coin 100 times, and record the results in a `list`.
+
+:::
+
+
+
 ::: {#exr-}
 ## `split` and `join`
 
@@ -273,3 +294,4 @@ Total number of items: 62
 # `N`-door Monty Hall problem
 Please finish the function `MontyHall()` for the `N`-door Monty Hall problem described in @sec-ndoormh.
 :::
+
