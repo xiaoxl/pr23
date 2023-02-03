@@ -690,8 +690,8 @@ A tricky case: Tuples are not really “immutable”
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list of `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is `container`:  ([1], [2])
-This is the id of `container`:  3147905337216
-This is the id of the first list of `container`:  3147905609408</code></pre>
+This is the id of `container`:  2836083576256
+This is the id of the first list of `container`:  2836083459840</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="17">
@@ -701,8 +701,8 @@ This is the id of the first list of `container`:  3147905609408</code></pre>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list (which is updated) of the new `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is the new `container`:  ([1, 2], [2])
-This is the id of the new `container`:  3147905337216
-This is the id of the first list (which is updated) of the new `container`:  3147905609408</code></pre>
+This is the id of the new `container`:  2836083576256
+This is the id of the first list (which is updated) of the new `container`:  2836083459840</code></pre>
 </div>
 </div>
 <p>You can see that the tuple <code>container</code> and its first object stay the same, although we add one element to the first object.</p>
@@ -2100,7 +2100,7 @@ Wrapped in a function
 <span id="cb176-6"><a href="#cb176-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb176-7"><a href="#cb176-7" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="91">
-<pre><code>{'remain': 41, 'switch': 59}</code></pre>
+<pre><code>{'remain': 37, 'switch': 63}</code></pre>
 </div>
 </div>
 <p>From this result, you may guess that switch might be the better strategy.</p>
