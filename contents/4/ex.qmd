@@ -308,3 +308,100 @@ df2 = pd.DataFrame({'pazham': ['apple', 'orange', 'pine'] * 2,
 ```
 
 :::
+
+
+
+
+
+
+
+
+
+::: {#exr-}
+Extract the valid emails from the series `emails`. The regex `pattern` for valid emails is provided as reference.
+
+```{python}
+import pandas as pd
+emails = pd.Series(['buying books at amazom.com',
+                    'rameses@egypt.com',
+                    'matt@t.co',
+                    'narendra@modi.com'])
+pattern = '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}'
+```
+
+:::
+
+
+
+::: {#exr-}
+Consider the following DataFrame.
+
+```{python}
+import pandas as pd
+import numpy as np
+df = pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/Cars93_miss.csv', usecols=[0,1,2,3,5])
+```
+
+1. Replace `NaN` with string `missing` in columns `Manufacturer`, `Model` and `Type`.
+2. Create an index as a combination of these three columns.
+
+:::
+
+
+::: {#exr-}
+Given the following DataFrame.
+
+```{python}
+import pandas as pd
+df = pd.DataFrame({
+    'name': ['James', 'Jane', 'Melissa', 'Ed', 'Neil'],
+    'age': [30, 40, 32, 67, 43],
+    'score': ['90%', '95%', '100%', '82%', '87%'],
+    'age_missing_data': [30, 40, 32, 67, None],
+    'income':[100000, 80000, 55000, 62000, 120000]
+})
+```
+- Please use `.map` to create a new column `numeric_score` whose value is the number version of `score`. 
+- Please use `.apply` to create a new column `numeric_score` whose value is the number version of `score`. 
+:::
+
+
+::: {#exr-}
+From `ser = pd.Series(['Apple', 'Orange', 'Plan', 'Python', 'Money'])`, find the words that contain at least 2 vowels.
+:::
+
+
+
+::: {#exr-}
+Please download the [given file](assests/datasets/test_emails.txt) with sample emails, and use the following code to load the file and save it to a string `content`.
+```{python}
+with open('assests/datasets/test_emails.txt', 'r') as f:
+    content = f.read()
+```
+Please use regex to play with `content`.
+
+1. Get all valid email address in `content`, from both the header part or the body part.
+2. There are two emails in `content`. Please get the sender's email and the receiver's email from `content`.
+3. Please get the sender's name.
+4. Please get the subject of each email.
+:::
+
+
+
+::: {#exr-}
+The following DataFrame is given.
+
+```{python}
+import pandas as pd
+df = pd.DataFrame(["STD, City    State",
+                   "33, Kolkata    West Bengal",
+                   "44, Chennai    Tamil Nadu",
+                   "40, Hyderabad    Telengana",
+                   "80, Bangalore    Karnataka"],
+                   columns=['row'])
+```
+
+1. Split the columns into a list with 3 entries.
+2. Make the first row (row 0) into a header.
+3. Create a new DataFrame out of the data.
+:::

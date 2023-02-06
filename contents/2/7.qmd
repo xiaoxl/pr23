@@ -7,6 +7,10 @@ The Monty Hall problem is a brain teaser, in the form of a probability puzzle, l
 
 Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
+Here is a YouTube video of the Monty Hall problem.
+
+{{< video https://youtu.be/4Lb-6rxZxx0 >}}
+
 
 We would like to use code to simulate this process. Here are the steps. 
 
@@ -83,8 +87,8 @@ After the host opens `door_host_open`, two doors are left: our initial choice an
 
 ```{python}
 tmpdoors = doors[:]
-tmpdoors.remove(initial_choice)
 tmpdoors.remove(door_host_open)
+tmpdoors.remove(initial_choice)
 door_unopened = tmpdoors[0]
 ```
 Then we could start the check the result. 
@@ -127,8 +131,8 @@ elif door_with_car != initial_choice:
     door_host_open = random.choice(rest_doors)
 
 tmpdoors = doors[:]
-tmpdoors.remove(initial_choice)
 tmpdoors.remove(door_host_open)
+tmpdoors.remove(initial_choice)
 door_unopened = tmpdoors[0]
 
 if door_with_car == initial_choice:
@@ -165,8 +169,8 @@ def MontyHall():
         door_host_open = random.choice(rest_doors)
 
     tmpdoors = doors[:]
-    tmpdoors.remove(initial_choice)
     tmpdoors.remove(door_host_open)
+    tmpdoors.remove(initial_choice)
     door_unopened = tmpdoors[0]
 
     if door_with_car == initial_choice:

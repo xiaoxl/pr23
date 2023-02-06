@@ -90,7 +90,12 @@ There are some very exotic examples that are very hard to tell whether they belo
 # Fancy indexing
 Fancy indexing is a term adopted by `numpy` to describe indexing using integer arrays. 
 
-The basic idea is to use a `list` of indexes to select entries. 
+The basic idea is to use a `list` of indexes to select entries. The general rule is relative complicated. Here we will only talk about 1d and 2d cases.
+
+
+::: {.callout-tip}
+# 1d case
+:::
 
 When dealing with a 1d `ndarray`, indexing by a `list` is straight forward. Please see the following example.
 
@@ -111,7 +116,7 @@ arr[1:2]
 ```
 
 ```{python}
-arr[[1]].base
+arr[[1]]
 ```
 From the first glance, the two outputs look the same. However they are from two different techniques. 
 
@@ -121,6 +126,10 @@ From the first glance, the two outputs look the same. However they are from two 
 The main reason to distinguish these two indexings is about view and copy, which will be discussed in the next section.
 :::
 
+
+::: {.callout-tip}
+# 2d case
+:::
 
 When dealing with a 2d `ndarray`, there are multiple possibilities. In the following discussion we will use the following example.
 
@@ -132,7 +141,7 @@ A
 
 ::: {.callout-note collapse="true"}
 # 1. If only one `list` is given
-If only one `list` is given, this `list` is considered as the list of row indexes. The resulted `ndarray` is always 1d.
+If only one `list` is given, this `list` is considered as the list of row indexes. The resulted `ndarray` is always 2d.
 
 ```{python}
 A[[3, 1]]

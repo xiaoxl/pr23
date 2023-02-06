@@ -13,7 +13,7 @@ Many exercises are from [@Pra2018].
 
 
 ::: {#exr-}
-Write a function to reverse a `ndarray` (first element becomes last).
+Write a function to reverse a 1d `ndarray` (first element becomes last).
 :::
 
 
@@ -25,9 +25,9 @@ Given `a = np.array([1,2,3])`, please get the desired output `array([1, 1, 1, 2,
 
 ::: {#exr-}
 ## Compare two `ndarrays`
-Consider two `ndarrays` of the same length `x` and `y`. Compare them entry by entry. We would like to know how many are the same.
+Consider two `ndarrays` of the same length `x` and `y`. Compare them entry by entry. We would like to know the percentage of the entries that are the same.
 
-Please wrap your code into a function that return the nnumber of same entries between `x` and `y`.
+Please wrap your code into a function that return the above percentage.
 :::
 
 
@@ -98,7 +98,8 @@ import numpy as np
 
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 iris_1d = np.genfromtxt(url, delimiter=',', dtype=None, encoding=None)
-iris_2d = np.genfromtxt(url, delimiter=',', dtype='float', encoding=None)
+iris_2d = np.genfromtxt(url, delimiter=',', dtype='float', encoding=None,
+                        usecols=[0, 1, 2, 3])
 iris_2d[np.random.randint(150, size=20), np.random.randint(4, size=20)] = np.nan
 sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0],
                             encoding=None)
