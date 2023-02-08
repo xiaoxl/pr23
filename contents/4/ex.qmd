@@ -59,6 +59,26 @@ ser2 = pd.Series([4, 5, 6, 7, 8])
 
 
 ::: {#exr-}
+Consider the following `DataFrame`.
+
+```{python}
+import pandas as pd
+
+data = pd.DataFrame(np.arange(16).reshape((4, 4)),
+                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
+                    columns=['one', 'two', 'three', 'four'])
+```
+
+1. Please select the column `two`.
+2. Please select the second and the third row.
+3. Please find the rows that the column `three` value is bigger than `5`.
+4. Please find the last row that the column `three` value is bigger than `5`.
+5. Please find the rows that the column `three` value is bigger than `5`, and display the resulted `DataFrame` with only `Colorado` and `Utah` row and `four` and `one` columns, in the specified order.
+:::
+
+
+
+::: {#exr-}
 ## Some statistics
 Please check the following commands and answer the following questions.
 

@@ -58,7 +58,22 @@ data = pd.DataFrame(np.arange(16).reshape((4, 4)),
 
 
 ## Indexing
-The act of selecting rows or columns to access from a dataframe or series is called *indexing*. 
+The act of selecting rows or columns to access from a dataframe or series is called *indexing*. There are many different ways to index in `pandas`. We will only cover the most popular ones.
+
+
+::: {.callout-caution collapse="true"}
+There is the same copy and view issue with `pandas` as in `numpy`. However it is more complicated and more inconsistent. Please check the official documents for more details and do more experiments before implementing the codes. Usually if your code is ambiguous, you might see the infamous `SettingWithCopyWarning` warning.
+
+
+```{python}
+#| warning: true
+df['a'][[1,2]]=[1,2]
+```
+
+
+Note that `pandas` is testing a `copy-on-write` feature to fix the issue. The feature can be simlified as "any `DataFrame` or `Series` derived from another in any way always behaves as a copy". Please keep an eye on the updates about when the feature will be fully implemented in `pandas`.
+:::
+
 
 ### `[]`
 
@@ -267,41 +282,140 @@ example.iloc[[1], 0:2]
 
 
 
+### Boolean indexing
+Let `df` be a `DataFrame`. Assume that `boo` is boolean vector of the dimension same to the number of rows of `df`, then we can use `df[boo]` to filter data: all rows with `True` will be selected. The syntax is similar to the boolean indexing in `numpy`.
 
 
-
-
-
-
-
-
-
-
-
-### Updating data
-- Assign values to a column of a DataFrame will update that column. If the column doesn't exist, new column will be created.
-- When assign values with non-existent row index, that part of the data will be discarded. 
-- Any time if there are no values with a specific column and row, it will show as `NaN`. 
-
-::: {#exm-}
+::: {.callout-note collapse="true"}
+# The basic usage of boolean indexing
 
 ```{python}
 import pandas as pd
-
-data = {'a': [1, 2, 3, 4],
-        'b': [1.1, 2.1, 3.1, 4.1],
-        'c': ['a', 'b', 'c', 'd']}
-df = pd.DataFrame(data)
-
-newcol = {1: 'good', 3: 'better', 5: 'best'}
-df['d'] = pd.Series(newcol)
+import numpy as np
+df = pd.DataFrame(np.random.randn(8, 4),
+                  index=pd.date_range('1/1/2023', periods=8),
+                  columns=['A', 'B', 'C', 'D'])
 df
+```
+
+```{python}
+df[df['A']>0]
+```
+
+To get the boolean vector, we may directly compute logic expression using columns of `df`. The previous example is of this kind.
+
+You may write complicated expressions. The operators are:
+
+- `|` for or
+- `&` for and
+- `~` for not
+
+Note that parentheses **must** be used to ensure a correct result. Please see the following example.
+
+```{python}
+df[(df['A'] > 1) & (df['B'] < 3)]
 ```
 
 :::
 
+<!-- One method that is usually use is `.isin()` method. This is used to check whether the entry of the `Series` belongs to a `list`. -->
 
-### Indexing, Selection, and Filtering
+There are many methods and functions that can create boolean vectors. We will introduce them when we need them.
+
+
+
+### `.query()`
+`DataFrame` has a `.query()` method that allows filtering using an expression instead of a boolean vector. This method uses a different approach from the point of programming language. From the point of users, you are free to choose between `.query()` and boolean indexing to filter data.
+
+
+::: {.callout-note collapse="true"}
+# Here are examples of `.query()`.
+```{python}
+df = pd.DataFrame({'A': [1,2,3], 'B': [3,2,1], 'C': [5,4,3]})
+df
+```
+
+
+```{python}
+df.query('A<B and B<C')
+```
+
+It can be simplified as follows:
+
+```{python}
+df.query('A<B<C')
+```
+
+This is the same as the following code.
+
+```{python}
+df[(df['A']<df['B']) & (df['B']<df['C'])]
+```
+
+Note that `.query()` does not require the usage of parentheses. It also use English like `or`/`and`/`not` for `|`/`&`/`~`.
+
+
+
+```{python}
+df.query('A in C')
+```
+
+
+```{python}
+df.query('A not in C')
+```
+
+
+```{python}
+df.query('A not in C and A<B')
+```
+
+
+```{python}
+df.query('[1,2] in B')
+```
+:::
+
+
+### Reindex
+
+`.reindex()` is a data alignment method in `pandas`. To reindex means to conform the data to match a given set of labels along a particular axis. This accomplishes several things:
+
+- Reordering the existing data to match a new set of labels
+- Inserting missing value (`NaN`) markers in label locations where no data for that label existed
+
+Here is a simple example:
+
+
+```{python}
+import pandas as pd
+data = pd.DataFrame(np.arange(16).reshape((4, 4)),
+                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
+                    columns=['one', 'two', 'three', 'four'])
+data
+```
+
+```{python}
+data.reindex(index = ['Colorado', 'Arkansas', 'New York'],
+             columns = ['three', 'five', 'one'])
+```
+
+From the first glance, `.reindex()` behave the same as other indexing methods. Here are a few differences:
+
+- The purpose of indexing methods is to select/filter data, while the purpose of reindex is to make the data in a very specific form.
+- When dealing with non-existent indexes/columns, most other indexing methods will return error or warning, while `.reindex()` can handle it automatically.
+- The default setting of `.reindex()` is to return a copy. This setting can be changed by the argument `copy=False`. 
+
+For more details please see the [official guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#reindexing). 
+
+
+
+
+
+
+
+
+<!-- 
 
 - Series indexing `(obj[...])` works analogously to NumPy array indexing, except you
 can use the Series’s index values instead of only integers. 
@@ -345,120 +459,38 @@ obj['b':'c']
 
 
 - Reindex `.reindex()`:
-```{python}
-import pandas as pd
-data = pd.DataFrame(np.arange(16).reshape((4, 4)),
-                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
-                    columns=['one', 'two', 'three', 'four'])
-
-data.reindex(index = ['Colorado', 'Arkansas', 'New York'],
-             columns = ['three', 'five', 'one'])
-```
 
 
 ::: {.callout-note}
-`.loc` and `.reindex` are very similar to each other. The main difference between theses two is that `.loc` will return a view and `.reindex` will return a copy in most cases.
 :::
-
-
-::: {.callout-note}
-When locate data using indexes, duplicate labels will return all results.
-:::
+ -->
 
 
 
 
-### Essential functions
-- Arithmetic and Data Alignment
-Elements of the same index and columns will be computed. By default, if any entry is `nan`, the answer will be `nan`. You may use `fill_value` argument to fill the empty slots.
 
+### Updating data
+- Assign values to a column of a DataFrame will update that column. If the column doesn't exist, new column will be created. This is called *enlargement*. 
+- When assign values with non-existent row index, that part of the data will be discarded. 
+- When using `.loc`, a `DataFrame` can be enlarged on either axis.
+- Any time if there are no values with a specific column and row, it will show as `NaN`. 
+<!-- - When locating data using indexes, duplicate labels will return all results. -->
 
 ::: {#exm-}
 
 ```{python}
 import pandas as pd
-import numpy as np
-df1 = pd.DataFrame(np.arange(12.).reshape((3, 4)), columns=list('abcd'))
-df2 = pd.DataFrame(np.arange(20.).reshape((4, 5)), columns=list('abcde'))
-df2.loc[1, 'b'] = np.nan
 
-df1.add(df2, fill_value=0)
+data = {'a': [1, 2, 3, 4],
+        'b': [1.1, 2.1, 3.1, 4.1],
+        'c': ['a', 'b', 'c', 'd']}
+df = pd.DataFrame(data)
+
+newcol = {1: 'good', 3: 'better', 5: 'best'}
+df['d'] = pd.Series(newcol)
+df
 ```
 
 :::
-
-Relatedly, when reindexing a Series or DataFrame, you can also specify a `fill_value`.
-
-### Function Application and Mapping
-We may apply functions to each row/column of a DataFrame. If the function is built-in function that is compatible with DataFrame, you can directly call the function that it will be applied automatically to each row/column. If it is not, we can call `apply` to get the desired result. 
-
-
-::: {#exm-}
-
-```{python}
-import pandas as pd
-data = pd.DataFrame(np.random.rand(4, 4),
-                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
-                    columns=['one', 'two', 'three', 'four'])
-
-f = lambda x: x.max() - x.min()
-
-print(data.apply(f))
-print(data.apply(f, axis='columns'))
-```
-
-:::
-
-
-We can use more complicated function to get more complicated result.
-
-::: {#exm-}
-
-```{python}
-import pandas as pd
-data = pd.DataFrame(np.random.rand(4, 4),
-                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
-                    columns=['one', 'two', 'three', 'four'])
-
-f = lambda x: pd.Series([x.max(), x.min()], index=['max', 'min'])
-
-print(data.apply(f))
-```
-
-:::
-
-
-### Sorting and Ranking
-
-- `.sort_values(by=)`
-- `.rank(ascending=, method=)`
-
-
-
-
-### Summarizing and Computing Descriptive Statistics
-
-- `sum`, `cumsum`
-- `mean`, `median`
-- `.describe()`
-- `.cov`, `.corr`
-
-### Unique Values, Value Counts, and Membership
-- `unique`
-- `value_counts`
-
-
-
-### Reading and Writing Data in Text Format
-- `read_csv`
-- `read_excel`
-- `df.to_csv`
-
-
-### Copies and views
-
-- `inplace`
-
-
 
 
