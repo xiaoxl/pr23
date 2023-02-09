@@ -98,6 +98,14 @@ The title is all. A few remarks:
 
 :::
 
+### Look at the `DataFrame`
+The following methods can be used to look at the `DataFrame`. Their syntax is very simple. Please try them by yourselves.
+
+- `.head()`
+- `.tail()`
+- `.describe()`
+- `.info()`
+
 
 
 ## Indexing

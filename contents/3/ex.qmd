@@ -122,9 +122,10 @@ sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0],
 ## Random
 Please finish the following tasks. 
 
-1. Use the package `np.random` to flip a coin 100 times and record the result in a list `coin`.
+1. Use the package `np.random` to flip a coin 100 times and record the result in a 1d `ndarray` `coin`.
 2. Assume that the coin is not fair, and the probability to get `H` is `p`. Write a code to flip the coin 100 times and record the result in a list `coin`, with a given parameter `p`. You may use `p=.4` as the first choice.
 3. For each list `coin` created above, write a code to find the longest `H` streak. We only need the biggest number of consecutive `H` we get during this 100 tosses. It is NOT necessary to know when we start the streak.
+4. Please write functions to perform the above operations.
 :::
 
 
@@ -136,8 +137,8 @@ Please read the [document of `np.digitize()`](https://numpy.org/doc/stable/refer
 
 Set the following bins:
 
-- Less than `3`: `small`
-- `3-5`: `medium`
+- Less than or equal to `3`: `small`
+- Bigger than `3` but less than or equal to `5`: `medium`
 - Bigger than `5`: `large`
 
 Please transform the following data `iris_2c` into texts using the given bins.
@@ -183,7 +184,7 @@ arr = np.random.randint(1,4, size=6)
 
 
 ::: {#exr-}
-Consider `arr = np.arange(8)`. A stride of `arr` with a window length of `4` and strides of `2` is a 2d `np.array` that looks like:
+Consider `arr = np.arange(8)`. A stride of `arr` with a window length of `4` and strides of `2` is a 2d `ndarray` that looks like:
 
 ```{python}
 #| echo: false
