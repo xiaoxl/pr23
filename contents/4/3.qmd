@@ -1,7 +1,7 @@
 
 ## Data Wrangling
 
-### Hierarchical indexing
+### Hierarchical indexing {#sec-hierindexing}
 Pandas support a more complex indexing system, that the index may have multiple levels. See the following example.
 
 
