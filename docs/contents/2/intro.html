@@ -288,6 +288,11 @@ div.csl-indent {
   <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/app/re.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Regular expression</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -330,7 +335,6 @@ div.csl-indent {
   <li><a href="#more-advanced-topics" id="toc-more-advanced-topics" class="nav-link" data-scroll-target="#more-advanced-topics"><span class="toc-section-number">2.6</span>  More advanced topics</a>
   <ul class="collapse">
   <li><a href="#listdict-comprehension" id="toc-listdict-comprehension" class="nav-link" data-scroll-target="#listdict-comprehension"><span class="toc-section-number">2.6.1</span>  <code>list</code>/<code>dict</code> comprehension</a></li>
-  <li><a href="#re" id="toc-re" class="nav-link" data-scroll-target="#re"><span class="toc-section-number">2.6.2</span>  <code>re</code></a></li>
   </ul></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="toc-section-number">2.7</span>  Examples</a>
   <ul class="collapse">
@@ -690,8 +694,8 @@ A tricky case: Tuples are not really “immutable”
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list of `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is `container`:  ([1], [2])
-This is the id of `container`:  2836083576256
-This is the id of the first list of `container`:  2836083459840</code></pre>
+This is the id of `container`:  2464859994432
+This is the id of the first list of `container`:  2464859969152</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="17">
@@ -701,8 +705,8 @@ This is the id of the first list of `container`:  2836083459840</code></pre>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'This is the id of the first list (which is updated) of the new `container`: '</span>, <span class="bu">id</span>(container[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is the new `container`:  ([1, 2], [2])
-This is the id of the new `container`:  2836083576256
-This is the id of the first list (which is updated) of the new `container`:  2836083459840</code></pre>
+This is the id of the new `container`:  2464859994432
+This is the id of the first list (which is updated) of the new `container`:  2464859969152</code></pre>
 </div>
 </div>
 <p>You can see that the tuple <code>container</code> and its first object stay the same, although we add one element to the first object.</p>
@@ -1850,9 +1854,6 @@ e-&gt;a
 </div>
 </div>
 </section>
-<section id="re" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="re"><span class="header-section-number">2.6.2</span> <code>re</code></h3>
-</section>
 </section>
 <section id="examples" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="examples"><span class="header-section-number">2.7</span> Examples</h2>
@@ -2100,7 +2101,7 @@ Wrapped in a function
 <span id="cb176-6"><a href="#cb176-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb176-7"><a href="#cb176-7" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="91">
-<pre><code>{'remain': 37, 'switch': 63}</code></pre>
+<pre><code>{'remain': 34, 'switch': 66}</code></pre>
 </div>
 </div>
 <p>From this result, you may guess that switch might be the better strategy.</p>

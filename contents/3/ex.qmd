@@ -54,7 +54,7 @@ arr = np.random.rand(4, 4)
 
 1. Please compute the mean of each column.
 2. Please compute the sum of each row.
-3. Please compute the maximam of the whole array.
+3. Please compute the maximum of the whole array.
 :::
 
 

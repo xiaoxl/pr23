@@ -77,7 +77,7 @@ data = pd.DataFrame(np.arange(16).reshape((4, 4)),
 :::
 
 
-
+<!-- 
 ::: {#exr-}
 ## Some statistics
 Please check the following commands and answer the following questions.
@@ -92,21 +92,25 @@ ser = pd.Series(np.random.normal(10, 5, 25))
 ```
 
 
-:::
+::: -->
 
 
 
 ::: {#exr-}
-Please use `pd.Series.value_counts()` to calculte the frequency counts of each unique value of the following Series.
+Consider the following `Series`.
+
 
 ```{python}
 import pandas as pd
 import numpy as np
 ser = pd.Series(np.take(list('abcdefgh'), np.random.randint(8, size=30)))
 ```
+
+1. Please use `pd.Series.value_counts()` to calculte the frequency counts of each unique value of the following Series.
+2. Please keep the top 2 most frequent items of `ser` as it is and replace everything else as `Other`.
 :::
 
-
+<!-- 
 ::: {#exr-}
 Please keep the top 2 most frequent items of `ser` as it is and replace everything else as `Other`.
 
@@ -115,10 +119,9 @@ import pandas as pd
 import numpy as np
 ser = pd.Series(np.take(list('abcdefgh'), np.random.randint(8, size=30)))
 ```
+::: -->
 
-:::
-
-
+<!-- 
 ::: {#exr-}
 Please use `pd.cut` or `pd.qcut` to bin the Series `ser` into 10 equal deciles. You may use the following `ser` as an example.
 
@@ -126,9 +129,7 @@ Please use `pd.cut` or `pd.qcut` to bin the Series `ser` into 10 equal deciles. 
 import pandas as pd
 ser = pd.Series(np.random.random(20))
 ```
-
-
-:::
+::: -->
 
 
 ::: {#exr-}
@@ -176,11 +177,11 @@ df = pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/Cars
 
 
 
-
+<!-- 
 ::: {#exr-}
 Replace the spaces in `my_str = 'dbc deb abed gade'` with the least frequent character.
-:::
-
+::: -->
+<!-- 
 
 ::: {#exr-}
 Suppress scientific notations like `e-03` in `df` and print up to 4 numbers after decimal.
@@ -192,9 +193,9 @@ df = pd.DataFrame(np.random.random(4)**10, columns=['random'])
 df
 ```
 
-:::
+::: -->
 
-
+<!-- 
 ::: {#exr-}
 Format the values in column `random` of `df` as percentages.
 
@@ -205,82 +206,7 @@ df = pd.DataFrame(np.random.random(4), columns=['random'])
 df
 ```
 
-:::
-
-
-
-::: {#exr-}
-## Regular expressions
-Please use regular expressions to finish the following tasks.
-
-1. Match a string that has an `a` followed by zero or more `b`'s.
-2. Match a string that has an `a` followed by one or more `b`'s.
-3. Match a string that has an `a` followed by zero or one `b`.
-4. Match a string that has an `a` followed by three `b`'s.
-:::
-
-
-
-::: {#exr-}
-## More regex
-Find all words starting with `a` or `e` in a given string:
-
-```{python}
-text = "The following example creates an ArrayList with a capacity of 50 elements. Four elements are then added to the ArrayList and the ArrayList is trimmed accordingly."
-```
-
-:::
-
-
-::: {#exr-}
-## More regex
-Write a Python code to extract year, month and date from a `url1`: 
-
-```{python}
-url1= "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-beckhams-fame-rests-on-one-stupid-little-ball-josh-norman-tells-author/"
-```
-
-:::
-
-
-
-
-::: {#exr-}
-## More regex
-Please use regex to parse the following str to create a dictionary.
-```{python}
-text = r'''
-{
-    name: Firstname Lastname;
-    age: 100;
-    salary: 10000 
-}
-'''
-```
-
-
-:::
-
-
-
-::: {#exr-}
-Consider the following DataFrame.
-
-```{python}
-data = [['Evert van Dijk', 'Carmine-pink, salmon-pink streaks, stripes, flecks.  Warm pink, clear carmine pink, rose pink shaded salmon.  Mild fragrance.  Large, very double, in small clusters, high-centered bloom form.  Blooms in flushes throughout the season.'],
-        ['Every Good Gift', 'Red.  Flowers velvety red.  Moderate fragrance.  Average diameter 4".  Medium-large, full (26-40 petals), borne mostly solitary bloom form.  Blooms in flushes throughout the season.'], 
-        ['Evghenya', 'Orange-pink.  75 petals.  Large, very double bloom form.  Blooms in flushes throughout the season.'], 
-        ['Evita', 'White or white blend.  None to mild fragrance.  35 petals.  Large, full (26-40 petals), high-centered bloom form.  Blooms in flushes throughout the season.'],
-        ['Evrathin', 'Light pink. [Deep pink.]  Outer petals white. Expand rarely.  Mild fragrance.  35 to 40 petals.  Average diameter 2.5".  Medium, double (17-25 petals), full (26-40 petals), cluster-flowered, in small clusters bloom form.  Prolific, once-blooming spring or summer.  Glandular sepals, leafy sepals, long sepals buds.'],
-        ['Evita 2', 'White, blush shading.  Mild, wild rose fragrance.  20 to 25 petals.  Average diameter 1.25".  Small, very double, cluster-flowered bloom form.  Blooms in flushes throughout the season.']]
-  
-df = pd.DataFrame(data, columns = ['NAME', 'BLOOM']) 
-df 
-```
-
-Please use regex methods to find all the `()` in each columns.
-
-:::
+::: -->
 
 
 
@@ -337,21 +263,6 @@ df2 = pd.DataFrame({'pazham': ['apple', 'orange', 'pine'] * 2,
 
 
 
-::: {#exr-}
-Extract the valid emails from the series `emails`. The regex `pattern` for valid emails is provided as reference.
-
-```{python}
-import pandas as pd
-emails = pd.Series(['buying books at amazom.com',
-                    'rameses@egypt.com',
-                    'matt@t.co',
-                    'narendra@modi.com'])
-pattern = '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}'
-```
-
-:::
-
-
 
 ::: {#exr-}
 Consider the following DataFrame.
@@ -386,25 +297,6 @@ df = pd.DataFrame({
 :::
 
 
-::: {#exr-}
-From `ser = pd.Series(['Apple', 'Orange', 'Plan', 'Python', 'Money'])`, find the words that contain at least 2 vowels.
-:::
-
-
-
-::: {#exr-}
-Please download the [given file](assests/datasets/test_emails.txt) with sample emails, and use the following code to load the file and save it to a string `content`.
-```{python}
-with open('assests/datasets/test_emails.txt', 'r') as f:
-    content = f.read()
-```
-Please use regex to play with `content`.
-
-1. Get all valid email address in `content`, from both the header part or the body part.
-2. There are two emails in `content`. Please get the sender's email and the receiver's email from `content`.
-3. Please get the sender's name.
-4. Please get the subject of each email.
-:::
 
 
 

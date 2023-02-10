@@ -1,0 +1,228 @@
+---
+format:
+   html:
+     code-line-numbers: false
+     code-block-border-left: false 
+---
+
+# Regular expression {#sec-re}
+
+*Regular expressions* provide a flexible way to search or match string patterns in text. A single expression, commonly called a *regex*, is a string formed according to the regular expression language. Python’s built-in `re` module is responsible for applying regular expressions to strings.
+
+For details of the regular expression language in Python, please read the official documents from [here](https://docs.python.org/3/library/re.html). There are also many great websites for learning regex. [This](https://regex101.com/) is one example.
+
+We will briefly mentioned a few rules here.
+
+
+- `.`: matches any character except a newline. 
+- `\d`: matches any digit. It is the same as `[0-9]`.
+- `\D`: matches any characters that are NOT `\d`. It is the same as `[^0-9]`.
+- `\w`: matches any alphabatic or numeric character. It is the same as `[a-zA-Z0-9_]`.
+- `\W`: matches any characters that are NOT `\w`.
+- `\s`: matches any whitespaces. It is the same as `[\t\n\r\f\v]`.
+- `\S`: mathces any characters that are not `\s`.
+- `\A`: matches the start of the string.
+- `\Z`: matches the end of the string.
+
+- `*`: Causes the resulting RE to match 0 or more repetitions of the preceding RE, as many repetitions as are possible. 
+- `+`: Causes the resulting RE to match 1 or more repetitions of the preceding RE, as many repetitions as are possible.
+- `?`: Causes the resulting RE to match 0 or 1 repetitions of the preceding RE. 
+- `*?`, `+?`, `??`: The `*`, `+`, and `?` qualifiers are all greedy; they match as much text as possible. Adding `?` after the qualifier makes it perform the match in non-greedy or minimal fashion; as few characters as possible will be matched.
+- `{m}`: Specifies that exactly m copies of the previous RE should be matched.
+- `{m,n}`: Causes the resulting RE to match from `m` to `n` repetitions of the preceding RE, attempting to match as many repetitions as possible. 
+- `{m,n}?`: Causes the resulting RE to match from `m` to `n` repetitions of the preceding RE, attempting to match as few repetitions as possible. 
+- `[]`: Used to indicate a set of characters.
+- `()`: set groups.
+
+
+
+::: {.callout-note}
+To search multiple characters simutanously, you may use `[]`. For example, `[abc]` means either `a` or `b` or `c`. However, `[]` doesn't recognize special characters, so `[\s|\w]` means either `\` or `s` or `\` or `w`, instead of the pattern `\s` or `\w`.
+
+To search such a pattern, you may use `(|)`. For example, `(\s|\w)` means either `\s` or `\w` satisfies the pattern.
+:::
+
+::: {#exm-}
+
+```{python}
+import re
+text = "foo bar\t baz \tqux"
+pattern = '\s+'
+regex = re.compile(pattern)
+regex.split(text)
+```
+
+:::
+
+- `.match()`
+- `.search()`
+- `.findall()`
+- `.split()`
+- `.sub()`
+
+We can use `()` to specify groups, and use `.groups()` to get access to the results.
+
+
+::: {#exm-}
+
+```{python}
+import re
+pattern = r'([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})'
+regex = re.compile(pattern, flags=re.IGNORECASE)
+m = regex.match('wesm@bright.net')
+m.groups()
+```
+
+:::
+
+To use regex to DataFrame and Series, you may directly apply `.match`, `.findall`, `.replace` after `.str`, with the regex pattern as one of the arguments.
+
+`.extract` is a method that is not from `re`. It is used to extract the matched groups and make them as a DataFrame. 
+
+::: {#exm-}
+```{python}
+import pandas as pd
+import numpy as np
+mnames = ['movie_id', 'title', 'genres']
+movies = pd.read_table('assests/datasets/movies.dat', sep='::',
+                       header=None, names=mnames, engine="python",
+                       encoding='ISO-8859-1')
+
+pattern = r'([a-zA-Z0-9_\s,.?:;\']+)\((\d{4})\)'
+movies = movies.join(movies.title.str.extract(pattern).rename(columns={0: 'movie title', 1: 'year'}))
+```
+:::
+
+
+
+```{python}
+#| eval: false
+#| echo: false
+from functools import reduce
+genresdummylist = df['genres'].str.extractall(r"'(\w+)'").unstack()
+dummylist = list()
+for i in genresdummylist.columns:
+    dummylist.append(pd.get_dummies(genresdummylist[i]))
+
+dummy = reduce(lambda x, y: x.add(y, fill_value=0), dummylist).astype(int)
+df = pd.merge(df, dummy, left_index=True, right_index=True)
+
+```
+
+
+
+
+
+
+::: {#exr-}
+## Regular expressions
+Please use regular expressions to finish the following tasks.
+
+1. Match a string that has an `a` followed by zero or more `b`'s.
+2. Match a string that has an `a` followed by one or more `b`'s.
+3. Match a string that has an `a` followed by zero or one `b`.
+4. Match a string that has an `a` followed by three `b`'s.
+:::
+
+
+
+::: {#exr-}
+## More regex
+Find all words starting with `a` or `e` in a given string:
+
+```{python}
+text = "The following example creates an ArrayList with a capacity of 50 elements. Four elements are then added to the ArrayList and the ArrayList is trimmed accordingly."
+```
+
+:::
+
+
+::: {#exr-}
+## More regex
+Write a Python code to extract year, month and date from a `url1`: 
+
+```{python}
+url1= "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-beckhams-fame-rests-on-one-stupid-little-ball-josh-norman-tells-author/"
+```
+
+:::
+
+
+
+
+::: {#exr-}
+## More regex
+Please use regex to parse the following str to create a dictionary.
+```{python}
+text = r'''
+{
+    name: Firstname Lastname;
+    age: 100;
+    salary: 10000 
+}
+'''
+```
+
+
+:::
+
+
+
+::: {#exr-}
+Consider the following DataFrame.
+
+```{python}
+data = [['Evert van Dijk', 'Carmine-pink, salmon-pink streaks, stripes, flecks.  Warm pink, clear carmine pink, rose pink shaded salmon.  Mild fragrance.  Large, very double, in small clusters, high-centered bloom form.  Blooms in flushes throughout the season.'],
+        ['Every Good Gift', 'Red.  Flowers velvety red.  Moderate fragrance.  Average diameter 4".  Medium-large, full (26-40 petals), borne mostly solitary bloom form.  Blooms in flushes throughout the season.'], 
+        ['Evghenya', 'Orange-pink.  75 petals.  Large, very double bloom form.  Blooms in flushes throughout the season.'], 
+        ['Evita', 'White or white blend.  None to mild fragrance.  35 petals.  Large, full (26-40 petals), high-centered bloom form.  Blooms in flushes throughout the season.'],
+        ['Evrathin', 'Light pink. [Deep pink.]  Outer petals white. Expand rarely.  Mild fragrance.  35 to 40 petals.  Average diameter 2.5".  Medium, double (17-25 petals), full (26-40 petals), cluster-flowered, in small clusters bloom form.  Prolific, once-blooming spring or summer.  Glandular sepals, leafy sepals, long sepals buds.'],
+        ['Evita 2', 'White, blush shading.  Mild, wild rose fragrance.  20 to 25 petals.  Average diameter 1.25".  Small, very double, cluster-flowered bloom form.  Blooms in flushes throughout the season.']]
+  
+df = pd.DataFrame(data, columns = ['NAME', 'BLOOM']) 
+df 
+```
+
+Please use regex methods to find all the `()` in each columns.
+
+:::
+
+
+::: {#exr-}
+From `ser = pd.Series(['Apple', 'Orange', 'Plan', 'Python', 'Money'])`, find the words that contain at least 2 vowels.
+:::
+
+
+
+::: {#exr-}
+Please download the [given file](assests/datasets/test_emails.txt) with sample emails, and use the following code to load the file and save it to a string `content`.
+```{python}
+with open('assests/datasets/test_emails.txt', 'r') as f:
+    content = f.read()
+```
+Please use regex to play with `content`.
+
+1. Get all valid email address in `content`, from both the header part or the body part.
+2. There are two emails in `content`. Please get the sender's email and the receiver's email from `content`.
+3. Please get the sender's name.
+4. Please get the subject of each email.
+:::
+
+
+
+
+
+
+::: {#exr-}
+Extract the valid emails from the series `emails`. The regex `pattern` for valid emails is provided as reference.
+
+```{python}
+import pandas as pd
+emails = pd.Series(['buying books at amazom.com',
+                    'rameses@egypt.com',
+                    'matt@t.co',
+                    'narendra@modi.com'])
+pattern = '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}'
+```
+
+:::

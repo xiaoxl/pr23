@@ -1,0 +1,26 @@
+
+## Example: Movies
+
+Below we explore the MovieLens 1M datasets. You may download it from this [link](assests/datasets/movies.dat). 
+
+```{python}
+import pandas as pd
+import numpy as np
+mnames = ['movie_id', 'title', 'genres']
+movies = pd.read_table('assests/datasets/movies.dat', sep='::',
+                       header=None, names=mnames, engine="python",
+                       encoding='ISO-8859-1')
+
+all_genres = list()
+movies['genres'].map(lambda x: all_genres.extend(x.split('|')))
+
+genres = pd.unique(all_genres)
+
+dummies = pd.DataFrame(np.zeros((len(movies), len(genres))), columns=genres)
+
+for i, gen in enumerate(movies.genres):
+    indices = dummies.columns.get_indexer(gen.split('|'))
+    dummies.iloc[i, indices] = 1
+
+movies_windic = movies.join(dummies.add_prefix('Genre_'))
+```

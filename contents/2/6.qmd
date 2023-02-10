@@ -112,6 +112,4 @@ transform_dict = {s[i]: s[(i+1)%5] for i in range(len(s))}
 
 
 
-### `re`
-
 

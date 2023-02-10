@@ -23,6 +23,9 @@ Since `DataFrame` is more like a table, the biggest questions here is not to do 
 {{< include 4.qmd >}}
 
 
+{{< include 5.qmd >}}
+
+
 {{< include ex.qmd >}}
 
 

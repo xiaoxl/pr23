@@ -63,6 +63,7 @@ book:
     - contents/app/virtenv.qmd
     - contents/app/concepts.qmd
     - contents/app/r.qmd
+    - contents/app/re.qmd
   sidebar:
     # style: docked
     pinned: true
