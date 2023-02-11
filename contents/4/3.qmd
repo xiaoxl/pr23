@@ -1,11 +1,214 @@
 
 ## Data Wrangling
 
+### Tidy data
+
+
+The same underlying data can be represented in multiple ways. To better study the data, it is better to make these data *tidy*.
+
+::: {#def-}
+A dataset is *tidy* if
+
+1. Each variable have its own column.
+2. Each observation have its own row.
+3. Each value have its oven cell.
+:::
+
+
+
+::: {.callout-note collapse="true"}
+# Typical examples of tidydata
+
+These `DataFrame` are provided by `tidyr`. We will talk about them again when we get to R.
+
+
+1. `table1`
+
+
+```{python}
+#| echo: false
+import pandas as pd
+table1 = pd.read_csv('assests/datasets/table1.csv', index_col='Unnamed: 0')
+table1
+```
+
+2. `table2`
+
+```{python}
+#| echo: false
+import pandas as pd
+table2 = pd.read_csv('assests/datasets/table2.csv', index_col='Unnamed: 0')
+table2
+```
+
+3. `table3`
+
+```{python}
+#| echo: false
+import pandas as pd
+table3 = pd.read_csv('assests/datasets/table3.csv', index_col='Unnamed: 0')
+table3
+```
+
+
+4. Spread across two `DataFrame`s: `table4a` and `table4b`:
+
+```{python}
+#| echo: false
+import pandas as pd
+table4a = pd.read_csv('assests/datasets/table4a.csv', index_col='Unnamed: 0')
+table4b = pd.read_csv('assests/datasets/table4b.csv', index_col='Unnamed: 0')
+table4a
+```
+
+```{python}
+#| echo: false
+table4b
+```
+
+
+Among all these `DataFrame`s, only `table1` is tidy.
+
+:::
+
+
+
+These three conditions are interrelated because it is impossible to only satisfy two of the three. In pratical, we need to follow the instructions:
+
+1. Put each dataset in a `DataFrame`.
+2. Put each variable in a column.
+3. Every row is about one obeservation.
+
+*Tidy* data is a consistent way to organize your data. The main advantages are:
+
+1. It is one consistent way of storing data. In other words, this is a consistent data structure that can be used in many cases.
+2. To placing variables in columns enables Python to do vectorized operations.
+
+
+
+Most datasets are untidy, since tidy data is usually not intuitive for collecting. Therefore raw data which are collected by some naive ideas are usually not tidy. 
+
+Untidy data are usually:
+
+- One variable might be spread across multiple columns.
+- One observation might be scattered across multiple rows.
+
+
+
+::: {.callout-note collapse="true"}
+# `.melt()` method
+
+A common problem is that the column names are not names of variables, but values of a variable. For example, `table4a` above has columns `1999` and `2000`. These two names are actually the values of a variable `year`. In addition, each row represents two observations, not one.
+
+```{python}
+#| echo: false
+table4a
+```
+To tidy this type of dataset, we need to gather those columns into a new pair of variables. We need three parameters:
+
+- The set of columns that represent values. In this case, those are `1999` and `2000`.
+- The name of the variable. In this case, it is `year`. 
+-The name of the variable whose values are spread over the cells. In this case, it is the number of `cases`. 
+
+Then we apply `.melt()`.
+
+```{python}
+table4a.melt(id_vars=['country'],
+             value_vars=['1999', '2000'],
+             var_name='year',
+             value_name='cases')
+```
+
+
+We can do the similar thing to `table4b`. 
+
+```{python}
+table4b.melt(id_vars=['country'],
+             value_vars=['1999', '2000'],
+             var_name='year',
+             value_name='population')
+```
+
+
+::: {.callout-tip}
+In Python there are multiple different ways to change a wide `DataFrame` to be longer like `.melt()`. Among all of them, `.melt()` is the most common one.
+:::
+
+:::
+
+
+
+::: {.callout-note collapse="true"}
+# `.pivot()` method
+
+
+Another issuse is that an observation is scattered across multiple rows. Take `table2` as an example. 
+
+An observation is a country in a year, but each observation is spread across two rows.
+
+```{python}
+table2
+```
+We could apply `.pivot()` to make it tidy. Here we need two arguments.
+
+- The column that contains variable names. Here, it’s `type`.
+- The column that contains values forms multiple variables. Here, it’s `count`.
+
+
+```{python}
+table2.pivot(index=['country', 'year'], columns='type', values='count')
+```
+
+
+<!-- 
+
+
+`pivot_wider()` is an updated approach to `spread()`, designed to be both simpler to use and to handle more use cases. We recommend you use `pivot_wider()` for new code; `spread()` isn't going away but is no longer under active development. -->
+
+:::
+
+
+
+::: {.callout-note collapse="true"}
+# Split and combine columns
+
+If we would like to split one columns into multiple columns since there are more than one values in a cell, we could use `Series` string method to split it. 
+
+
+```{python}
+table3['newrate'] = table3['rate'].str.split('/')
+table3
+```
+
+If we prepare two columns from the beginning, we could directly get two columns.
+
+```{python}
+table3[['cases', 'population']] = table3['rate'].str.split('/', expand=True)
+table3.drop(columns=['rate', 'newrate'], inplace=True)
+table3
+```
+
+
+
+Similarly we could also combine columns just as they are strings.
+
+```{python}
+table3['another_rate'] = table3['cases']+'/'+table3['population']
+table3
+```
+
+
+:::
+
+
+
+
 ### Hierarchical indexing {#sec-hierindexing}
 Pandas support a more complex indexing system, that the index may have multiple levels. See the following example.
 
 
-::: {$exm-}
+::: {.callout-note collapse="true"}
+# An example
 
 ```{python}
 import pandas as pd
@@ -53,7 +256,8 @@ For DataFrame the index for both axes can be multiindex. The usual indexing way 
 
 
 
-::: {#exm-}
+::: {.callout-note collapse="true"}
+# An example
 
 ```{python}
 import pandas as pd
@@ -104,9 +308,12 @@ df.xs(3, level=1, drop_level=False)
 
 
 
-### Combining and Merging Datasets
 
-#### `merge()`
+### Combining and Merging Datasets
+`merge` and `concat` are the two most common ways to combine datasets. 
+
+::: {.callout-note collapse="true"}
+# `pd.merge()` function
 Merge combines datasets by linking rows using one or more keys. This is from relational databases (e.g., SQL-based). 
 
 Here are some examples. 
@@ -245,7 +452,18 @@ deck = pd.merge(suit, face, how='cross')
 
 
 
-#### `concat()`
+:::
+
+
+
+
+
+
+
+
+
+::: {.callout-note collapse="true"}
+# `pd.concat()` function
 The `concat()` function (in the main pandas namespace) performs concatenation operations along an axis while performing optional set logic (union or intersection) of the indexes (if any) on the other axes.  
 
 
@@ -309,3 +527,5 @@ deck = pd.concat(decklist, ignore_index=True)
 ```
 
 :::
+:::
+

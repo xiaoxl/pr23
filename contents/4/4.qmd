@@ -173,36 +173,33 @@ print(data.apply(f))
 :::
 
 
-### Sorting and Ranking
+<!-- ### Sorting and Ranking
 
 - `.sort_values(by=)`
-- `.rank(ascending=, method=)`
+- `.rank(ascending=, method=)` -->
 
 
 
 
-### Summarizing and Computing Descriptive Statistics
+<!-- ### Summarizing and Computing Descriptive Statistics
 
 - `sum`, `cumsum`
 - `mean`, `median`
 - `.describe()`
-- `.cov`, `.corr`
-
-### Unique Values, Value Counts, and Membership
-- `unique`
-- `value_counts`
+- `.cov`, `.corr` -->
 
 
 
-### Reading and Writing Data in Text Format
+
+<!-- ### Reading and Writing Data in Text Format
 - `read_csv`
 - `read_excel`
-- `df.to_csv`
+- `df.to_csv` -->
 
 
-### Copies and views
+<!-- ### Copies and views
 
-- `inplace`
+- `inplace` -->
 
 
 

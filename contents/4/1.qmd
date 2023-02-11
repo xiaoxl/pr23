@@ -98,13 +98,62 @@ The title is all. A few remarks:
 
 :::
 
+::: {.callout-note collapse="true"}
+# Reset the index by `.reset_index()`
+
+The title is all. A few remarks:
+
+1. The new index is integers starting from `0`.
+2. `dorp` is an argument to control whether the original index is dropped or added back to the `DataFrame` as a column. The default is `False`, which means that by default the original index will be added back to the `DataFrame`. 
+:::
+
 ### Look at the `DataFrame`
 The following methods can be used to look at the `DataFrame`. Their syntax is very simple. Please try them by yourselves.
 
-- `.head()`
-- `.tail()`
-- `.describe()`
-- `.info()`
+- `.head()`: show the first few rows.
+- `.tail()`: show the last few rows.
+- `.describe()`: show the basic statistics of each columns.
+
+These are methods for `Series` which might be helpful to understand the data. 
+
+- `.unique()`
+- `.value_counts()`
+
+
+::: {.callout-note collapse="true"}
+# An example
+
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame({'a': [1, 2, 3, 1, 2, 2, 1, 1, 1],
+                   'b': [3, 1, 1, 2, 4, 5, 2, 1, 3]})
+df.head(3)
+```
+
+```{python}
+df.tail()
+```
+
+```{python}
+df.describe()
+```
+
+```{python}
+df['a'].unique()
+```
+
+```{python}
+df['b'].value_counts()
+```
+
+:::
+
+
+
+
+
 
 
 

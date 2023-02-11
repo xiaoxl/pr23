@@ -208,7 +208,17 @@ df
 
 ::: -->
 
+<!-- 
+::: {#exr-splitacolumnofadf}
+`table3` can be downloaded from [here](assests/datasets/table3.csv). Please use the following code to get the `DataFrame`.
 
+```{python}
+import pandas as pd
+table3 = pd.read_csv('assests/datasets/table3.csv', index_col='Unnamed: 0')
+table3['newrate'] = table3['rate'].str.split('/')
+```
+Please read cases and populations from the column `newrate` and write them into columns to make the original `table3` tidy.
+::: -->
 
 
 ::: {#exr-}
