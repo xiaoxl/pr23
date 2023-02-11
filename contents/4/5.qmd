@@ -1,4 +1,19 @@
 ## Read and write files
 
+### Read files
+
+In most cases we will read data from a `csv` file or an `excel` file. 
+
+
+::: {.callout-note collapse="true"}
+# Read `csv` files
+A `csv` file is a plain txt file, with a fixed format. It consists of rows and columns. Rows are separated by newline symbol, which is usually `\n`. Columns are separated by a separator. Common separators include empty spaces` `, comma `,`, semi-column `;`, tab space `\t`. There might be other speical separators, depending on the creators of the specific `csv` files. 
+
+In `pandas`, you may use `pd.read_csv()` function to read a `csv` file. 
+
+1. , that 
+
+
+:::
 
 

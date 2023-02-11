@@ -180,7 +180,7 @@ table3['newrate'] = table3['rate'].str.split('/')
 table3
 ```
 
-If we prepare two columns from the beginning, we could directly get two columns.
+If we prepare two columns from the beginning, we could directly get two columns. Note that the argument `expand=True` means that we want to get a `DataFrame` by expanding dimensionality. More details can be found [here](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.split.html).
 
 ```{python}
 table3[['cases', 'population']] = table3['rate'].str.split('/', expand=True)

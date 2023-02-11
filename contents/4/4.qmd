@@ -10,10 +10,13 @@ We would like to apply group operations based on the split-apply-combine model.
 - Finally the results of all those function applications are combined into a result object. We may apply groupby functions directly as methods to groupby objects.The result is the combined result object.
 
 
-::: {#exm-}
+::: {.callout-note collapse="true"}
+# An example
 
 ```{python}
 import pandas as pd
+import numpy as np
+
 df = pd.DataFrame({'key1' : ['a', 'a', 'b', 'b', 'a'],
                    'key2' : ['one', 'two', 'one', 'two', 'one'],
                    'data1' : np.random.randn(5),
@@ -28,7 +31,7 @@ grouped
 ```
 What we get is a groupby object and we could apply group functions to it.
 
-The method to look at each group is `.get_group`.
+The method to look at each group is `.get_group()`.
 ```{python}
 grouped.get_group('a')
 ```
@@ -60,7 +63,9 @@ dict(list(grouped))
 
 :::
 
-### More aggregation functions
+### Built-in aggregation functions
+
+The following functions directly work with groupby objects. You may try them by yourselves.
 
 - `.describe()`
 - `.count()`
@@ -70,8 +75,88 @@ dict(list(grouped))
 - `.std()`, `.var()`
 - `.min()`, `.max()`
 - `.prod()`
-- `first()`, `.last()`
-- `.agg()`
+- `.first()`, `.last()`
+<!-- - `.agg()` -->
+
+
+
+### Function Application and Mapping
+We may apply functions to each row/column of a `DataFrame`. If the function is a built-in function that is compatible with `DataFrame`, you can directly call the function that it will be applied automatically to each row/column. If it is not, we can call `apply` to get the desired result. 
+
+
+::: {.callout-note collapse="true"}
+# `map`
+To understand the behaviour of `map`, you may treat it as a loop, through a `Series`. `pandas` goes through each item in the `Series` and perform operations as instructed. If there is a returned value, it will be recorded along the `Sereis`.
+
+
+```{python}
+import pandas as pd
+
+ind = pd.Series(['Ohio', 'Colorado', 'New York'])
+ind
+```
+
+```{python}
+ind.map(lambda x: x[:4].upper())
+```
+In the example we go through each item in `ind`. Each item is a string. We pick the first 4 characters, and change them to be upper case.
+
+Note that this operation can also be done by string method. These are two different methods but the results are the same.
+
+```{python}
+ind.str[:4].str.upper()
+```
+
+:::
+
+
+::: {.callout-note collapse="true"}
+# `apply`
+`apply` is very similar to `map`, but for `DataFrame`. The default setting is to go through each column of a `DataFrame`, and the input is the column. You may use the argument `axis=1` to change it to go through each row. Please see the following example. 
+
+::: {#exm-}
+
+```{python}
+import pandas as pd
+data = pd.DataFrame(np.random.rand(4, 4),
+                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
+                    columns=['one', 'two', 'three', 'four'])
+data
+```
+
+```{python}
+f = lambda x: x.max() - x.min()
+
+data.apply(f)
+```
+
+Change `axis` to find the range for each row.
+
+```{python}
+data.apply(f, axis=1)
+```
+
+:::
+
+
+We can use more complicated function to get more complicated result.
+
+::: {#exm-}
+
+```{python}
+data = pd.DataFrame(np.random.rand(4, 4),
+                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
+                    columns=['one', 'two', 'three', 'four'])
+
+f = lambda x: pd.Series([x.max(), x.min()], index=['max', 'min'])
+
+data.apply(f)
+```
+
+:::
+
+
+:::
 
 
 ### Some examples
@@ -88,20 +173,40 @@ df = pd.DataFrame({'location': ['East', 'East', 'East', 'East',
                    index=['Ohio', 'New York', 'Vermont', 'Florida',
                           'Oregon', 'Nevada', 'California', 'Idaho'])
 df.loc[['Vermont', 'Nevada', 'Idaho'], 'data'] = np.nan
+df
 ```
 
-We would like to fill in NA values with the mean from each group.
+We would like to fill in NA values with the mean from each `location` group.
+
+::: {.callout-tip collapse="true"}
+# Tips
 
 ```{python}
-df.groupby('location').apply(lambda x: x.fillna(x.mean()))
+#| warning: false
+df.groupby('location', group_keys=False).apply(lambda x: x.fillna(x.mean()))
 ```
+The argument `group_keys=False` refers to the setting whether you want to `group_keys` to be presented. If it is `True`, the result looks like this.
+
+```{python}
+#| warning: false
+df.groupby('location', group_keys=True).apply(lambda x: x.fillna(x.mean()))
+```
+
+:::
+
 
 We could also fill in NA values with predefined values, similar to the non-groupby case.
 
+::: {.callout-tip collapse="true"}
+# Tips
 ```{python}
-df.groupby('location').apply(lambda x: x.fillna({'East': 0.1,
-                                                 'West': -0.5}[x.name]))
+#| warning: false
+predefined = {'East': 0.1, 'West': -0.5}
+df.groupby('location', group_keys=True).apply(lambda x: x.fillna(predefined[x.name]))
 ```
+
+:::
+
 
 :::
 
@@ -110,67 +215,6 @@ df.groupby('location').apply(lambda x: x.fillna({'East': 0.1,
 
 
 
-
-
-
-### Essential functions
-- Arithmetic and Data Alignment
-Elements of the same index and columns will be computed. By default, if any entry is `nan`, the answer will be `nan`. You may use `fill_value` argument to fill the empty slots.
-
-
-::: {#exm-}
-
-```{python}
-import pandas as pd
-import numpy as np
-df1 = pd.DataFrame(np.arange(12.).reshape((3, 4)), columns=list('abcd'))
-df2 = pd.DataFrame(np.arange(20.).reshape((4, 5)), columns=list('abcde'))
-df2.loc[1, 'b'] = np.nan
-
-df1.add(df2, fill_value=0)
-```
-
-:::
-
-Relatedly, when reindexing a Series or DataFrame, you can also specify a `fill_value`.
-
-### Function Application and Mapping
-We may apply functions to each row/column of a DataFrame. If the function is built-in function that is compatible with DataFrame, you can directly call the function that it will be applied automatically to each row/column. If it is not, we can call `apply` to get the desired result. 
-
-
-::: {#exm-}
-
-```{python}
-import pandas as pd
-data = pd.DataFrame(np.random.rand(4, 4),
-                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
-                    columns=['one', 'two', 'three', 'four'])
-
-f = lambda x: x.max() - x.min()
-
-print(data.apply(f))
-print(data.apply(f, axis='columns'))
-```
-
-:::
-
-
-We can use more complicated function to get more complicated result.
-
-::: {#exm-}
-
-```{python}
-import pandas as pd
-data = pd.DataFrame(np.random.rand(4, 4),
-                    index=['Ohio', 'Colorado', 'Utah', 'New York'],
-                    columns=['one', 'two', 'three', 'four'])
-
-f = lambda x: pd.Series([x.max(), x.min()], index=['max', 'min'])
-
-print(data.apply(f))
-```
-
-:::
 
 
 <!-- ### Sorting and Ranking
