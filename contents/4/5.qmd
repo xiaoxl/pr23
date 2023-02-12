@@ -11,7 +11,9 @@ A `csv` file is a plain txt file, with a fixed format. It consists of rows and c
 
 In `pandas`, you may use `pd.read_csv()` function to read a `csv` file. 
 
-1. , that 
+1. The argument `sep` is used to set separators. The default is `,`.
+2. The argument `names` is used to set the column names. Otherwise the column names will be generated and is highly unlikely to be directly usable.
+3. The argument `header` will choose the header row and the 
 
 
 :::

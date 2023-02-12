@@ -104,7 +104,7 @@ The title is all. A few remarks:
 The title is all. A few remarks:
 
 1. The new index is integers starting from `0`.
-2. `dorp` is an argument to control whether the original index is dropped or added back to the `DataFrame` as a column. The default is `False`, which means that by default the original index will be added back to the `DataFrame`. 
+2. `drop` is an argument to control whether the original index is dropped or added back to the `DataFrame` as a column. The default is `False`, which means that by default the original index will be added back to the `DataFrame`. 
 :::
 
 ### Look at the `DataFrame`
