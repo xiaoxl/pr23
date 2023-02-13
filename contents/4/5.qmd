@@ -13,9 +13,116 @@ In `pandas`, you may use `pd.read_csv()` function to read a `csv` file.
 
 1. The argument `sep` is used to set separators. The default is `,`.
 2. The argument `names` is used to set the column names. Otherwise the column names will be generated and is highly unlikely to be directly usable.
-3. The argument `header` will choose the header row and the 
+3. The argument `header` will choose the header row and only parse the lines after it. If there is no header, you may set `header=None`.
+4. The argument `index_col` is used to set the index column(s). If it is `False`, the index will be automatically generated from `0`. If it is set to a list of columns, the result will be a multi-index system.
 
+You may read the [document](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) for more arguments.
+
+Please see the following example.
+
+::: {#exm-}
+The file is [`yob1880.txt`](assests/datasets/yob1880.txt). This is from the US Baby names dataset. It provides the counts of each US baby names born in 1880. You may use any txt editor to open the file. The first few rows are like the following:
+
+```
+Mary,F,7065
+Anna,F,2604
+Emma,F,2003
+Elizabeth,F,1939
+Minnie,F,1746
+Margaret,F,1578
+```
+It seems that `sep` is the default `,`. So you may directly directly read it into a `DataFrame` by `pd.read_csv()`.
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv('assests/datasets/yob1880.txt')
+df.head()
+```
+Please look at the header of the `DataFrame`. It is supposed to be the first data. Therefore there is no header in the original file. So the correct way to read the file is 
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv('assests/datasets/yob1880.txt',
+                 header=None,
+                 names=['Name', 'Sex', 'Counts'])
+df.head()
+```
+
+:::
 
 :::
 
 
+
+
+
+::: {.callout-note collapse="true"}
+# Read Excel files
+`pandas` provides `pd.read_excel()` function to read Excel files. Since Excel files are much more complicated than `csv` files, it requires more setting. One of the most important different setting is the engine. `pandas` needs you to specify a way (an engine) to understand Excel files. For the newer Excel file `.xlsx`, it is recommended to use the engine `openpyxl`. 
+
+If you don't have `openpyxl` installed, you may use the following code to install it.
+
+```{.bash}
+pip install openpyxl
+```
+
+Many options, like `header`, `names` and `index_col`, are very similar to `pd.read_csv()`. Some additional remarks:
+
+1. There is no `sep` argument since columns are not separated based on separators.
+2. The argument `sheet_name` is used to choose which sheet(s) you want to read.
+3. The argument `nrows` is used to set the number of rows to parse.
+
+You may read the [document](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) for more arguments.
+
+
+::: {#exm-}
+The file can be downloaded from [here](assests/datasets/prepost.xlsx). This is the result of the Pre-Post test of a class for the course COURSE1001. You may first use Microsoft Office or other spreadsheet applications to open the file to have some ideas what it look like. 
+
+Here is the screenshot of the first few columns. `Last` and `First` refers to the last name and the first name of the student, while `Last0X` and `First0X` are students' fake names.
+
+![](assests/img/20230212225803.png)  
+
+Note that this files contains two `DataFrame`s. 
+
+- The first is the result of the pretest, which is from row 3 to row 11, with the header row 2. 
+- The second is the result of the posttest, which is from row 15 to row 23, with the header row 14. 
+To read the file, the code is as follows:
+
+
+```{python}
+import pandas as pd
+
+df_pre = pd.read_excel('assests/datasets/prepost.xlsx',
+                       engine='openpyxl',
+                       header=2, 
+                       nrows=10)
+df_pre 
+```
+
+
+
+```{python}
+df_post = pd.read_excel('assests/datasets/prepost.xlsx',
+                        engine='openpyxl',
+                        header=14,
+                        nrows=10)                      
+df_post
+```
+
+It seems that the original files have an additional column `Unnamed: 13` containing `nan` values that should be dropped. Then it is not necessary to read it from the original file. Here we could use the argument `usecols` to select the first 13 columns. We only show the example of pretest result.
+
+
+```{python}
+df_pre = pd.read_excel('assests/datasets/prepost.xlsx',
+                       engine='openpyxl',
+                       header=2, 
+                       nrows=10,
+                       usecols=list(range(13)))
+df_pre 
+```
+
+:::
+
+:::

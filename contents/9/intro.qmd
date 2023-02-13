@@ -1,0 +1,32 @@
+
+
+# R for Data Sciences
+
+
+The main reference for this Chapter is @Wic2017.
+
+
+{{< include 1.qmd >}}
+
+
+{{< include 2.qmd >}}
+
+
+{{< include 3.qmd >}}
+
+
+{{< include 4.qmd >}}
+
+
+
+{{< include ex.qmd >}}
+
+
+
+
+
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

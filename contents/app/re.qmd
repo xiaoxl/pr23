@@ -42,7 +42,7 @@ To search multiple characters simutanously, you may use `[]`. For example, `[abc
 To search such a pattern, you may use `(|)`. For example, `(\s|\w)` means either `\s` or `\w` satisfies the pattern.
 :::
 
-::: {#exm-}
+::: {#exm-p1}
 
 ```{python}
 import re
@@ -63,7 +63,7 @@ regex.split(text)
 We can use `()` to specify groups, and use `.groups()` to get access to the results.
 
 
-::: {#exm-}
+::: {#exm-p2}
 
 ```{python}
 import re
@@ -79,7 +79,7 @@ To use regex to DataFrame and Series, you may directly apply `.match`, `.findall
 
 `.extract` is a method that is not from `re`. It is used to extract the matched groups and make them as a DataFrame. 
 
-::: {#exm-}
+::: {#exm-p3}
 ```{python}
 import pandas as pd
 import numpy as np
@@ -95,7 +95,7 @@ movies = movies.join(movies.title.str.extract(pattern).rename(columns={0: 'movie
 
 
 
-```{python}
+<!-- ```{python}
 #| eval: false
 #| echo: false
 from functools import reduce
@@ -107,15 +107,15 @@ for i in genresdummylist.columns:
 dummy = reduce(lambda x, y: x.add(y, fill_value=0), dummylist).astype(int)
 df = pd.merge(df, dummy, left_index=True, right_index=True)
 
-```
+``` -->
 
 
 
 
 
 
-::: {#exr-}
-## Regular expressions
+::: {#exr-pp5}
+# Regular expressions
 Please use regular expressions to finish the following tasks.
 
 1. Match a string that has an `a` followed by zero or more `b`'s.
@@ -126,8 +126,8 @@ Please use regular expressions to finish the following tasks.
 
 
 
-::: {#exr-}
-## More regex
+::: {#exr-m1}
+# More regex
 Find all words starting with `a` or `e` in a given string:
 
 ```{python}
@@ -137,8 +137,8 @@ text = "The following example creates an ArrayList with a capacity of 50 element
 :::
 
 
-::: {#exr-}
-## More regex
+::: {#exr-m2}
+# More regex
 Write a Python code to extract year, month and date from a `url1`: 
 
 ```{python}
@@ -150,8 +150,8 @@ url1= "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-
 
 
 
-::: {#exr-}
-## More regex
+::: {#exr-m3}
+# More regex
 Please use regex to parse the following str to create a dictionary.
 ```{python}
 text = r'''
@@ -168,7 +168,8 @@ text = r'''
 
 
 
-::: {#exr-}
+::: {#exr-pp1}
+
 Consider the following DataFrame.
 
 ```{python}
@@ -188,13 +189,15 @@ Please use regex methods to find all the `()` in each columns.
 :::
 
 
-::: {#exr-}
+::: {#exr-pp2}
+
 From `ser = pd.Series(['Apple', 'Orange', 'Plan', 'Python', 'Money'])`, find the words that contain at least 2 vowels.
 :::
 
 
 
-::: {#exr-}
+::: {#exr-pp3}
+
 Please download the [given file](assests/datasets/test_emails.txt) with sample emails, and use the following code to load the file and save it to a string `content`.
 ```{python}
 with open('assests/datasets/test_emails.txt', 'r') as f:
@@ -213,7 +216,8 @@ Please use regex to play with `content`.
 
 
 
-::: {#exr-}
+::: {#exr-pp4}
+
 Extract the valid emails from the series `emails`. The regex `pattern` for valid emails is provided as reference.
 
 ```{python}

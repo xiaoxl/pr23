@@ -3,16 +3,52 @@
 
 ## Example: Movies
 
-Below we explore the MovieLens 1M datasets. You may download it from this [link](assests/datasets/movies.dat). 
+Below we explore the MovieLens 1M datasets. You may download it from this [link](assests/datasets/movies.dat). This is a `.dat` file, and you may use the following code to read it into a `DataFrame`.
 
 ```{python}
 import pandas as pd
-import numpy as np
 mnames = ['movie_id', 'title', 'genres']
 movies = pd.read_table('assests/datasets/movies.dat', sep='::',
                        header=None, names=mnames, engine="python",
                        encoding='ISO-8859-1')
+movies.head()
+```
 
+In this example we concentrate on exploring the genres information. We first want to find all genres in this dataset. The idea is:
+
+- split each item in the `genres` column by `|` to get a list.
+- go through each item in the `genres` column, and union all lists together.
+
+This can be done by the `map` function.
+
+
+::: {.callout-tip collapse="true"}
+# Tips
+
+```{python}
+all_genres = list()
+movies['genres'].map(lambda x: all_genres.extend(x.split('|')))
+```
+`all_genres` is the list of all genres (with duplicates).
+
+In the output of the above code you may see many `None` in each row. This is because the lambda function used in `map` doesn't have a return value. However after applying the function to each row, new genres information is added to the list `all_genres`.
+:::
+
+Then we would like to drop all the duplicates to get the list of all unique genres.
+
+::: {.callout-tip collapse="true"}
+# Tips
+
+```{python}
+genres = pd.unique(all_genres)
+genres
+```
+`genres` is the list of all unique genres.
+:::
+
+```{python}
+#| echo: false
+#| eval: false
 all_genres = list()
 movies['genres'].map(lambda x: all_genres.extend(x.split('|')))
 
