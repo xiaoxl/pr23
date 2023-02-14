@@ -126,3 +126,9 @@ df_pre
 :::
 
 :::
+
+### Write files
+
+We will only talk about writing in `csv`. The function is `df.to_csv()`. It is straightforward.
+
+- The argument `index` is used to control whether you want to write index into the file. The default is `True`. If the index doesn't contain any real information, we usually set it to be `False`.

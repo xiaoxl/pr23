@@ -159,6 +159,9 @@ data.apply(f)
 :::
 
 
+
+
+
 ### Some examples
 
 
@@ -167,6 +170,7 @@ Consider the following DataFrame.
 
 ```{python}
 import pandas as pd
+import numpy as np
 df = pd.DataFrame({'location': ['East', 'East', 'East', 'East',
                                 'West', 'West', 'West', 'West'],
                    'data': np.random.randn(8)},
@@ -213,6 +217,25 @@ df.groupby('location', group_keys=True).apply(lambda x: x.fillna(predefined[x.na
 
 
 
+::: {.callout-tip}
+# Chaining commands
+You may chain commands to a `DataFrame`, just like the examples shown above. If the commands are too long:
+
+- a `()` has to be used to indicate that this is a multiline command, and
+- the line is broken before the `.` sybmol.
+
+Please see the following example.
+
+```{python}
+(df.groupby('location', group_keys=False)
+    .apply(lambda x: x.fillna(predefined[x.name]))
+    .reset_index()
+    .groupby('location')
+    .max()
+)
+```
+
+:::
 
 
 
