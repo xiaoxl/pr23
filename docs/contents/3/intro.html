@@ -351,7 +351,7 @@ div.csl-indent {
 
 </header>
 
-<p>The main reference for this chapter is <span class="citation" data-cites="McK2017">[<a href="../../index.html#ref-McK2017" role="doc-biblioref">1</a>]</span>.</p>
+<p>The main reference for this chapter is <span class="citation" data-cites="McK2017">[<a href="#ref-McK2017" role="doc-biblioref">1</a>]</span>.</p>
 <section id="basics" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">3.1</span> Basics</h2>
 <p>The core data structure for <code>numpy</code> is <code>numpy.ndarray</code>. It is called <em>NumPy Nd array</em>. In most cases we will use its alias <code>array</code> for simplicity. You may treat it as a generalized version of <code>list</code>. However it can do so much more than the built-in <code>list</code>.</p>
@@ -645,7 +645,7 @@ Changing the shape of other <code>ndarrays</code>
 <li>A tuple which represents the sequence of <code>ndarrays</code>.</li>
 <li>The axis for the <code>ndarrays</code> to be concatenated. The default is <code>axis=0</code>.</li>
 </ul>
-<p>The setting for <code>axis</code> is the same as in <a href="#sec-moving-along-axis"><span>Section&nbsp;3.1.1.2</span></a>. That is, <code>axis=i</code> along the axis <code>i</code> means that all we collect all the entries with the same other indexes and different <code>i</code>th index.</p>
+<p>The setting for <code>axis</code> is the same as in <a href="#sec-moving-along-axis"><span class="quarto-unresolved-ref">sec-moving-along-axis</span></a>. That is, <code>axis=i</code> along the axis <code>i</code> means that all we collect all the entries with the same other indexes and different <code>i</code>th index.</p>
 <p>A quick example is about a 2d <code>ndarrays</code>. When talking about <code>axis=0</code>, we are looking at entries that have the same <code>1st</code> index and different <code>0th</code> index. This refers to all the entries in one column. So if we want to do something vertically, we need to set <code>axis=0</code>.</p>
 <p>Similarly, <code>axis=1</code> means that we are looking at the entries wich the same <code>0th</code> index and different <code>1st</code> index. These are entries in the same row. So <code>axis=1</code> menas horizontally. Please see the following example.</p>
 <div id="exm-" class="theorem example">
@@ -2007,7 +2007,7 @@ Tip
 </section>
 <section id="exercises" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.5</span> Exercises</h2>
-<p>Many exercises are from <span class="citation" data-cites="Pra2018">[<a href="../../index.html#ref-Pra2018" role="doc-biblioref">2</a>]</span>.</p>
+<p>Many exercises are from <span class="citation" data-cites="Pra2018">[<a href="#ref-Pra2018" role="doc-biblioref">2</a>]</span>.</p>
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3.1 </strong></span>&nbsp;</p>
 <ol type="1">
@@ -2147,7 +2147,7 @@ Tip
 </div>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
 <div id="ref-McK2017" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><span class="smallcaps">McKinney</span>, W. (2017). <em>Python for data analysis: Data wrangling with pandas, NumPy, and IPython</em>. O’Reilly Media.</div>
 </div>

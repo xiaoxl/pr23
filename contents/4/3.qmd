@@ -19,42 +19,42 @@ A dataset is *tidy* if
 ::: {.callout-note collapse="true"}
 # Typical examples of tidydata
 
-These `DataFrame` are provided by `tidyr`. We will talk about them again when we get to R.
+These `DataFrame` are provided by `tidyr`. We will talk about them again when we get to R. These tables can be downloaded by clicking the names.
 
 
-1. `table1`
+1. [`table1`](assests/datasets/table1.csv)
 
 
 ```{python}
-#| echo: false
+#| echo: true
 import pandas as pd
 table1 = pd.read_csv('assests/datasets/table1.csv', index_col='Unnamed: 0')
 table1
 ```
 
-2. `table2`
+2. [`table2`](assests/datasets/table2.csv)
 
 ```{python}
-#| echo: false
+#| echo: true
 import pandas as pd
 table2 = pd.read_csv('assests/datasets/table2.csv', index_col='Unnamed: 0')
 table2
 ```
 
-3. `table3`
+3. [`table3`](assests/datasets/table3.csv)
 
 ```{python}
-#| echo: false
+#| echo: true
 import pandas as pd
 table3 = pd.read_csv('assests/datasets/table3.csv', index_col='Unnamed: 0')
 table3
 ```
 
 
-4. Spread across two `DataFrame`s: `table4a` and `table4b`:
+4. Spread across two `DataFrame`s: [`table4a`](assests/datasets/table4a.csv) and [`table4b`](assests/datasets/table4b.csv):
 
 ```{python}
-#| echo: false
+#| echo: true
 import pandas as pd
 table4a = pd.read_csv('assests/datasets/table4a.csv', index_col='Unnamed: 0')
 table4b = pd.read_csv('assests/datasets/table4b.csv', index_col='Unnamed: 0')
@@ -62,7 +62,7 @@ table4a
 ```
 
 ```{python}
-#| echo: false
+#| echo: true
 table4b
 ```
 
