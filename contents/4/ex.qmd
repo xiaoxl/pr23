@@ -323,7 +323,5 @@ df = pd.DataFrame(["STD, City    State",
                    columns=['row'])
 ```
 
-1. Split the columns into a list with 3 entries.
-2. Make the first row (row 0) into a header.
-3. Create a new DataFrame out of the data.
+Please create a new DataFrame out of `df` by spliting it into three columns based on `,` and four spaces. In addition, the column names of the new DataFrame are given by the first row of `df`.
 :::
