@@ -556,7 +556,9 @@ Note
 </section>
 <section id="plt.bar-and-plt.barh" class="level4" data-number="5.1.3.2">
 <h4 data-number="5.1.3.2" class="anchored" data-anchor-id="plt.bar-and-plt.barh"><span class="header-section-number">5.1.3.2</span> <code>plt.bar()</code> and <code>plt.barh()</code></h4>
-<p>The two commands make vertical and horizontal bar plots, respectively. ::: {#exm-}</p>
+<p>The two commands make vertical and horizontal bar plots, respectively.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5.8 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.Series(np.random.rand(<span class="dv">16</span>), index<span class="op">=</span><span class="bu">list</span>(<span class="st">'abcdefghijklmnop'</span>))</span>
@@ -583,10 +585,10 @@ Note
 <p><img src="intro_files/figure-html/cell-16-output-2.png" class="img-fluid"></p>
 </div>
 </div>
-<p>:::</p>
+</div>
 <p>With a DataFrame, bar plots group the values in each row together in a group in bars. This is easier if we directly plot from the DataFrame.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.8 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.9 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.random.rand(<span class="dv">6</span>, <span class="dv">4</span>),</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'three'</span>, <span class="st">'four'</span>, <span class="st">'five'</span>, <span class="st">'six'</span>],</span>
@@ -609,45 +611,45 @@ Note
   <tbody>
     <tr>
       <th>one</th>
-      <td>0.073407</td>
-      <td>0.288822</td>
-      <td>0.445663</td>
-      <td>0.353471</td>
+      <td>0.372624</td>
+      <td>0.575508</td>
+      <td>0.661715</td>
+      <td>0.354529</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>0.007572</td>
-      <td>0.519824</td>
-      <td>0.785194</td>
-      <td>0.501753</td>
+      <td>0.162220</td>
+      <td>0.826236</td>
+      <td>0.380394</td>
+      <td>0.226761</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>0.545695</td>
-      <td>0.720350</td>
-      <td>0.332348</td>
-      <td>0.928621</td>
+      <td>0.811051</td>
+      <td>0.394109</td>
+      <td>0.368788</td>
+      <td>0.404048</td>
     </tr>
     <tr>
       <th>four</th>
-      <td>0.187223</td>
-      <td>0.833833</td>
-      <td>0.310928</td>
-      <td>0.081876</td>
+      <td>0.742663</td>
+      <td>0.677992</td>
+      <td>0.494423</td>
+      <td>0.875010</td>
     </tr>
     <tr>
       <th>five</th>
-      <td>0.842100</td>
-      <td>0.011436</td>
-      <td>0.970228</td>
-      <td>0.142956</td>
+      <td>0.556097</td>
+      <td>0.268580</td>
+      <td>0.233862</td>
+      <td>0.291724</td>
     </tr>
     <tr>
       <th>six</th>
-      <td>0.268989</td>
-      <td>0.570278</td>
-      <td>0.501287</td>
-      <td>0.210757</td>
+      <td>0.834804</td>
+      <td>0.355838</td>
+      <td>0.463061</td>
+      <td>0.960764</td>
     </tr>
   </tbody>
 </table>
@@ -677,7 +679,7 @@ Note
 <section id="plt.scatter" class="level4" data-number="5.1.3.3">
 <h4 data-number="5.1.3.3" class="anchored" data-anchor-id="plt.scatter"><span class="header-section-number">5.1.3.3</span> <code>plt.scatter()</code></h4>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.9 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.10 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -687,7 +689,7 @@ Note
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.sqrt(area)</span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[:, <span class="dv">0</span>], data[:, <span class="dv">1</span>], s<span class="op">=</span>area, marker<span class="op">=</span><span class="st">'^'</span>, c<span class="op">=</span>c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>&lt;matplotlib.collections.PathCollection at 0x131030f4dc0&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x25a3d7d1ae0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="intro_files/figure-html/cell-20-output-2.png" class="img-fluid"></p>
@@ -697,7 +699,9 @@ Note
 </section>
 <section id="plt.hist" class="level4" data-number="5.1.3.4">
 <h4 data-number="5.1.3.4" class="anchored" data-anchor-id="plt.hist"><span class="header-section-number">5.1.3.4</span> <code>plt.hist()</code></h4>
-<p>Here are two plots with build-in statistics. The plot command will have statistics as outputs. To disable it we could send the outputs to a temporary variable <code>_</code>. ::: {#exm-histogram1}</p>
+<p>Here are two plots with build-in statistics. The plot command will have statistics as outputs. To disable it we could send the outputs to a temporary variable <code>_</code>.</p>
+<div id="exm-histogram1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5.11 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> <span class="dv">100</span>, <span class="dv">15</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
@@ -708,13 +712,13 @@ Note
 <p><img src="intro_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>:::</p>
+</div>
 </section>
 </section>
 <section id="plt.boxplot" class="level3" data-number="5.1.4">
 <h3 data-number="5.1.4" class="anchored" data-anchor-id="plt.boxplot"><span class="header-section-number">5.1.4</span> <code>plt.boxplot()</code></h3>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.10 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.12 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>spread <span class="op">=</span> np.random.rand(<span class="dv">50</span>) <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>center <span class="op">=</span> np.ones(<span class="dv">30</span>) <span class="op">*</span> <span class="dv">50</span></span>
@@ -757,7 +761,7 @@ Note
 </ul></li>
 </ul>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.11 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.13 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
@@ -774,7 +778,7 @@ Note
 <span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
-<pre><code>&lt;matplotlib.legend.Legend at 0x13103b66230&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend at 0x25a3d04d9f0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="intro_files/figure-html/cell-23-output-2.png" class="img-fluid"></p>
@@ -789,7 +793,7 @@ Note
 <li>If arrows are needed, we may use <code>ax.annotation()</code>. Here an arrow will be shown from <code>xytext</code> to <code>xy</code>. The style of the arrow is controlled by the option <code>arrowprops</code>.</li>
 </ul>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.12 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.14 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>))</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>ax.plot(np.random.randn(<span class="dv">1000</span>).cumsum(), <span class="st">'k'</span>, label<span class="op">=</span><span class="st">'one'</span>)</span>
@@ -809,7 +813,7 @@ Note
 <section id="example" class="level3" data-number="5.1.7">
 <h3 data-number="5.1.7" class="anchored" data-anchor-id="example"><span class="header-section-number">5.1.7</span> Example</h3>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.13 </strong></span>The stock data can be downloaded from <a href="assests/datasets/spx.csv">here</a>.</p>
+<p><span class="theorem-title"><strong>Example 5.15 </strong></span>The stock data can be downloaded from <a href="assests/datasets/spx.csv">here</a>.</p>
 <div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
@@ -834,7 +838,7 @@ Note
 </div>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.14 </strong></span>Here is an example of arrows with different shapes. For more details please read the official <a href="https://matplotlib.org/stable/tutorials/text/annotations.html#annotating-with-arrow">document</a>.</p>
+<p><span class="theorem-title"><strong>Example 5.16 </strong></span>Here is an example of arrows with different shapes. For more details please read the official <a href="https://matplotlib.org/stable/tutorials/text/annotations.html#annotating-with-arrow">document</a>.</p>
 <div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -873,7 +877,7 @@ Note
 </div>
 <p>Let us directly run a few codes from the last section and compare the differences between them.</p>
 <div id="exm-plotwithsns" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.15 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.17 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.plot(np.random.randn(<span class="dv">30</span>).cumsum(), color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -893,7 +897,7 @@ Note
 <li><code>style</code> will change the marker symbol, based on the column you choose.</li>
 </ul>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.16 </strong></span>Consider the following example. <code>tips</code> is a DataFrame, which is shown below.</p>
+<p><span class="theorem-title"><strong>Example 5.18 </strong></span>Consider the following example. <code>tips</code> is a DataFrame, which is shown below.</p>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
@@ -1037,7 +1041,7 @@ Note
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, col<span class="op">=</span><span class="st">"time"</span>,</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>            hue<span class="op">=</span><span class="st">"smoker"</span>, style<span class="op">=</span><span class="st">"smoker"</span>, size<span class="op">=</span><span class="st">"size"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x13106b6a5f0&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x25a406599f0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="intro_files/figure-html/cell-32-output-2.png" class="img-fluid"></p>
@@ -1046,7 +1050,7 @@ Note
 </div>
 <p>The default type of plots for <code>relplot()</code> is scatter plots. However you may change it to line plot by setting <code>kind='line'</code>.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.17 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.19 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>dots <span class="op">=</span> sns.load_dataset(<span class="st">"dots"</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>dots, kind<span class="op">=</span><span class="st">"line"</span>,</span>
@@ -1054,7 +1058,7 @@ Note
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>            hue<span class="op">=</span><span class="st">"choice"</span>, size<span class="op">=</span><span class="st">"coherence"</span>, style<span class="op">=</span><span class="st">"choice"</span>,</span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>            facet_kws<span class="op">=</span><span class="bu">dict</span>(sharex<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x13104a0a500&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x25a3e2d7370&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="intro_files/figure-html/cell-33-output-2.png" class="img-fluid"></p>
@@ -1066,7 +1070,7 @@ Note
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="regplot"><span class="header-section-number">5.2.2</span> <code>regplot()</code></h3>
 <p>This method is a combination between scatter plots and linear regression.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.18 </strong></span>We still use <code>tips</code> as an example.</p>
+<p><span class="theorem-title"><strong>Example 5.20 </strong></span>We still use <code>tips</code> as an example.</p>
 <div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>sns.regplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'tip'</span>, data<span class="op">=</span>tips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
@@ -1082,11 +1086,11 @@ Note
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="pairplot"><span class="header-section-number">5.2.3</span> <code>pairplot()</code></h3>
 <p>This is a way to display the pairwise relations among several variables.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.19 </strong></span>The following code shows the pairplots among all numeric data in <code>tips</code>.</p>
+<p><span class="theorem-title"><strong>Example 5.21 </strong></span>The following code shows the pairplots among all numeric data in <code>tips</code>.</p>
 <div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(tips, diag_kind<span class="op">=</span><span class="st">'kde'</span>, plot_kws<span class="op">=</span>{<span class="st">'alpha'</span>: <span class="fl">0.2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
-<pre><code>&lt;seaborn.axisgrid.PairGrid at 0x13107ccf7f0&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.PairGrid at 0x25a3db024a0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="intro_files/figure-html/cell-35-output-2.png" class="img-fluid"></p>
@@ -1097,7 +1101,7 @@ Note
 <section id="barplot" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="barplot"><span class="header-section-number">5.2.4</span> <code>barplot</code></h3>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.20 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.22 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'total_bill'</span>, y<span class="op">=</span><span class="st">'day'</span>, data<span class="op">=</span>tips, orient<span class="op">=</span><span class="st">'h'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
@@ -1123,7 +1127,7 @@ Note
 <section id="histogram" class="level3" data-number="5.2.5">
 <h3 data-number="5.2.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">5.2.5</span> Histogram</h3>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.21 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5.23 </strong></span>&nbsp;</p>
 <div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>mu, sigma <span class="op">=</span> <span class="dv">100</span>, <span class="dv">15</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> mu <span class="op">+</span> sigma <span class="op">*</span> np.random.randn(<span class="dv">10000</span>)</span>
