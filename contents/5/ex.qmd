@@ -18,7 +18,7 @@ Please read the file as a DataFrame from [here](assests/datasets/QSR.csv). This 
 3. Look at the column `Profession`. Keep `Student`, and change everything else to be `Professional`, and add it as a new column `Status` to the DataFrame.
 4. Draw the histogram of `mean` with respect to `Status`.
 5. Find the counts of each `recommend` rating for each `Status` and draw the barplot. Do the same to `last.visit`/`Status` and `visit.again`/`Status`.
-6. Exploer the dataset and draw one plot.
+6. Explore the dataset and draw one plot.
 :::
 
 
