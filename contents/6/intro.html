@@ -369,7 +369,7 @@ Tip
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tzone <span class="op">=</span> df[<span class="st">'tz'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tvc <span class="op">=</span> tzone.value_counts()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tvc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>America/New_York        1251
 Unknown                  521
 America/Chicago          400
@@ -405,11 +405,11 @@ Tip
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>tvc[:<span class="dv">10</span>].values, y<span class="op">=</span>tvc[:<span class="dv">10</span>].index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-5-output-2.png" width="696" height="408"></p>
+<p><img src="intro_files/figure-html/cell-5-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -435,7 +435,7 @@ Tip
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> agent.<span class="bu">str</span>.split(<span class="st">' '</span>).<span class="bu">str</span>[<span class="dv">0</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>avc <span class="op">=</span> agent.value_counts()</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>avc.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>Mozilla/5.0               2594
 Mozilla/4.0                601
 GoogleMaps/RochesterNY     121
@@ -487,7 +487,7 @@ Tip
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tz_os_counts <span class="op">=</span> df.groupby([<span class="st">'tz'</span>, <span class="st">'os'</span>]).size().unstack().fillna(<span class="dv">0</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tz_os_counts.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="7">
 
 <div>
 
@@ -559,7 +559,7 @@ Tip
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>tovc.name <span class="op">=</span> <span class="st">'count'</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dftovc <span class="op">=</span> pd.DataFrame(tovc).reset_index()</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>dftovc.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="8">
 
 <div>
 
@@ -628,11 +628,11 @@ Tip
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'count'</span>, y<span class="op">=</span><span class="st">'tz'</span>, hue<span class="op">=</span><span class="st">'os'</span>, data<span class="op">=</span>dftovc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;AxesSubplot:xlabel='count', ylabel='tz'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-10-output-2.png" width="716" height="428"></p>
+<p><img src="intro_files/figure-html/cell-10-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -694,11 +694,11 @@ Tip
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'gender'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display" data-execution_count="25">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x29038993790&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x22a64f7a680&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-13-output-2.png" width="530" height="464"></p>
+<p><img src="intro_files/figure-html/cell-13-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -728,7 +728,7 @@ Tip
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="11">
 
 <div>
 
@@ -818,7 +818,7 @@ Tip
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>top100.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="12">
 
 <div>
 
@@ -904,11 +904,11 @@ Tip
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'name'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display" data-execution_count="28">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x290370b9540&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x22a6440dab0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-19-output-2.png" width="546" height="464"></p>
+<p><img src="intro_files/figure-html/cell-19-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -963,7 +963,7 @@ Tip
 </div>
 <div class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-22-output-1.png" width="816" height="573"></p>
+<p><img src="intro_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -989,11 +989,11 @@ Tip
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'ending'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="23">
-<div class="cell-output cell-output-display" data-execution_count="30">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x29037fa8a90&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x22a6518f7f0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-24-output-2.png" width="525" height="464"></p>
+<p><img src="intro_files/figure-html/cell-24-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
