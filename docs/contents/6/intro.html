@@ -350,12 +350,26 @@ div.csl-indent {
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'a'</span>] <span class="op">=</span> df[<span class="st">'a'</span>].fillna(<span class="st">'Missing'</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'a'</span>][df[<span class="st">'a'</span>] <span class="op">==</span> <span class="st">''</span>] <span class="op">=</span> <span class="st">'Unknown'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We first want to extract the timezone infomation from it. The timezone info is in the column <code>tz</code>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.1 </strong></span>We first want to extract the timezone infomation from it. The timezone info is in the column <code>tz</code>. Please count different values in the columns <code>tz</code>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tzone <span class="op">=</span> df[<span class="st">'tz'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tvc <span class="op">=</span> tzone.value_counts()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tvc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>America/New_York        1251
 Unknown                  521
 America/Chicago          400
@@ -370,46 +384,110 @@ America/Tegucigalpa        1
 Name: tz, Length: 98, dtype: int64</code></pre>
 </div>
 </div>
-<p>After cleaning data, we would like to visulize the value counts.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.2 </strong></span>We would like to visulize the value counts. You may just show the top ten results.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>tvc[:<span class="dv">10</span>].values, y<span class="op">=</span>tvc[:<span class="dv">10</span>].index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-5-output-2.png" class="img-fluid"></p>
+<p><img src="intro_files/figure-html/cell-5-output-2.png" width="696" height="408"></p>
 </div>
 </div>
-<p>We then would like to extract information from the column <code>a</code>. This column is about the agent of the connection. The important info is the part before the space <code>' '</code>.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.3 </strong></span>We then would like to extract information from the column <code>a</code>. This column is about the agent of the connection. The important info is the part before the space <code>' '</code>. Please get that part out and count values.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> df[<span class="st">'a'</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> agent.<span class="bu">str</span>.split(<span class="st">' '</span>).<span class="bu">str</span>[<span class="dv">0</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>avc <span class="op">=</span> agent.value_counts()</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>avc[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>Mozilla/5.0                 2594
-Mozilla/4.0                  601
-GoogleMaps/RochesterNY       121
-Missing                      120
-Opera/9.80                    34
-TEST_INTERNET_AGENT           24
-GoogleProducer                21
-Mozilla/6.0                    5
-BlackBerry8520/5.0.0.681       4
-BlackBerry8520/5.0.0.592       3
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>avc.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>Mozilla/5.0               2594
+Mozilla/4.0                601
+GoogleMaps/RochesterNY     121
+Missing                    120
+Opera/9.80                  34
 Name: a, dtype: int64</code></pre>
 </div>
 </div>
-<p>Now let us assume that, if <code>Windows</code> appears in column <code>a</code> the user is using <code>Windows</code> os, if not then not. In this case, the os can be detected by the following code.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.4 </strong></span>Now let us assume that, if <code>Windows</code> appears in column <code>a</code> the user is using <code>Windows</code> os, if not then not. Please detect os, and classify it as <code>Windows</code> and <code>Not Windows</code>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'os'</span>] <span class="op">=</span> np.where(df[<span class="st">'a'</span>].<span class="bu">str</span>.contains(<span class="st">'Windows'</span>), <span class="st">'Windows'</span>, <span class="st">'Not Windows'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now we can make a bar plot about the counts based on <code>os</code> and <code>timezone</code>.</p>
+</div>
+</div>
+</div>
+<p>Now make a bar plot about the counts based on <code>os</code> and <code>timezone</code>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.5 </strong></span>We first group the data by <code>os</code> and <code>tz</code>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tz_os_counts <span class="op">=</span> df.groupby([<span class="st">'tz'</span>, <span class="st">'os'</span>]).size().unstack().fillna(<span class="dv">0</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tz_os_counts.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="22">
 
 <div>
 
@@ -457,27 +535,128 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>We then turn it into a DataFrame using the <code>.stack()</code>, <code>.unstack()</code> tricks.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.6 </strong></span>We then turn it into a DataFrame. You may use any methods.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We use the <code>.stack()</code>, <code>.unstack()</code> tricks here.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tovc <span class="op">=</span> tz_os_counts.stack()[tz_os_counts.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>).nlargest(<span class="dv">10</span>).index]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>tovc.name <span class="op">=</span> <span class="st">'count'</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dftovc <span class="op">=</span> pd.DataFrame(tovc).reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dftovc <span class="op">=</span> pd.DataFrame(tovc).reset_index()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>dftovc.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>tz</th>
+      <th>os</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>America/New_York</td>
+      <td>Not Windows</td>
+      <td>339.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>America/New_York</td>
+      <td>Windows</td>
+      <td>912.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Unknown</td>
+      <td>Not Windows</td>
+      <td>245.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Unknown</td>
+      <td>Windows</td>
+      <td>276.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>America/Chicago</td>
+      <td>Not Windows</td>
+      <td>115.0</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<p>Finally we may draw the bar plot.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.7 </strong></span>We may now draw the bar plot showing <code>tz</code> and <code>os</code>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'count'</span>, y<span class="op">=</span><span class="st">'tz'</span>, hue<span class="op">=</span><span class="st">'os'</span>, data<span class="op">=</span>dftovc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>&lt;AxesSubplot:xlabel='count', ylabel='tz'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-10-output-2.png" class="img-fluid"></p>
+<p><img src="intro_files/figure-html/cell-10-output-2.png" width="716" height="428"></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
 <section id="example-2-us-baby-names-18802010" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="example-2-us-baby-names-18802010"><span class="header-section-number">6.2</span> Example 2: US Baby Names 1880–2010</h2>
 <p>The United States Social Security Administration (SSA) has made available data on the frequency of baby names from 1880 through the present. Hadley Wickham, an author of several popular R packages, has often made use of this dataset in illustrating data manipulation in <code>R</code>. The dataset can be downloaded from <a href="assests/datasets/babynames.zip">here</a> as a zip file. Please unzip it and put it in your working folder.</p>
-<p>In the folder there are 131 <code>.txt</code> files. The naming scheme is <code>yob</code> + the year. Each file contains 3 columns: <code>name</code>, <code>gender</code>, and <code>counts</code>. We would like to add a column <code>year</code>, and combine all files into a single DataFrame. In our example, the year is from 1880 to 2010.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.8 </strong></span>In the folder there are 131 <code>.txt</code> files. The naming scheme is <code>yob</code> + the year. Each file contains 3 columns: <code>name</code>, <code>gender</code>, and <code>counts</code>. We would like to add a column <code>year</code>, and combine all files into a single DataFrame. In our example, the year is from 1880 to 2010.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -490,7 +669,24 @@ Name: a, dtype: int64</code></pre>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    dflist.append(df)</span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dflist, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We can plot the total births by sex and year.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.9 </strong></span>Plot the total births by sex and year.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -498,14 +694,31 @@ Name: a, dtype: int64</code></pre>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'gender'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x1fdbb4472b0&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x29038993790&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-13-output-2.png" class="img-fluid"></p>
+<p><img src="intro_files/figure-html/cell-13-output-2.png" width="530" height="464"></p>
 </div>
 </div>
-<p>For further analysis, we would like to compute the proportions of each name relative to the total number of births per year per gender.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.10 </strong></span>For further analysis, we would like to compute the proportions of each name relative to the total number of births per year per gender.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_prop(group):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    group[<span class="st">'prop'</span>] <span class="op">=</span> group.counts <span class="op">/</span> group.counts.<span class="bu">sum</span>()</span>
@@ -515,7 +728,7 @@ Name: a, dtype: int64</code></pre>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="26">
 
 <div>
 
@@ -576,7 +789,24 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p>Now we would like to keep the first 100 names in each year, and save it as a new DataFrame <code>top100</code>.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.11 </strong></span>Now we would like to keep the first 100 names in each year, and save it as a new DataFrame <code>top100</code>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>top100 <span class="op">=</span> (</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    df.groupby([<span class="st">'year'</span>, <span class="st">'gender'</span>])</span>
@@ -588,7 +818,7 @@ Name: a, dtype: int64</code></pre>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>top100.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="27">
 
 <div>
 
@@ -650,26 +880,77 @@ Name: a, dtype: int64</code></pre>
 </div>
 </div>
 <p>Note that <code>level_2</code> is related to the original index after <code>reset_index()</code>. That’s why we don’t need it here.</p>
-<p>Now we would like to draw the trend of some names.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.12 </strong></span>Now we would like to draw the trend of some names: <code>John</code>, <code>Harry</code> and <code>Mary</code>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>namelist <span class="op">=</span> [<span class="st">'John'</span>, <span class="st">'Harry'</span>, <span class="st">'Mary'</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>top100[top100[<span class="st">'name'</span>].isin(namelist)],</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'counts'</span>, hue<span class="op">=</span><span class="st">'name'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x1fdb4a7d240&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x290370b9540&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-19-output-2.png" class="img-fluid"></p>
+<p><img src="intro_files/figure-html/cell-19-output-2.png" width="546" height="464"></p>
 </div>
 </div>
-<p>Now we would like to analyze the ending of names.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.13 </strong></span>Please analyze the ending of names.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'ending'</span>] <span class="op">=</span> df[<span class="st">'name'</span>].<span class="bu">str</span>[<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>endingcount <span class="op">=</span> df.groupby([<span class="st">'gender'</span>, <span class="st">'year'</span>, <span class="st">'ending'</span>]).<span class="bu">sum</span>().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We would like to draw barplots to show the distributions in year 1910, 1960 and 2010.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.14 </strong></span>We would like to draw barplots to show the distributions in year 1910, 1960 and 2010.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>certainyear <span class="op">=</span> endingcount[endingcount[<span class="st">'year'</span>].isin([<span class="dv">1910</span>, <span class="dv">1960</span>, <span class="dv">2010</span>])]</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -682,20 +963,40 @@ Name: a, dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
+<p><img src="intro_files/figure-html/cell-22-output-1.png" width="816" height="573"></p>
 </div>
 </div>
-<p>We would also like to draw the line plot to show the trending of certain letters through years.</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.15 </strong></span>We would also like to draw the line plot to show the trending of certain letters through years.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>endingcount[endingcount.ending.isin([<span class="st">'d'</span>, <span class="st">'n'</span>, <span class="st">'y'</span>])],</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'prop'</span>, hue<span class="op">=</span><span class="st">'ending'</span>, kind<span class="op">=</span><span class="st">'line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="23">
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x1fdba624b20&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x29037fa8a90&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="intro_files/figure-html/cell-24-output-2.png" class="img-fluid"></p>
+<p><img src="intro_files/figure-html/cell-24-output-2.png" width="525" height="464"></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -703,6 +1004,9 @@ Name: a, dtype: int64</code></pre>
 <h2 data-number="6.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.3</span> Exercises</h2>
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6.1 </strong></span>Please use the baby name dataset. We would like to consider the diversity of the names. Please compute the number of popular names in top 50% for each year each gender. Draw a line plot to show the trend and discuss the result.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.2 </strong></span>Please consider the baby name dataset. Please draw the trends of counts of names ending in <code>a</code>, <code>e</code>, <code>n</code> across years for each gender.</p>
 </div>
 
 

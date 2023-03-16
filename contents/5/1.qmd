@@ -173,6 +173,7 @@ You may compare it with this [Example](#exm-plotwithsns) for the purpose of `sea
 
 #### `plt.bar()` and `plt.barh()`
 The two commands make vertical and horizontal bar plots, respectively.
+
 ::: {#exm-}
 
 ```{python}
@@ -235,6 +236,7 @@ plt.scatter(data[:, 0], data[:, 1], s=area, marker='^', c=c)
 
 #### `plt.hist()`
 Here are two plots with build-in statistics. The plot command will have statistics as outputs. To disable it we could send the outputs to a temporary variable `_`.
+
 ::: {#exm-histogram1}
 ```{python}
 mu, sigma = 100, 15

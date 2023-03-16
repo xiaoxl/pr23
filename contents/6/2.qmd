@@ -2,8 +2,15 @@
 ## Example 2: US Baby Names 1880–2010
 The United States Social Security Administration (SSA) has made available data on the frequency of baby names from 1880 through the present. Hadley Wickham, an author of several popular R packages, has often made use of this dataset in illustrating data manipulation in `R`. The dataset can be downloaded from [here](assests/datasets/babynames.zip) as a zip file. Please unzip it and put it in your working folder.
 
-In the folder there are 131 `.txt` files. The naming scheme is `yob` + the year. Each file contains 3 columns: `name`, `gender`, and `counts`. We would like to add a column `year`, and combine all files into a single DataFrame. In our example, the year is from 1880 to 2010.
 
+
+::: {#exm-}
+
+In the folder there are 131 `.txt` files. The naming scheme is `yob` + the year. Each file contains 3 columns: `name`, `gender`, and `counts`. We would like to add a column `year`, and combine all files into a single DataFrame. In our example, the year is from 1880 to 2010.
+:::
+
+
+::: {.callout-tip collapse="true"}
 
 ```{python}
 #| eval: false
@@ -19,7 +26,16 @@ for year in range(1880, 2011):
 df = pd.concat(dflist, ignore_index=True)
 ```
 
-We can plot the total births by sex and year.
+:::
+
+
+::: {#exm-}
+
+Plot the total births by sex and year.
+:::
+
+
+::: {.callout-tip collapse="true"}
 
 ```{python}
 #| eval: false
@@ -40,7 +56,17 @@ sns.relplot(data=dfgy,
 ```
 
 
+:::
+
+
+::: {#exm-}
+
 For further analysis, we would like to compute the proportions of each name relative to the total number of births per year per gender. 
+
+:::
+
+
+::: {.callout-tip collapse="true"}
 
 ```{python}
 #| eval: false
@@ -57,8 +83,17 @@ df.head()
 babydf5 = pd.read_csv('assests/datasets/babydf5.csv')
 babydf5
 ```
+:::
+
+
+
+::: {#exm-}
 
 Now we would like to keep the first 100 names in each year, and save it as a new DataFrame `top100`.
+:::
+
+
+::: {.callout-tip collapse="true"}
 
 ```{python}
 #| eval: false
@@ -78,9 +113,18 @@ dftop100 = pd.read_csv('assests/datasets/baby100.csv')
 dftop100
 ```
 
-Note that `level_2` is related to the original index after `reset_index()`. That's why we don't need it here.
 
-Now we would like to draw the trend of some names.
+Note that `level_2` is related to the original index after `reset_index()`. That's why we don't need it here.
+:::
+
+
+
+::: {#exm-}
+Now we would like to draw the trend of some names: `John`, `Harry` and `Mary`.
+:::
+
+
+::: {.callout-tip collapse="true"}
 
 ```{python}
 #| eval: false
@@ -96,15 +140,37 @@ sns.relplot(data=babynamelist,
             x='year', y='counts', hue='name', kind='line')
 ```
 
+:::
 
-Now we would like to analyze the ending of names.
+
+::: {#exm-}
+Please analyze the ending of names.
+:::
+
+
+::: {.callout-tip collapse="true"}
+
 
 ```{python}
 #| eval: false
 df['ending'] = df['name'].str[-1]
 endingcount = df.groupby(['gender', 'year', 'ending']).sum().reset_index()
 ```
+
+:::
+
+
+
+::: {#exm-}
 We would like to draw barplots to show the distributions in year 1910, 1960 and 2010.
+
+
+:::
+
+
+
+::: {.callout-tip collapse="true"}
+
 
 ```{python}
 #| eval: false
@@ -129,8 +195,17 @@ sns.barplot(data=babyyear[babyyear['gender']=='M'],
 sns.barplot(data=babyyear[babyyear['gender']=='F'],
             x='ending', y='prop', hue='year', ax=axs[1]).legend_.remove()
 ```
+:::
+
+
+::: {#exm-}
+
 
 We would also like to draw the line plot to show the trending of certain letters through years.
+:::
+
+
+::: {.callout-tip collapse="true"}
 
 ```{python}
 #| eval: false
@@ -146,3 +221,5 @@ sns.relplot(data=babyending[babyending.ending.isin(['d', 'n', 'y'])],
 ```
 
 
+
+:::

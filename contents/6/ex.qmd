@@ -3,3 +3,9 @@
 ::: {#exr-}
 Please use the baby name dataset. We would like to consider the diversity of the names. Please compute the number of popular names in top 50% for each year each gender. Draw a line plot to show the trend and discuss the result.
 :::
+
+
+
+::: {#exr-}
+Please consider the baby name dataset. Please draw the trends of counts of names ending in `a`, `e`, `n` across years for each gender.
+:::
