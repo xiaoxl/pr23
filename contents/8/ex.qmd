@@ -59,6 +59,7 @@ Please write some codes to count how many rows whose `Var1` are equal to `hearts
 
 ::: {#exr-}
 Converte the following sentences into tests written with R code. 
+
 - `w <- c(-1, 0, 1)`. Is `w` positive?
 - `x <- c(5, 15)`. Is `x` greater than `10` and less than `20`?
 - `y <- 'February'`. Is object `y` the word `February`?
