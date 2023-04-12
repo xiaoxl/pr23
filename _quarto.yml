@@ -8,7 +8,7 @@ top-level-division: part
 toc-depth: 3
 number-depth: 4
 bibliography: book.bib
-csl: "C:/Users/Xinli/Documents/ims.csl"
+csl: "ims.csl"
 
 crossref:
   labels: arabic        # (default is arabic)
@@ -23,17 +23,16 @@ knitr:
     comment: "#>"
     collapse: true
 
-jupyter: base23
+jupyter: base
 
 format:
   html:
-    theme: 
-      - cosmo
+    theme: default
     code-block-bg: true
     code-block-border-left: true #"#31BAE9"
     # code-line-numbers: true
     highlight-style: atom-one
-    # page-layout: article
+    page-layout: article
 
 book:
   title: "Python/R for Data Science"
@@ -65,7 +64,7 @@ book:
     - contents/app/r.qmd
     - contents/app/re.qmd
   sidebar:
-    # style: docked
+    style: floating
     pinned: true
     align: center
     border: true
