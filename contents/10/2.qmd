@@ -110,18 +110,17 @@ Now we would like to analyze the ending of names. Please get a `tibble` that con
 #| warning: false
 df %>% 
     filter(year %in% c(1910, 1960, 2010)) %>% 
-    mutate(ending=str_sub(name, -1, -1)) %>% 
+    mutate(ending=str_sub(name, -1, -1), 
+           year=as.factor(year)) %>% 
     group_by(gender, year, ending) %>% 
     summarise(ending_counts=sum(counts)) %>% 
     ggplot() +
-        geom_bar(
+        geom_col(
             mapping = aes(
                 x=ending, 
                 y=ending_counts, 
                 fill=year,
-                group=year
                 ), 
-            stat = "identity", 
             position = "dodge",
         ) +
         facet_wrap(~gender, nrow=2)
