@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.319">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,48 +47,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -101,8 +73,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -142,6 +113,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -157,14 +129,21 @@ div.csl-indent {
     <span class="navbar-title">Python/R for Data Science</span>
     </a>
   </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/1/intro.html">Part I: Python</a></li><li class="breadcrumb-item"><a href="../../contents/3/intro.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: `numpy`</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -172,125 +151,145 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-      <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Part I: Python</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Part I: Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/1/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></a>
+  <a href="../../contents/1/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/2/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python Basics</span></a>
+  <a href="../../contents/2/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python Basics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/3/intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></a>
+  <a href="../../contents/3/intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/4/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Package: <code>pandas</code></span></a>
+  <a href="../../contents/4/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Package: <code>pandas</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/5/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualization</span></a>
+  <a href="../../contents/5/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/6/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Projects with Python</span></a>
+  <a href="../../contents/6/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Projects with Python</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/7/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classes/Packages for Python</span></a>
+  <a href="../../contents/7/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classes/Packages for Python</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Part II: R</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Part II: R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/8/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Fundamentals</span></a>
+  <a href="../../contents/8/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R Fundamentals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/9/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></a>
+  <a href="../../contents/9/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R for Data Sciences</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/10/intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projects with R</span></a>
+  <a href="../../contents/10/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projects with R</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Appendices</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Python Setup</span></a>
+  <a href="../../contents/app/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Python Setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Environemnt Variable <code>PATH</code></span></a>
+  <a href="../../contents/app/path.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Environemnt Variable <code>PATH</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python Virtual Environment</span></a>
+  <a href="../../contents/app/virtenv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python Virtual Environment</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Some Hard Python concepts</span></a>
+  <a href="../../contents/app/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Some Hard Python concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></a>
+  <a href="../../contents/app/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">R Setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/app/re.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Regular expression</span></a>
+  <a href="../../contents/app/re.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Regular expression</span></span></a>
   </div>
 </li>
       </ul>
@@ -298,36 +297,37 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="toc-section-number">3.1</span>  Basics</a>
+  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="header-section-number">3.1</span> Basics</a>
   <ul class="collapse">
-  <li><a href="#understanding-ndarray" id="toc-understanding-ndarray" class="nav-link" data-scroll-target="#understanding-ndarray"><span class="toc-section-number">3.1.1</span>  Understanding <code>ndarray</code></a></li>
-  <li><a href="#create-ndarrays" id="toc-create-ndarrays" class="nav-link" data-scroll-target="#create-ndarrays"><span class="toc-section-number">3.1.2</span>  Create <code>ndarrays</code></a></li>
-  <li><a href="#mathematical-and-statistical-methods" id="toc-mathematical-and-statistical-methods" class="nav-link" data-scroll-target="#mathematical-and-statistical-methods"><span class="toc-section-number">3.1.3</span>  Mathematical and Statistical Methods</a></li>
+  <li><a href="#understanding-ndarray" id="toc-understanding-ndarray" class="nav-link" data-scroll-target="#understanding-ndarray"><span class="header-section-number">3.1.1</span> Understanding <code>ndarray</code></a></li>
+  <li><a href="#create-ndarrays" id="toc-create-ndarrays" class="nav-link" data-scroll-target="#create-ndarrays"><span class="header-section-number">3.1.2</span> Create <code>ndarrays</code></a></li>
+  <li><a href="#mathematical-and-statistical-methods" id="toc-mathematical-and-statistical-methods" class="nav-link" data-scroll-target="#mathematical-and-statistical-methods"><span class="header-section-number">3.1.3</span> Mathematical and Statistical Methods</a></li>
   </ul></li>
-  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing"><span class="toc-section-number">3.2</span>  Indexing</a>
+  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing"><span class="header-section-number">3.2</span> Indexing</a>
   <ul class="collapse">
-  <li><a href="#basic-indexing" id="toc-basic-indexing" class="nav-link" data-scroll-target="#basic-indexing"><span class="toc-section-number">3.2.1</span>  Basic indexing</a></li>
-  <li><a href="#advanced-indexing" id="toc-advanced-indexing" class="nav-link" data-scroll-target="#advanced-indexing"><span class="toc-section-number">3.2.2</span>  Advanced Indexing</a></li>
-  <li><a href="#copies-and-views" id="toc-copies-and-views" class="nav-link" data-scroll-target="#copies-and-views"><span class="toc-section-number">3.2.3</span>  Copies and views</a></li>
+  <li><a href="#basic-indexing" id="toc-basic-indexing" class="nav-link" data-scroll-target="#basic-indexing"><span class="header-section-number">3.2.1</span> Basic indexing</a></li>
+  <li><a href="#advanced-indexing" id="toc-advanced-indexing" class="nav-link" data-scroll-target="#advanced-indexing"><span class="header-section-number">3.2.2</span> Advanced Indexing</a></li>
+  <li><a href="#copies-and-views" id="toc-copies-and-views" class="nav-link" data-scroll-target="#copies-and-views"><span class="header-section-number">3.2.3</span> Copies and views</a></li>
   </ul></li>
-  <li><a href="#more-functions" id="toc-more-functions" class="nav-link" data-scroll-target="#more-functions"><span class="toc-section-number">3.3</span>  More functions</a>
+  <li><a href="#more-functions" id="toc-more-functions" class="nav-link" data-scroll-target="#more-functions"><span class="header-section-number">3.3</span> More functions</a>
   <ul class="collapse">
-  <li><a href="#some-examples" id="toc-some-examples" class="nav-link" data-scroll-target="#some-examples"><span class="toc-section-number">3.3.1</span>  Some examples</a></li>
+  <li><a href="#some-examples" id="toc-some-examples" class="nav-link" data-scroll-target="#some-examples"><span class="header-section-number">3.3.1</span> Some examples</a></li>
   </ul></li>
-  <li><a href="#projects-examples" id="toc-projects-examples" class="nav-link" data-scroll-target="#projects-examples"><span class="toc-section-number">3.4</span>  Projects Examples</a>
+  <li><a href="#projects-examples" id="toc-projects-examples" class="nav-link" data-scroll-target="#projects-examples"><span class="header-section-number">3.4</span> Projects Examples</a>
   <ul class="collapse">
-  <li><a href="#toss-a-coin" id="toc-toss-a-coin" class="nav-link" data-scroll-target="#toss-a-coin"><span class="toc-section-number">3.4.1</span>  Toss a coin</a></li>
-  <li><a href="#random-walks" id="toc-random-walks" class="nav-link" data-scroll-target="#random-walks"><span class="toc-section-number">3.4.2</span>  Random walks</a></li>
-  <li><a href="#many-random-walks" id="toc-many-random-walks" class="nav-link" data-scroll-target="#many-random-walks"><span class="toc-section-number">3.4.3</span>  Many random walks</a></li>
-  <li><a href="#analyze-positions" id="toc-analyze-positions" class="nav-link" data-scroll-target="#analyze-positions"><span class="toc-section-number">3.4.4</span>  Analyze <code>positions</code></a></li>
+  <li><a href="#toss-a-coin" id="toc-toss-a-coin" class="nav-link" data-scroll-target="#toss-a-coin"><span class="header-section-number">3.4.1</span> Toss a coin</a></li>
+  <li><a href="#random-walks" id="toc-random-walks" class="nav-link" data-scroll-target="#random-walks"><span class="header-section-number">3.4.2</span> Random walks</a></li>
+  <li><a href="#many-random-walks" id="toc-many-random-walks" class="nav-link" data-scroll-target="#many-random-walks"><span class="header-section-number">3.4.3</span> Many random walks</a></li>
+  <li><a href="#analyze-positions" id="toc-analyze-positions" class="nav-link" data-scroll-target="#analyze-positions"><span class="header-section-number">3.4.4</span> Analyze <code>positions</code></a></li>
   </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">3.5</span>  Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -336,7 +336,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Package: <code>numpy</code></span></h1>
 </div>
 
 
@@ -410,12 +410,12 @@ div.csl-indent {
 <pre><code>2</code></pre>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Comparing to Linear algebras
 </div>
 </div>
@@ -440,13 +440,13 @@ Comparing to Linear algebras
 </ul>
 <p>So a 2d array can be treated as a matrix, and the shape being <code>(2, 3)</code> means that the matrix has <code>2</code> rows and <code>3</code> columns.</p>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-Danger
+<div class="callout-title-container flex-fill">
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -464,12 +464,12 @@ Danger
 <section id="create-ndarrays" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="create-ndarrays"><span class="header-section-number">3.1.2</span> Create <code>ndarrays</code></h3>
 <p>There are many ways to create <code>ndarrays</code>. We list some basic ways below.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Converting from a Python <code>list</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -486,12 +486,12 @@ Converting from a Python <code>list</code>
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Intrinsic <code>numpy</code> array creation functions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -526,12 +526,12 @@ Intrinsic <code>numpy</code> array creation functions
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Reading from files
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -624,12 +624,12 @@ Reading from files
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Changing the shape of other <code>ndarrays</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -733,12 +733,12 @@ Changing the shape of other <code>ndarrays</code>
 </div>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Pay attention to the format of inputs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -772,13 +772,13 @@ Pay attention to the format of inputs
 </div>
 <p>This example defines two functions <span class="math inline">\(y=\sin(x)\)</span> and <span class="math inline">\(z=y^2+2y-3\)</span>. The syntax is very similar to the math language.</p>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-Danger
+<div class="callout-title-container flex-fill">
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -813,12 +813,12 @@ Danger
 <li><code>.sort()</code>: Sort the array. There is also a <code>np.sort()</code> function.</li>
 </ul></li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 </div>
@@ -829,12 +829,12 @@ Tip
 <section id="broadcasting" class="level4" data-number="3.1.3.1">
 <h4 data-number="3.1.3.1" class="anchored" data-anchor-id="broadcasting"><span class="header-section-number">3.1.3.1</span> Broadcasting</h4>
 <p>Although most <code>numpy</code> functions and <code>ndarray</code> methods are computing entry-wise, when we perform binary operations, the size of the two arrays don’t have to be the same. If they are not the same, the Broadcasting Rule applies, and some entries will be filled automatically by repeating themselves.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 The Broadcasting Rule
 </div>
 </div>
@@ -962,12 +962,12 @@ The Broadcasting Rule
 </div>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Nested indexes
 </div>
 </div>
@@ -981,25 +981,25 @@ Nested indexes
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="advanced-indexing"><span class="header-section-number">3.2.2</span> Advanced Indexing</h3>
 <p>Advanced indexing is triggered when the selection object satisfies some conditions. The concrete definition is technical and abstract. You may (not entirely correctly) understand it as “everything other than basic indexing (concrete coordinates or slicing)”. Please read the <a href="https://numpy.org/doc/stable/user/basics.indexing.html#advanced-indexing">official document</a> for more details.</p>
 <p>Here we mainly focus on some typical advaced indexing methods.</p>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-Danger
+<div class="callout-title-container flex-fill">
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>There are some very exotic examples that are very hard to tell whether they belong to basic indexing or advanced indexing. Our suggestion is to avoid this type of code, and try to code in the most straight forward way. You could come back to understand this problem later when you are more expericened, but it is more of a Programming Language problem, instead of a Data Science problem.</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Fancy indexing
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1008,12 +1008,12 @@ Fancy indexing
 <div class="callout-body-container callout-body">
 <p>Fancy indexing is a term adopted by <code>numpy</code> to describe indexing using integer arrays.</p>
 <p>The basic idea is to use a <code>list</code> of indexes to select entries. The general rule is relative complicated. Here we will only talk about 1d and 2d cases.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 1d case
 </div>
 </div>
@@ -1031,12 +1031,12 @@ Fancy indexing
 <pre><code>array([1, 3, 0, 2])</code></pre>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 A trick example
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1065,12 +1065,12 @@ A trick example
 </div>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 2d case
 </div>
 </div>
@@ -1089,12 +1089,12 @@ A trick example
        [12, 13, 14, 15]])</code></pre>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 1. If only one <code>list</code> is given
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1112,12 +1112,12 @@ A trick example
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 2. If two arguments are given, one is a <code>list</code>, the other is <code>:</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1144,12 +1144,12 @@ A trick example
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 3. If both two arguments are <code>lists</code> of the same length
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1172,12 +1172,12 @@ A trick example
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 4. If both two arguments are <code>lists</code>, and one of the <code>lists</code> is of length <code>1</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1200,12 +1200,12 @@ A trick example
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Boolean Indexing
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1296,17 +1296,17 @@ b is [-1 -2  7]</code></pre>
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.random.rand(<span class="dv">3</span>, <span class="dv">3</span>)</span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="49">
-<pre><code>array([[0.22517482, 0.25367704, 0.9311397 ],
-       [0.51016383, 0.18804834, 0.57453533],
-       [0.97257192, 0.14926951, 0.02578065]])</code></pre>
+<pre><code>array([[0.79690976, 0.21905802, 0.35006144],
+       [0.72899552, 0.63574407, 0.40568658],
+       [0.26448473, 0.09233898, 0.91547063]])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span>:<span class="dv">2</span>].base</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="50">
-<pre><code>array([[0.22517482, 0.25367704, 0.9311397 ],
-       [0.51016383, 0.18804834, 0.57453533],
-       [0.97257192, 0.14926951, 0.02578065]])</code></pre>
+<pre><code>array([[0.79690976, 0.21905802, 0.35006144],
+       [0.72899552, 0.63574407, 0.40568658],
+       [0.26448473, 0.09233898, 0.91547063]])</code></pre>
 </div>
 </div>
 <p>Basic indexing creates views. In this example, the <code>base</code> of <code>A[1:2]</code> is <code>A</code>, which means that <code>A[1:2]</code> is a view of <code>A</code>.</p>
@@ -1361,12 +1361,12 @@ b is [-1  6  7]</code></pre>
 <section id="more-functions" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="more-functions"><span class="header-section-number">3.3</span> More functions</h2>
 <p>We introduce a few more advanced functions here. All the following functions are somehow related to the indexes of entries.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 <code>np.where()</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1382,20 +1382,20 @@ b is [-1  6  7]</code></pre>
 <span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.random.randint(<span class="dv">10</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="56">
-<pre><code>array([2, 3, 6, 1, 6, 3, 3, 8, 3, 3])</code></pre>
+<pre><code>array([6, 1, 2, 4, 6, 2, 2, 1, 3, 4])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb109"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>np.where(a<span class="op">%</span><span class="dv">3</span> <span class="op">==</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
-<pre><code>(array([3], dtype=int64),)</code></pre>
+<pre><code>(array([1, 3, 7, 9], dtype=int64),)</code></pre>
 </div>
 </div>
 <p>Since the output is the <code>ndarray</code> of indexes, it is possible to directly use it to get those entries.</p>
 <div class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>a[np.where(a<span class="op">%</span><span class="dv">3</span> <span class="op">==</span> <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
-<pre><code>array([1])</code></pre>
+<pre><code>array([1, 4, 1, 4])</code></pre>
 </div>
 </div>
 <p>Note that this is a fancy indexing, so the result is a copy.</p>
@@ -1406,22 +1406,22 @@ b is [-1  6  7]</code></pre>
 <div class="sourceCode cell-code" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.random.randint(<span class="dv">10</span>, size<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">3</span>))</span>
 <span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
-<pre><code>array([[7, 0, 2],
-       [5, 1, 5],
-       [1, 7, 7]])</code></pre>
+<pre><code>array([[6, 5, 5],
+       [7, 2, 3],
+       [1, 1, 3]])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>np.where(b<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
-<pre><code>(array([0, 0], dtype=int64), array([1, 2], dtype=int64))</code></pre>
+<pre><code>(array([0, 1], dtype=int64), array([0, 1], dtype=int64))</code></pre>
 </div>
 </div>
 <p>Similar to the previous case, we may directly using fancy indexing to get an <code>ndarray</code> of the entries, and what we get is a copy.</p>
 <div class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>b[np.where(b<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="61">
-<pre><code>array([0, 2])</code></pre>
+<pre><code>array([6, 2])</code></pre>
 </div>
 </div>
 <ul>
@@ -1443,12 +1443,12 @@ b is [-1  6  7]</code></pre>
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 <code>np.any()</code> and <code>np.all()</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1498,12 +1498,12 @@ b is [-1  6  7]</code></pre>
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 <code>np.argsort()</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1516,13 +1516,13 @@ b is [-1  6  7]</code></pre>
 <span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.random.randint(<span class="dv">100</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="69">
-<pre><code>array([46, 43, 66, 49, 79, 18, 60, 64, 63, 39])</code></pre>
+<pre><code>array([39, 71, 46, 36, 30, 51, 94, 76, 64, 28])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="72">
 <div class="sourceCode cell-code" id="cb136"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>a[np.argsort(a)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="70">
-<pre><code>array([18, 39, 43, 46, 49, 60, 63, 64, 66, 79])</code></pre>
+<pre><code>array([28, 30, 36, 39, 46, 51, 64, 71, 76, 94])</code></pre>
 </div>
 </div>
 </div>
@@ -1639,12 +1639,12 @@ b is [-1  6  7]</code></pre>
 <section id="toss-a-coin" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="toss-a-coin"><span class="header-section-number">3.4.1</span> Toss a coin</h3>
 <p>Tossing a coin can be modeled by picking a random number between <code>0</code> and <code>1</code>. If the number is <code>&lt;0.5</code>, we call it <code>H</code> (head). If the number is <code>&gt;=0.5</code>, we call it <code>T</code> (tail).</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1666,12 +1666,12 @@ Tip
 </div>
 </div>
 <p>If we want to do it 10 times, we may use a <code>for</code> loop.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1687,12 +1687,12 @@ Tip
 </div>
 </div>
 <p>The above code can be written in terms of list comprehension.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1707,12 +1707,12 @@ Tip
 </div>
 </div>
 <p>Now we would like to rewrite these code using <code>np.where()</code>. Consider all tossing actions simutanously. So we generate an <code>ndarray</code> of random numbers to model all tossing actions.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1726,12 +1726,12 @@ Tip
 </div>
 </div>
 <p>Then using <code>np.where()</code> to check each whether it is <code>H</code> or <code>T</code>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1745,12 +1745,12 @@ Tip
 </div>
 </div>
 <p>Since now <code>results</code> is an <code>ndarray</code>, we could directly use it to count the number of <code>H</code>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1760,7 +1760,7 @@ Tip
 <div class="cell" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb167"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a>(results<span class="op">==</span><span class="st">'H'</span>).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="88">
-<pre><code>5</code></pre>
+<pre><code>6</code></pre>
 </div>
 </div>
 </div>
@@ -1777,12 +1777,12 @@ Tip
 <li>To record the starting position, we attach <code>0</code> to the beginning of the new <code>choices</code>.</li>
 <li>Apply <code>.cumsum()</code> to <code>choices</code> to get <code>positions</code>.</li>
 </ol>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1818,12 +1818,12 @@ Tip
 <li>For <code>cumsum</code> and <code>concatenate</code>, add <code>axis=1</code> to indicate that we perform the operations along <code>axis 1</code>.</li>
 <li>We plot each row in the same figure. <code>plt.legend</code> is used to show the label for each line.</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1845,7 +1845,7 @@ Tip
 <span id="cb170-12"><a href="#cb170-12" aria-hidden="true" tabindex="-1"></a>    plt.plot(row)</span>
 <span id="cb170-13"><a href="#cb170-13" aria-hidden="true" tabindex="-1"></a>plt.legend([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="90">
-<pre><code>&lt;matplotlib.legend.Legend at 0x1fc99bc2680&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend at 0x1af780ffca0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="intro_files/figure-html/cell-93-output-2.png" class="img-fluid"></p>
@@ -1861,12 +1861,12 @@ Tip
 <ul>
 <li>The maximal position:</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1885,12 +1885,12 @@ Tip
 <ul>
 <li>The maximal position for each one:</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1900,7 +1900,7 @@ Tip
 <div class="cell" data-execution_count="94">
 <div class="sourceCode cell-code" id="cb174"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a>positions.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="92">
-<pre><code>array([2., 6., 3.])</code></pre>
+<pre><code>array([2., 0., 6.])</code></pre>
 </div>
 </div>
 </div>
@@ -1909,12 +1909,12 @@ Tip
 <ul>
 <li>The maximal position across all three for each step:</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1924,8 +1924,9 @@ Tip
 <div class="cell" data-execution_count="95">
 <div class="sourceCode cell-code" id="cb176"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a>positions.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="93">
-<pre><code>array([0., 1., 2., 1., 0., 1., 2., 3., 4., 3., 4., 5., 6., 5., 6., 5., 4.,
-       3., 2., 1., 2., 3., 2., 1., 2., 3., 2., 1., 2., 1., 0.])</code></pre>
+<pre><code>array([ 0., -1.,  0.,  1.,  2.,  1.,  2.,  1.,  0.,  1.,  2.,  3.,  2.,
+        1.,  0.,  1.,  2.,  3.,  4.,  5.,  6.,  5.,  6.,  5.,  4.,  3.,
+        2.,  1.,  2.,  1.,  0.])</code></pre>
 </div>
 </div>
 </div>
@@ -1934,12 +1935,12 @@ Tip
 <ul>
 <li>Check whether anyone once got to the position 3:</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1949,7 +1950,7 @@ Tip
 <div class="cell" data-execution_count="96">
 <div class="sourceCode cell-code" id="cb178"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a>(positions<span class="op">&gt;=</span><span class="dv">3</span>).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="94">
-<pre><code>array([False,  True,  True])</code></pre>
+<pre><code>array([False, False,  True])</code></pre>
 </div>
 </div>
 </div>
@@ -1958,12 +1959,12 @@ Tip
 <ul>
 <li>The number of people who once got to the position 3:</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1973,7 +1974,7 @@ Tip
 <div class="cell" data-execution_count="97">
 <div class="sourceCode cell-code" id="cb180"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a>(positions<span class="op">&gt;=</span><span class="dv">3</span>).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="95">
-<pre><code>2</code></pre>
+<pre><code>1</code></pre>
 </div>
 </div>
 </div>
@@ -1982,12 +1983,12 @@ Tip
 <ul>
 <li>Which step for each one gets to the right most position:</li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
@@ -1997,7 +1998,7 @@ Tip
 <div class="cell" data-execution_count="98">
 <div class="sourceCode cell-code" id="cb182"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a>positions.argmax(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="96">
-<pre><code>array([12, 12, 25], dtype=int64)</code></pre>
+<pre><code>array([ 4,  0, 20], dtype=int64)</code></pre>
 </div>
 </div>
 </div>
@@ -2147,11 +2148,11 @@ Tip
 </div>
 
 
-<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
-<div id="ref-McK2017" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-McK2017" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline"><span class="smallcaps">McKinney</span>, W. (2017). <em>Python for data analysis: Data wrangling with pandas, NumPy, and IPython</em>. O’Reilly Media.</div>
 </div>
-<div id="ref-Pra2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Pra2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline"><span class="smallcaps">Prabhakaran</span>, S. (2018). <a href="https://www.machinelearningplus.com/python/101-numpy-exercises-python/">101 NumPy exercises for data analysis (python)</a>.</div>
 </div>
 </div>
@@ -2185,9 +2186,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2252,6 +2267,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
